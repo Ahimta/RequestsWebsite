@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  applicant: MyString
+  reason: MyString
+  accepted: false
+  reviewed: false
+
+two:
+  applicant: MyString
+  reason: MyString
+  accepted: false
+  reviewed: false

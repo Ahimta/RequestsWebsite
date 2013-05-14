@@ -8,5 +8,6 @@ class Vacation < ActiveRecord::Base
   validates :day, presence: true
   validates :duration, presence: true
   validates :month, presence: true
+  validates :year, presence: true
   validates :user_id, presence: true
 end

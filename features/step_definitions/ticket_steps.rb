@@ -1,4 +1,4 @@
-When(/^I request ticket:$/) do |data|
+When(/^I request a ticket:$/) do |data|
   visit new_ticket_path
   
   data.rows_hash.each do |field, value|

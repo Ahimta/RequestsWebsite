@@ -1,7 +1,8 @@
-= form_tag '' do
+= form_tag @vacation do
 	%fieldsset
 		%legend
 			%h1= action
+		%div= hidden_field :vacation, :user_id, value: 0
 		%div= text_field :vacation, :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
 		%div= text_field :vacation, :duration, placeholder: t('.duration'), title: t('.duration')
 		%div

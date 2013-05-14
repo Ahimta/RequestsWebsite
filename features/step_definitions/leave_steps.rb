@@ -1,4 +1,4 @@
-When(/^I request leave:$/) do |data|
+When(/^I request a leave:$/) do |data|
 	visit new_leafe_path
 	
   data.rows_hash.each do |field, value|

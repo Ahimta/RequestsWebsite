@@ -5,6 +5,11 @@
 	en:
 	{
 		applicant: 'Applicant', edit_request: 'Edit Request',
+		create:
+		{ 
+			notice: 'Your Request was sent successfully',
+			warning: 'Please fill in all fields'
+		},
 		layouts:
 		{
 			application:
@@ -18,16 +23,11 @@
 		leaves:
 		{
 			form: { reason: 'Reason', body: 'Body' },
-			new: { action: 'Request Leave' },
-			create:
-			{ 
-				notice: 'Your Request was sent successfully',
-				warning: 'Please fill in all fields'
-			}
+			new: { action: 'Request Leave' }
 		},
 		tickets:
 		{
-			form: { line: 'Line if exists', number: 'Number' },
+			form: { line: 'Line', number: 'Number if exists' },
 			new: { action: 'Request Ticket' }
 		},
 		vacations:

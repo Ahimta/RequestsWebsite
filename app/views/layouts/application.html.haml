@@ -13,14 +13,14 @@
 			%div.navbar-inner
 				%div.container.text-right
 					%div.navbar-form.pull-right= link_to 'Logout', '#', class: 'btn btn-danger'					
-					%ul.nav.pull-left
-						%li{class: @adduser_link}= link_to t('.new_user'), '#'
-						%li{class: @message_link}= link_to t('.alert_users'), '#'
-						%li{class: @accept_link}= link_to t('.received_requests'), '#'
-						%li{class: @request_link}= link_to t('.previous_requests'), '#'
-						%li{class: @vacation_link}= link_to t('.new_vacation'), new_vacation_path
-						%li{class: @ticket_link}= link_to t('.new_ticket'), new_ticket_path
-						%li{class: @leave_link}= link_to t('.new_leave'), new_leafe_path
+					%ul.nav
+						%li= link_to t('.new_user'), '#'
+						%li= link_to t('.alert_users'), '#'
+						%li= link_to t('.received_requests'), '#'
+						%li= link_to t('.previous_requests'), '#'
+						%li= link_to t('.new_vacation'), new_vacation_path
+						%li= link_to t('.new_ticket'), new_ticket_path
+						%li= link_to t('.new_leave'), new_leafe_path
 			
 		- if flash[:notice]
 			%div.alert.alert-success.text-center

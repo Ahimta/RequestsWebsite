@@ -10,10 +10,10 @@ class LeavesController < ApplicationController
 		@leave = Leave.new params[:leave]
 		
 		if @leave.save
-			flash[:notice] = t('leaves.create.notice')
+			flash[:notice] = t('create.notice')
 			redirect_to leaves_path
 		else
-			flash[:warning] = t('leaves.create.warning')
+			flash[:warning] = t('create.warning')
 			render :new
 		end
 	end

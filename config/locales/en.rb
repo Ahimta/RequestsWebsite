@@ -19,6 +19,11 @@
 		{
 			form: { reason: 'Reason', body: 'Body' },
 			new: { action: 'Request Leave' },
+			create:
+			{ 
+				notice: 'Your Request was sent successfully',
+				warning: 'Please fill in all fields'
+			}
 		},
 		tickets:
 		{

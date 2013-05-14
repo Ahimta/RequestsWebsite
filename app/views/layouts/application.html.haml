@@ -21,7 +21,13 @@
 						%li{class: @vacation_link}= link_to t('.new_vacation'), new_vacation_path
 						%li{class: @ticket_link}= link_to t('.new_ticket'), new_ticket_path
 						%li{class: @leave_link}= link_to t('.new_leave'), new_leafe_path
-						-#= link_to 'خدمة العطل و الإجازات', '#', class: "brand"
+			
+		- if flash[:notice]
+			%div.alert.alert-success.text-center
+				= flash[:notice]
+		- elsif flash[:warning]
+			%div.alert.alert-error.text-center
+				= flash[:warning]
 			
 		%div.container.text-center
 			= yield

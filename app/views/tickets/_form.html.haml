@@ -1,0 +1,8 @@
+= form_tag @ticket do
+	%fieldsset
+		%legend
+			%h1= action
+		%div= text_field :ticket, :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
+		%div= text_field :ticket, :line, placeholder: t('.line'), title: t('.line')
+		%div= text_field :ticket, :number, placeholder: t('.number'), title: t('.number')
+	= submit_tag action, class: 'btn btn-success btn-large'

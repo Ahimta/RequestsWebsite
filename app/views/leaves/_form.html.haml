@@ -1,0 +1,7 @@
+= form_tag @leave do
+	%fieldsset
+		%legend
+			%h1= action
+		%div= text_field :leave, :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
+		%div= text_field :leave, :reason, placeholder: t('.reason'), title: t('.reason')
+	= submit_tag action, class: 'btn btn-success btn-large'

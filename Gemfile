@@ -4,9 +4,6 @@ gem 'rails', '3.2.13'
 
 group :development, :test do
   gem 'sqlite3'
-end
-
-group :test do
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'

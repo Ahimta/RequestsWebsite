@@ -1,0 +1,12 @@
+= form_tag '' do
+	%fieldsset
+		%legend
+			%h1= action
+		%div= text_field :vacation, :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
+		%div= text_field :vacation, :duration, placeholder: t('.duration'), title: t('.duration')
+		%div
+			- klass = 'input-mini'
+			= text_field :vacation, :day, placeholder: t('.day'), title: t('.day'), class: klass
+			= text_field :vacation, :month, placeholder: t('.month'), title: t('.month'), class: klass
+			= text_field :vacation, :year, placeholder: t('.year'), title: t('.year'),class: klass
+	= submit_tag action, class: 'btn btn-success btn-large'

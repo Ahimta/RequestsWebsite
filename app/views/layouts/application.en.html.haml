@@ -1,0 +1,22 @@
+!!! 5
+%html
+	%head
+		%title
+			RequestsWebsite
+			= yield :title
+		= stylesheet_link_tag :application
+		= javascript_include_tag :application
+		= csrf_meta_tags
+	%body
+		= render '/partials/navbar'
+		
+		= render partial: '/partials/flash', locals: { warning: flash[:warning], notice: flash[:notice] }
+		
+		
+		%div.container.text-center
+			= yield
+				
+			%hr
+				
+			%footer
+				%p © Saleh Saifi 2013

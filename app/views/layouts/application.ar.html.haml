@@ -7,7 +7,7 @@
 		= stylesheet_link_tag :application
 		= javascript_include_tag :application
 		= csrf_meta_tags
-	%body
+	%body{ dir: 'rtl' }
 		%div.navbar.navbar-static-top
 			%div.navbar-inner
 				%div.container
@@ -15,7 +15,7 @@
 					%ul.nav
 						%li.dropdown
 							%a#drop1.dropdown-toggle{ 'data-toggle' => 'dropdown', 'role' => 'button', href: '#'}
-								Request
+								= t(:request)
 								%b.caret
 							%ul.dropdown-menu{ 'role' => 'menu', 'aria-labelledby' => 'drop1'}
 								%li{ 'role' => 'presentation' }
@@ -36,6 +36,13 @@
 		- elsif flash[:warning]
 			%div.alert.alert-error.text-center
 				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
+				- begin
+					%ul.unstyled
+						- @vacation.errors.full_messages.each do |message|
+							%li= message
+				- rescue => e
+					= e.message
+				
 				= flash[:warning]
 		
 		%div.container.text-center

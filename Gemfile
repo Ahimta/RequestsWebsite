@@ -11,15 +11,18 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'pickle'
+	gem 'mutant'
+	gem 'simplecov'
 end
 
-#group :production do
-#	gem 'pg'
-#end
+group :production do
+	gem 'pg'
+end
 
 gem 'jquery-rails'
 gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
 gem 'debugger' # To use debugger
 gem 'haml'
+
 gem 'rails-i18n'
 gem 'turbolinks'

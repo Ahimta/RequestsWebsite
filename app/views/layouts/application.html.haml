@@ -10,16 +10,24 @@
 	%body
 		%div.navbar.navbar-static-top
 			%div.navbar-inner
-				%div.container.text-right
-					%div.navbar-form.pull-right= link_to 'Logout', '#', class: 'btn btn-danger'					
+				%div.container
+					%div.navbar-form.pull-right= link_to 'Logout', '#', class: 'btn btn-danger'				
 					%ul.nav
+						%li.dropdown
+							%a#drop1.dropdown-toggle{ 'data-toggle' => 'dropdown', 'role' => 'button', href: '#'}
+								Request
+								%b.caret
+							%ul.dropdown-menu{ 'role' => 'menu', 'aria-labelledby' => 'drop1'}
+								%li{ 'role' => 'presentation' }
+									= link_to t('.new_vacation'), new_vacation_path
+								%li{ 'role' => 'presentation' }
+									= link_to t('.new_ticket'), new_ticket_path
+								%li{ 'role' => 'presentation' }
+									= link_to t('.new_leave'), new_leafe_path
 						%li= link_to t('.new_user'), '#'
 						%li= link_to t('.alert_users'), '#'
 						%li= link_to t('.received_requests'), '#'
 						%li= link_to t('.previous_requests'), '#'
-						%li= link_to t('.new_vacation'), new_vacation_path
-						%li= link_to t('.new_ticket'), new_ticket_path
-						%li= link_to t('.new_leave'), new_leafe_path
 			
 		- if flash[:notice]
 			%div.alert.alert-success.text-center
@@ -29,11 +37,11 @@
 			%div.alert.alert-error.text-center
 				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 				= flash[:warning]
-			
+		
 		%div.container.text-center
 			= yield
-			
+				
 			%hr
-			
+				
 			%footer
 				%p © Saleh Saifi 2013

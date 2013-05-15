@@ -1,0 +1,17 @@
+%div#myCarousel.carousel.slide
+	%ol.carousel-indicators
+		%li.active{ 'data-target' => '#myCarousel', 'data-slide-to' => '0'}
+		%li{ 'data-target' => '#myCarousel', 'data-slide-to' => '1'}
+	%div.carousel-inner
+		%div.item.active
+			= image_tag 'bootstrap-mdo-sfmoma-02.jpg'
+			%div.carousel-caption
+				%h4 hi
+				%p bi
+		%div.item
+			= image_tag 'bootstrap-mdo-sfmoma-03.jpg'
+			%div.carousel-caption
+				%h4 hi
+				%p bi
+	%a.carousel-control.left{ href: '#myCarousel', 'data-slide' => 'prev' } &lsaquo;
+	%a.carousel-control.right{ href: '#myCarousel', 'data-slide' => 'next' } &rsaquo;

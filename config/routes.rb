@@ -1,16 +1,9 @@
 RequestsWebsite::Application.routes.draw do
 
 
-  resources :leaves
-
-
-  resources :tickets
-
-
-  resources :vacations
-
-
-  resources :users
+  resources :leaves, :tickets, :vacations, :users
+  
+  root to: 'leaves#index'
 
 
   # The priority is based upon order of creation:

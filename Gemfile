@@ -22,3 +22,4 @@ gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
 gem 'debugger' # To use debugger
 gem 'haml'
 gem 'rails-i18n'
+gem 'turbolinks'

@@ -4,8 +4,7 @@ class CreateLeaves < ActiveRecord::Migration
       t.string :applicant
       t.string :reason
       t.boolean :accepted
-      t.boolean :reviewed
-      t.references :user
+      t.integer :user_id
 
       t.timestamps
     end

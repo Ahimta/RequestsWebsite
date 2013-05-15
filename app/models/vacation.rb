@@ -1,13 +1,16 @@
 class Vacation < ActiveRecord::Base
-  attr_accessible :accepted, :applicant, :day, :duration, :month, :reviewd,
-  	:year, :user_id
+  attr_accessible :accepted, :applicant, :from_day, :duration, :from_month,
+  	:from_year, :to_day, :to_month, :to_year, :user_id
   
   belongs_to :user, foreign_key: :user_id
   
   validates :applicant, presence: true
-  validates :day, presence: true
+  validates :from_day, presence: true
   validates :duration, presence: true
-  validates :month, presence: true
-  validates :year, presence: true
+  validates :from_month, presence: true
+  validates :from_year, presence: true
+  validates :to_day, presence: true
+  validates :to_month, presence: true
+  validates :to_year, presence: true
   validates :user_id, presence: true
 end

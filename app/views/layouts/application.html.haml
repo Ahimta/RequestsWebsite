@@ -2,13 +2,12 @@
 %html
 	%head
 		%title
-			خدمة العطل و الإجازات
+			RequestsWebsite
 			= yield :title
 		= stylesheet_link_tag :application
-		-#= javascript_include_tag :application
+		= javascript_include_tag :application
 		= csrf_meta_tags
 	%body
-		- admin = false
 		%div.navbar.navbar-static-top
 			%div.navbar-inner
 				%div.container.text-right
@@ -24,9 +23,11 @@
 			
 		- if flash[:notice]
 			%div.alert.alert-success.text-center
+				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 				= flash[:notice]
 		- elsif flash[:warning]
 			%div.alert.alert-error.text-center
+				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 				= flash[:warning]
 			
 		%div.container.text-center

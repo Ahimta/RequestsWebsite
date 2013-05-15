@@ -5,9 +5,15 @@
 		%div= hidden_field :vacation, :user_id, value: 0
 		%div= text_field :vacation, :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
 		%div= text_field :vacation, :duration, placeholder: t('.duration'), title: t('.duration')
+		- klass = 'input-mini'
 		%div
-			- klass = 'input-mini'
-			= text_field :vacation, :day, placeholder: t('.day'), title: t('.day'), class: klass
-			= text_field :vacation, :month, placeholder: t('.month'), title: t('.month'), class: klass
-			= text_field :vacation, :year, placeholder: t('.year'), title: t('.year'),class: klass
+			= t(:from)
+			= text_field :vacation, :from_day, placeholder: t('.day'), title: t('.day'), class: klass
+			= text_field :vacation, :from_month, placeholder: t('.month'), title: t('.month'), class: klass
+			= text_field :vacation, :from_year, placeholder: t('.year'), title: t('.year'),class: klass
+		%div
+			= t(:to)
+			= text_field :vacation, :to_day, placeholder: t('.day'), title: t('.day'), class: klass
+			= text_field :vacation, :to_month, placeholder: t('.month'), title: t('.month'), class: klass
+			= text_field :vacation, :to_year, placeholder: t('.year'), title: t('.year'),class: klass
 	= submit_tag action, class: 'btn btn-success btn-large'

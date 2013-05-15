@@ -4,7 +4,7 @@
 {
 	en:
 	{
-		applicant: 'Applicant', edit_request: 'Edit Request',
+		applicant: 'Applicant', edit_request: 'Edit Request',from: 'From',to: 'To',
 		create:
 		{ 
 			notice: 'Your Request was sent successfully',

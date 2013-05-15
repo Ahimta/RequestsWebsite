@@ -5,8 +5,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string :line
       t.string :number
       t.boolean :accepted
-      t.boolean :reviewed
-      t.references :user
+      t.integer :user_id
 
       t.timestamps
     end

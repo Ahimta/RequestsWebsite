@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
     t.string   "applicant"
     t.string   "reason"
     t.boolean  "accepted"
-    t.boolean  "reviewed"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -28,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
     t.string   "line"
     t.string   "number"
     t.boolean  "accepted"
-    t.boolean  "reviewed"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -36,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
+    t.string   "location"
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -44,11 +43,13 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
   create_table "vacations", :force => true do |t|
     t.string   "applicant"
     t.integer  "duration"
-    t.integer  "day"
-    t.integer  "month"
-    t.integer  "year"
+    t.integer  "from_day"
+    t.integer  "from_month"
+    t.integer  "from_year"
+    t.integer  "to_day"
+    t.integer  "to_month"
+    t.integer  "to_year"
     t.boolean  "accepted"
-    t.boolean  "reviewd"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

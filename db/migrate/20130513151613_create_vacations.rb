@@ -9,7 +9,8 @@ class CreateVacations < ActiveRecord::Migration
       t.integer :to_day
       t.integer :to_month
       t.integer :to_year
-      t.boolean :accepted
+      t.integer :from
+      t.integer :to
       t.integer :user_id
 
       t.timestamps

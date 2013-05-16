@@ -1,7 +1,7 @@
-= form_tag @leave do
+= form_for @leave do |f|
 	%div.page-header
 		%h1= action
-	%div= hidden_field :leave, :user_id, value: 0
-	%div= text_field :leave, :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
-	%div= text_field :leave, :reason, placeholder: t('.reason'), title: t('.reason')
-	= submit_tag action, class: 'btn btn-success btn-large'
+	%div= f.hidden_field :user_id, value: 0
+	%div= f.text_field :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
+	%div= f.text_field :reason, placeholder: t('.reason'), title: t('.reason')
+	= f.submit action, class: 'btn btn-success btn-large'

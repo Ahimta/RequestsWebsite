@@ -1,0 +1,11 @@
+%li.dropdown
+	%a#drop1.dropdown-toggle{ 'data-toggle' => 'dropdown', 'role' => 'button', href: '#'}
+		= t(:request)
+		%b.caret
+	%ul.dropdown-menu{ 'role' => 'menu', 'aria-labelledby' => 'drop1'}
+		%li{ 'role' => 'presentation' }
+			= link_to t('.new_vacation'), new_vacation_path
+		%li{ 'role' => 'presentation' }
+			= link_to t('.new_ticket'), new_ticket_path
+		%li{ 'role' => 'presentation' }
+			= link_to t('.new_leave'), new_leafe_path

@@ -1,7 +1,7 @@
 class Leave < ActiveRecord::Base
-  attr_accessible :accepted, :applicant, :reason, :reviewed, :user_id
+  attr_accessible :accepted, :applicant, :reason, :user_id
   
-  belongs_to :user, foreign_key: :user_id
+  belongs_to :user
   
   validates :applicant, presence: true
   validates :reason, presence: true

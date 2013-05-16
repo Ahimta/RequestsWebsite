@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe LeavesController do
 	let(:leave) { mock_model Leave, id: 0, applicant: 'X', reason: 'y', user_id: 0 }
-	let(:invalid_leave) { mock_model Leave, id: 0, applicant: 'X' }
 	let(:param) { { 'leave' => { 'applicant' => 'X', 'reason' => 'y', 'user_id' => '0' } } }
-	let(:invalid_param) { { 'leave' => { 'applicant' => 'X' } } }
 	
 	describe 'new action' do
 		before(:each) { get :new }

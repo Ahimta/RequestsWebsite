@@ -11,21 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515234522) do
-
-  create_table "applicants", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "hijris", :force => true do |t|
-    t.integer  "day"
-    t.integer  "month"
-    t.integer  "year"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130513152030) do
 
   create_table "leaves", :force => true do |t|
     t.string   "applicant"
@@ -34,20 +20,6 @@ ActiveRecord::Schema.define(:version => 20130515234522) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "locations", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "requests", :force => true do |t|
-    t.integer  "applicant_id"
-    t.integer  "user_id"
-    t.boolean  "accepted"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "tickets", :force => true do |t|
@@ -63,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130515234522) do
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.integer  "location_id"
+    t.integer  "location"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

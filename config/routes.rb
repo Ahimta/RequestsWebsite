@@ -4,6 +4,9 @@ RequestsWebsite::Application.routes.draw do
 		resources :leaves, :tickets, :vacations, :users
 	#end
   
+  namespace :locale do
+  	put :update
+  end
   
   root to: 'leaves#index'
 

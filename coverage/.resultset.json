@@ -24,6 +24,10 @@
         1,
         null
       ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/locale_helper.rb": [
+        1,
+        null
+      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/tickets_helper.rb": [
         1,
         null
@@ -54,6 +58,14 @@
         1,
         1,
         null,
+        null,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/locale_controller.rb": [
+        1,
+        1,
+        0,
+        0,
         null,
         null
       ],
@@ -154,7 +166,7 @@
         null
       ]
     },
-    "timestamp": 1369223011
+    "timestamp": 1369229066
   },
   "RSpec": {
     "coverage": {
@@ -178,6 +190,10 @@
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/leaves_helper.rb": [
+        1,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/locale_helper.rb": [
         1,
         null
       ],
@@ -214,6 +230,14 @@
         null,
         null
       ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/locale_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/tickets_controller.rb": [
         1,
         1,
@@ -311,6 +335,6 @@
         null
       ]
     },
-    "timestamp": 1369223022
+    "timestamp": 1369229076
   }
 }

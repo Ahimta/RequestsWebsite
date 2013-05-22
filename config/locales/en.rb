@@ -22,6 +22,19 @@
 				logout: 'Logout'
 			}
 		},
+		partials:
+		{
+			navbar:
+			{
+				new_user: 'Register User', alert_users: 'Alert Users',
+				received_requests: 'Received Requests',
+				previous_requests: 'Previous Requests', new_ticket: 'Ticket',
+				new_vacation: 'Vacation', new_leave: 'Leave',
+				logout: 'Logout'
+			},
+			navbar_dropdown:
+				{ new_ticket: 'Ticket', new_vacation: 'Vacation', new_leave: 'Leave' }
+		},
 		leaves:
 		{
 			form: { reason: 'Reason', body: 'Body' },

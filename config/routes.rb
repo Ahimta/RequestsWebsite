@@ -8,7 +8,7 @@ RequestsWebsite::Application.routes.draw do
   	put :update
   end
   
-  root to: 'leaves#index'
+  root to: redirect('/leaves') #'leaves#index'
 
 
   # The priority is based upon order of creation:

@@ -22,6 +22,17 @@
 				logout: 'سجل خروج'
 			}
 		},
+		partials:
+		{
+			navbar:
+			{
+				new_user: 'سجل المستخدم', alert_users: 'إرسال تنبيهات',
+				received_requests: 'الطلبات المستلمة',
+				previous_requests: 'الطلبات السابقة', logout: 'سجل خروج'
+			},
+			navbar_dropdown:
+				{ new_ticket: 'تذاكر', new_vacation: 'إجازة', new_leave: 'مغادرة' }
+		},
 		leaves:
 		{
 			form: { reason: 'السبب', body: 'المحتوى' },

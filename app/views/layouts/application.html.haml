@@ -10,35 +10,8 @@
 	- ar = I18n.locale == :ar
 	
 	%body{ dir: ar ? 'rtl' : 'ltr' }
-		%div.navbar.navbar-static-top
-			%div.navbar-inner
-				%div.container
-					%div.navbar-form{class: ar ? 'pull-left' : 'pull-right'}
-						= link_to t(:locale), locale_update_path(locale: ar ? 'en' : 'ar'), method: :put, class: 'btn btn-primary'
-						= link_to t('.logout'), '#', class: 'btn btn-danger'
-					%ul.nav{ class: ar ? 'pull-right' : '' }
-						%li.dropdown{ class: 'active' }
-							%a#drop1.dropdown-toggle{ 'data-toggle' => 'dropdown', role: 'button', href: '#'}
-								= t(:request)
-								%b.caret
-							%ul.dropdown-menu{ role: 'menu', 'aria-labelledby' => 'drop1' }
-								%li{ role: 'presentation' }= link_to t('.new_vacation'), new_vacation_path
-								%li{ role: 'presentation' }= link_to t('.new_ticket'), new_ticket_path
-								%li{ role: 'presentation' }= link_to t('.new_leave'), new_leafe_path
-						%li= link_to t('.new_user'), '#'
-						%li= link_to t('.alert_users'), '#'
-						%li= link_to t('.received_requests'), '#'
-						%li= link_to t('.previous_requests'), '#'
-						
-		- notice, warning = flash[:notice], flash[:warning]
-		- if notice
-			%div.alert.alert-success.text-center
-				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
-				= notice
-		- elsif warning
-			%div.alert.alert-error.text-center
-				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
-				= warning
+		%header
+			= render '/partials/header', ar: ar
 		
 		%div.container.text-center
 			= yield

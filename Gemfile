@@ -5,13 +5,17 @@ gem 'rails', '3.2.13'
 group :development, :test do
   gem 'sqlite3'
   gem 'brakeman'
+  gem 'rails_best_practices'
+	
+end
+
+group :test do
 	gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'guard-rspec'
   gem 'pickle'
 	gem 'mutant'
 	gem 'simplecov'

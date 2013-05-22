@@ -7,7 +7,7 @@
 		applicant: 'Applicant', edit_request: 'Edit Request',from: 'From',to: 'To',
 		request: 'Request', locale: 'Arabic',
 		create:
-		{ 
+	{
 			notice: 'Your Request was sent successfully',
 			warning: 'Please fill in all fields'
 		},

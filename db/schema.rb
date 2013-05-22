@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "leaves", ["user_id"], :name => "index_leaves_on_user_id"
+
   create_table "tickets", :force => true do |t|
     t.string   "applicant"
     t.string   "line"
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "tickets", ["user_id"], :name => "index_tickets_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -42,18 +46,14 @@ ActiveRecord::Schema.define(:version => 20130513152030) do
 
   create_table "vacations", :force => true do |t|
     t.string   "applicant"
-    t.integer  "duration"
-    t.integer  "from_day"
-    t.integer  "from_month"
-    t.integer  "from_year"
-    t.integer  "to_day"
-    t.integer  "to_month"
-    t.integer  "to_year"
-    t.integer  "from"
+    t.string   "duration"
+    t.string   "from"
     t.integer  "to"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "vacations", ["user_id"], :name => "index_vacations_on_user_id"
 
 end

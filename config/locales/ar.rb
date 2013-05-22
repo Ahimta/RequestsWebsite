@@ -7,7 +7,7 @@
 		applicant: 'المستفيد', edit_request: 'عدل الطلب',from: 'من',to: 'إلى',
 		request: 'طلب', locale: 'English',
 		create:
-		{ 
+	{
 			notice: 'تم إرسال طلبك بنجاح',
 			warning: 'الرجاء ملء جميع الحقول'
 		},

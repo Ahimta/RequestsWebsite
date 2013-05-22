@@ -1,14 +1,17 @@
 RequestsWebsite::Application.routes.draw do
-
+	
 	#scope '(:locale)' do
-		resources :leaves, :tickets, :vacations, :users
+		resources :leaves, only: [:index, :new, :create]
+		resources :tickets, only: [:index, :new, :create]
+		resources :vacations, only: [:index, :new, :create]
+		resources :users, only: []
 	#end
-  
+	
   namespace :locale do
   	put :update
   end
-  
-  root to: redirect('/leaves') #'leaves#index'
+	
+  root to: redirect('/leaves')
 
 
   # The priority is based upon order of creation:

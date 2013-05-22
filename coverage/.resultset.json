@@ -20,26 +20,6 @@
         1,
         null
       ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/leaves_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/locale_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/tickets_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/vacations_helper.rb": [
-        1,
-        null
-      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/leaves_controller.rb": [
         1,
         1,
@@ -140,13 +120,8 @@
         1,
         1,
         null,
-        null,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -166,7 +141,7 @@
         null
       ]
     },
-    "timestamp": 1369253446
+    "timestamp": 1369258424
   },
   "RSpec": {
     "coverage": {
@@ -186,26 +161,6 @@
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/leaves_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/locale_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/tickets_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/vacations_helper.rb": [
         1,
         null
       ],
@@ -309,13 +264,8 @@
         1,
         1,
         null,
-        null,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -335,6 +285,6 @@
         null
       ]
     },
-    "timestamp": 1369253457
+    "timestamp": 1369258434
   }
 }

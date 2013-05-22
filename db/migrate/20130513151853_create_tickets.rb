@@ -9,5 +9,7 @@ class CreateTickets < ActiveRecord::Migration
 
       t.timestamps
     end
+		
+		add_index :tickets, :user_id
   end
 end

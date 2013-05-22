@@ -8,5 +8,7 @@ class CreateLeaves < ActiveRecord::Migration
 
       t.timestamps
     end
+		
+		add_index :leaves, :user_id
   end
 end

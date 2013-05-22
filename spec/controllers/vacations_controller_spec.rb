@@ -2,11 +2,9 @@ require 'spec_helper'
 
 describe VacationsController do
 	let(:vacation) { mock_model Vacation, id: 0, applicant: 'X', duration: 1,
-		from_day: 2, from_month: 3, from_year: 4, to_day: 5, to_month: 6,
-		to_year: 7, user_id: 0 }
+		from: '2', to: '3', user_id: 0 }
 	let(:param) { { 'vacation' => { 'applicant' => 'X', 'duration' => '1',
-		'from_day' => '2', 'from_month' => '1', 'from_year' => '4',
-		'to_day' => '5', 'to_month' => '6', 'to_year' => '7','user_id' => '0' } } }
+		'from' => '2', 'to' => '3','user_id' => '0' } } }
 	
 	describe 'new action' do
 		before(:each) do

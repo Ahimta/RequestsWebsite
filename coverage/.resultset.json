@@ -4,6 +4,16 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        null,
+        1,
+        15,
+        15,
+        null,
+        null,
+        1,
+        15,
+        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
@@ -29,7 +39,6 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/leaves_controller.rb": [
         1,
         1,
-        null,
         null,
         1,
         2,
@@ -98,7 +107,6 @@
         1,
         1,
         null,
-        null,
         1,
         2,
         null,
@@ -146,13 +154,23 @@
         null
       ]
     },
-    "timestamp": 1368718327
+    "timestamp": 1369223011
   },
   "RSpec": {
     "coverage": {
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        null,
+        1,
+        42,
+        42,
+        null,
+        null,
+        1,
+        50,
+        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
@@ -178,7 +196,6 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/leaves_controller.rb": [
         1,
         1,
-        null,
         null,
         1,
         6,
@@ -247,7 +264,6 @@
         1,
         1,
         null,
-        null,
         1,
         4,
         null,
@@ -295,6 +311,6 @@
         null
       ]
     },
-    "timestamp": 1368718337
+    "timestamp": 1369223022
   }
 }

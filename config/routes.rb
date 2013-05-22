@@ -1,7 +1,9 @@
 RequestsWebsite::Application.routes.draw do
 
-
-  resources :leaves, :tickets, :vacations, :users
+	#scope '(:locale)' do
+		resources :leaves, :tickets, :vacations, :users
+	#end
+  
   
   root to: 'leaves#index'
 

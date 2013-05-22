@@ -5,7 +5,7 @@
 	ar:
 	{
 		applicant: 'المستفيد', edit_request: 'عدل الطلب',from: 'من',to: 'إلى',
-		request: 'طلب',
+		request: 'طلب', locale: 'English',
 		create:
 		{ 
 			notice: 'تم إرسال طلبك بنجاح',
@@ -18,7 +18,8 @@
 				new_user: 'سجل المستخدم', alert_users: 'إرسال تنبيهات',
 				received_requests: 'الطلبات المستلمة',
 				previous_requests: 'الطلبات السابقة', new_ticket: 'تذاكر',
-				new_vacation: 'إجازة', new_leave: 'مغادرة'
+				new_vacation: 'إجازة', new_leave: 'مغادرة',
+				logout: 'سجل خروج'
 			}
 		},
 		leaves:

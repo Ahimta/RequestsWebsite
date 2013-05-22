@@ -1,6 +1,5 @@
 class VacationsController < ApplicationController
-	def index
-	end
+	def index; end
 	
 	def new
 		@vacation = Vacation.new

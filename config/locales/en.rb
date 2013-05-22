@@ -5,7 +5,7 @@
 	en:
 	{
 		applicant: 'Applicant', edit_request: 'Edit Request',from: 'From',to: 'To',
-		request: 'Request',
+		request: 'Request', locale: 'عربي',
 		create:
 		{ 
 			notice: 'Your Request was sent successfully',
@@ -18,7 +18,8 @@
 				new_user: 'Register User', alert_users: 'Alert Users',
 				received_requests: 'Received Requests',
 				previous_requests: 'Previous Requests', new_ticket: 'Ticket',
-				new_vacation: 'Vacation', new_leave: 'Leave'
+				new_vacation: 'Vacation', new_leave: 'Leave',
+				logout: 'Logout'
 			}
 		},
 		leaves:

@@ -58,7 +58,8 @@
 		alerts:
 		{
 			form: { title: 'العنوان', body: 'المحتوى' },
-			new: { action: 'إرسال تنبيه' }
+			new: { action: 'إرسال تنبيه' },
+			index: { alerts: 'التنبيهات', empty: 'ﻻ يوجد تنبيهات حالياً' }
 		}
 	}	
 }

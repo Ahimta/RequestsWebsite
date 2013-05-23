@@ -63,7 +63,8 @@
 		alerts:
 		{
 			form: { title: 'Title', body: 'Body' },
-			new: { action: 'Send Alert' }
+			new: { action: 'Send Alert' },
+			index: { alerts: 'Alerts', empty: "There's no alerts in the mean time" }
 		}
 	}	
 }

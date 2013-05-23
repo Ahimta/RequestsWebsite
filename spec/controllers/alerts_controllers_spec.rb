@@ -4,6 +4,20 @@ describe AlertsController do
 	let(:alert) { mock_model Alert, id: 0, title: 'X', body: 'y' }
 	let(:param) { { 'title' => 'X', 'body' => 'y' } }
 	
+	describe 'index action' do
+		let(:alerts) { [alert, mock_model(Alert, id: 1, title: 'Z', body: 'r') ] }
+		
+		it 'should call Alert.all' do
+			Alert.should_receive(:all).with(no_args).and_return alerts
+			get :index
+		end
+		
+		before { get :index }
+		
+		it { response.should render_template :index }
+		it { assigns(:alerts).should_not == nil }
+	end
+	
 	describe 'new action' do
 		it 'should call Alert.new' do
 			Alert.should_receive(:new).with(no_args)

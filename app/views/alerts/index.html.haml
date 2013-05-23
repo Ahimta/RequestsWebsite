@@ -1,0 +1,6 @@
+%h1= t('.alerts')
+
+- if @alerts.present?
+	= render @alerts
+- else
+	%div.lead= t('.empty')

@@ -4,7 +4,7 @@ Scenario: I fill in fields appropriately
 	When I request a ticket:
 	|	ticket_applicant	|	ahmad	|
 	|	ticket_line			|	flue	|
-	Then I should be on the tickets page
+	Then I should be on the requests page
 	And I should see "Your Request was sent successfully"
 
 Scenario: I don't fill in fields appropriately

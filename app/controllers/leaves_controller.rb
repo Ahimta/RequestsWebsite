@@ -1,6 +1,4 @@
 class LeavesController < ApplicationController
-	def index; end
-	
 	def new
 		@leave = Leave.new
 	end
@@ -10,7 +8,7 @@ class LeavesController < ApplicationController
 		
 		if @leave.save
 			flash[:notice] = t('create.notice')
-			redirect_to leaves_path
+			redirect_to requests_path
 		else
 			flash[:warning] = t('create.warning')
 			render :new

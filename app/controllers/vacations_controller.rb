@@ -1,6 +1,4 @@
 class VacationsController < ApplicationController
-	def index; end
-	
 	def new
 		@vacation = Vacation.new
 	end
@@ -10,7 +8,7 @@ class VacationsController < ApplicationController
 		
 		if @vacation.save
 			flash[:notice] = t('create.notice')
-			redirect_to vacations_path
+			redirect_to requests_path
 		else
 			flash[:warning] = t('create.warning')
 			render :new

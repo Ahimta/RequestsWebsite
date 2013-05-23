@@ -49,7 +49,7 @@ describe VacationsController do
 			end
 			
 			it 'should redirect to vacations_path' do
-				response.should redirect_to vacations_path
+				response.should redirect_to requests_path
 			end
 			it 'should assign flash[:notice]' do
 				flash[:notice].should_not == nil

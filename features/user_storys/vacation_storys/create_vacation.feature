@@ -6,7 +6,7 @@ Scenario: I fill in fields appropriately
 	|	vacation_duration			|	1		|
 	|	vacation_from				|	2		|
 	|	vacation_to					|	3		|
-	Then I should be on the vacations page
+	Then I should be on the requests page
 	And I should see "Your Request was sent successfully"
 
 Scenario: I don't fill in fields appropriately

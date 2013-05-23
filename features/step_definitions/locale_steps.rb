@@ -1,5 +1,5 @@
 When(/^I change the locale to arabic$/) do
-	visit leaves_path
+	visit root_path
   click_link 'Arabic'
 end
 

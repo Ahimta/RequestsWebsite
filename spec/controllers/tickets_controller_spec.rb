@@ -43,7 +43,7 @@ describe TicketsController do
 				post :create, ticket: param
 			end
 			it 'should redirect to tickets_path' do
-				response.should redirect_to tickets_path
+				response.should redirect_to requests_path
 			end
 			it 'should assign flash[:notice]' do
 				flash[:notice].should_not == nil

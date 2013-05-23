@@ -1,6 +1,4 @@
 class ComingsController < ApplicationController
-	def index; end
-	
 	def new
 		@coming = Coming.new
 	end
@@ -10,7 +8,7 @@ class ComingsController < ApplicationController
 		
 		if @coming.save
 			flash[:notice] = t('create.notice')
-			redirect_to comings_path
+			redirect_to requests_path
 		else
 			flash[:warning] = t('create.warning')
 			render :new

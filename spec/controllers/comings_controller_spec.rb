@@ -47,7 +47,7 @@ describe ComingsController do
 				flash[:notice].should_not == nil
 			end
 			it 'should redirect to leaves_path' do
-				response.should redirect_to comings_path
+				response.should redirect_to requests_path
 			end
 		end
 		

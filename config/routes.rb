@@ -3,10 +3,10 @@ RequestsWebsite::Application.routes.draw do
 	#scope '(:locale)' do
 		resources :alerts, only: [:index, :new, :create]
 		resources :requests, only: :index
-		resources :comings, only: [:index, :new, :create]
-		resources :leaves, only: [:index, :new, :create]
-		resources :tickets, only: [:index, :new, :create]
-		resources :vacations, only: [:index, :new, :create]
+		resources :comings, only: [:new, :create]
+		resources :leaves, only: [:new, :create]
+		resources :tickets, only: [:new, :create]
+		resources :vacations, only: [:new, :create]
 		resources :users, only: []
 	#end
 	

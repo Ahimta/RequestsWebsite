@@ -69,9 +69,9 @@ ActiveRecord::Schema.define(:version => 20130523141846) do
 
   create_table "vacations", :force => true do |t|
     t.string   "applicant"
-    t.string   "duration"
+    t.integer  "duration"
     t.string   "from"
-    t.integer  "to"
+    t.string   "to"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

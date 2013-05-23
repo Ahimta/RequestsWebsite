@@ -122,7 +122,6 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/request.rb": [
         1,
-        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/tickets_controller.rb": [
@@ -217,7 +216,7 @@
         null
       ]
     },
-    "timestamp": 1369321523
+    "timestamp": 1369322204
   },
   "RSpec": {
     "coverage": {
@@ -342,7 +341,6 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/request.rb": [
         1,
-        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/tickets_controller.rb": [
@@ -437,6 +435,6 @@
         null
       ]
     },
-    "timestamp": 1369321534
+    "timestamp": 1369322215
   }
 }

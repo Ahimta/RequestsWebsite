@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 	end
 	
   before_filter do
-  	I18n.locale = :ar if params[:locale] == 'ar'
+  	I18n.locale = params[:locale].try(:to_sym) == :ar ? :ar : :en
   end
 end

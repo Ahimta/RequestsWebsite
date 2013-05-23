@@ -7,12 +7,12 @@
         null,
         null,
         1,
-        15,
-        15,
+        23,
+        23,
         null,
         null,
         1,
-        15,
+        23,
         null,
         null
       ],
@@ -44,8 +44,8 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/locale_controller.rb": [
         1,
         1,
-        0,
-        0,
+        3,
+        3,
         null,
         null
       ],
@@ -141,7 +141,7 @@
         null
       ]
     },
-    "timestamp": 1369267013
+    "timestamp": 1369269239
   },
   "RSpec": {
     "coverage": {
@@ -151,12 +151,12 @@
         null,
         null,
         1,
-        42,
-        42,
+        46,
+        46,
         null,
         null,
         1,
-        50,
+        52,
         null,
         null
       ],
@@ -188,8 +188,8 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/locale_controller.rb": [
         1,
         1,
-        0,
-        0,
+        2,
+        2,
         null,
         null
       ],
@@ -285,6 +285,6 @@
         null
       ]
     },
-    "timestamp": 1369267024
+    "timestamp": 1369269249
   }
 }

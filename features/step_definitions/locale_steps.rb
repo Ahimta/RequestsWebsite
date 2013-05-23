@@ -4,6 +4,6 @@ When(/^I change the locale to arabic$/) do
 end
 
 When(/^I change the locale to english$/) do
-	#step "I change the locale to arabic"
-	visit '/leaves?locale=en'
+	step "I change the locale to arabic"
+	click_link 'English'
 end

@@ -1,6 +1,7 @@
 RequestsWebsite::Application.routes.draw do
-	
+
 	#scope '(:locale)' do
+		resources :comings, only: [:index, :new, :create]
 		resources :leaves, only: [:index, :new, :create]
 		resources :tickets, only: [:index, :new, :create]
 		resources :vacations, only: [:index, :new, :create]

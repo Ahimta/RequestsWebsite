@@ -33,12 +33,17 @@
 				logout: 'Logout'
 			},
 			navbar_dropdown:
-				{ new_ticket: 'Ticket', new_vacation: 'Vacation', new_leave: 'Leave' }
+				{ new_coming: 'Coming', new_leave: 'Leave', new_ticket: 'Ticket', new_vacation: 'Vacation' }
 		},
 		leaves:
 		{
 			form: { reason: 'Reason', body: 'Body' },
 			new: { action: 'Request Leave' }
+		},
+		comings:
+		{
+			form: { reason: 'Reason', body: 'Body' },
+			new: { action: 'Request Coming' }
 		},
 		tickets:
 		{

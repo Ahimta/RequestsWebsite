@@ -31,12 +31,17 @@
 				previous_requests: 'الطلبات السابقة', logout: 'سجل خروج'
 			},
 			navbar_dropdown:
-				{ new_ticket: 'تذاكر', new_vacation: 'إجازة', new_leave: 'مغادرة' }
+				{ new_coming: 'مباشرة', new_leave: 'مغادرة', new_ticket: 'تذاكر', new_vacation: 'إجازة' }
 		},
 		leaves:
 		{
 			form: { reason: 'السبب', body: 'المحتوى' },
 			new: { action: 'طلب مغادرة' }
+		},
+		comings:
+		{
+			form: { reason: 'السبب', body: 'المحتوى' },
+			new: { action: 'طلب مباشرة' }
 		},
 		tickets:
 		{

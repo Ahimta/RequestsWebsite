@@ -7,16 +7,48 @@
         null,
         null,
         1,
-        23,
-        23,
+        28,
+        28,
         null,
         null,
         1,
-        23,
+        28,
         null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/comings_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        2,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/coming.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
         1,
         null
       ],
@@ -141,7 +173,7 @@
         null
       ]
     },
-    "timestamp": 1369269239
+    "timestamp": 1369271540
   },
   "RSpec": {
     "coverage": {
@@ -151,16 +183,48 @@
         null,
         null,
         1,
-        46,
-        46,
+        60,
+        60,
         null,
         null,
         1,
-        52,
+        70,
         null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/comings_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        6,
+        null,
+        null,
+        1,
+        12,
+        null,
+        12,
+        4,
+        4,
+        null,
+        8,
+        8,
+        null,
+        null,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/coming.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
         1,
         null
       ],
@@ -285,6 +349,6 @@
         null
       ]
     },
-    "timestamp": 1369269249
+    "timestamp": 1369271550
   }
 }

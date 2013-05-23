@@ -1,5 +1,5 @@
-class Leave < ActiveRecord::Base
-	attr_accessible :accepted, :applicant, :reason, :user_id
+class Coming < ActiveRecord::Base
+  attr_accessible :accepted, :applicant, :reason, :user_id
 	
 	belongs_to :user
 	

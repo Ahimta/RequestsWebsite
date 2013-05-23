@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513152030) do
+ActiveRecord::Schema.define(:version => 20130523004822) do
+
+  create_table "comings", :force => true do |t|
+    t.string   "applicant"
+    t.string   "reason"
+    t.boolean  "accepted"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comings", ["user_id"], :name => "index_comings_on_user_id"
 
   create_table "leaves", :force => true do |t|
     t.string   "applicant"

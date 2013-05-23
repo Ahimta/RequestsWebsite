@@ -7,6 +7,6 @@
 			%ul.nav{ class: ar ? 'pull-right' : '' }
 				= render '/partials/navbar_dropdown'
 				%li= link_to t('.new_user'), '#'
-				%li= link_to t('.alert_users'), '#'
+				%li= link_to t('.alert_users'), new_alert_path
 				%li= link_to t('.received_requests'), '#'
 				%li= link_to t('.previous_requests'), '#'

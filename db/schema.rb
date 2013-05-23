@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523004822) do
+ActiveRecord::Schema.define(:version => 20130523141846) do
+
+  create_table "alerts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comings", :force => true do |t|
     t.string   "applicant"
@@ -34,6 +41,11 @@ ActiveRecord::Schema.define(:version => 20130523004822) do
   end
 
   add_index "leaves", ["user_id"], :name => "index_leaves_on_user_id"
+
+  create_table "requests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tickets", :force => true do |t|
     t.string   "applicant"

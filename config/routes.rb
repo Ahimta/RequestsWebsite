@@ -1,6 +1,7 @@
 RequestsWebsite::Application.routes.draw do
 
 	#scope '(:locale)' do
+		resources :alerts, only: [:index, :new, :create]
 		resources :requests, only: :index
 		resources :comings, only: [:index, :new, :create]
 		resources :leaves, only: [:index, :new, :create]
@@ -13,7 +14,7 @@ RequestsWebsite::Application.routes.draw do
   	put :update
   end
 	
-  root to: redirect('/leaves')
+  root to: redirect('/requests')
 
 
   # The priority is based upon order of creation:

@@ -1,22 +1,51 @@
 {
   "Cucumber Features": {
     "coverage": {
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/alerts_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        2,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        30,
-        30,
+        35,
+        35,
         null,
         null,
         1,
-        30,
+        35,
         null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/alert.rb": [
+        1,
+        1,
+        null,
+        1,
         1,
         null
       ],
@@ -188,26 +217,55 @@
         null
       ]
     },
-    "timestamp": 1369310574
+    "timestamp": 1369321523
   },
   "RSpec": {
     "coverage": {
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/alerts_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        12,
+        null,
+        12,
+        4,
+        4,
+        null,
+        8,
+        8,
+        null,
+        null,
+        null
+      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        65,
-        65,
+        79,
+        79,
         null,
         null,
         1,
-        76,
+        92,
         null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/alert.rb": [
+        1,
+        1,
+        null,
+        1,
         1,
         null
       ],
@@ -379,6 +437,6 @@
         null
       ]
     },
-    "timestamp": 1369310587
+    "timestamp": 1369321534
   }
 }

@@ -54,6 +54,11 @@
 		{
 			form: { duration: 'المدة', day: 'يوم', month: 'شهر', year: 'سنة' },
 			new: { action: 'طلب إجازة' }
+		},
+		alerts:
+		{
+			form: { title: 'العنوان', body: 'المحتوى' },
+			new: { action: 'إرسال تنبيه' }
 		}
 	}	
 }

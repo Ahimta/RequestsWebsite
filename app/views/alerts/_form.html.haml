@@ -1,0 +1,6 @@
+= form_for alert do |f|
+	%div.page-header
+		%h1= action
+	%div= f.text_field :title, placeholder: t('.title'), title: t('.title'), autofocus: ''
+	%div= f.text_area :body, placeholder: t('.body'), title: t('.body'), rows: 8
+	= f.submit action, class: 'btn btn-success btn-large'

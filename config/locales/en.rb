@@ -59,6 +59,11 @@
 		{
 			form: { duration: 'Duration', day: 'Day', month: 'Month', year: 'Year' },
 			new: { action: 'Request Vacation' }
+		},
+		alerts:
+		{
+			form: { title: 'Title', body: 'Body' },
+			new: { action: 'Send Alert' }
 		}
 	}	
 }

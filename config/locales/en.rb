@@ -5,7 +5,8 @@
 	en:
 	{
 		applicant: 'Applicant', edit_request: 'Edit Request',from: 'From',to: 'To',
-		request: 'Request', locale: 'Arabic',
+		request: 'Request', locale: 'Arabic', coming: 'Coming', leave: 'Leave',
+		ticket: 'Ticket', vacation: 'Vacation', request_type: 'Type',
 		create:
 	{
 			notice: 'Your Request was sent successfully',
@@ -33,8 +34,12 @@
 				logout: 'Logout'
 			},
 			navbar_dropdown:
-				{ new_coming: 'Coming', new_leave: 'Leave', new_ticket: 'Ticket', new_vacation: 'Vacation' }
+				{
+					new_coming: 'Coming', new_leave: 'Leave', new_ticket: 'Ticket',
+					new_vacation: 'Vacation'
+				}
 		},
+		requests: { index: { empty: "You haven't requested anything yet", requests: 'Requests' } },
 		leaves:
 		{
 			form: { reason: 'Reason', body: 'Body' },

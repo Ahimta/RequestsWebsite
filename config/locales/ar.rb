@@ -5,7 +5,8 @@
 	ar:
 	{
 		applicant: 'المستفيد', edit_request: 'عدل الطلب',from: 'من',to: 'إلى',
-		request: 'طلب', locale: 'English',
+		request: 'طلب', locale: 'English', coming: 'مباشرة', leave: 'مغادرة',
+		ticket: 'تذكرة', vacation: 'عطلة', request_type: 'نوع الطلب',
 		create:
 	{
 			notice: 'تم إرسال طلبك بنجاح',
@@ -33,6 +34,7 @@
 			navbar_dropdown:
 				{ new_coming: 'مباشرة', new_leave: 'مغادرة', new_ticket: 'تذاكر', new_vacation: 'إجازة' }
 		},
+		requests: { index: { empty: "لم تقم بتقديم طلبات حتى الآن", 	requests: 'الطلبات' } },
 		leaves:
 		{
 			form: { reason: 'السبب', body: 'المحتوى' },

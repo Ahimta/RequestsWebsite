@@ -1,0 +1,51 @@
+%div.page-header
+	%h1= t('.requests')
+
+- if @comings.empty? && @leaves.empty? && @tickets.empty? && @vacations.empty?
+	%p.lead= t('.empty')
+	
+- else
+	- i = 1
+	
+	%table.table.table-bordered
+		%thead
+			%tr
+				%th #
+				%th= t(:applicant)
+				%th= t(:request_type)
+		%tbody
+			- if @comings.any?
+				- @comings.each do |coming|
+					%tr
+						%td= i
+						%td= coming.applicant
+						%td= t(:coming)
+						- i += 1
+			- if @leaves.any?
+				- @leaves.each do |leave|
+					%tr
+						%td= i
+						%td= leave.applicant
+						%td= t(:leave)
+						- i += 1
+			- if @tickets.any?
+				- @tickets.each do |ticket|
+					%tr
+						%td= i
+						%td= ticket.applicant
+						%td= t(:ticket)
+						- i += 1
+			- if @vacations.any?
+				- @vacations.each do |vacation|
+					%tr
+						%td= i
+						%td= vacation.applicant
+						%td= t(:vacation)
+						- i += 1
+
+%div.btn-group{ dir: 'ltr' }
+	- klass = 'btn btn-success'
+	= link_to t(:coming), new_coming_path, class: klass
+	= link_to t(:leave), new_leafe_path, class: klass
+	= link_to t(:ticket), new_ticket_path, class: klass
+	= link_to t(:vacation), new_vacation_path, class: klass

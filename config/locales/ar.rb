@@ -44,7 +44,8 @@
 		comings:
 		{
 			form: { reason: 'السبب', body: 'المحتوى' },
-			new: { action: 'طلب مباشرة' }
+			new: { action: 'طلب مباشرة' },
+			show: { header: 'طلب مباشرة' }
 		},
 		tickets:
 		{

@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-24T22:23:13+03:00">2013-05-24T22:23:13+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-25T00:51:37+03:00">2013-05-25T00:51:37+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         7.33
+         7.46
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>109</b> relevant lines. 
-    <span class="green"><b>109</b> lines covered</span> and
+    <b>111</b> relevant lines. 
+    <span class="green"><b>111</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,17 +67,17 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>56.7</td>
+        <td>59.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#3b0223fc2910d21e5732a6fc34fe104a16d4e796" class="src_link" title="app/controllers/comings_controller.rb">app/controllers/comings_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>17</td>
-        <td>10</td>
-        <td>10</td>
+        <td>21</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
-        <td>6.8</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -233,15 +233,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         12.07
+         12.32
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>72</b> relevant lines. 
-    <span class="green"><b>72</b> lines covered</span> and
+    <b>74</b> relevant lines. 
+    <span class="green"><b>74</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -275,17 +275,17 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>56.7</td>
+        <td>59.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#3b0223fc2910d21e5732a6fc34fe104a16d4e796" class="src_link" title="app/controllers/comings_controller.rb">app/controllers/comings_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>17</td>
-        <td>10</td>
-        <td>10</td>
+        <td>21</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
-        <td>6.8</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -816,14 +816,14 @@
           <code class="ruby">	def default_url_options(options={})</code>
         </li>
       
-        <li class="covered" data-hits="126" data-linenumber="6">
-          <span class="hits">126</span>
+        <li class="covered" data-hits="132" data-linenumber="6">
+          <span class="hits">132</span>
           
           <code class="ruby">		logger.debug &quot;default_url_options is passed options: #{options.inspect}\n&quot;</code>
         </li>
       
-        <li class="covered" data-hits="126" data-linenumber="7">
-          <span class="hits">126</span>
+        <li class="covered" data-hits="132" data-linenumber="7">
+          <span class="hits">132</span>
           
           <code class="ruby">		{ locale: I18n.locale }</code>
         </li>
@@ -846,8 +846,8 @@
           <code class="ruby">  before_filter do</code>
         </li>
       
-        <li class="covered" data-hits="137" data-linenumber="11">
-          <span class="hits">137</span>
+        <li class="covered" data-hits="144" data-linenumber="11">
+          <span class="hits">144</span>
           
           <code class="ruby">  	I18n.locale = params[:locale].try(:to_sym) == :ar ? :ar : :en</code>
         </li>
@@ -873,8 +873,8 @@
     <h3>app/controllers/comings_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -891,13 +891,13 @@
         <li class="covered" data-hits="2" data-linenumber="2">
           <span class="hits">2</span>
           
-          <code class="ruby">	def new</code>
+          <code class="ruby">	def show</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="3">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="3">
+          <span class="hits">7</span>
           
-          <code class="ruby">		@coming = Coming.new</code>
+          <code class="ruby">		@coming = Coming.find params[:id]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -915,70 +915,94 @@
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">	def create</code>
+          <code class="ruby">	def new</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="7">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="6" data-linenumber="7">
+          <span class="hits">6</span>
           
-          <code class="ruby">		@coming = Coming.new params[:coming]</code>
+          <code class="ruby">		@coming = Coming.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">		</code>
+          <code class="ruby">	end</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">	</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">	def create</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="11">
           <span class="hits">14</span>
           
-          <code class="ruby">		if @coming.save</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="10">
-          <span class="hits">5</span>
-          
-          <code class="ruby">			flash[:notice] = t('create.notice')</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="11">
-          <span class="hits">5</span>
-          
-          <code class="ruby">			redirect_to requests_path</code>
+          <code class="ruby">		@coming = Coming.new params[:coming]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">		else</code>
+          <code class="ruby">		</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="13">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="14" data-linenumber="13">
+          <span class="hits">14</span>
           
-          <code class="ruby">			flash[:warning] = t('create.warning')</code>
+          <code class="ruby">		if @coming.save</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="14">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="5" data-linenumber="14">
+          <span class="hits">5</span>
           
-          <code class="ruby">			render :new</code>
+          <code class="ruby">			flash[:notice] = t('create.notice')</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="5" data-linenumber="15">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">		end</code>
+          <code class="ruby">			redirect_to requests_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
+          <code class="ruby">		else</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="17">
+          <span class="hits">9</span>
+          
+          <code class="ruby">			flash[:warning] = t('create.warning')</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="18">
+          <span class="hits">9</span>
+          
+          <code class="ruby">			render :new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>

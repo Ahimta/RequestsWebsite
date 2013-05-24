@@ -1,4 +1,8 @@
 class ComingsController < ApplicationController
+	def show
+		@coming = Coming.find params[:id]
+	end
+	
 	def new
 		@coming = Coming.new
 	end

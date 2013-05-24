@@ -49,7 +49,8 @@
 		comings:
 		{
 			form: { reason: 'Reason', body: 'Body' },
-			new: { action: 'Request Coming' }
+			new: { action: 'Request Coming' },
+			show: { header: 'Coming Request' }
 		},
 		tickets:
 		{

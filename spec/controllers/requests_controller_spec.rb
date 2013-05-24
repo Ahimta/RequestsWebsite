@@ -19,10 +19,7 @@ describe RequestsController do
 				mock_model(Vacation, applicant: 'vapplicant2', duration: '21', from: '22', to: '23', user_id: 0)
 			] }
 		
-		it 'should render index' do
-			get :index
-			response.should render_template :index
-		end
+		it_behaves_like 'index'
 		
 		after { get :index }
 		

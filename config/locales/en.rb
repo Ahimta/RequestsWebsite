@@ -43,7 +43,8 @@
 		leaves:
 		{
 			form: { reason: 'Reason', body: 'Body' },
-			new: { action: 'Request Leave' }
+			new: { action: 'Request Leave' },
+			show: { header: 'Leave Request' }
 		},
 		comings:
 		{

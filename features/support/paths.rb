@@ -7,7 +7,11 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+		
+		when /^the first leave page$/ then leafe_path(id: 1)
+		when /^the second leave page$/ then leafe_path(id: 2)
+		when /^the third leave page$/ then leafe_path(id: 3)
+		
     when /the home\s?page/
       '/'
 

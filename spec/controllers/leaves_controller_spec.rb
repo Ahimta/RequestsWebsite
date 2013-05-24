@@ -4,6 +4,22 @@ describe LeavesController do
 	let(:leave) { mock_model Leave, id: 0, applicant: 'X', reason: 'y', user_id: 0 }
 	let(:param) { { 'leave' => { 'applicant' => 'X', 'reason' => 'y', 'user_id' => '0' } } }
 	
+	describe 'show action' do
+		before { Leave.stub(:find).and_return leave }
+		
+		it 'should call Leave.find' do
+			Leave.should_receive(:find).with(leave.id.to_s).and_return leave
+			get :show, id: leave.id
+		end
+		
+		before { get :show, id: leave.id }
+		
+		it 'should assign @leave' do
+			assigns(:leave).should_not == nil
+		end
+		it { response.should render_template :show }
+	end
+	
 	describe 'new action' do
 		before(:each) { get :new }
 		after(:each) { get :new }

@@ -4,7 +4,7 @@ RequestsWebsite::Application.routes.draw do
 		resources :alerts, only: [:index, :new, :create]
 		resources :requests, only: :index
 		resources :comings, only: [:new, :create]
-		resources :leaves, only: [:new, :create]
+		resources :leaves, only: [:show, :new, :create]
 		resources :tickets, only: [:new, :create]
 		resources :vacations, only: [:new, :create]
 		resources :users, only: []

@@ -38,7 +38,8 @@
 		leaves:
 		{
 			form: { reason: 'السبب', body: 'المحتوى' },
-			new: { action: 'طلب مغادرة' }
+			new: { action: 'طلب مغادرة' },
+			show: { header: 'طلب إجازة' }
 		},
 		comings:
 		{

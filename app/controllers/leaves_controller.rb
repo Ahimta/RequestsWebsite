@@ -1,4 +1,8 @@
 class LeavesController < ApplicationController
+	def show
+		@leave = Leave.find params[:id]
+	end
+	
 	def new
 		@leave = Leave.new
 	end

@@ -1,0 +1,13 @@
+%div.lead
+	%p
+		%b= t(:applicant) + ': '
+		= ticket.applicant
+	
+	%p
+		%b= t('tickets.form.line') + ': '
+		= ticket.line
+	
+	- if ticket.number.try(:present?)
+		%p
+			%b= t('tickets.form.number') + ': '
+			= ticket.number

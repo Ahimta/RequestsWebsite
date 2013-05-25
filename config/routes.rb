@@ -5,8 +5,8 @@ RequestsWebsite::Application.routes.draw do
 		resources :requests, only: :index
 		resources :comings, only: [:show, :new, :create]
 		resources :leaves, only: [:show, :new, :create]
-		resources :tickets, only: [:new, :create]
-		resources :vacations, only: [:new, :create]
+		resources :tickets, only: [:show, :new, :create]
+		resources :vacations, only: [:show, :new, :create]
 		resources :users, only: []
 	#end
 	

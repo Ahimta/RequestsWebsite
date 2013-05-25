@@ -15,7 +15,6 @@ Scenario: requests exist
 	|	vapplicant2	|	21			|	22		|	23	|	0		|
 	And I am on the requests page
 	Then I should see the following: capplicant1, capplicant2, tapplicant1, tapplicant2, vapplicant1, vapplicant2
-	
 
 Scenario: requests don't exist
 	Given I am on the requests page

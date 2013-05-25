@@ -1,6 +1,7 @@
 class CreateVacations < ActiveRecord::Migration
   def change
     create_table :vacations do |t|
+    	t.accepted :boolean
       t.string :applicant
       t.integer :duration
       t.string :from

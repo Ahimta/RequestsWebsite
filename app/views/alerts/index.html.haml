@@ -4,3 +4,5 @@
 	= render @alerts
 - else
 	%div.lead= t('.empty')
+
+%div= link_to t('alerts.new.action'), new_alert_path, class: 'btn btn-success btn-large'

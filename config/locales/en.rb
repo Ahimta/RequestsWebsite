@@ -55,7 +55,8 @@
 		tickets:
 		{
 			form: { line: 'Line', number: 'Number if exists' },
-			new: { action: 'Request Ticket' }
+			new: { action: 'Request Ticket' },
+			show: { header: 'Ticket Request' }
 		},
 		vacations:
 		{

@@ -1,8 +1,9 @@
 class Vacation < ActiveRecord::Base
-  attr_accessible :applicant, :duration,:from, :to, :user_id
+  attr_accessible :accepted, :applicant, :duration,:from, :to, :user_id
 	
   belongs_to :user
 	
+  #validates :accepted, presence: true
   validates :applicant, presence: true
   validates :duration, presence: true
   validates :from, presence: true

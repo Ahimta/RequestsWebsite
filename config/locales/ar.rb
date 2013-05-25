@@ -50,7 +50,8 @@
 		tickets:
 		{
 			form: { line: 'خط السير', number: 'رقم الحجز إن وجد' },
-			new: { action: 'طلب تذاكر' }
+			new: { action: 'طلب تذاكر' },
+			show: { header: 'طلب تذكرة' }
 		},
 		vacations:
 		{

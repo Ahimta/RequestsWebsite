@@ -7,6 +7,4 @@
 			%ul.nav{ class: ar ? 'pull-right' : '' }
 				%li= link_to t(:request), requests_path
 				%li= link_to t('.new_user'), '#'
-				%li= link_to t('.alert_users'), new_alert_path
-				%li= link_to t('.received_requests'), '#'
-				%li= link_to t('.previous_requests'), '#'
+				%li= link_to t('.alert_users'), alerts_path

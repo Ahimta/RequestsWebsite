@@ -1,4 +1,8 @@
 class TicketsController < ApplicationController
+	def show
+		@ticket = Ticket.find params[:id]
+	end
+	
 	def new
 		@ticket = Ticket.new
 	end

@@ -16,6 +16,10 @@ module NavigationHelpers
 		when /^the second coming page$/ then coming_path(id: 2)
 		when /^the third coming page$/ then coming_path(id: 3)
 		
+		when /^the first ticket page$/ then ticket_path(id: 1)
+		when /^the second ticket page$/ then ticket_path(id: 2)
+		when /^the third ticket page$/ then ticket_path(id: 3)
+		
     when /the home\s?page/
       '/'
 

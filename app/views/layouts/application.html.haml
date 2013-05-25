@@ -10,7 +10,7 @@
 	- ar = I18n.locale == :ar
 	
 	%body{ dir: ar ? 'rtl' : 'ltr' }
-		%header
+		%header{ style: 'margin-bottom: 50px' }
 			%div.navbar.navbar-static-top
 				%div.navbar-inner
 					%div.container
@@ -33,10 +33,10 @@
 					%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 					= warning
 		
-		%div.container.text-center
+		%div.container.text-center.well
 			= yield
 				
 			%hr
 				
 			%footer.lead
-				%p © Saleh Saifi 2013
+				%p © Saleh Saifi

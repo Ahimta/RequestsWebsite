@@ -8,7 +8,7 @@ end
 shared_examples_for 'show' do |model, double, symbol|
 	before { model.stub(:find).and_return double }
 	
-	it 'should call Leave.find' do
+	it 'should call Model.find' do
 		model.should_receive(:find).with(0.to_s)
 		get :show, id: 0
 	end
@@ -41,7 +41,7 @@ shared_examples_for 'create' do |model, double, param, symbol, index = '/request
 	it { model.should_receive(:new).with(param).and_return double }
 	it { double.should_receive :save }
 	#TODO
-	it 'should assign @vacation' do
+	it 'should assign @record' do
 		post :create, symbol => param
 		assigns(symbol).should_not == nil
 	end

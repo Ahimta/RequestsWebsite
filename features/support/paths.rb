@@ -20,6 +20,10 @@ module NavigationHelpers
 		when /^the second ticket page$/ then ticket_path(id: 2)
 		when /^the third ticket page$/ then ticket_path(id: 3)
 		
+		when /^the first vacation page$/ then vacation_path(id: 1)
+		when /^the second vacation page$/ then vacation_path(id: 2)
+		when /^the third vacation page$/ then vacation_path(id: 3)
+		
     when /the home\s?page/
       '/'
 

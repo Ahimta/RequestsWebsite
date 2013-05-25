@@ -5,6 +5,7 @@ describe ComingsController do
 	param = { 'coming' => { 'applicant' => 'X', 'reason' => 'y',
 		'user_id' => '0' } }
 	
+	
 	it_behaves_like 'show', Coming, coming, :coming
 	
 	it_behaves_like 'new', Coming, :coming

@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-25T21:59:46+03:00">2013-05-25T21:59:46+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-26T01:56:19+03:00">2013-05-26T01:56:19+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         7.58
+         7.74
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>114</b> relevant lines. 
-    <span class="green"><b>114</b> lines covered</span> and
+    <b>115</b> relevant lines. 
+    <span class="green"><b>115</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>62.1</td>
+        <td>64.9</td>
       </tr>
       
       <tr>
@@ -134,8 +134,8 @@
         <td class="strong"><a href="#4b9747e9fe25ae6e453eeb47f045ebb144e8786c" class="src_link" title="app/controllers/vacations_controller.rb">app/controllers/vacations_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>21</td>
-        <td>11</td>
-        <td>11</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
         <td>6.4</td>
       </tr>
@@ -233,15 +233,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         12.53
+         12.84
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>77</b> relevant lines. 
-    <span class="green"><b>77</b> lines covered</span> and
+    <b>78</b> relevant lines. 
+    <span class="green"><b>78</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -275,7 +275,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>62.1</td>
+        <td>64.9</td>
       </tr>
       
       <tr>
@@ -342,8 +342,8 @@
         <td class="strong"><a href="#4b9747e9fe25ae6e453eeb47f045ebb144e8786c" class="src_link" title="app/controllers/vacations_controller.rb">app/controllers/vacations_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>21</td>
-        <td>11</td>
-        <td>11</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
         <td>6.4</td>
       </tr>
@@ -816,14 +816,14 @@
           <code class="ruby">	def default_url_options(options={})</code>
         </li>
       
-        <li class="covered" data-hits="138" data-linenumber="6">
-          <span class="hits">138</span>
+        <li class="covered" data-hits="144" data-linenumber="6">
+          <span class="hits">144</span>
           
           <code class="ruby">		logger.debug &quot;default_url_options is passed options: #{options.inspect}\n&quot;</code>
         </li>
       
-        <li class="covered" data-hits="138" data-linenumber="7">
-          <span class="hits">138</span>
+        <li class="covered" data-hits="144" data-linenumber="7">
+          <span class="hits">144</span>
           
           <code class="ruby">		{ locale: I18n.locale }</code>
         </li>
@@ -846,8 +846,8 @@
           <code class="ruby">  before_filter do</code>
         </li>
       
-        <li class="covered" data-hits="151" data-linenumber="11">
-          <span class="hits">151</span>
+        <li class="covered" data-hits="158" data-linenumber="11">
+          <span class="hits">158</span>
           
           <code class="ruby">  	I18n.locale = params[:locale].try(:to_sym) == :ar ? :ar : :en</code>
         </li>
@@ -1455,8 +1455,8 @@
     <h3>app/controllers/vacations_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1476,10 +1476,10 @@
           <code class="ruby">	def show</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="7" data-linenumber="3">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby">		</code>
+          <code class="ruby">		@vacation = Vacation.find params[:id]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">

@@ -46,7 +46,8 @@
 		vacations:
 		{
 			form: { duration: 'Duration' },
-			new: { action: 'Request Vacation' }
+			new: { action: 'Request Vacation' },
+			show: { header: 'Vacation Request' }
 		},
 		alerts:
 		{

@@ -1,0 +1,16 @@
+%div.lead
+	%p
+		%b= t(:applicant) + ': '
+		= vacation.applicant
+	
+	%p
+		%b= t('vacations.form.duration') + ': '
+		= vacation.duration
+	
+	%p
+		%b= t(:from) + ': '
+		= vacation.from
+	
+	%p
+		%b= t(:to) + ': '
+		= vacation.to

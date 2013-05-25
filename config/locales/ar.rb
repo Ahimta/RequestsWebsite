@@ -46,7 +46,8 @@
 		vacations:
 		{
 			form: { duration: 'المدة' },
-			new: { action: 'طلب إجازة' }
+			new: { action: 'طلب إجازة' },
+			show: { header: 'طلب إجازة' }
 		},
 		alerts:
 		{

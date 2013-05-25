@@ -1,6 +1,6 @@
 class VacationsController < ApplicationController
 	def show
-		
+		@vacation = Vacation.find params[:id]
 	end
 	
 	def new

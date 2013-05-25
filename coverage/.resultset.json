@@ -30,12 +30,12 @@
         null,
         null,
         1,
-        46,
-        46,
+        49,
+        49,
         null,
         null,
         1,
-        46,
+        49,
         null,
         null
       ],
@@ -180,7 +180,7 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/vacations_controller.rb": [
         1,
         1,
-        null,
+        3,
         null,
         null,
         1,
@@ -225,7 +225,7 @@
         null
       ]
     },
-    "timestamp": 1369508375
+    "timestamp": 1369522568
   },
   "RSpec": {
     "coverage": {
@@ -258,12 +258,12 @@
         null,
         null,
         1,
-        92,
-        92,
+        95,
+        95,
         null,
         null,
         1,
-        105,
+        109,
         null,
         null
       ],
@@ -408,7 +408,7 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/vacations_controller.rb": [
         1,
         1,
-        null,
+        4,
         null,
         null,
         1,
@@ -453,6 +453,6 @@
         null
       ]
     },
-    "timestamp": 1369508386
+    "timestamp": 1369522579
   }
 }

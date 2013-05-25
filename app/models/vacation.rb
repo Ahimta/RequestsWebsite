@@ -3,7 +3,6 @@ class Vacation < ActiveRecord::Base
 	
   belongs_to :user
 	
-  #validates :accepted, presence: true
   validates :applicant, presence: true
   validates :duration, presence: true
   validates :from, presence: true

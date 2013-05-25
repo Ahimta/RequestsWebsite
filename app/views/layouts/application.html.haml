@@ -11,7 +11,27 @@
 	
 	%body{ dir: ar ? 'rtl' : 'ltr' }
 		%header
-			= render '/partials/header', ar: ar
+			%div.navbar.navbar-static-top
+				%div.navbar-inner
+					%div.container
+						%div.navbar-form{class: ar ? 'pull-left' : 'pull-right'}
+							= link_to t('.locale'), locale_update_path(locale: ar ? 'en' : 'ar'), method: :put, class: 'btn btn-primary'
+							= link_to t('.logout'), '#', class: 'btn btn-danger'
+						%ul.nav{ class: ar ? 'pull-right' : '' }
+							%li= link_to t('.requests'), requests_path
+							%li= link_to t('.users'), '#'
+							%li= link_to t('.alerts'), alerts_path
+			
+			- notice, warning = flash[:notice], flash[:warning]
+			
+			- if notice
+				%div.alert.alert-success.text-center
+					%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
+					= notice
+			- elsif warning
+				%div.alert.alert-error.text-center
+					%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
+					= warning
 		
 		%div.container.text-center
 			= yield

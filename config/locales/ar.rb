@@ -4,7 +4,7 @@
 {
 	ar:
 	{
-		applicant: 'المستفيد', edit_request: 'عدل الطلب',from: 'من',to: 'إلى',
+		applicant: 'المستفيد', edit_request: 'عدل الطلب',from: 'من تاريخ',to: 'إلى تاريخ',
 		request: 'طلب', locale: 'English', coming: 'مباشرة', leave: 'مغادرة',
 		ticket: 'تذكرة', vacation: 'عطلة', request_type: 'نوع الطلب',
 		create:
@@ -16,34 +16,24 @@
 		{
 			application:
 			{
-				new_user: 'سجل المستخدم', alert_users: 'إرسال تنبيهات',
-				received_requests: 'الطلبات المستلمة',
-				previous_requests: 'الطلبات السابقة', new_ticket: 'تذاكر',
-				new_vacation: 'إجازة', new_leave: 'مغادرة',
-				logout: 'سجل خروج'
+				users: 'المستخدمين', alerts: 'التنبيهات', logout: 'سجل خروج', locale: 'English',
+				requests: 'الطلبات'
 			}
 		},
-		partials:
+		comings_leaves:
 		{
-			navbar:
-			{
-				new_user: 'سجل المستخدم', alert_users: 'إرسال تنبيهات',
-				received_requests: 'الطلبات المستلمة',
-				previous_requests: 'الطلبات السابقة', logout: 'سجل خروج'
-			},
-			navbar_dropdown:
-				{ new_coming: 'مباشرة', new_leave: 'مغادرة', new_ticket: 'تذاكر', new_vacation: 'إجازة' }
+			form: { reason: 'السبب' }
 		},
 		requests: { index: { empty: "لم تقم بتقديم طلبات حتى الآن", 	requests: 'الطلبات' } },
 		leaves:
 		{
-			form: { reason: 'السبب', body: 'المحتوى' },
+			form: { reason: 'السبب' },
 			new: { action: 'طلب مغادرة' },
-			show: { header: 'طلب إجازة' }
+			show: { header: 'طلب مغادرة' }
 		},
 		comings:
 		{
-			form: { reason: 'السبب', body: 'المحتوى' },
+			form: { reason: 'السبب' },
 			new: { action: 'طلب مباشرة' },
 			show: { header: 'طلب مباشرة' }
 		},
@@ -51,11 +41,11 @@
 		{
 			form: { line: 'خط السير', number: 'رقم الحجز إن وجد' },
 			new: { action: 'طلب تذاكر' },
-			show: { header: 'طلب تذكرة' }
+			show: { header: 'طلب تذاكر' }
 		},
 		vacations:
 		{
-			form: { duration: 'المدة', day: 'يوم', month: 'شهر', year: 'سنة' },
+			form: { duration: 'المدة' },
 			new: { action: 'طلب إجازة' }
 		},
 		alerts:

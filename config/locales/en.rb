@@ -16,28 +16,13 @@
 		{
 			application:
 			{
-				new_user: 'Register User', alert_users: 'Alert Users',
-				received_requests: 'Received Requests',
-				previous_requests: 'Previous Requests', new_ticket: 'Ticket',
-				new_vacation: 'Vacation', new_leave: 'Leave',
-				logout: 'Logout'
+				users: 'Users', alerts: 'Alerts', logout: 'Logout', locale: 'Arabic',
+				requests: 'Requests'
 			}
 		},
-		partials:
+		comings_leaves:
 		{
-			navbar:
-			{
-				new_user: 'Register User', alert_users: 'Alert Users',
-				received_requests: 'Received Requests',
-				previous_requests: 'Previous Requests', new_ticket: 'Ticket',
-				new_vacation: 'Vacation', new_leave: 'Leave',
-				logout: 'Logout'
-			},
-			navbar_dropdown:
-				{
-					new_coming: 'Coming', new_leave: 'Leave', new_ticket: 'Ticket',
-					new_vacation: 'Vacation'
-				}
+			form: { reason: 'Reason' }
 		},
 		requests: { index: { empty: "You haven't requested anything yet", requests: 'Requests' } },
 		leaves:
@@ -48,7 +33,7 @@
 		},
 		comings:
 		{
-			form: { reason: 'Reason', body: 'Body' },
+			form: { reason: 'Reason' },
 			new: { action: 'Request Coming' },
 			show: { header: 'Coming Request' }
 		},
@@ -60,7 +45,7 @@
 		},
 		vacations:
 		{
-			form: { duration: 'Duration', day: 'Day', month: 'Month', year: 'Year' },
+			form: { duration: 'Duration' },
 			new: { action: 'Request Vacation' }
 		},
 		alerts:

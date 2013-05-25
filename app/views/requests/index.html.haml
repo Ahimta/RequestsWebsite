@@ -16,36 +16,35 @@
 		%tbody
 			- if @comings.any?
 				- @comings.each do |coming|
-					%tr{ class: coming.accepted.nil? ? 'warning' : (coming.accepted ? 'success' : 'error')}
+					%tr.coming{ class: coming.accepted.nil? ? 'warning' : (coming.accepted ? 'success' : 'error')}
 						%td= link_to i, coming
 						%td= coming.applicant
 						%td= t(:coming)
 						- i += 1
 			- if @leaves.any?
 				- @leaves.each do |leave|
-					%tr{ class: leave.accepted.nil? ? 'warning' : (leave.accepted ? 'success' : 'error')}
+					%tr.leave{ class: leave.accepted.nil? ? 'warning' : (leave.accepted ? 'success' : 'error')}
 						%td= link_to i, leave
 						%td= leave.applicant
 						%td= t(:leave)
 						- i += 1
 			- if @tickets.any?
 				- @tickets.each do |ticket|
-					%tr{ class: ticket.accepted.nil? ? 'warning' : (ticket.accepted ? 'success' : 'error')}
+					%tr.ticket{ class: ticket.accepted.nil? ? 'warning' : (ticket.accepted ? 'success' : 'error')}
 						%td= link_to i, ticket
 						%td= ticket.applicant
 						%td= t(:ticket)
 						- i += 1
 			- if @vacations.any?
 				- @vacations.each do |vacation|
-					%tr
-						-#{ class: vacation.accepted.nil? ? 'warning' : (vacation.accepted ? 'success' : 'error')}
+					%tr.vacation{ class: vacation.accepted.nil? ? 'warning' : (vacation.accepted ? 'success' : 'error')}
 						%td= link_to i, vacation
 						%td= vacation.applicant
 						%td= t(:vacation)
 						- i += 1
 
 %div.btn-group{ dir: 'ltr' }
-	- klass = 'btn btn-success'
+	- klass = 'btn btn-success btn-large'
 	= link_to t(:coming), new_coming_path, class: klass
 	= link_to t(:leave), new_leafe_path, class: klass
 	= link_to t(:ticket), new_ticket_path, class: klass

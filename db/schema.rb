@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130523141846) do
   end
 
   create_table "vacations", :force => true do |t|
+    t.boolean  "accepted"
     t.string   "applicant"
     t.integer  "duration"
     t.string   "from"

@@ -24,7 +24,19 @@
 		{
 			form: { reason: 'Reason' }
 		},
-		requests: { index: { empty: "You haven't requested anything yet", requests: 'Requests' } },
+		requests:
+		{ 
+			index:
+			{ 
+				empty: "You haven't requested anything yet", requests: 'Requests',
+				request_type: 'Type', status: 'Status', decide: 'Accept/Reject'
+			},
+			request:
+			{
+				pending: 'Pending', accepted: 'Accepted', rejected: 'Rejected',
+				accept: 'Accept', reject: 'Reject'
+			}
+		},
 		leaves:
 		{
 			form: { reason: 'Reason', body: 'Body' },

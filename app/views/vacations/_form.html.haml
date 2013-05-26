@@ -1,9 +1,6 @@
 = form_for vacation do |f|
-	%div.page-header
-		%h1= action
-	%div= f.hidden_field :user_id, value: 0
-	%div= f.text_field :applicant, placeholder: t(:applicant), title: t(:applicant), autofocus: ''
+	= render '/shared/form', action: action, f: f
 	%div= f.text_field :duration, placeholder: t('.duration'), title: t('.duration')
 	%div= f.text_field :from, placeholder: t(:from), title: t(:from)
 	%div= f.text_field :to, placeholder: t(:to), title: t(:to)
-	= f.submit action, class: 'btn btn-success btn-large'
+	= eval render_submit_field

@@ -1,15 +1,13 @@
 Feature: Users can request leaves
 
-Scenario: I fill in fields appropriately
+Scenario Outline: I (don't)? fill in fields appropriately
 	When I request a leave:
-	|	leave_applicant	|	ahmad	|
-	|	leave_reason	|	flue	|
-	Then I should be on the requests page
-	And I should see "Your Request was sent successfully"
+	|	leave_applicant	|	ahmad		|
+	|	leave_reason	|	<reason>	|
+	Then I should be on the <page> page
+	And I should see "<should_see>"
 
-Scenario: I don't fill in fields appropriately
-	When I request a leave:
-	|	leave_applicant	|	ahmad	|
-	Then I should be on the leaves page
-	And I should see "Please fill in all fields"
-	And the "leave_applicant" field should contain "ahmad"
+Examples:
+	|	reason	|	page		|	should_see							|
+	|	flue	|	requests	|	Your Request was sent successfully	|
+	|			|	leaves		|	Please fill in all fields			|

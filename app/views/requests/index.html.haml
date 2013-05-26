@@ -5,46 +5,22 @@
 	%p.lead= t('.empty')
 	
 - else
-	- i = 1
-	
-	%table.table.table-bordered
+	%table.table
 		%thead
 			%tr
-				%th #
 				%th= t(:applicant)
-				%th= t(:request_type)
+				%th= t('.request_type')
+				%th= t('.status')
+				%th= t('.decide')
 		%tbody
-			- if @comings.any?
-				- @comings.each do |coming|
-					%tr.coming{ class: coming.accepted.nil? ? 'warning' : (coming.accepted ? 'success' : 'error')}
-						%td= link_to i, coming
-						%td= coming.applicant
-						%td= t(:coming)
-						- i += 1
-			- if @leaves.any?
-				- @leaves.each do |leave|
-					%tr.leave{ class: leave.accepted.nil? ? 'warning' : (leave.accepted ? 'success' : 'error')}
-						%td= link_to i, leave
-						%td= leave.applicant
-						%td= t(:leave)
-						- i += 1
-			- if @tickets.any?
-				- @tickets.each do |ticket|
-					%tr.ticket{ class: ticket.accepted.nil? ? 'warning' : (ticket.accepted ? 'success' : 'error')}
-						%td= link_to i, ticket
-						%td= ticket.applicant
-						%td= t(:ticket)
-						- i += 1
-			- if @vacations.any?
-				- @vacations.each do |vacation|
-					%tr.vacation{ class: vacation.accepted.nil? ? 'warning' : (vacation.accepted ? 'success' : 'error')}
-						%td= link_to i, vacation
-						%td= vacation.applicant
-						%td= t(:vacation)
-						- i += 1
+			- i = 1
+			= render 'request', requests: @comings, type: t(:coming)
+			= render 'request', requests: @leaves, type: t(:leave)
+			= render 'request', requests: @tickets, type: t(:ticket)
+			= render 'request', requests: @vacations, type: t(:vacation)
 
 %div.btn-group{ dir: 'ltr' }
-	- klass = 'btn btn-success btn-large'
+	- klass = 'btn btn-primary btn-large'
 	= link_to t(:coming), new_coming_path, class: klass
 	= link_to t(:leave), new_leafe_path, class: klass
 	= link_to t(:ticket), new_ticket_path, class: klass

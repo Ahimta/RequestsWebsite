@@ -1,4 +1,6 @@
 class AlertsController < ApplicationController
+	before_filter { @alerts_link = 'active' }
+	
 	def index
 		@alerts = Alert.all
 	end
@@ -11,10 +13,9 @@ class AlertsController < ApplicationController
 		@alert = Alert.new params[:alert]
 		
 		if @alert.save
-			flash[:notice] = t('create.notice')
-			redirect_to alerts_path
+			redirect_to alerts_path, notice: t('create.notice')
 		else
-			flash[:warning] = t('create.warning')
+			flash.now[:warning] = t('create.warning')
 			render :new
 		end
 	end

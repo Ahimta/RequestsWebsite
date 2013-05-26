@@ -1,6 +1,10 @@
-shared_examples_for 'index' do |symbol = nil|
-	before { get :index }
+shared_examples_for 'index' do |model, symbol|
+	it 'should call Model.all' do
+		model.should_receive(:all).with(no_args)
+		get :index
+	end
 	
+	before { get :index }	
 	it { response.should render_template :index }
 	it { assigns(symbol).should_not == nil }
 end

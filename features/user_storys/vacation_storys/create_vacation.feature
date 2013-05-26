@@ -1,19 +1,15 @@
 Feature: Users can request vacations
 
-Scenario: I fill in fields appropriately
+Scenario Outline: I (don't)? fill in fields appropriately
 	When I request a vacation:
 	|	vacation_applicant			|	ahmad	|
 	|	vacation_duration			|	1		|
 	|	vacation_from				|	2		|
-	|	vacation_to					|	3		|
-	Then I should be on the requests page
-	And I should see "Your Request was sent successfully"
+	|	vacation_to					|	<to>	|
+	Then I should be on the <page> page
+	And I should see "<should_see>"
 
-Scenario: I don't fill in fields appropriately
-	When I request a vacation:
-	|	vacation_applicant			|	ahmad	|
-	|	vacation_duration			|	1		|
-	|	vacation_from				|	2		|
-	Then I should be on the vacations page
-	And I should see "Please fill in all fields"
-	And the "vacation_applicant" field should contain "ahmad"
+Examples:
+	|	to	|	page		|	should_see							|
+	|	3	|	requests	|	Your Request was sent successfully	|
+	|		|	vacations	|	Please fill in all fields			|

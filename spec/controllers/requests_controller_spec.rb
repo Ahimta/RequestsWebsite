@@ -19,10 +19,7 @@ describe RequestsController do
 				mock_model(Vacation, applicant: 'vapplicant2', duration: '21', from: '22', to: '23', user_id: 0)
 			] }
 		
-		it_behaves_like 'index'
-		
 		after { get :index }
-		
 		it 'should call Coming.all' do
 			Coming.should_receive(:all).with(no_args).and_return comings
 		end
@@ -35,5 +32,8 @@ describe RequestsController do
 		it 'should call Vacation.all' do
 			Vacation.should_receive(:all).with(no_args).and_return vacations
 		end
+		
+		before { get :index }	
+		it { response.should render_template :index }
 	end
 end

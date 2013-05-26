@@ -1,7 +1,10 @@
-%h1= t('.alerts')
+%div.page-header
+	%h1= t('.alerts')
 
 - if @alerts.present?
-	= render @alerts
+	- @alerts.each do |alert|
+		%h2= alert.title
+		%p.lead= alert.body
 - else
 	%div.lead= t('.empty')
 

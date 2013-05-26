@@ -17,7 +17,8 @@
 			application:
 			{
 				users: 'Users', alerts: 'Alerts', logout: 'Logout', locale: 'Arabic',
-				requests: 'Requests'
+				requests: 'Requests', login: 'Login', username: 'Username',
+				password: 'Password'
 			}
 		},
 		comings_leaves:
@@ -71,7 +72,9 @@
 		{
 			form: { username: 'Username', password: 'Password', location: 'Location' },
 			new: { action: 'Register User' },
-			index: { users: 'Users', empty: "There's no users in the mean time" }
+			index: { users: 'Users', empty: "There's no users in the mean time" },
+			login: { notice: 'Logged in', warning: 'Invalid username and/or password' },
+			logout: { notice: 'Logged out' }
 		}
 	}	
 }

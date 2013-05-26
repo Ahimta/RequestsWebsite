@@ -7,7 +7,12 @@ RequestsWebsite::Application.routes.draw do
 		resources :leaves, only: [:show, :new, :create]
 		resources :tickets, only: [:show, :new, :create]
 		resources :vacations, only: [:show, :new, :create]
-		resources :users, only: [:index, :new, :create]
+		resources :users, only: [:index, :new, :create] do
+			collection do
+				post 'login'
+				delete 'logout'
+			end
+		end
 	#end
 	
   namespace :locale do

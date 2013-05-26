@@ -1,4 +1,6 @@
-shared_examples_for 'index' do |model, symbol|
+shared_examples_for 'index' do |model|
+	let(:symbol) { model.to_s.downcase.pluralize.to_sym }
+	
 	it 'should call Model.all' do
 		model.should_receive(:all).with(no_args)
 		get :index
@@ -10,6 +12,7 @@ shared_examples_for 'index' do |model, symbol|
 end
 
 shared_examples_for 'show' do |model, double, symbol|
+	let(:symbol) { model.to_s.downcase.to_sym }
 	before { model.stub(:find).and_return double }
 	
 	it 'should call Model.find' do
@@ -24,6 +27,7 @@ shared_examples_for 'show' do |model, double, symbol|
 end
 
 shared_examples_for 'new' do |model, symbol|
+	let(:symbol) { model.to_s.downcase.to_sym }
 	it 'should call Model.new' do
 		model.should_receive(:new).with(no_args)
 		get :new
@@ -36,6 +40,7 @@ shared_examples_for 'new' do |model, symbol|
 end
 
 shared_examples_for 'create' do |model, double, param, symbol, index = '/requests?locale=en'|
+	let(:symbol) { model.to_s.downcase.to_sym }
 	before do
 		model.stub(:new).and_return double
 		double.stub(:save)

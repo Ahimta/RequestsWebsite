@@ -19,4 +19,24 @@ class UsersController < ApplicationController
 			render :new
 		end
 	end
+	
+	def login
+		login = params[:login]
+		username, password = login[:username], login[:password]
+		
+		user = User.where("username = ?", username).first
+		
+		if user and user.authenticate password
+			session[:user_id] = user.id
+			redirect_to requests_path, notice: t('users.login.notice')
+		else
+			flash.now[:warning] = t('users.login.warning')
+			render :index
+		end
+	end
+	
+	def logout
+		reset_session
+		redirect_to requests_path, notice: t('users.logout.notice')
+	end
 end

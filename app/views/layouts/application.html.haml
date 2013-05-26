@@ -8,19 +8,29 @@
 		= javascript_include_tag :application
 		= csrf_meta_tags
 	- ar = I18n.locale == :ar
-	
 	%body{ dir: ar ? 'rtl' : 'ltr', style: 'background-color: #888' }
 		%header{ style: 'margin-bottom: 50px' }
 			%div.navbar.navbar-static-top
 				%div.navbar-inner
 					%div.container
-						%div.navbar-form{class: ar ? 'pull-left' : 'pull-right'}
+						- pull = ar ? 'pull-left' : 'pull-right'
+						%div.navbar-form{ class: pull }
 							= link_to t('.locale'), locale_update_path(locale: ar ? 'en' : 'ar'), method: :put, class: 'btn btn-primary'
-							= link_to t('.logout'), '#', class: 'btn btn-danger'
-						%ul.nav{ class: ar ? 'pull-right' : '' }
-							%li{ class: @requests_link }= link_to t('.requests'), requests_path
-							%li{ class: @users_link }= link_to t('.users'), users_path
-							%li{ class: @alerts_link }= link_to t('.alerts'), alerts_path
+							- if @current_user
+								= link_to t('.logout'), logout_users_path, method: :delete, class: 'btn btn-danger'
+						
+						- pull2 = ar ? 'pull-right' : 'pull-left'
+						- if @current_user
+							%ul.nav{ class: pull2 }
+								%li{ class: @requests_link }= link_to t('.requests'), requests_path
+								%li{ class: @users_link }= link_to t('.users'), users_path
+								%li{ class: @alerts_link }= link_to t('.alerts'), alerts_path
+						- else
+							= form_tag login_users_path, class: 'navbar-form ' + pull2 do
+								- username, password = t('.username'), t('.password')
+								= text_field :login, :username, class: 'span2', placeholder: username, autofocus: ''
+								= password_field :login, :password, class: 'span2', placeholder: password
+								= submit_tag t('.login'), class: 'btn btn-success'
 			
 			- notice, warning = flash[:notice], flash[:warning]
 			
@@ -33,7 +43,7 @@
 					%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 					= warning
 		
-		%div.container.text-center.well.well-large
+		%div.container.text-center.well.well-small
 			= yield
 				
 			%hr

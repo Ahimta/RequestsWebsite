@@ -54,6 +54,12 @@
 			form: { title: 'Title', body: 'Body' },
 			new: { action: 'Send Alert' },
 			index: { alerts: 'Alerts', empty: "There's no alerts in the mean time" }
+		},
+		users:
+		{
+			form: { username: 'Username', password: 'Password', location: 'Location' },
+			new: { action: 'Register User' },
+			index: { users: 'Users', empty: "There's no users in the mean time" }
 		}
 	}	
 }

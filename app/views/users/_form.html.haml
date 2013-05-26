@@ -1,0 +1,8 @@
+= form_for @user do |f|
+	%div.page-header
+		%h1= action
+	- username, password, location = t('.username'), t('.password'), t('.location')
+	%div= f.text_field :username, placeholder: username, title: username
+	%div= f.password_field :password, placeholder: password, title: password
+	%div= f.text_field :location, placeholder: location, title: location
+	= submit_tag action, class: 'btn btn-large btn-success'

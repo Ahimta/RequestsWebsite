@@ -19,7 +19,7 @@
 							= link_to t('.logout'), '#', class: 'btn btn-danger'
 						%ul.nav{ class: ar ? 'pull-right' : '' }
 							%li= link_to t('.requests'), requests_path
-							%li= link_to t('.users'), '#'
+							%li= link_to t('.users'), users_path
 							%li= link_to t('.alerts'), alerts_path
 			
 			- notice, warning = flash[:notice], flash[:warning]

@@ -1,0 +1,23 @@
+%div.page-header
+	%h1= t('.users')
+- if @users.present?
+	%table.table.table-bordered
+		%thead
+			%tr
+				%th #
+				%th= t('users.form.username')
+				%th= t('users.form.location')
+		%tbody
+			- i = 1
+			- @users.each do |user|
+				%tr
+					%td= i
+					%td= user.username
+					%td= user.location
+					- i += 1
+- else
+	%div.lead= t('.empty')
+
+%hr
+
+= link_to t('users.new.action'), new_user_path, class: 'btn btn-large btn-success'

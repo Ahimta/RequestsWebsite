@@ -1,10 +1,10 @@
 shared_examples_for 'index' do |model|
 	let(:symbol) { model.to_s.downcase.pluralize.to_sym }
 	
-	# it 'should call Model.all' do
-		# model.should_receive(:all).with(no_args)
-		# get :index
-	# end
+	it 'should call Model.all' do
+		model.should_receive(:all).with(no_args)
+		get :index
+	end
 	
 	before { get :index }	
 	it { response.should render_template :index }
@@ -28,6 +28,16 @@ end
 
 shared_examples_for 'new' do |model, symbol|
 	let(:symbol) { model.to_s.downcase.to_sym }
+	
+	before do
+		x, y = 'x', 'y'
+		model.stub(:new).and_return x
+		x.stub(:build_request).and_return y
+		x.stub(:build_location)
+		y.stub(:build_applicant)
+		get :new
+	end
+	
 	it 'should call Model.new' do
 		model.should_receive(:new)
 		get :new

@@ -1,12 +1,13 @@
 Feature: Users can see individual leaves
 
+@request_show
 Scenario Outline:
 	Given the followingg leaves exist:
-	|	applicant	|	reason	|	user_id	|	accepted	|
-	|	applicant1	|	reason1	|	0		|	nil			|
-	|	applicant2	|	reason2	|	0		|	true		|
-	|	applicant3	|	reason3	|	0		|	false		|
-	Given I am on the <cardinality> leave page
+	|	reason	|	request_id	|
+	|	reason1	|	1			|
+	|	reason2	|	2			|
+	|	reason3	|	3			|
+	And I am on the <cardinality> leave page
 	Then I should see the following: <should_see>
 	But I should not see the following: <should_not_see>
 

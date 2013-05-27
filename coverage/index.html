@@ -14,26 +14,26 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-27T03:24:22+03:00">2013-05-27T03:24:22+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-27T04:43:31+03:00">2013-05-27T04:43:31+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.6%</span></span>
+    (<span class="covered_percent"><span class="green">98.65%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         11.58
+         11.04
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>17</b> files in total.
-    <b>143</b> relevant lines. 
-    <span class="green"><b>141</b> lines covered</span> and
+    <b>18</b> files in total.
+    <b>148</b> relevant lines. 
+    <span class="green"><b>146</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -171,6 +171,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#1dbe133023e4bbc6bc1d4e326c5b26984dcfe00c" class="src_link" title="app/models/companion.rb">app/models/companion.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>8</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>2.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#373f16683e3141766b7f622b866058b807902215" class="src_link" title="app/models/leave.rb">app/models/leave.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>9</td>
@@ -193,9 +203,9 @@
       <tr>
         <td class="strong"><a href="#03f3b8bbf4b8d45c9c198b609bb9edb62452810e" class="src_link" title="app/models/ticket.rb">app/models/ticket.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>6</td>
-        <td>6</td>
+        <td>13</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>2.0</td>
       </tr>
@@ -366,9 +376,9 @@
   </h2>
   <a name="Models"></a>
   <div>
-    <b>7</b> files in total.
-    <b>36</b> relevant lines. 
-    <span class="green"><b>36</b> lines covered</span> and
+    <b>8</b> files in total.
+    <b>41</b> relevant lines. 
+    <span class="green"><b>41</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -406,6 +416,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#1dbe133023e4bbc6bc1d4e326c5b26984dcfe00c" class="src_link" title="app/models/companion.rb">app/models/companion.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>8</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>2.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#373f16683e3141766b7f622b866058b807902215" class="src_link" title="app/models/leave.rb">app/models/leave.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>9</td>
@@ -428,9 +448,9 @@
       <tr>
         <td class="strong"><a href="#03f3b8bbf4b8d45c9c198b609bb9edb62452810e" class="src_link" title="app/models/ticket.rb">app/models/ticket.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>6</td>
-        <td>6</td>
+        <td>13</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>2.0</td>
       </tr>
@@ -1353,7 +1373,7 @@
         <li class="covered" data-hits="6" data-linenumber="7">
           <span class="hits">6</span>
           
-          <code class="ruby">		@ticket = Ticket.new</code>
+          <code class="ruby">		@ticket = Ticket.new(companions: [Companion.new, Companion.new, Companion.new])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -2074,6 +2094,72 @@
   </pre>
 </div>
       
+        <div class="source_table" id="1dbe133023e4bbc6bc1d4e326c5b26984dcfe00c">
+  <div class="header">
+    <h3>app/models/companion.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="2" data-linenumber="1">
+          <span class="hits">2</span>
+          
+          <code class="ruby">class Companion &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="2">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  attr_accessible :birthdate, :name, :relation</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="3">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  belongs_to :ticket</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  #validates :birthdate, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  #validates :name, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  #validates :relation, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="373f16683e3141766b7f622b866058b807902215">
   <div class="header">
     <h3>app/models/leave.rb</h3>
@@ -2181,8 +2267,8 @@
     <h3>app/models/ticket.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2199,46 +2285,70 @@
         <li class="covered" data-hits="2" data-linenumber="2">
           <span class="hits">2</span>
           
-          <code class="ruby">  attr_accessible :accepted, :applicant, :line, :number, :user_id</code>
+          <code class="ruby">  attr_accessible :accepted, :applicant, :line, :number, :user_id,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
           
           
-          <code class="ruby">	</code>
+          <code class="ruby">  	:companions_attributes, :companions</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">  belongs_to :user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">	</code>
+          <code class="ruby">	has_many :companions</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">  validates :applicant, presence: true</code>
+          <code class="ruby">  belongs_to :user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="7">
           
-          <code class="ruby">  validates :line, presence: true</code>
+          
+          <code class="ruby">	</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="8">
           <span class="hits">2</span>
           
-          <code class="ruby">  validates :user_id, presence: true</code>
+          <code class="ruby">	accepts_nested_attributes_for :companions</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">	</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  validates :applicant, presence: true</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  validates :line, presence: true</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  validates :user_id, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>

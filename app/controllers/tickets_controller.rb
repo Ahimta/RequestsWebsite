@@ -4,7 +4,7 @@ class TicketsController < ApplicationController
 	end
 	
 	def new
-		@ticket = Ticket.new
+		@ticket = Ticket.new(companions: [Companion.new, Companion.new, Companion.new])
 	end
 	
 	def create

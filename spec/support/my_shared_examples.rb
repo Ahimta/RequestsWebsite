@@ -29,7 +29,7 @@ end
 shared_examples_for 'new' do |model, symbol|
 	let(:symbol) { model.to_s.downcase.to_sym }
 	it 'should call Model.new' do
-		model.should_receive(:new).with(no_args)
+		model.should_receive(:new)
 		get :new
 	end
 	

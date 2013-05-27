@@ -171,6 +171,10 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
         1,
         null,
         1,
@@ -267,6 +271,16 @@
         1,
         null
       ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/companion.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/leave.rb": [
         1,
         1,
@@ -279,7 +293,7 @@
         null
       ]
     },
-    "timestamp": 1369614250
+    "timestamp": 1369618999
   },
   "RSpec": {
     "coverage": {
@@ -453,6 +467,10 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
         1,
         null,
         1,
@@ -549,6 +567,16 @@
         1,
         null
       ],
+      "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/companion.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/leave.rb": [
         1,
         1,
@@ -561,6 +589,6 @@
         null
       ]
     },
-    "timestamp": 1369614262
+    "timestamp": 1369619011
   }
 }

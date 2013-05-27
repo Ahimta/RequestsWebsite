@@ -52,7 +52,11 @@
 		},
 		tickets:
 		{
-			form: { line: 'Line', number: 'Number if exists' },
+			form:
+			{
+				line: 'Line', number: 'Number if exists', birthdate: 'Birthdate',
+				name: 'Name', relation: 'Relation', companions: 'Companion'
+			},
 			new: { action: 'Request Ticket' },
 			show: { header: 'Ticket Request' }
 		},

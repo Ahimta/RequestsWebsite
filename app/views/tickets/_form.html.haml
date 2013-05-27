@@ -1,5 +1,15 @@
 = form_for ticket do |f|
 	= render '/shared/form', action: action, f: f
-	%div= f.text_field :line, placeholder: t('.line'), title: t('.line')
-	%div= f.text_field :number, placeholder: t('.number'), title: t('.number')
+	- line, number = t('.line'), t('.number')
+	%div= f.text_field :line, placeholder: line
+	%div= f.text_field :number, placeholder: number
+	
+	%div.lead= t('.companions')
+	= f.fields_for :companions do |h|
+		%div
+			- birthdate, name, relation = t('.birthdate'), t('.name'), t('.relation')
+			- klass = 'input-mini'
+			= h.text_field :name, placeholder: name, class: klass
+			= h.text_field :relation, placeholder: relation, class: klass
+			= h.text_field :birthdate, placeholder: birthdate, class: klass
 	= eval render_submit_field

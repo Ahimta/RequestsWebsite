@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527003857) do
+ActiveRecord::Schema.define(:version => 20130527015619) do
 
   create_table "alerts", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20130527003857) do
   end
 
   add_index "alerts", ["title"], :name => "index_alerts_on_title"
+
+  create_table "applicants", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "applicants", ["user_id"], :name => "index_applicants_on_user_id"
 
   create_table "comings", :force => true do |t|
     t.string   "applicant"
@@ -54,6 +63,22 @@ ActiveRecord::Schema.define(:version => 20130527003857) do
   end
 
   add_index "leaves", ["user_id"], :name => "index_leaves_on_user_id"
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "requests", :force => true do |t|
+    t.boolean  "accepted"
+    t.string   "type"
+    t.integer  "applicant_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "requests", ["applicant_id"], :name => "index_requests_on_applicant_id"
 
   create_table "tickets", :force => true do |t|
     t.string   "applicant"

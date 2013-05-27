@@ -4,6 +4,7 @@ class Ticket < ActiveRecord::Base
   
 	has_many :companions
   belongs_to :user
+  #belongs_to :requestable, as: :requestable
 	
 	accepts_nested_attributes_for :companions
 	

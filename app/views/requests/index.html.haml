@@ -23,7 +23,7 @@
 					%td
 						= i
 						- i += 1
-					%td= request.applicant.name
+					%td= request.applicant_name
 					%td= t(request.rtype.try :to_sym)
 					%td= request.accepted.nil? ? t('.pending') : (request.accepted ? t('.accepted') : t('.rejected'))
 					%td

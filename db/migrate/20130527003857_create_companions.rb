@@ -8,7 +8,7 @@ class CreateCompanions < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :companions, :ticket_id
   end
 end

@@ -22,9 +22,9 @@
 			}
 		},
 		requests:
-		{ 
+		{
 			index:
-			{ 
+			{
 				empty: "You haven't requested anything yet", requests: 'Requests',
 				request_type: 'Type', status: 'Status', decide: 'Accept/Reject',
 				page_title: 'Requests', accept: 'Accept', reject: 'Reject',

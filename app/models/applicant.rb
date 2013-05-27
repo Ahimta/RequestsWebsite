@@ -1,6 +1,6 @@
 class Applicant < ActiveRecord::Base
-  attr_accessible :name, :user_id
-  belongs_to :user
-  
-  validates :name, presence: true
+	attr_accessible :name, :user_id
+	belongs_to :user
+	
+	validates :name, presence: true
 end

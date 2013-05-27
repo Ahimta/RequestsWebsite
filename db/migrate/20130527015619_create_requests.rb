@@ -7,7 +7,7 @@ class CreateRequests < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :requests, :applicant_id
   end
 end

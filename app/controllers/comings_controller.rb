@@ -5,6 +5,8 @@ class ComingsController < ApplicationController
 	
 	def new
 		@coming = Coming.new
+		request = @coming.build_request
+		request.build_applicant
 	end
 	
 	def create

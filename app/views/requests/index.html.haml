@@ -1,7 +1,7 @@
 %div.page-header
 	%h1= t('.requests')
 
-- if @comings.empty? && @leaves.empty? && @tickets.empty? && @vacations.empty?
+- if @requests.empty?
 	%p.lead= t('.empty')
 	
 - else
@@ -13,11 +13,17 @@
 				%th= t('.status')
 				%th= t('.decide')
 		%tbody
-			- i = 1
-			= render 'request', requests: @comings, type: t(:coming)
-			= render 'request', requests: @leaves, type: t(:leave)
-			= render 'request', requests: @tickets, type: t(:ticket)
-			= render 'request', requests: @vacations, type: t(:vacation)
+			- @requests.each do |request|
+				%tr{ class: request.accepted.nil? ? 'warning' : (request.accepted ? 'success' : 'error')}
+					%td= request.applicant.name
+					%td= request.rtype
+					%td= request.accepted.nil? ? t('.pending') : (request.accepted ? t('.accepted') : t('.rejected'))
+					%td
+						%div.btn-group{ dir: 'ltr' }
+							- klass = 'btn btn-small '
+							= link_to t('.accept'), '', class: (klass + 'btn-success')
+							= link_to t('.reject'), '', class: (klass + 'btn-danger')
+
 
 %div.btn-group{ dir: 'ltr' }
 	- klass = 'btn btn-primary btn-large'

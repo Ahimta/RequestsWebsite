@@ -1,16 +1,14 @@
 class CreateVacations < ActiveRecord::Migration
   def change
     create_table :vacations do |t|
-    	t.boolean :accepted
-      t.string :applicant
       t.integer :duration
       t.string :from
       t.string :to
-      t.integer :user_id
+      t.belongs_to :request
 
       t.timestamps
     end
 		
-		add_index :vacations, :user_id
+		add_index :vacations, :request_id
   end
 end

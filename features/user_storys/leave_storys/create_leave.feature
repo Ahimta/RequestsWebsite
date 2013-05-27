@@ -2,8 +2,8 @@ Feature: Users can request leaves
 
 Scenario Outline: I (don't)? fill in fields appropriately
 	When I request a leave:
-	|	leave_applicant	|	ahmad		|
-	|	leave_reason	|	<reason>	|
+	|	leave_request_attributes_applicant_attributes_name	|	ahmad		|
+	|	leave_reason										|	<reason>	|
 	Then I should be on the <page> page
 	And I should see "<should_see>"
 

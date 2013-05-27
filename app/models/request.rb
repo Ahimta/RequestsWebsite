@@ -1,5 +1,13 @@
 class Request < ActiveRecord::Base
-	#attr_accessible :accepted, :type, :applicant, :applicant_id
+	attr_accessible :accepted, :rtype, :applicant_attributes, :applicant_id
 	
-	#has_one :requestable, polymorphic: true
+	belongs_to :applicant
+	
+	has_one :coming
+	has_one :leave
+	has_one	:ticket
+	has_one :vacation
+	
+	accepts_nested_attributes_for :applicant
+	validates :applicant, presence: true
 end

@@ -1,7 +1,7 @@
 %div.lead
 	%p
 		%b= t(:applicant) + ': '
-		= ticket.applicant
+		= ticket.request.applicant.name
 	
 	%p
 		%b= t('tickets.form.line') + ': '

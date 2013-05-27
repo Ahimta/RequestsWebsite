@@ -1,14 +1,12 @@
 class CreateComings < ActiveRecord::Migration
   def change
     create_table :comings do |t|
-      t.string :applicant
       t.string :reason
-      t.boolean :accepted
-      t.integer :user_id
+      t.belongs_to :request
 			
       t.timestamps
     end
 		
-		add_index :comings, :user_id
+		add_index :comings, :request_id
   end
 end

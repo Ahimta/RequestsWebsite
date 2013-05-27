@@ -1,16 +1,14 @@
 Feature: Users can request tickets
 
-Scenario: I fill in fields appropriately
+Scenario Outline: I fill in fields appropriately/inappropriately
 	When I request a ticket:
-	|	ticket_applicant	|	ahmad	|
-	|	ticket_line			|	flue	|
-	Then I should be on the requests page
-	And I should see "Your Request was sent successfully"
+	|	ticket_request_attributes_applicant_attributes_name	|	ahmad		|
+	|	ticket_line											|	<line>		|
+	|	ticket_number										|	<number>	|
+	Then I should be on the <page> page
+	And I should see "<should_see>"
 
-Scenario: I don't fill in fields appropriately
-	When I request a ticket:
-	|	ticket_applicant	|	ahmad	|
-	|	ticket_number		|	flue	|
-	Then I should be on the tickets page
-	And I should see "Please fill in all fields"
-	And the "ticket_applicant" field should contain "ahmad"
+Examples:
+	|	line	|	number	|	page		|	should_see							|
+	|	line	|			|	requests	|	Your Request was sent successfully	|
+	|			|	number	|	tickets		|	Please fill in all fields			|

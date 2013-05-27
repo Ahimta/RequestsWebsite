@@ -5,6 +5,8 @@ class VacationsController < ApplicationController
 	
 	def new
 		@vacation = Vacation.new
+		request = @vacation.build_request
+		request.build_applicant
 	end
 	
 	def create

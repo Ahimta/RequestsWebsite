@@ -1,10 +1,10 @@
 class Leave < ActiveRecord::Base
-	attr_accessible :accepted, :applicant, :reason, :user_id
+	attr_accessible :reason, :request_attributes, :request_id
 	
-	belongs_to :user
-	#belongs_to :requestable, as: :requestable
+	belongs_to :request
 	
-	validates :applicant, presence: true
+	accepts_nested_attributes_for :request
+	
+	validates :request, presence: true
 	validates :reason, presence: true
-	validates :user_id, presence: true
 end

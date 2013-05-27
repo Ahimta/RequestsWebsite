@@ -2,10 +2,10 @@ Feature: Users can request vacations
 
 Scenario Outline: I (don't)? fill in fields appropriately
 	When I request a vacation:
-	|	vacation_applicant			|	ahmad	|
-	|	vacation_duration			|	1		|
-	|	vacation_from				|	2		|
-	|	vacation_to					|	<to>	|
+	|	vacation_request_attributes_applicant_attributes_name	|	ahmad	|
+	|	vacation_duration										|	1		|
+	|	vacation_from											|	2		|
+	|	vacation_to												|	<to>	|
 	Then I should be on the <page> page
 	And I should see "<should_see>"
 

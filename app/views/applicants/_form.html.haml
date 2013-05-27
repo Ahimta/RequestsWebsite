@@ -1,0 +1,4 @@
+= fields_for :applicant do |f|
+	= f.hidden_field :user_id, value: 0
+	- applicant = t(:applicant)
+	%div= i.text_field :name, placeholder: applicant, autofocus: ''

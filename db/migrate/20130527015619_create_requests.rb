@@ -2,7 +2,7 @@ class CreateRequests < ActiveRecord::Migration
   def change
     create_table :requests do |t|
       t.boolean :accepted
-      t.string :type
+      t.string :rtype
       t.belongs_to :applicant
 
       t.timestamps

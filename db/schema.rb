@@ -32,15 +32,13 @@ ActiveRecord::Schema.define(:version => 20130527015619) do
   add_index "applicants", ["user_id"], :name => "index_applicants_on_user_id"
 
   create_table "comings", :force => true do |t|
-    t.string   "applicant"
     t.string   "reason"
-    t.boolean  "accepted"
-    t.integer  "user_id"
+    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "comings", ["user_id"], :name => "index_comings_on_user_id"
+  add_index "comings", ["request_id"], :name => "index_comings_on_request_id"
 
   create_table "companions", :force => true do |t|
     t.string   "name"
@@ -54,15 +52,13 @@ ActiveRecord::Schema.define(:version => 20130527015619) do
   add_index "companions", ["ticket_id"], :name => "index_companions_on_ticket_id"
 
   create_table "leaves", :force => true do |t|
-    t.string   "applicant"
     t.string   "reason"
-    t.boolean  "accepted"
-    t.integer  "user_id"
+    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "leaves", ["user_id"], :name => "index_leaves_on_user_id"
+  add_index "leaves", ["request_id"], :name => "index_leaves_on_request_id"
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -72,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20130527015619) do
 
   create_table "requests", :force => true do |t|
     t.boolean  "accepted"
-    t.string   "type"
+    t.string   "rtype"
     t.integer  "applicant_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -81,38 +77,34 @@ ActiveRecord::Schema.define(:version => 20130527015619) do
   add_index "requests", ["applicant_id"], :name => "index_requests_on_applicant_id"
 
   create_table "tickets", :force => true do |t|
-    t.string   "applicant"
     t.string   "line"
     t.string   "number"
-    t.boolean  "accepted"
-    t.integer  "user_id"
+    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "tickets", ["user_id"], :name => "index_tickets_on_user_id"
+  add_index "tickets", ["request_id"], :name => "index_tickets_on_request_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.string   "location"
+    t.integer  "location_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "users", ["username", "password_digest"], :name => "index_users_on_username_and_password_digest"
+  add_index "users", ["username", "location_id"], :name => "index_users_on_username_and_location_id"
 
   create_table "vacations", :force => true do |t|
-    t.boolean  "accepted"
-    t.string   "applicant"
     t.integer  "duration"
     t.string   "from"
     t.string   "to"
-    t.integer  "user_id"
+    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "vacations", ["user_id"], :name => "index_vacations_on_user_id"
+  add_index "vacations", ["request_id"], :name => "index_vacations_on_request_id"
 
 end

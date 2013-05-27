@@ -2,7 +2,8 @@
 	%div.page-header
 		%h1= action
 	- username, password, location = t('.username'), t('.password'), t('.location')
-	%div= f.text_field :username, placeholder: username, title: username
-	%div= f.password_field :password, placeholder: password, title: password
-	%div= f.text_field :location, placeholder: location, title: location
+	%div= f.text_field :username, placeholder: username
+	%div= f.password_field :password, placeholder: password
+	= f.fields_for :location do |h|
+		%div= h.text_field :name, placeholder: location
 	= submit_tag action, class: 'btn btn-large btn-success'

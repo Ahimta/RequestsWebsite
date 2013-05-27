@@ -4,7 +4,7 @@ Scenario Outline: I fill in fields appropriately | I don't fill in fields approp
 	When I register a user:
 	|	user_username			|	ahmad		|
 	|	user_password			|	password	|
-	|	user_location			|	<location>	|
+	|	user_location_attributes_name		|	<location>	|
 	Then I should be on the <page> page
 	And I should see "<should_see>"
 

@@ -1,9 +1,7 @@
 Feature: users can log in
 
+@login_logout
 Scenario Outline: valid user | invalid user
-	Given the following users exist:
-	|	username	|	password	|	location	|
-	|	username	|	password	|	location	|
 	When I login:
 	|	login_username	|	<username>	|
 	|	login_password	|	<password>	|
@@ -13,6 +11,6 @@ Scenario Outline: valid user | invalid user
 
 Examples:
 	|	username	|	password	|	should_see							|	should_not_see						|
-	|	username	|	password	|	Logged in, Logout					|	Invalid username and/or password	|
-	|	username	|	passwor		|	Invalid username and/or password	|	Logged in, Logout					|
-	|	usernam		|	password	|	Invalid username and/or password	|	Logged in, Logout					|
+	|	username1	|	password1	|	Logged in, Logout					|	Invalid username and/or password	|
+	|	username2	|	password1	|	Invalid username and/or password	|	Logged in, Logout					|
+	|	usernam		|	password1	|	Invalid username and/or password	|	Logged in, Logout					|

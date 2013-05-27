@@ -40,13 +40,13 @@
 		},
 		leaves:
 		{
-			form: { reason: 'Reason', body: 'Body' },
+			form: { reason: 'Reason', type: 'leave' },
 			new: { action: 'Request Leave' },
 			show: { header: 'Leave Request' }
 		},
 		comings:
 		{
-			form: { reason: 'Reason' },
+			form: { reason: 'Reason', type: 'coming' },
 			new: { action: 'Request Coming' },
 			show: { header: 'Coming Request' }
 		},
@@ -55,14 +55,15 @@
 			form:
 			{
 				line: 'Line', number: 'Number if exists', birthdate: 'Birthdate',
-				name: 'Name', relation: 'Relation', companions: 'Companion'
+				name: 'Name', relation: 'Relation', companions: 'Companion',
+				type: 'ticket'
 			},
 			new: { action: 'Request Ticket' },
 			show: { header: 'Ticket Request' }
 		},
 		vacations:
 		{
-			form: { duration: 'Duration' },
+			form: { duration: 'Duration', type: 'vacation' },
 			new: { action: 'Request Vacation' },
 			show: { header: 'Vacation Request' }
 		},

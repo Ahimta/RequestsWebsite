@@ -1,11 +1,12 @@
 Feature: Users can see individual tickets
 
+@request_show
 Scenario Outline:
 	Given the following tickets exist:
-	|	applicant	|	line	|	user_id	|	accepted	|
-	|	applicant1	|	line1	|	0		|	nil			|
-	|	applicant2	|	line2	|	0		|	true		|
-	|	applicant3	|	line3	|	0		|	false		|
+	|	line	|	request_id	|
+	|	line1	|	1			|
+	|	line2	|	2			|
+	|	line3	|	3			|
 	Given I am on the <cardinality> ticket page
 	Then I should see the following: <should_see>
 	But I should not see the following: <should_not_see>

@@ -5,6 +5,8 @@ class LeavesController < ApplicationController
 	
 	def new
 		@leave = Leave.new
+		request = @leave.build_request
+		request.build_applicant
 	end
 	
 	def create

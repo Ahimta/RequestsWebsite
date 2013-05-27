@@ -1,10 +1,7 @@
 Feature: Users can find all users on users page
 
+@login_logout
 Scenario: users exist
-	Given the following users exist:
-	|	username	|	password	|	location	|
-	|	username1	|	password1	|	location1	|
-	|	username2	|	password2	|	location2	|
 	And I am on the users page
 	Then I should see the following: username1, username2, location1, location2
 

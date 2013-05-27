@@ -1,23 +1,9 @@
 = form_for @ticket do |f|
-	%div.page-header
-		%h1= action
-	= f.fields_for :request do |h|
-		= h.hidden_field :rtype, value: t('.type')
-		= h.fields_for :applicant do |i|
-			= i.hidden_field :user_id, value: 0
-			- applicant = t(:applicant)
-			%div= i.text_field :name, placeholder: applicant, autofocus: ''
+	= render '/requests/form', f: f, type: Ticket::Type, action: action
 	
 	- line, number = t('.line'), t('.number')
 	%div= f.text_field :line, placeholder: line
 	%div= f.text_field :number, placeholder: number
 	
-	%div.lead= t('.companions')
-	= f.fields_for :companions do |h|
-		%div
-			- birthdate, name, relation = t('.birthdate'), t('.name'), t('.relation')
-			- klass = 'input-mini'
-			= h.text_field :name, placeholder: name, class: klass
-			= h.text_field :relation, placeholder: relation, class: klass
-			= h.text_field :birthdate, placeholder: birthdate, class: klass
+	= render '/companions/form', f: f
 	= eval render_submit_field

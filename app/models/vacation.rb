@@ -1,4 +1,6 @@
 class Vacation < ActiveRecord::Base
+	Type = 'vacation'
+	
   attr_accessible :duration,:from, :to, :request_attributes, :request_id
 	
   belongs_to :request

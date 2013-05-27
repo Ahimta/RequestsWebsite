@@ -1,0 +1,9 @@
+%label.lead{ for: 'companions' }= t('.companions')
+
+= f.fields_for :companions, id: 'companions' do |h|
+	%div
+		- birthdate, name, relation = t('.birthdate'), t('.name'), t('.relation')
+		- klass = 'input-mini'
+		= h.text_field :name, placeholder: name, class: klass
+		= h.text_field :relation, placeholder: relation, class: klass
+		= h.text_field :birthdate, placeholder: birthdate, class: klass

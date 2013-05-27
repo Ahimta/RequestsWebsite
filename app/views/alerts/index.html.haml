@@ -1,5 +1,8 @@
+- alerts = t('.alerts')
+= provide :title, alerts
+
 %div.page-header
-	%h1= t('.alerts')
+	%h1= alerts
 
 - if @alerts.present?
 	- @alerts.each do |alert|

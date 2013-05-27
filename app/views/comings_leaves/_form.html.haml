@@ -1,4 +1,0 @@
-= form_for coming_leave do |f|
-	= render '/shared/form', action: action, f: f
-	%div= f.text_field :reason, placeholder: t('.reason'), title: t('.reason')
-	= eval render_submit_field

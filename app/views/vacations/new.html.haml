@@ -1,1 +1,4 @@
-= render 'form', action: t('.action'), vacation: @vacation
+- action = t('.action')
+= provide :title, action
+
+= render 'form', action: action, vacation: @vacation

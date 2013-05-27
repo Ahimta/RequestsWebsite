@@ -6,9 +6,9 @@
 	{
 		applicant: 'Applicant', edit_request: 'Edit Request',from: 'From',to: 'To',
 		request: 'Request', locale: 'Arabic', coming: 'Coming', leave: 'Leave',
-		ticket: 'Ticket', vacation: 'Vacation', request_type: 'Type',
+		ticket: 'Ticket', vacation: 'Vacation',
 		create:
-	{
+		{
 			notice: 'Your Request was sent successfully',
 			warning: 'Please fill in all fields'
 		},
@@ -18,25 +18,18 @@
 			{
 				users: 'Users', alerts: 'Alerts', logout: 'Logout', locale: 'Arabic',
 				requests: 'Requests', login: 'Login', username: 'Username',
-				password: 'Password'
+				password: 'Password', page_title: 'RequestsWebsite'
 			}
-		},
-		comings_leaves:
-		{
-			form: { reason: 'Reason' }
 		},
 		requests:
 		{ 
 			index:
 			{ 
 				empty: "You haven't requested anything yet", requests: 'Requests',
-				request_type: 'Type', status: 'Status', decide: 'Accept/Reject'
+				request_type: 'Type', status: 'Status', decide: 'Accept/Reject',
+				page_title: 'Requests', accept: 'Accept', reject: 'Reject',
+				pending: 'Pending', accepted: 'Accepted', rejected: 'Rejected'
 			},
-			request:
-			{
-				pending: 'Pending', accepted: 'Accepted', rejected: 'Rejected',
-				accept: 'Accept', reject: 'Reject'
-			}
 		},
 		leaves:
 		{
@@ -50,20 +43,30 @@
 			new: { action: 'Request Coming' },
 			show: { header: 'Coming Request' }
 		},
+		companions:
+		{
+			form:
+			{
+				name: 'Name', relation: 'Relation', companions: 'Companions',
+				birthdate: 'Birthdate'
+			}
+		},
 		tickets:
 		{
 			form:
 			{
-				line: 'Line', number: 'Number if exists', birthdate: 'Birthdate',
-				name: 'Name', relation: 'Relation', companions: 'Companion',
-				type: 'ticket'
+				line: 'Line', number: 'Number if exists', type: 'ticket'
 			},
 			new: { action: 'Request Ticket' },
 			show: { header: 'Ticket Request' }
 		},
 		vacations:
 		{
-			form: { duration: 'Duration', type: 'vacation' },
+			form:
+			{
+				duration: 'Duration', type: 'vacation', from: 'From date',
+				to: 'To date'
+			},
 			new: { action: 'Request Vacation' },
 			show: { header: 'Vacation Request' }
 		},
@@ -78,7 +81,11 @@
 			form: { username: 'Username', password: 'Password', location: 'Location' },
 			new: { action: 'Register User' },
 			index: { users: 'Users', empty: "There's no users in the mean time" },
-			login: { notice: 'Logged in', warning: 'Invalid username and/or password' },
+			login:
+			{
+				notice: 'Logged in', warning: 'Invalid username and/or password',
+				page_title: 'Login'
+			},
 			logout: { notice: 'Logged out' }
 		}
 	}	

@@ -1,5 +1,8 @@
+- requests = t('.requests')
+= provide :title, requests
+
 %div.page-header
-	%h1= t('.requests')
+	%h1= requests
 
 - if @requests.empty?
 	%p.lead= t('.empty')
@@ -21,7 +24,7 @@
 						= i
 						- i += 1
 					%td= request.applicant.name
-					%td= request.rtype
+					%td= t(request.rtype.try :to_sym)
 					%td= request.accepted.nil? ? t('.pending') : (request.accepted ? t('.accepted') : t('.rejected'))
 					%td
 						%div.btn-group{ dir: 'ltr' }

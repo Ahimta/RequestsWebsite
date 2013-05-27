@@ -1,1 +1,4 @@
-= render 'form', action: t('.action'), alert: @alert
+- action = t('.action')
+= provide :title, action
+
+= render 'form', action: action, alert: @alert

@@ -46,14 +46,6 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/helpers/application_helper.rb": [
         1,
         1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
         12,
         null,
         null
@@ -92,6 +84,8 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/coming.rb": [
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -141,6 +135,7 @@
         1,
         22,
         null,
+        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/request.rb": [
@@ -184,6 +179,8 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/ticket.rb": [
         1,
+        1,
+        null,
         1,
         null,
         null,
@@ -290,6 +287,8 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         1,
         1,
@@ -317,6 +316,7 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/leave.rb": [
         1,
         1,
+        1,
         null,
         1,
         null,
@@ -335,7 +335,7 @@
         null
       ]
     },
-    "timestamp": 1369668356
+    "timestamp": 1369686467
   },
   "RSpec": {
     "coverage": {
@@ -386,14 +386,6 @@
         1,
         0,
         null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/alert.rb": [
@@ -430,6 +422,8 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/coming.rb": [
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -479,6 +473,7 @@
         1,
         4,
         null,
+        null,
         null
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/request.rb": [
@@ -522,6 +517,8 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/ticket.rb": [
         1,
+        1,
+        null,
         1,
         null,
         null,
@@ -628,6 +625,8 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         1,
         1,
@@ -655,6 +654,7 @@
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/models/leave.rb": [
         1,
         1,
+        1,
         null,
         1,
         null,
@@ -673,6 +673,6 @@
         null
       ]
     },
-    "timestamp": 1369668367
+    "timestamp": 1369686478
   }
 }

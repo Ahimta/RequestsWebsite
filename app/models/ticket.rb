@@ -1,4 +1,6 @@
 class Ticket < ActiveRecord::Base
+	Type = 'ticket'
+	
   attr_accessible :line, :number, :request_attributes,
   	:companions_attributes, :companions, :request_id
   

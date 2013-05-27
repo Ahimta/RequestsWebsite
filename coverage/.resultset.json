@@ -31,15 +31,15 @@
         null,
         null,
         1,
-        69,
-        69,
+        71,
+        71,
         null,
         null,
         1,
-        69,
+        71,
         null,
-        69,
-        69,
+        71,
+        71,
         null,
         null
       ],
@@ -131,13 +131,13 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/requests_controller.rb": [
         1,
-        21,
+        23,
         null,
         1,
-        20,
-        20,
-        20,
-        20,
+        22,
+        22,
+        22,
+        22,
         null,
         null
       ],
@@ -212,8 +212,9 @@
         2,
         null,
         2,
-        2,
         null,
+        null,
+        4,
         null,
         null,
         1,
@@ -278,16 +279,16 @@
         null
       ]
     },
-    "timestamp": 1369606341
+    "timestamp": 1369614250
   },
   "RSpec": {
     "coverage": {
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/alerts_controller.rb": [
         1,
-        21,
+        20,
         null,
         1,
-        4,
+        3,
         null,
         null,
         1,
@@ -312,12 +313,15 @@
         null,
         null,
         1,
-        112,
-        112,
+        119,
+        119,
         null,
         null,
         1,
-        132,
+        134,
+        null,
+        134,
+        134,
         null,
         null
       ],
@@ -458,10 +462,10 @@
       ],
       "/home/abdullah/0/Home/Aptana/RequestsWebsite/app/controllers/users_controller.rb": [
         1,
-        21,
+        24,
         null,
         1,
-        4,
+        2,
         null,
         null,
         1,
@@ -477,6 +481,27 @@
         8,
         8,
         null,
+        null,
+        null,
+        1,
+        5,
+        5,
+        null,
+        5,
+        null,
+        5,
+        0,
+        0,
+        null,
+        5,
+        null,
+        null,
+        5,
+        null,
+        null,
+        1,
+        0,
+        0,
         null,
         null
       ],
@@ -536,6 +561,6 @@
         null
       ]
     },
-    "timestamp": 1369597734
+    "timestamp": 1369614262
   }
 }

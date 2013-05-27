@@ -28,11 +28,12 @@ class UsersController < ApplicationController
 		
 		if user and user.authenticate password
 			session[:user_id] = user.id
-			redirect_to requests_path, notice: t('users.login.notice')
+			flash[:notice] = t('users.login.notice')
 		else
-			flash.now[:warning] = t('users.login.warning')
-			render :index
+			flash[:warning] = t('users.login.warning')
 		end
+		
+		redirect_to requests_path
 	end
 	
 	def logout

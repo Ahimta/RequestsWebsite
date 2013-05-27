@@ -1,10 +1,10 @@
 shared_examples_for 'index' do |model|
 	let(:symbol) { model.to_s.downcase.pluralize.to_sym }
 	
-	it 'should call Model.all' do
-		model.should_receive(:all).with(no_args)
-		get :index
-	end
+	# it 'should call Model.all' do
+		# model.should_receive(:all).with(no_args)
+		# get :index
+	# end
 	
 	before { get :index }	
 	it { response.should render_template :index }

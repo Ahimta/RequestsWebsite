@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20130523141846) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "alerts", ["title"], :name => "index_alerts_on_title"
+
   create_table "comings", :force => true do |t|
     t.string   "applicant"
     t.string   "reason"
@@ -42,11 +44,6 @@ ActiveRecord::Schema.define(:version => 20130523141846) do
 
   add_index "leaves", ["user_id"], :name => "index_leaves_on_user_id"
 
-  create_table "requests", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "tickets", :force => true do |t|
     t.string   "applicant"
     t.string   "line"
@@ -66,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20130523141846) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  add_index "users", ["username", "password_digest"], :name => "index_users_on_username_and_password_digest"
 
   create_table "vacations", :force => true do |t|
     t.boolean  "accepted"

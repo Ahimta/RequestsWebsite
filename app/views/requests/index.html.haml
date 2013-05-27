@@ -8,13 +8,18 @@
 	%table.table.table-hover
 		%thead
 			%tr
+				%th #
 				%th= t(:applicant)
 				%th= t('.request_type')
 				%th= t('.status')
 				%th= t('.decide')
 		%tbody
+			- i = 1
 			- @requests.each do |request|
 				%tr{ class: request.accepted.nil? ? 'warning' : (request.accepted ? 'success' : 'error')}
+					%td
+						= i
+						- i += 1
 					%td= request.applicant.name
 					%td= request.rtype
 					%td= request.accepted.nil? ? t('.pending') : (request.accepted ? t('.accepted') : t('.rejected'))

@@ -12,5 +12,8 @@ Scenario Outline: valid user | invalid user
 Examples:
 	|	username	|	password	|	should_see							|	should_not_see						|
 	|	username1	|	password1	|	Logged in, Logout					|	Invalid username and/or password	|
+	|	username1	|	password2	|	Invalid username and/or password	|	Logged in, Logout					|
 	|	username2	|	password1	|	Invalid username and/or password	|	Logged in, Logout					|
-	|	usernam		|	password1	|	Invalid username and/or password	|	Logged in, Logout					|
+	|	username1	|				|	Invalid username and/or password	|	Logged in, Logout					|
+	|				|	password1	|	Invalid username and/or password	|	Logged in, Logout					|
+	|				|				|	Invalid username and/or password	|	Logged in, Logout					|

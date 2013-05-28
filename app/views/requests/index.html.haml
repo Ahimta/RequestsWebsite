@@ -29,8 +29,8 @@
 					%td
 						%div.btn-group{ dir: 'ltr' }
 							- klass = 'btn btn-small '
-							= link_to t('.accept'), '', class: (klass + 'btn-success')
-							= link_to t('.reject'), '', class: (klass + 'btn-danger')
+							= link_to t('.accept'), decide_request_path(request, decision: 'accept'), method: :put, class: (klass + 'btn-success')
+							= link_to t('.reject'), decide_request_path(request, decision: 'reject'), method: :put, class: (klass + 'btn-danger')
 
 
 %div.btn-group{ dir: 'ltr' }

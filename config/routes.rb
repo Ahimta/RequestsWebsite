@@ -2,7 +2,11 @@ RequestsWebsite::Application.routes.draw do
 
 	#scope '(:locale)' do
 		resources :alerts, only: [:index, :new, :create]
-		resources :requests, only: [:index, :show]
+		resources :requests, only: [:index, :show] do
+			member do
+				put 'decide'
+			end
+		end
 		resources :comings, only: [:new, :create]
 		resources :leaves, only: [:new, :create]
 		resources :tickets, only: [:new, :create]

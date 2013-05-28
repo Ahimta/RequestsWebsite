@@ -4,8 +4,8 @@
 {
 	en:
 	{
-		applicant: 'Applicant', edit_request: 'Edit Request',from: 'From',to: 'To',
-		request: 'Request', locale: 'Arabic', coming: 'Coming', leave: 'Leave',
+		applicant: 'Applicant',from: 'From',to: 'To', request: 'Request',
+		locale: 'Arabic', coming: 'Coming', leave: 'Leave',
 		ticket: 'Ticket', vacation: 'Vacation',
 		create:
 		{
@@ -29,10 +29,6 @@
 				request_type: 'Type', status: 'Status', decide: 'Accept/Reject',
 				page_title: 'Requests', accept: 'Accept', reject: 'Reject',
 				pending: 'Pending', accepted: 'Accepted', rejected: 'Rejected'
-			},
-			request:
-			{
-				
 			}
 		},
 		leaves:

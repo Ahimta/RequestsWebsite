@@ -6,7 +6,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'brakeman'
   gem 'rails_best_practices'
-	
 end
 
 group :test do
@@ -18,7 +17,6 @@ group :test do
   gem 'rspec-rails'
   gem 'pickle'
 	gem 'mutant'
-	gem 'simplecov'
 end
 
 group :production do

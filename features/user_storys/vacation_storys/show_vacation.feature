@@ -7,7 +7,7 @@ Scenario Outline:
 	|	1			|	11			|	12		|	13	|
 	|	2			|	21			|	22		|	23	|
 	|	3			|	31			|	32		|	33	|
-	And I am on the <cardinality> vacation page
+	And I am on the <cardinality> request page
 	Then I should see the following: <should_see>
 	But I should not see the following: <should_not_see>
 

@@ -21,7 +21,7 @@
 			- @requests.each do |request|
 				%tr{ class: request.accepted.nil? ? 'warning' : (request.accepted ? 'success' : 'error')}
 					%td
-						= i
+						= link_to i, request
 						- i += 1
 					%td= request.applicant_name
 					%td= t(request.rtype.try :to_sym)

@@ -8,21 +8,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 		
-		when /^the first leave page$/ then leafe_path(id: 1)
-		when /^the second leave page$/ then leafe_path(id: 2)
-		when /^the third leave page$/ then leafe_path(id: 3)
-		
-		when /^the first coming page$/ then coming_path(id: 1)
-		when /^the second coming page$/ then coming_path(id: 2)
-		when /^the third coming page$/ then coming_path(id: 3)
-		
-		when /^the first ticket page$/ then ticket_path(id: 1)
-		when /^the second ticket page$/ then ticket_path(id: 2)
-		when /^the third ticket page$/ then ticket_path(id: 3)
-		
-		when /^the first vacation page$/ then vacation_path(id: 1)
-		when /^the second vacation page$/ then vacation_path(id: 2)
-		when /^the third vacation page$/ then vacation_path(id: 3)
+		when /^the first request page$/ then request_path(id: 1)
+		when /^the second request page$/ then request_path(id: 2)
+		when /^the third request page$/ then request_path(id: 3)
 		
     when /the home\s?page/
       '/'

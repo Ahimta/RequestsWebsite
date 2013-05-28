@@ -5,8 +5,6 @@ describe LeavesController do
 	param = { 'leave' => { 'applicant' => 'X', 'reason' => 'y', 'user_id' => '0' } }
 	
 	
-	it_behaves_like 'show', Leave, leave, :leave
-	
 	it_behaves_like 'new', Leave, :leave
 	
 	it_behaves_like 'create', Leave, leave, param, :leave

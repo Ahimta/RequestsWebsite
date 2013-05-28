@@ -1,0 +1,14 @@
+- header = t('.header')
+= provide :title, header
+
+%div.page-header
+	%h1= header
+
+%div.lead
+	%p
+		%b= t(:applicant) + ': '
+		= leave.request.applicant.name
+	
+	%p
+		%b= t('leaves.form.reason') + ': '
+		= leave.reason

@@ -7,7 +7,7 @@ Scenario Outline:
 	|	line1	|	1			|
 	|	line2	|	2			|
 	|	line3	|	3			|
-	Given I am on the <cardinality> ticket page
+	Given I am on the <cardinality> request page
 	Then I should see the following: <should_see>
 	But I should not see the following: <should_not_see>
 

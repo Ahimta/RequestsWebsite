@@ -30,18 +30,24 @@
 				page_title: 'Requests', accept: 'Accept', reject: 'Reject',
 				pending: 'Pending', accepted: 'Accepted', rejected: 'Rejected'
 			},
+			request:
+			{
+				
+			}
 		},
 		leaves:
 		{
 			form: { reason: 'Reason', type: 'leave' },
 			new: { action: 'Request Leave' },
-			show: { header: 'Leave Request' }
+			show: { header: 'Leave Request' },
+			leave: { header: 'Leave Request' }
 		},
 		comings:
 		{
 			form: { reason: 'Reason', type: 'coming' },
 			new: { action: 'Request Coming' },
-			show: { header: 'Coming Request' }
+			show: { header: 'Coming Request' },
+			coming: { header: 'Coming Request' }
 		},
 		companions:
 		{
@@ -58,7 +64,8 @@
 				line: 'Line', number: 'Number if exists', type: 'ticket'
 			},
 			new: { action: 'Request Ticket' },
-			show: { header: 'Ticket Request' }
+			show: { header: 'Ticket Request' },
+			ticket: { header: 'Ticket Request' }
 		},
 		vacations:
 		{
@@ -68,7 +75,8 @@
 				to: 'To date'
 			},
 			new: { action: 'Request Vacation' },
-			show: { header: 'Vacation Request' }
+			show: { header: 'Vacation Request' },
+			vacation: { header: 'Vacation Request' }
 		},
 		alerts:
 		{

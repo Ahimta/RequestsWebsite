@@ -1,13 +1,12 @@
 Feature: Users can change locale
 
-Scenario: I am on the english version
-	When I change the locale to arabic
+Scenario Outline: I am on the english/arabic version
+	When I change the locale to <locale>
 	Then I should be on the requests page
-	And I should see: English, طلب
-	But I should not see: Request, Arabic
+	And I should see: <should_see>
+	But I should not see: <should_not_see>
 
-Scenario: I am on the arabic version
-	When I change the locale to english
-	Then I should be on the requests page
-	And I should see: Request, Arabic
-	But I should not see: English, طلب
+Examples:
+	|	locale	|	should_see		|	should_not_see	|
+	|	arabic	|	English, طلب	|	Request, Arabic	|
+	|	english	|	Request, Arabic	|	English, طلب	|

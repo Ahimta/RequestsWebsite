@@ -26,4 +26,8 @@ module RequestsHelper
 	def get_request(request)
 		request.coming or request.leave or request.ticket or request.vacation
 	end
+	
+	def back_to_requests
+		"link_to t('requests.back'), requests_path, class: 'btn btn-primary'"
+	end
 end

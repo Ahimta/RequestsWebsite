@@ -1,7 +1,6 @@
 = form_for [@request, @decision] do |f|
 	%div.page-header
 		%h1= action
-	- number = t('.number')
 	= f.hidden_field :request_id, value: @request.id
-	%div= f.text_field :number, placeholder: number
+	%div= f.text_field :number, placeholder: t('.number')
 	= eval render_submit_field

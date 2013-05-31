@@ -1,14 +1,7 @@
-- header = t('.header')
-= provide :title, header
+= render '/shared/request', header: t('.header'), request: coming
 
-%div.page-header
-	%h1= header
+%p
+	%b= t('comings.form.reason') + ': '
+	= coming.reason
 
-%div.lead
-	%p
-		%b= t(:applicant) + ': '
-		= coming.request.applicant.name
-	
-	%p
-		%b= t('comings.form.reason') + ': '
-		= coming.reason
+%div= eval back_to_requests

@@ -23,6 +23,7 @@
 		},
 		requests:
 		{
+			back: 'Back to requests page',
 			index:
 			{
 				empty: "You haven't requested anything yet", requests: 'Requests',
@@ -91,6 +92,15 @@
 				page_title: 'Login'
 			},
 			logout: { notice: 'Logged out' }
+		},
+		decisions:
+		{
+			form: { number: 'Decision Number' },
+			new: { action: 'New Acceptance' },
+			decision:
+			{
+				acceptance: 'applicant was granted a type with the decision numbered number.'
+			}
 		}
 	}	
 }

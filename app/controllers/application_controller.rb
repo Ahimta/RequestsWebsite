@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
 	end
 	
   before_filter do
-  	I18n.locale = params[:locale].try(:to_sym) == :ar ? :ar : :en
+  	locale = params[:locale].try :to_sym
+  	
+  	case locale
+  	when :ar then I18n.locale = :ar
+  	when :en then I18n.locale = :en
+  	end
   	
   	id = session[:user_id]
   	@current_user ||= User.find id if id

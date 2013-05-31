@@ -8,6 +8,7 @@ class Request < ActiveRecord::Base
 	has_one :leave
 	has_one	:ticket
 	has_one :vacation
+	has_one :decision
 	
 	accepts_nested_attributes_for :applicant
 	validates :applicant, presence: true

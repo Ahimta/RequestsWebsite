@@ -1,9 +1,9 @@
 When(/^I change the locale to arabic$/) do
-	visit root_path
+	visit requests_path(locale: 'en')
   click_link 'Arabic'
 end
 
 When(/^I change the locale to english$/) do
-	step "I change the locale to arabic"
+	visit requests_path(locale: 'ar')
 	click_link 'English'
 end

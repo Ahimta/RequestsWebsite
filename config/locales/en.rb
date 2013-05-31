@@ -97,6 +97,7 @@
 		{
 			form: { number: 'Decision Number' },
 			new: { action: 'New Acceptance' },
+			show: { header: 'Acceptance' },
 			decision:
 			{
 				acceptance: 'applicant was granted a type with the decision numbered number.'

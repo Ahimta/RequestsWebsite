@@ -1,6 +1,6 @@
 class AlertsController < ApplicationController
 	before_filter { @alerts_link = 'active' }
-	#hi
+	
 	def index
 		@alerts = Alert.all
 	end

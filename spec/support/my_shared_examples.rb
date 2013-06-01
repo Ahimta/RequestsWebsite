@@ -14,7 +14,7 @@ end
 shared_examples_for 'show' do |model, double, symbol|
 	let(:symbol) { model.to_s.downcase.to_sym }
 	before { model.stub(:find).and_return double }
-	debugger
+	
 	it 'should call Model.find' do
 		model.should_receive(:find).with(0.to_s)
 		get :show, id: 0

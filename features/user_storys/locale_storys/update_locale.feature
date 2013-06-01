@@ -10,3 +10,7 @@ Examples:
 	|	locale	|	should_see		|	should_not_see	|
 	|	arabic	|	English, طلب	|	Request, Arabic	|
 	|	english	|	Request, Arabic	|	English, طلب	|
+	|	english	|	Request, Arabic	|	English, طلب	|
+	|	arabic	|	English, طلب	|	Request, Arabic	|
+	|	arabic	|	English, طلب	|	Request, Arabic	|
+	|	english	|	Request, Arabic	|	English, طلب	|

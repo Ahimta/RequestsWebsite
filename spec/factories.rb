@@ -32,13 +32,13 @@ FactoryGirl.define do
 		sequence(:reason) { |n| "reason#{n}" }
 		
 		factory :pending_coming do
-			association :request, factory: :pending_request, rtype: 'coming'
+			association :request, factory: :pending_request, rtype: Coming::Type
 		end
 		factory :accepted_coming do
-			association :request, factory: :accepted_request, rtype: 'coming'
+			association :request, factory: :accepted_request, rtype: Coming::Type
 		end
 		factory :rejected_coming do
-			association :request, factory: :rejected_request, rtype: 'coming'
+			association :request, factory: :rejected_request, rtype: Coming::Type
 		end
 	end
 	
@@ -46,13 +46,13 @@ FactoryGirl.define do
 		sequence(:reason) { |n| "reason#{n}" }
 		
 		factory :pending_leave do
-			association :request, factory: :pending_request, rtype: 'leave'
+			association :request, factory: :pending_request, rtype: Leave::Type
 		end
 		factory :accepted_leave do
-			association :request, factory: :accepted_request, rtype: 'leave'
+			association :request, factory: :accepted_request, rtype: Leave::Type
 		end
 		factory :rejected_leave do
-			association :request, factory: :rejected_request, rtype: 'leave'
+			association :request, factory: :rejected_request, rtype: Leave::Type
 		end
 	end
 	
@@ -60,13 +60,13 @@ FactoryGirl.define do
 		sequence(:line) { |n| "line#{n}" }
 		
 		factory :pending_ticket do
-			association :request, factory: :pending_request, rtype: 'ticket'
+			association :request, factory: :pending_request, rtype: Ticket::Type
 		end
 		factory :accepted_ticket do
-			association :request, factory: :accepted_request, rtype: 'ticket'
+			association :request, factory: :accepted_request, rtype: Ticket::Type
 		end
 		factory :rejected_ticket do
-			association :request, factory: :rejected_request, rtype: 'ticket'
+			association :request, factory: :rejected_request, rtype: Ticket::Type
 		end
 	end
 	
@@ -76,13 +76,13 @@ FactoryGirl.define do
 		sequence(:to) { |n| "3#{n}" }
 		
 		factory :pending_vacation do
-			association :request, factory: :pending_request, rtype: 'vacation'
+			association :request, factory: :pending_request, rtype: Vacation::Type
 		end
 		factory :accepted_vacation do
-			association :request, factory: :accepted_request, rtype: 'vacation'
+			association :request, factory: :accepted_request, rtype: Vacation::Type
 		end
 		factory :rejected_vacation do
-			association :request, factory: :rejected_request, rtype: 'vacation'
+			association :request, factory: :rejected_request, rtype: Vacation::Type
 		end
 	end
 end

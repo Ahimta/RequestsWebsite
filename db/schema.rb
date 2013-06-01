@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527015619) do
+ActiveRecord::Schema.define(:version => 20130529011935) do
 
   create_table "alerts", :force => true do |t|
     t.string   "title"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(:version => 20130527015619) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "alerts", ["title"], :name => "index_alerts_on_title"
 
   create_table "applicants", :force => true do |t|
     t.string   "name"
@@ -50,6 +48,15 @@ ActiveRecord::Schema.define(:version => 20130527015619) do
   end
 
   add_index "companions", ["ticket_id"], :name => "index_companions_on_ticket_id"
+
+  create_table "decisions", :force => true do |t|
+    t.integer  "number"
+    t.integer  "request_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "decisions", ["request_id"], :name => "index_decisions_on_request_id"
 
   create_table "leaves", :force => true do |t|
     t.string   "reason"

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		login = params[:login]
 		username, password = login[:username], login[:password]
 		
-		user = User.where("username = ?", username).first
+		user = User.where("lower(username) = ?", username.downcase).first
 		
 		if user and user.authenticate password
 			session[:user_id] = user.id

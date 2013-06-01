@@ -9,4 +9,24 @@
 		%b= t('tickets.form.number') + ': '
 		= ticket.number
 
+- if ticket.companions.any?
+	%table.table.table-striped
+		%thead
+			%tr
+				%th{colspan: 0, style: 'text-align: center' }= t('companions.form.companions')
+			%tr
+				%th #
+				%th= t('companions.form.name')
+				%th= t('companions.form.relation')
+				%th= t('companions.form.birthdate')
+		%tbody
+			- i = 1
+			- ticket.companions.each do |companion|
+				%tr
+					%td= i
+					- i += 1
+					%td= companion.name
+					%td= companion.relation
+					%td= companion.birthdate
+
 %div= eval back_to_requests

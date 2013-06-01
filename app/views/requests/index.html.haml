@@ -19,13 +19,17 @@
 		%tbody
 			- i = 1
 			- @requests.each do |request|
-				%tr{ class: request.accepted.nil? ? 'warning' : (request.accepted ? 'success' : 'error')}
+				%tr{ class: get_row_class(request.accepted) }
 					%td
 						= link_to i, request
 						- i += 1
 					%td= request.applicant_name
 					%td= t(request.rtype.try :to_sym)
-					%td{ class: get_row_class(request.accepted) }= get_status(request.accepted)
+					%td
+						- if request.decision
+							= link_to t('.accepted'), request_decision_path(request, request.decision)
+						- else
+							= get_status(request.accepted)
 					%td
 						%div.btn-group{ dir: 'ltr' }
 							- klass = 'btn btn-small '

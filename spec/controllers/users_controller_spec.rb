@@ -24,7 +24,7 @@ describe UsersController do
 		end
 		
 		it 'should call User.where' do
-			User.should_receive(:where).with('username = ?', 'x').and_return arr
+			User.should_receive(:where).with('lower(username) = ?', 'x').and_return arr
 		end
 		it 'should call user.first' do
 			arr.should_receive(:first).with(no_args).and_return user

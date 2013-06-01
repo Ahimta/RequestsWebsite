@@ -1,6 +1,6 @@
 Feature: Users can request alerts
 
-Scenario Outline: I fill in fields appropriately
+Scenario Outline: alert_create
 	When I send an alert:
 	|	alert_title	|	<title>	|
 	|	alert_body	|	<body>	|

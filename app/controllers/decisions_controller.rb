@@ -1,5 +1,5 @@
 class DecisionsController < ApplicationController
-	before_filter :get_request
+	before_filter :get_request, only: [:new, :create]
 	
 	def get_request
 		@request = Request.find params[:request_id]

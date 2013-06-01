@@ -1,3 +1,5 @@
+= provide :title, action
+
 = form_for @ticket do |f|
 	= render '/requests/form', f: f, type: Ticket::Type, action: action
 	

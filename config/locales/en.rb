@@ -37,14 +37,16 @@
 			form: { reason: 'Reason', type: 'leave' },
 			new: { action: 'Request Leave' },
 			show: { header: 'Leave Request' },
-			leave: { header: 'Leave Request' }
+			leave: { header: 'Leave Request' },
+			edit: { action: 'Edit Leave Request' }
 		},
 		comings:
 		{
 			form: { reason: 'Reason', type: 'coming' },
 			new: { action: 'Request Coming' },
 			show: { header: 'Coming Request' },
-			coming: { header: 'Coming Request' }
+			coming: { header: 'Coming Request' },
+			edit: { action: 'Edit Coming Request' }
 		},
 		companions:
 		{
@@ -62,7 +64,8 @@
 			},
 			new: { action: 'Request Ticket' },
 			show: { header: 'Ticket Request' },
-			ticket: { header: 'Ticket Request' }
+			ticket: { header: 'Ticket Request' },
+			edit: { action: 'Edit Ticket Request' }
 		},
 		vacations:
 		{
@@ -73,18 +76,21 @@
 			},
 			new: { action: 'Request Vacation' },
 			show: { header: 'Vacation Request' },
-			vacation: { header: 'Vacation Request' }
+			vacation: { header: 'Vacation Request' },
+			edit: { action: 'Edit Vacation Request' }
 		},
 		alerts:
 		{
 			form: { title: 'Title', body: 'Body' },
 			new: { action: 'Send Alert' },
-			index: { alerts: 'Alerts', empty: "There's no alerts in the mean time" }
+			index: { alerts: 'Alerts', empty: "There's no alerts in the mean time" },
+			edit: { action: 'Edit Alert' }
 		},
 		users:
 		{
 			form: { username: 'Username', password: 'Password', location: 'Location' },
 			new: { action: 'Register User' },
+			edit: { action: 'Edit User' },
 			index: { users: 'Users', empty: "There's no users in the mean time" },
 			login:
 			{

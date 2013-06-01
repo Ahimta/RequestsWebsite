@@ -1,15 +1,15 @@
 RequestsWebsite::Application.routes.draw do
 
 	#scope '(:locale)' do
-		resources :alerts, only: [:index, :new, :create]
-		resources :requests, only: [:index, :show] do
+		resources :alerts
+		resources :requests do
 			resources :decisions, only: [:show, :new, :create]
 		end
-		resources :comings, only: [:new, :create]
-		resources :leaves, only: [:new, :create]
-		resources :tickets, only: [:new, :create]
-		resources :vacations, only: [:new, :create]
-		resources :users, only: [:index, :new, :create] do
+		resources :comings
+		resources :leaves
+		resources :tickets
+		resources :vacations
+		resources :users do
 			collection do
 				post 'login'
 				delete 'logout'
@@ -17,11 +17,7 @@ RequestsWebsite::Application.routes.draw do
 		end
 	#end
 	
-  namespace :locale do
-  	put :update
-  end
-	
-  root to: redirect('/requests')
+  root to: 'requests#index'
 
 
   # The priority is based upon order of creation:

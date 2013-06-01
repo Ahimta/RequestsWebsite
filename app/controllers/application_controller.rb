@@ -16,6 +16,11 @@ class ApplicationController < ActionController::Base
   	end
   	
   	id = session[:user_id]
-  	@current_user ||= User.find id if id
+  	
+  	begin
+  		@current_user ||= User.find id if id
+  	rescue ActiveRecord::RecordNotFound
+  		reset_session and redirect_to requests_path
+  	end
   end
 end

@@ -1,5 +1,10 @@
 class AlertsController < ApplicationController
 	before_filter { @alerts_link = 'active' }
+	before_filter :get_alert, only: [:edit, :update]
+	
+	def get_alert
+		@alert = Alert.find params[:id]
+	end
 	
 	def index
 		@alerts = Alert.all
@@ -17,6 +22,19 @@ class AlertsController < ApplicationController
 		else
 			flash.now[:warning] = t('create.warning')
 			render :new
+		end
+	end
+	
+	def edit
+	end
+	
+	def update
+		@alert.attributes = params[:alert]
+		
+		if @alert.save
+			redirect_to alerts_path
+		else
+			render :edit
 		end
 	end
 end

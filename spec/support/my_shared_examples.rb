@@ -1,5 +1,5 @@
 shared_examples_for 'index' do |model|
-	let(:symbol) { model.to_s.downcase.pluralize.to_sym }
+	before { @symbol = model.to_s.downcase.pluralize.to_sym }
 	
 	it 'should call Model.all' do
 		model.should_receive(:all).with(no_args)
@@ -8,12 +8,15 @@ shared_examples_for 'index' do |model|
 	
 	before { get :index }	
 	it { response.should render_template :index }
-	it { assigns(symbol).should_not == nil }
+	it { assigns(@symbol).should_not == nil }
 end
 
-shared_examples_for 'show' do |model, double, symbol|
-	let(:symbol) { model.to_s.downcase.to_sym }
-	before { model.stub(:find).and_return double }
+shared_examples_for 'show' do |model|
+	before do
+		@symbol = model.to_s.downcase.to_sym
+		@double = FactoryGirl.build_stubbed @symbol
+		model.stub(:find).and_return @double
+	end
 	
 	it 'should call Model.find' do
 		model.should_receive(:find).with(0.to_s)
@@ -22,14 +25,14 @@ shared_examples_for 'show' do |model, double, symbol|
 	
 	before { get :show, id: 0 }
 	
-	it { assigns(symbol).should_not == nil }
+	it { assigns(@symbol).should_not == nil }
 	it { response.should render_template :show }
 end
 
-shared_examples_for 'new' do |model, symbol|
-	let(:symbol) { model.to_s.downcase.to_sym }
-	
+shared_examples_for 'new' do |model|
 	before do
+		@symbol = model.to_s.downcase.to_sym
+		
 		x, y = 'x', 'y'
 		model.stub(:new).and_return x
 		x.stub(:build_request).and_return y
@@ -46,29 +49,31 @@ shared_examples_for 'new' do |model, symbol|
 	before { get :new }
 	
 	it { response.should render_template :new }
-	it { assigns(symbol).should_not == nil }
+	it { assigns(@symbol).should_not == nil }
 end
 
-shared_examples_for 'create' do |model, double, param, symbol, index = '/requests?locale=en'|
-	let(:symbol) { model.to_s.downcase.to_sym }
+shared_examples_for 'create' do |model, index = '/requests?locale=en'|
 	before do
-		model.stub(:new).and_return double
-		double.stub(:save)
+		@symbol = model.to_s.downcase.to_sym
+		@double = FactoryGirl.build_stubbed @symbol
+		@param = 'x'
+		model.stub(:new).and_return @double
+		@double.stub(:save)
 	end
-	after { post :create, symbol => param }
+	after { post :create, @symbol => @param }
 	
-	it { model.should_receive(:new).with(param).and_return double }
-	it { double.should_receive :save }
+	it { model.should_receive(:new).with(@param).and_return @double }
+	it { @double.should_receive :save }
 	#TODO
 	it 'should assign @record' do
-		post :create, symbol => param
-		assigns(symbol).should_not == nil
+		post :create, @symbol => @param
+		assigns(@symbol).should_not == nil
 	end
 	
 	context 'fields filled in appropriately' do
 		before do
-			double.stub(:save).and_return true
-			post :create, symbol => param
+			@double.stub(:save).and_return true
+			post :create, @symbol => @param
 		end
 		
 		it { response.should redirect_to index }
@@ -78,7 +83,7 @@ shared_examples_for 'create' do |model, double, param, symbol, index = '/request
 	context 'fields filled in inappropriately' do
 		before do
 			double.stub(:save).and_return false
-			post :create, symbol => param
+			post :create, @symbol => @param
 		end
 		
 		it { response.should render_template :new }

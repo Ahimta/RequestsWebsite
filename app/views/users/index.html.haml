@@ -4,20 +4,26 @@
 %div.page-header
 	%h1= users
 - if @users.present?
-	%table.table.table-hover
+	%table.table.table-striped
 		%thead
 			%tr
 				%th #
 				%th= t('users.form.username')
 				%th= t('users.form.location')
+				%th= t('.modify')
 		%tbody
 			- i = 1
 			- @users.each do |user|
 				%tr
 					%td= i
+					- i += 1
 					%td= user.username
 					%td= user.location_name
-					- i += 1
+					%td
+						%div.btn-group{ dir: 'ltr' }
+							- klass = 'btn btn-small '
+							= link_to t('.edit'), edit_user_path(user), class: (klass + 'btn-success')
+							= link_to t('.destroy'), user, method: :delete, class: (klass + 'btn-danger')
 - else
 	%div.lead= t('.empty')
 

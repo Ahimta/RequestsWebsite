@@ -1,6 +1,11 @@
 class VacationsController < ApplicationController
-	def show
+	before_filter :get_vacation, only: [:show, :edit, :update]
+	
+	def get_vacation
 		@vacation = Vacation.find params[:id]
+	end
+	
+	def show
 	end
 	
 	def new
@@ -17,6 +22,19 @@ class VacationsController < ApplicationController
 		else
 			flash.now[:warning] = t('create.warning')
 			render :new
+		end
+	end
+	
+	def edit
+	end
+	
+	def update
+		@vacation.attributes = params[:vacation]
+		
+		if @vacation.save
+			redirect_to requests_path
+		else
+			render :edit
 		end
 	end
 end

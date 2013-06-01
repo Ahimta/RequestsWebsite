@@ -1,11 +1,7 @@
 Feature: Users can find all alerts on alerts page
 
 Scenario: alerts exist
-	Given the following alerts exist:
-	|	title	|	body	|
-	|	title1	|	body1	|
-	|	title2	|	body2	|
-	|	title3	|	body3	|
+	Given 3 alerts exist
 	And I am on the alerts page
 	Then I should see the following: title1, title2, title3, body1, body2, body3
 

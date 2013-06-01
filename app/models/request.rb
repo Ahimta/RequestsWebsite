@@ -12,5 +12,4 @@ class Request < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :applicant
 	validates :applicant, presence: true
-	#validates :rtype, presence: true
 end

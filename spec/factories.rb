@@ -1,4 +1,9 @@
 FactoryGirl.define do
+	factory :alert do
+		sequence(:title) { |n| "title#{n}" }
+		sequence(:body) { |n| "body#{n}" }
+	end
+	
 	factory :location do
 		sequence(:name) { |n| "location#{n}" }
 	end
@@ -14,6 +19,10 @@ FactoryGirl.define do
 		sequence(:name) { |n| "applicant#{n}" }
 	end
 	
+	factory :decision do
+		sequence(:number) { |n| n }
+	end
+	
 	factory :request do
 		applicant
 		
@@ -22,6 +31,7 @@ FactoryGirl.define do
 		end
 		factory :accepted_request do
 			accepted true
+			decision
 		end
 		factory :rejected_request do
 			accepted false

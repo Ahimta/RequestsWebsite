@@ -9,9 +9,10 @@ describe UsersController do
 	
 	it_behaves_like 'new', User
 	
-	it_behaves_like 'create', User, user, param, :user
+	it_behaves_like 'create', User
 	
 	describe 'login' do
+		let(:user) { 'user' }
 		let!(:arr) { [user] }
 		
 		before do

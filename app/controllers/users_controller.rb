@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 	before_filter { @users_link = 'active' }
+	before_filter :get_user, only: [:show, :edit, :update, :destroy]
+	
+	def get_user
+		@user = User.find params[:id]
+	end
 	
 	def index
 		@users = User.all
@@ -19,6 +24,24 @@ class UsersController < ApplicationController
 			flash.now[:warning] = t('create.warning')
 			render :new
 		end
+	end
+	
+	def edit
+	end
+	
+	def update
+		@user.attributes = params[:user]
+		
+		if @user.save
+			redirect_to users_path
+		else
+			render :edit
+		end
+	end
+	
+	def destroy
+		@user.destroy
+		redirect_to users_path
 	end
 	
 	def login

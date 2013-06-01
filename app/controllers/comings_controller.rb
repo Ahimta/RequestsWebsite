@@ -1,6 +1,11 @@
 class ComingsController < ApplicationController
-	def show
+	before_filter :get_coming, only: [:show, :edit, :update]
+	
+	def get_coming
 		@coming = Coming.find params[:id]
+	end
+	
+	def show
 	end
 	
 	def new
@@ -17,6 +22,19 @@ class ComingsController < ApplicationController
 		else
 			flash.now[:warning] = t('create.warning')
 			render :new
+		end
+	end
+	
+	def edit
+	end
+	
+	def update
+		@coming.attributes = params[:coming]
+		
+		if @coming.save
+			redirect_to requests_path, notice: t('coming.update.notice')
+		else
+			render :edit
 		end
 	end
 end

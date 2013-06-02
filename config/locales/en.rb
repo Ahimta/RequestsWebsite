@@ -4,9 +4,9 @@
 {
 	en:
 	{
-		applicant: 'Applicant',from: 'From',to: 'To', request: 'Request',
-		coming: 'Coming', leave: 'Leave', destroy: 'Delete', edit: 'Edit',
-		ticket: 'Ticket', vacation: 'Vacation',
+		applicant: 'Applicant', request: 'Request', coming: 'Coming',
+		leave: 'Leave', destroy: 'Delete', edit: 'Edit', ticket: 'Ticket',
+		vacation: 'Vacation',
 		create:
 		{
 			notice: 'Your Request was sent successfully',
@@ -18,8 +18,23 @@
 			{
 				users: 'Users', alerts: 'Alerts', logout: 'Logout', locale: 'Arabic',
 				requests: 'Requests', login: 'Login', username: 'Username',
-				password: 'Password', page_title: 'RequestsWebsite'
+				password: 'Password', page_title: 'RequestsWebsite',
+				locations: 'Locations'
 			}
+		},
+		locations:
+		{
+			show:
+			{
+				header: 'Show Location', applicants_count: 'Applicants Count',
+				empty: "There's no locations in the mean time"
+			},
+			index:
+			{
+				locations: 'Locations', users_count: 'Users Count',
+				empty: "There's no locations in the mean time."
+			},
+			form: { name: 'Name' }
 		},
 		requests:
 		{
@@ -92,6 +107,7 @@
 		{
 			form: { username: 'Username', password: 'Password', location: 'Location' },
 			new: { action: 'Register User' },
+			create: { notice: 'The user was updated successfully' },
 			edit: { action: 'Edit User' },
 			index:
 			{
@@ -103,7 +119,11 @@
 				notice: 'Logged in', warning: 'Invalid username and/or password',
 				page_title: 'Login'
 			},
-			logout: { notice: 'Logged out' }
+			logout: { notice: 'Logged out' },
+			show:
+			{
+				header: 'Show User', empty: "There's no users in the mean time."
+			}
 		},
 		decisions:
 		{

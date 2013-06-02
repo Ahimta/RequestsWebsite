@@ -1,6 +1,7 @@
 FactoryGirl.define do
 	factory :ticket do
 		sequence(:line) { |n| "line#{n}" }
+			association :request, rtype: Ticket::Type
 
 		factory :pending_ticket do
 			association :request, factory: :pending_request, rtype: Ticket::Type

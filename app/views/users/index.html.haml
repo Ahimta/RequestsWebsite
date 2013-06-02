@@ -17,8 +17,8 @@
 				%tr
 					%td= i
 					- i += 1
-					%td= user.username
-					%td= user.location_name
+					%td= link_to user.username, user
+					%td= link_to user.location_name, user.location
 					%td
 						%div.btn-group{ dir: 'ltr' }
 							- klass = 'btn btn-small '

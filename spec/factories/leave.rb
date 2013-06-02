@@ -1,7 +1,8 @@
 FactoryGirl.define do
 	factory :leave do
 		sequence(:reason) { |n| "reason#{n}" }
-
+			association :request, rtype: Leave::Type
+		
 		factory :pending_leave do
 			association :request, factory: :pending_request, rtype: Leave::Type
 		end

@@ -3,6 +3,7 @@ FactoryGirl.define do
 		sequence(:duration) { |n| "#{n}1" }
 		sequence(:from) { |n| "#{n}2" }
 		sequence(:to) { |n| "#{n}3" }
+			association :request, rtype: Vacation::Type
 
 		factory :pending_vacation do
 			association :request, factory: :pending_request, rtype: Vacation::Type

@@ -1,0 +1,24 @@
+- locations = t('.locations')
+= provide :title, locations
+
+%div.page-header
+	%h1= locations
+
+- if @locations.empty?
+	%p= t('.empty')
+
+- else
+	%table.table.table-striped
+		%thead
+			%tr
+				%th #
+				%th= t('locations.form.name')
+				%th= t('.users_count')
+		%tbody
+			- i = 1
+			- @locations.each do |location|
+				%tr
+					%td= i
+					- i += 1
+					%td= link_to location.name, location
+					%td= location.users.count

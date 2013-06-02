@@ -1,7 +1,8 @@
 FactoryGirl.define do
 	factory :coming do
 		sequence(:reason) { |n| "reason#{n}" }
-
+		association :request, rtype: Coming::Type
+		
 		factory :pending_coming do
 			association :request, factory: :pending_request, rtype: Coming::Type
 		end

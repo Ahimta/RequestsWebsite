@@ -1,9 +1,9 @@
 module RequestsHelper
 	def get_status(status)
 		case status
-		when nil then t('requests.index.pending')
-		when true then t('requests.index.accepted')
-		when false then t('requests.index.rejected')
+		when nil then t('requests.requests.pending')
+		when true then t('requests.requests.accepted')
+		when false then t('requests.requests.rejected')
 		end
 	end
 	

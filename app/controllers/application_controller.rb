@@ -7,20 +7,25 @@ class ApplicationController < ActionController::Base
 		{ locale: I18n.locale }
 	end
 	
-  before_filter do
-  	locale = params[:locale].try :to_sym
+	before_filter :get_locale
+	before_filter :get_session
+	
+	def get_locale
+		locale = params[:locale].try :to_sym
   	
   	case locale
   	when :ar then I18n.locale = :ar
   	when :en then I18n.locale = :en
   	end
-  	
-  	id = session[:user_id]
+	end
+	
+	def get_session
+		id = session[:user_id]
   	
   	begin
   		@current_user ||= User.find id if id
   	rescue ActiveRecord::RecordNotFound
   		reset_session and redirect_to requests_path
   	end
-  end
+	end
 end

@@ -1,0 +1,25 @@
+- header = t('.header')
+= provide :title, header
+
+%div.page-header
+	%h1= header
+
+
+- if @location.users.try :empty?
+	%p.lead= t('.empty')
+
+- else
+	%table.table.table-striped
+		%thead
+			%tr
+				%th #
+				%th= t('users.form.username')
+				%th= t('.applicants_count')
+		%tbody
+			- i = 1
+			- @location.users.each do |user|
+				%tr
+					%td= i
+					- i += 1
+					%td= link_to user.username, user
+					%td= user.applicants.count

@@ -6,6 +6,7 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'brakeman'
 	gem 'rails_best_practices'
+	gem 'factory_girl_rails'
 end
 
 group :test do
@@ -17,7 +18,6 @@ group :test do
 	gem 'rspec-rails'
 	gem 'pickle'
 	gem 'mutant'
-	gem 'factory_girl_rails'
 end
 
 group :production do

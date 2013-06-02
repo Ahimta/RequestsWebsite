@@ -31,6 +31,7 @@ group :assets do
 end
 
 gem 'unicorn'# Use unicorn as the app server
+gem 'paperclip', "~> 3.0"
 
 gem 'jquery-rails'
 gem 'bcrypt-ruby'# To use ActiveModel has_secure_password

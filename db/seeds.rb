@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 requests = [:coming, :leave, :ticket, :vacation]
 
-requests.each { |request| FactoryGirl.create_list request, 5 }
+requests.each { |request| FactoryGirl.create_list request, 3 }

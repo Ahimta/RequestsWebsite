@@ -10,6 +10,7 @@ class VacationsController < ApplicationController
 	
 	def new
 		@vacation = Vacation.new
+		@vacation.build_passport
 		request = @vacation.build_request
 		request.build_applicant
 	end

@@ -9,6 +9,8 @@
 		%b= t('tickets.form.number') + ': '
 		= ticket.number
 
+= render ticket.passport if ticket.passport
+
 = render '/companions/companions', companions: ticket.companions
 
 = render '/shared/request_footer', edit_link: edit_ticket_path(ticket), request: ticket

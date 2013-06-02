@@ -12,4 +12,6 @@
 	%b= t(:to) + ': '
 	= vacation.to
 
+= render vacation.passport if vacation.passport
+
 = render '/shared/request_footer', edit_link: edit_vacation_path(vacation), request: vacation

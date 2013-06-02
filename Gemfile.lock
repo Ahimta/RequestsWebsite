@@ -56,6 +56,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     code_analyzer (0.3.1)
       sexp_processor
     coffee-rails (3.2.2)
@@ -135,6 +139,12 @@ GEM
       to_source (~> 0.2.19)
     mutant-melbourne (2.0.3)
     nokogiri (1.5.9)
+    paperclip (3.4.2)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pg (0.15.1)
     pickle (0.4.11)
       cucumber (>= 0.8)
@@ -254,6 +264,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mutant
+  paperclip (~> 3.0)
   pg
   pickle
   rails (= 3.2.13)

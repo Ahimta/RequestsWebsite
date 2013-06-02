@@ -10,6 +10,7 @@ class TicketsController < ApplicationController
 	
 	def new
 		@ticket = Ticket.new(companions: [Companion.new, Companion.new, Companion.new])
+		@ticket.build_passport
 		request = @ticket.build_request
 		request.build_applicant
 	end

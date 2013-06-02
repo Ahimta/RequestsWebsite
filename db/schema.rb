@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529011935) do
+ActiveRecord::Schema.define(:version => 20130602183153) do
 
   create_table "alerts", :force => true do |t|
     t.string   "title"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(:version => 20130529011935) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "passports", :force => true do |t|
+    t.integer  "passportable_id"
+    t.string   "passportable_type"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "passports", ["passportable_id", "passportable_type"], :name => "index_passports_on_passportable_id_and_passportable_type"
 
   create_table "requests", :force => true do |t|
     t.boolean  "accepted"

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 		@user = User.new params[:user]
 		
 		if @user.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to users_path, notice: t('create.notice')
 		else
 			flash.now[:warning] = t('create.warning')
 			render :new
@@ -45,12 +45,9 @@ class UsersController < ApplicationController
 	end
 	
 	def login
-		login = params[:login]
-		username, password = login[:username], login[:password]
+		user = User.login(params[:login])
 		
-		user = User.where("lower(username) = ?", username.downcase).first
-		
-		if user and user.authenticate password
+		if user
 			session[:user_id] = user.id
 			flash[:notice] = t('users.login.notice')
 		else

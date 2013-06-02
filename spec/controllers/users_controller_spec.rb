@@ -9,32 +9,25 @@ describe UsersController do
 	
 	it_behaves_like 'new', User
 	
-	it_behaves_like 'create', User
+	it_behaves_like 'create', User, '/users?locale=en'
+	
+	it_behaves_like 'edit', User
+	
+	it_behaves_like 'update', User, '/users?locale=en'
+	
+	it_behaves_like 'destroy', User, '/users?locale=en'
 	
 	describe 'login' do
-		let(:user) { 'user' }
-		let!(:arr) { [user] }
-		
 		before do
-			User.stub(:where).and_return arr
-			arr.stub(:first).and_return user
-			user.stub(:authenticate)
-		end
-		after do
-			post :login, login: param
+			User.stub(:login)
 		end
 		
 		it 'should call User.where' do
-			User.should_receive(:where).with('lower(username) = ?', 'x').and_return arr
-		end
-		it 'should call user.first' do
-			arr.should_receive(:first).with(no_args).and_return user
-		end
-		it 'should call user.authenticate' do
-			user.should_receive(:authenticate).with 'y'
+			User.should_receive(:login).with('x')
+			post :login, login: 'x'
 		end
 		it 'should redirect_to requests_path' do
-			post :login, login: param
+			post :login, login: 'x'
 			response.should redirect_to requests_path
 		end
 	end

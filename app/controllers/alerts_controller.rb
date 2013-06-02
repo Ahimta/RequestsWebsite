@@ -1,6 +1,6 @@
 class AlertsController < ApplicationController
 	before_filter { @alerts_link = 'active' }
-	before_filter :get_alert, only: [:edit, :update]
+	before_filter :get_alert, only: [:edit, :update, :destroy]
 	
 	def get_alert
 		@alert = Alert.find params[:id]
@@ -36,5 +36,10 @@ class AlertsController < ApplicationController
 		else
 			render :edit
 		end
+	end
+	
+	def destroy
+		@alert.destroy
+		redirect_to alerts_path
 	end
 end

@@ -10,4 +10,10 @@ class User < ActiveRecord::Base
 	
 	validates :username, presence: true, uniqueness: { case_insensetive: true }
 	validates :location, presence: true
+	
+	def self.login(login)
+		username, password = login[:username], login[:password]
+		user = User.where("lower(username) = ?", username.downcase).first
+		user.authenticate password if user
+	end
 end

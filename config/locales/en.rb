@@ -103,27 +103,33 @@
 			edit: { action: 'Edit Alert' },
 			show: { header: 'Show Alert', edit: 'Edit', destroy: 'Delete' }
 		},
+		applicants:
+		{
+			applicants:
+			{
+				empty: "There's no users in the mean time.",
+				requests_count: 'Requests Count', applicant_name: 'Applicant Name'
+			}
+		},
 		users:
 		{
 			form: { username: 'Username', password: 'Password', location: 'Location' },
 			new: { action: 'Register User' },
 			create: { notice: 'The user was updated successfully' },
 			edit: { action: 'Edit User' },
-			index:
+			users:
 			{
-				users: 'Users', empty: "There's no users in the mean time",
-				modify: 'Modify'
+				empty: "There's no users in the mean time", modify: 'Modify',
+				applicants_count: 'Applicants Count'
 			},
+			index: { users: 'Users' },
 			login:
 			{
 				notice: 'Logged in', warning: 'Invalid username and/or password',
 				page_title: 'Login'
 			},
 			logout: { notice: 'Logged out' },
-			show:
-			{
-				header: 'Show User', empty: "There's no users in the mean time."
-			}
+			show: { header: 'User Applicants' }
 		},
 		decisions:
 		{

@@ -32,11 +32,12 @@ end
 shared_examples_for 'new' do |model|
 	before do
 		@symbol = model.to_s.downcase.to_sym
+		@double = FactoryGirl.build_stubbed @symbol
 		
-		x, y = 'x', 'y'
-		model.stub(:new).and_return x
-		x.stub(:build_request).and_return y
-		x.stub(:build_location)
+		y = 'x', 'y'
+		model.stub(:new).and_return @double
+		@double.stub(:build_request).and_return y
+		@double.stub(:build_location)
 		y.stub(:build_applicant)
 		get :new
 	end
@@ -49,7 +50,7 @@ shared_examples_for 'new' do |model|
 	before { get :new }
 	
 	it { response.should render_template :new }
-	it { assigns(@symbol).should_not == nil }
+	it { assigns(@symbol).should == @double }
 end
 
 shared_examples_for 'create' do |model, index = '/requests?locale=en'|
@@ -67,7 +68,7 @@ shared_examples_for 'create' do |model, index = '/requests?locale=en'|
 	#TODO
 	it 'should assign @record' do
 		post :create, @symbol => @param
-		assigns(@symbol).should_not == nil
+		assigns(@symbol).should == @double
 	end
 	
 	context 'fields filled in appropriately' do

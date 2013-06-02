@@ -30,8 +30,8 @@ FactoryGirl.define do
 			accepted nil
 		end
 		factory :accepted_request do
+			#decision
 			accepted true
-			decision
 		end
 		factory :rejected_request do
 			accepted false
@@ -81,9 +81,9 @@ FactoryGirl.define do
 	end
 	
 	factory :vacation do
-		sequence(:duration) { |n| "1#{n}" }
-		sequence(:from) { |n| "2#{n}" }
-		sequence(:to) { |n| "3#{n}" }
+		sequence(:duration) { |n| "#{n}1" }
+		sequence(:from) { |n| "#{n}2" }
+		sequence(:to) { |n| "#{n}3" }
 		
 		factory :pending_vacation do
 			association :request, factory: :pending_request, rtype: Vacation::Type

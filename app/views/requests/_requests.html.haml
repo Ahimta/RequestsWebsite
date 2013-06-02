@@ -1,0 +1,31 @@
+- if requests.empty?
+	%p.lead= t('.empty')
+	
+- else
+	%table.table
+		%thead
+			%tr
+				%th #
+				%th= t(:applicant)
+				%th= t('.request_type')
+				%th= t('.status')
+				%th= t('.decide')
+		%tbody
+			- i = 1
+			- requests.each do |request|
+				%tr{ class: get_row_class(request.accepted) }
+					%td
+						= link_to i, request
+						- i += 1
+					%td= request.applicant_name
+					%td= t(request.rtype.try :to_sym)
+					%td
+						- if request.decision
+							= link_to t('.accepted'), request_decision_path(request, request.decision)
+						- else
+							= get_status(request.accepted)
+					%td
+						%div.btn-group{ dir: 'ltr' }
+							- klass = 'btn btn-small '
+							= link_to t('.accept'), new_request_decision_path(request, d: 'accept'), class: (klass + 'btn-success')
+							= link_to t('.reject'), new_request_decision_path(request, d: 'reject'), class: (klass + 'btn-danger')

@@ -12,4 +12,4 @@
 	%b= t(:to) + ': '
 	= vacation.to
 
-%div= eval back_to_requests
+= render '/shared/request_footer', edit_link: edit_vacation_path(vacation), request: vacation

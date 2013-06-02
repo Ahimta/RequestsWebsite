@@ -8,4 +8,5 @@
 	%div= f.text_field :number, placeholder: number
 	
 	= render '/companions/form', f: f
+	%div= file_field :x, nil
 	= eval render_submit_field

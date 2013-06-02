@@ -1,23 +1,39 @@
-Given(/^a coming group exist$/) do
-  FactoryGirl.create :pending_coming
-  FactoryGirl.create :accepted_coming
-  FactoryGirl.create :rejected_coming
+When(/^I request a coming:$/) do |data|
+	visit new_coming_path
+	
+  data.rows_hash.each do |field, value|
+  	fill_in field, with: value
+  end
+  
+  click_button 'Request Coming'
 end
 
-Given(/^a leave group exist$/) do
-  FactoryGirl.create :pending_leave
-  FactoryGirl.create :accepted_leave
-  FactoryGirl.create :rejected_leave
+When(/^I request a leave:$/) do |data|
+	visit new_leafe_path
+	
+  data.rows_hash.each do |field, value|
+  	fill_in field, with: value
+  end
+  
+  click_button 'Request Leave'
 end
 
-Given(/^a ticket group exist$/) do
-  FactoryGirl.create :pending_ticket
-  FactoryGirl.create :accepted_ticket
-  FactoryGirl.create :rejected_ticket
+When(/^I request a ticket:$/) do |data|
+  visit new_ticket_path
+  
+  data.rows_hash.each do |field, value|
+  	fill_in field, with: value
+  end
+  
+  click_button 'Request Ticket'
 end
 
-Given(/^a vacation group exist$/) do
-  FactoryGirl.create :pending_vacation
-  FactoryGirl.create :accepted_vacation
-  FactoryGirl.create :rejected_vacation
+When(/^I request a vacation:$/) do |data|
+  visit new_vacation_path
+  
+  data.rows_hash.each do |field, value|
+  	fill_in field, with: value
+  end
+  
+  click_button 'Request Vacation'
 end

@@ -5,9 +5,7 @@
 	%h1= alerts
 
 - if @alerts.present?
-	- @alerts.each do |alert|
-		%h2= alert.title
-		%p.lead= alert.body
+	= render @alerts, link: true
 - else
 	%div.lead= t('.empty')
 

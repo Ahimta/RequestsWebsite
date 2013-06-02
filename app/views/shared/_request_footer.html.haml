@@ -1,0 +1,6 @@
+%div.btn-group{ dir: 'ltr' }
+	
+	- klass = 'btn btn-small '
+	= eval back_to_requests
+	= link_to t(:edit), edit_link, class: (klass + 'btn-success')
+	= link_to t(:destroy), request.request, method: :delete, class: (klass + 'btn-danger')

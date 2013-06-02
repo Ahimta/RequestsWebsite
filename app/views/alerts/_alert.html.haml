@@ -1,0 +1,10 @@
+%div
+	- if link
+		%h2= link_to alert.title, alert
+	- else
+		%h2= alert.title
+	
+	%p.lead= alert.body
+	
+	- if link
+		%hr

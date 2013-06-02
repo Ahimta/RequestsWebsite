@@ -5,7 +5,7 @@
 	en:
 	{
 		applicant: 'Applicant',from: 'From',to: 'To', request: 'Request',
-		locale: 'Arabic', coming: 'Coming', leave: 'Leave',
+		coming: 'Coming', leave: 'Leave', destroy: 'Delete', edit: 'Edit',
 		ticket: 'Ticket', vacation: 'Vacation',
 		create:
 		{
@@ -23,14 +23,15 @@
 		},
 		requests:
 		{
-			back: 'Back to requests page',
-			index:
+			back: 'Back',
+			requests:
 			{
-				empty: "You haven't requested anything yet", requests: 'Requests',
-				request_type: 'Type', status: 'Status', decide: 'Accept/Reject',
-				page_title: 'Requests', accept: 'Accept', reject: 'Reject',
-				pending: 'Pending', accepted: 'Accepted', rejected: 'Rejected'
-			}
+				empty: "You haven't requested anything yet", request_type: 'Type',
+				status: 'Status', decide: 'Accept/Reject', accept: 'Accept',
+				reject: 'Reject', pending: 'Pending', accepted: 'Accepted',
+				rejected: 'Rejected'
+			},
+			index: { requests: 'Requests' }
 		},
 		leaves:
 		{
@@ -84,14 +85,19 @@
 			form: { title: 'Title', body: 'Body' },
 			new: { action: 'Send Alert' },
 			index: { alerts: 'Alerts', empty: "There's no alerts in the mean time" },
-			edit: { action: 'Edit Alert' }
+			edit: { action: 'Edit Alert' },
+			show: { header: 'Show Alert', edit: 'Edit', destroy: 'Delete' }
 		},
 		users:
 		{
 			form: { username: 'Username', password: 'Password', location: 'Location' },
 			new: { action: 'Register User' },
 			edit: { action: 'Edit User' },
-			index: { users: 'Users', empty: "There's no users in the mean time" },
+			index:
+			{
+				users: 'Users', empty: "There's no users in the mean time",
+				modify: 'Modify'
+			},
 			login:
 			{
 				notice: 'Logged in', warning: 'Invalid username and/or password',

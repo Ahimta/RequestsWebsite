@@ -9,7 +9,7 @@
 		%b= t('tickets.form.number') + ': '
 		= ticket.number
 
-= render ticket.passport if ticket.passport
+= render '/passports/passport', passport: ticket.passport
 
 = render '/companions/companions', companions: ticket.companions
 

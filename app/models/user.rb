@@ -4,7 +4,14 @@ class User < ActiveRecord::Base
 	
 	belongs_to :location
 	delegate :name, to: :location, prefix: true
+	
 	has_many :applicants
+	has_many :requests, through: :applicants
+	has_many :decisions, through: :requests
+	has_many :comings, through: :requests
+	has_many :leaves, through: :requests
+	has_many :tickets, through: :requests
+	has_many :vacations, through: :requests
 	
 	accepts_nested_attributes_for :location
 	

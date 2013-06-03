@@ -1,0 +1,7 @@
+- applicants = t('.applicants')
+= provide :title, applicants
+
+%div.page-header
+	%h1= applicants
+
+= render 'applicants', applicants: @applicants

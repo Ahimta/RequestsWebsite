@@ -7,6 +7,11 @@
 		applicant: 'Applicant', request: 'Request', coming: 'Coming',
 		leave: 'Leave', destroy: 'Delete', edit: 'Edit', ticket: 'Ticket',
 		vacation: 'Vacation',
+		applicants:
+		{
+			form: { name: 'Name' },
+			show: { header: 'Show Applicant' }
+		},
 		create:
 		{
 			notice: 'Your Request was sent successfully',
@@ -111,7 +116,10 @@
 			{
 				empty: "There's no users in the mean time.",
 				requests_count: 'Requests Count', applicant_name: 'Applicant Name'
-			}
+			},
+			index: { applicants: 'Applicants' },
+			form: { name: 'Name' },
+			show: { header: 'Show Applicant' }
 		},
 		users:
 		{

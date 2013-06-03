@@ -8,7 +8,7 @@ class RequestsController < ApplicationController
 	
 	def index
 		@requests = Request.all
-		#@requests = Request.includes(:coming, :leave, :ticket, :vacation).includes(:applicant).all
+		#@requests = Request.includes(:applicant).all
 	end
 	
 	def show

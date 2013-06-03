@@ -37,3 +37,13 @@ When(/^I request a vacation:$/) do |data|
   
   click_button 'Request Vacation'
 end
+
+When(/^I destroy all requests$/) do
+  Request.destroy_all
+end
+
+Then(/^all request models should be empty$/) do
+  are_empty = Request.all.empty? && Coming.all.empty? && Leave.all.empty? && Ticket.all.empty? && Vacation.all.empty?
+  
+  are_empty.should be_true
+end

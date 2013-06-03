@@ -1,8 +1,8 @@
 FactoryGirl.define do
 	factory :vacation do
-		sequence(:duration) { |n| "#{n}1" }
-		sequence(:from) { |n| "#{n}2" }
-		sequence(:to) { |n| "#{n}3" }
+		sequence(:duration, 0) { |n| "#{n % 3}1" }
+		sequence(:from, 0) { |n| "#{n%3}2" }
+		sequence(:to, 0) { |n| "#{n%3}3" }
 			association :request, rtype: Vacation::Type
 
 		factory :pending_vacation do

@@ -1,5 +1,5 @@
 FactoryGirl.define do
 	factory :decision do
-		sequence(:number) { |n| n }
+		sequence(:number, 0) { |n| n % 3 }
 	end
 end

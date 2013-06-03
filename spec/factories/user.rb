@@ -1,12 +1,7 @@
 FactoryGirl.define do
 	factory :user do
-		sequence(:username) { |n| "username#{n}" }
-		sequence(:password) { |n| "password#{n}" }
+		sequence(:username, 0) { |n| "username#{n%3}" }
+		sequence(:password, 0) { |n| "password#{n%3}" }
 		location
-	end
-
-	factory :applicant do
-		user
-		sequence(:name) { |n| "applicant#{n}" }
 	end
 end

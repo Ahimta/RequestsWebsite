@@ -29,11 +29,12 @@
 				header: 'Show Location', applicants_count: 'Applicants Count',
 				empty: "There's no locations in the mean time"
 			},
-			index:
+			locations:
 			{
-				locations: 'Locations', users_count: 'Users Count',
+				users_count: 'Users Count',
 				empty: "There's no locations in the mean time."
 			},
+			index: { locations: 'Locations' },
 			form: { name: 'Name' }
 		},
 		requests:
@@ -99,7 +100,8 @@
 		{
 			form: { title: 'Title', body: 'Body' },
 			new: { action: 'Send Alert' },
-			index: { alerts: 'Alerts', empty: "There's no alerts in the mean time" },
+			index: { alerts: 'Alerts' },
+			alerts: { empty: "There's no alerts in the mean time" },
 			edit: { action: 'Edit Alert' },
 			show: { header: 'Show Alert', edit: 'Edit', destroy: 'Delete' }
 		},

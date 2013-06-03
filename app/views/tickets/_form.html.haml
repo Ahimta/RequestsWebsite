@@ -8,5 +8,6 @@
 	%div= f.text_field :number, placeholder: number
 	
 	= render '/companions/form', f: f
+	= render '/passports/passport', passport: @ticket.passport if @ticket.passport
 	= render '/passports/form', f: f
 	%div= eval render_submit_field

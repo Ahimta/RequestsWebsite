@@ -14,7 +14,11 @@
 					%td= i
 					- i += 1
 					%td= link_to user.username, user
-					%td= link_to user.location_name, user.location
+					%td
+						- if link_location
+							= link_to user.location_name, user.location
+						- else
+							= user.location_name
 					%td= user.applicants.count
 					%td
 						%div.btn-group{ dir: 'ltr' }

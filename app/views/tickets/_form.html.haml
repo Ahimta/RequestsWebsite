@@ -3,11 +3,11 @@
 = form_for @ticket do |f|
 	= render '/requests/form', f: f, type: Ticket::Type, action: action
 	
-	- line, number = t('.line'), t('.number')
-	%div= f.text_field :line, placeholder: line
-	%div= f.text_field :number, placeholder: number
+	%div= f.text_field :line, placeholder: t('.line')
+	%div= f.text_field :number, placeholder: t('.number')
 	
 	= render '/companions/form', f: f
 	= render '/passports/passport', passport: @ticket.passport
 	= render '/passports/form', f: f
+	
 	%div= eval render_submit_field

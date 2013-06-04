@@ -3,7 +3,6 @@
 = form_for @leave do |f|
 	= render '/requests/form', f: f, type: Leave::Type, action: action
 	
-	- reason = t('.reason')
-	%div= f.text_field :reason, placeholder: reason
+	%div= f.text_field :reason, placeholder: t('.reason')
 	
 	= eval render_submit_field

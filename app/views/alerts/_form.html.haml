@@ -5,4 +5,4 @@
 		%h1= action
 	%div= f.text_field :title, placeholder: t('.title'), autofocus: ''
 	%div= f.text_area :body, placeholder: t('.body'), rows: 8
-	= f.submit action, class: 'btn btn-success btn-large'
+	= eval render_submit_field

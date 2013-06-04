@@ -1,8 +1,7 @@
 = provide :title, t('.header')
 
-= render @alert, link: false
+= render @alert
 
 %div.btn-group{ dir: 'ltr' }
-	- klass = 'btn btn-small '
-	= link_to t('.edit'), edit_alert_path(@alert), class: (klass + 'btn-success')
-	= link_to t('.destroy'), @alert, method: :delete, class: (klass + 'btn-danger')
+	= link_to t('.edit'), edit_alert_path(@alert), class: get_btn_class(:edit)
+	= link_to t('.destroy'), @alert, method: :delete, class: get_btn_class(:destroy)

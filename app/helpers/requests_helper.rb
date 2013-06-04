@@ -24,7 +24,12 @@ module RequestsHelper
 	end
 	
 	def get_request(request)
-		request.coming or request.leave or request.ticket or request.vacation
+		case request.rtype
+		when 'coming' then request.coming
+		when 'leave' then request.leave
+		when 'ticket' then request.ticket
+		when 'vacation' then request.vacation
+		end
 	end
 	
 	def back_to_requests

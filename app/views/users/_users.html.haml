@@ -20,8 +20,7 @@
 					%td= user.requests.count
 					%td
 						%div.btn-group{ dir: 'ltr' }
-							- klass = 'btn btn-small '
-							= link_to t(:edit), edit_user_path(user), class: (klass + 'btn-success')
-							= link_to t(:destroy), user, method: :delete, class: (klass + 'btn-danger')
+							= link_to t(:edit), edit_user_path(user), class: get_btn_class(:edit)
+							= link_to t(:destroy), user, method: :delete, class: get_btn_class(:destroy)
 - else
 	%div.lead= t('.empty')

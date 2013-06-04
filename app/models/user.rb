@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 	accepts_nested_attributes_for :location
 	
 	validates :username, presence: true #, uniqueness: { case_insensetive: true }
-	validates :location, presence: true
+	#validates :location, presence: true
 	
 	def self.login(login)
 		username, password = login[:username], login[:password]

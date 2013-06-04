@@ -28,4 +28,10 @@ class ApplicationController < ActionController::Base
   		reset_session and redirect_to requests_path
   	end
 	end
+	
+	def ensure_admin
+		unless @current_user.try(:admin)
+			redirect_to requests_path
+		end
+	end
 end

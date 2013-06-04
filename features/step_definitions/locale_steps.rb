@@ -1,9 +1,11 @@
-When(/^I change the locale to arabic$/) do
-	visit requests_path(locale: 'en')
-  click_link 'Arabic'
-end
-
-When(/^I change the locale to english$/) do
-	visit requests_path(locale: 'ar')
-	click_link 'English'
+When(/^I change the locale to (\w+)/) do |locale|
+	case locale
+	when 'english'
+		locale, link = 'ar', 'English'
+	when 'arabic'
+		locale, link = 'en', 'Arabic'
+	end
+	
+	visit requests_path(locale: locale)
+	click_link link
 end

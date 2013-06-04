@@ -8,9 +8,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 		
-		when /^the first request page$/ then request_path(id: 1)
-		when /^the second request page$/ then request_path(id: 2)
-		when /^the third request page$/ then request_path(id: 3)
+		when /^the first (\w+) page$/ then eval "#{$1}_path(id: 1)"
 		
     when /the home\s?page/
       '/'

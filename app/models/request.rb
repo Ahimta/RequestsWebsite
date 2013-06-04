@@ -18,4 +18,15 @@ class Request < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :applicant
 	validates :applicant, presence: true
+	
+	
+	def self.build_associations(record, options={})
+		record.build_passport if options[:passportable]
+		3.times { record.companions.build } if options[:companions]
+		
+		request = record.build_request
+		request.build_applicant
+		
+		record
+	end
 end

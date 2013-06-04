@@ -2,7 +2,7 @@
 	%dt= t('users.form.username')
 	%dd= user.username
 	%dt Location
-	%dd= user.location_name
+	%dd= link_to user.location_name, user.location
 	%dt Applicants Count
 	%dd= user.applicants.count
 	%dt Requests Count

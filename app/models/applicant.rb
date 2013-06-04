@@ -2,6 +2,9 @@ class Applicant < ActiveRecord::Base
 	attr_accessible :name, :user_id, :user
 	
 	belongs_to :user
+	delegate :username, to: :user, prefix: true
+	has_one :location, through: :user
+	delegate :name, to: :location, prefix: true
 	
 	has_many :requests
 	has_many :comings, through: :requests

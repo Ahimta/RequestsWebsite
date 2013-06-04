@@ -9,6 +9,11 @@ group :development, :test do
 	gem 'factory_girl_rails'
 end
 
+group :development do
+	gem 'guard-cucumber'
+	gem 'guard-rspec'
+end
+
 group :test do
 	gem 'cucumber-rails', require: false
 	gem 'cucumber-rails-training-wheels'

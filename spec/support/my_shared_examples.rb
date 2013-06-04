@@ -39,16 +39,12 @@ shared_examples_for 'new' do |model|
 		@symbol = model.to_s.downcase.to_sym
 		@double = FactoryGirl.build_stubbed @symbol
 		
-		y = 'x', 'y'
 		model.stub(:new).and_return @double
-		@double.stub(:build_request).and_return y
-		@double.stub(:build_location)
-		y.stub(:build_applicant)
 		get :new
 	end
 	
 	it 'should call Model.new' do
-		model.should_receive(:new)
+		model.should_receive(:new).and_return @double
 		get :new
 	end
 	
@@ -168,4 +164,3 @@ shared_examples_for 'destroy' do |model, index = '/requests?locale=en'|
 	it { assigns(@symbol).should == @double }
 	it { response.should redirect_to index }
 end
-

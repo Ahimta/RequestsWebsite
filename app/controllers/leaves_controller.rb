@@ -10,8 +10,7 @@ class LeavesController < ApplicationController
 	
 	def new
 		@leave = Leave.new
-		request = @leave.build_request
-		request.build_applicant
+		@leave = Request.build_associations(@leave)
 	end
 	
 	def create

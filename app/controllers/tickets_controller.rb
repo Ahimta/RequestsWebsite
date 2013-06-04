@@ -9,10 +9,8 @@ class TicketsController < ApplicationController
 	end
 	
 	def new
-		@ticket = Ticket.new(companions: [Companion.new, Companion.new, Companion.new])
-		@ticket.build_passport
-		request = @ticket.build_request
-		request.build_applicant
+		@ticket = Ticket.new
+		@ticket = Request.build_associations(@ticket, passportable: true, companions: true)
 	end
 	
 	def create

@@ -10,8 +10,7 @@ class ComingsController < ApplicationController
 	
 	def new
 		@coming = Coming.new
-		request = @coming.build_request
-		request.build_applicant
+		@coming = Request.build_associations(@coming)
 	end
 	
 	def create

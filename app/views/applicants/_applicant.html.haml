@@ -1,9 +1,9 @@
 %dl
-	%dt= t('applicants.form.name')
+	%dt= t(:name)
 	%dd= applicant.name
-	%dt= t('.user')
+	%dt= t(:user)
 	%dd= link_to applicant.user_username, applicant.user
-	%dt= t('.location')
+	%dt= t(:location)
 	%dd= link_to applicant.location_name, applicant.location
-	%dt= t('.requests_count')
+	%dt= t(:requests_count)
 	%dd= applicant.requests.size

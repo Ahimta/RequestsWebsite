@@ -5,11 +5,11 @@
 	= vacation.duration
 	
 %p
-	%b= t(:from) + ': '
+	%b= t('vacations.form.from') + ': '
 	= vacation.from
 	
 %p
-	%b= t(:to) + ': '
+	%b= t('vacations.form.to') + ': '
 	= vacation.to
 
 = render '/passports/passport', passport: vacation.passport

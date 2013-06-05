@@ -6,7 +6,10 @@
 	{
 		applicant: 'Applicant', request: 'Request', coming: 'Coming',
 		leave: 'Leave', destroy: 'Delete', edit: 'Edit', ticket: 'Ticket',
-		vacation: 'Vacation',
+		vacation: 'Vacation', name: 'Name',type: 'Type', modify: 'Modify',
+		location: 'Location', requests_count: 'Requests Count', user: 'User',
+		applicants_count: 'Applicants Count', applicant_name: 'Applicant Name',
+		users_count: 'Users Count', status: 'Status',
 		applicants:
 		{
 			form: { name: 'Name' },
@@ -21,54 +24,45 @@
 		{
 			application:
 			{
-				users: 'Users', alerts: 'Alerts', logout: 'Logout', locale: 'Arabic',
-				requests: 'Requests', login: 'Login', username: 'Username',
-				password: 'Password', page_title: 'RequestsWebsite',
-				locations: 'Locations'
+				alerts: 'Alerts', locale: 'Arabic', locations: 'Locations',
+				login: 'Login', logout: 'Logout', page_title: 'RequestsWebsite',
+				password: 'Password', requests: 'Requests', username: 'Username',
+				users: 'Users'
 			}
 		},
 		locations:
 		{
+			form: { name: 'Location' },
+			index: { locations: 'Locations' },
+			locations: { empty: "There's no locations in the mean time." },
 			show:
 			{
-				header: 'Show Location', applicants_count: 'Applicants Count',
-				empty: "There's no locations in the mean time"
+				empty: "There's no locations in the mean time", header: 'Show Location'
 			},
-			locations:
-			{
-				users_count: 'Users Count',
-				empty: "There's no locations in the mean time."
-			},
-			index: { locations: 'Locations' },
-			form: { name: 'Name' }
 		},
 		requests:
 		{
-			back: 'Back',
+			index: { requests: 'Requests' },
 			requests:
 			{
-				empty: "You haven't requested anything yet", request_type: 'Type',
-				status: 'Status', decide: 'Accept/Reject', accept: 'Accept',
-				reject: 'Reject', pending: 'Pending', accepted: 'Accepted',
-				rejected: 'Rejected'
-			},
-			index: { requests: 'Requests' }
+				accept: 'Accept', accepted: 'Accepted', decide: 'Accept/Reject',
+				empty: "You haven't requested anything yet", reject: 'Reject',
+				pending: 'Pending', rejected: 'Rejected'
+			}
 		},
 		leaves:
 		{
-			form: { reason: 'Reason', type: 'leave' },
-			new: { action: 'Request Leave' },
-			show: { header: 'Leave Request' },
+			edit: { action: 'Edit Leave Request' },
+			form: { reason: 'Reason' },
 			leave: { header: 'Leave Request' },
-			edit: { action: 'Edit Leave Request' }
+			new: { action: 'Request Leave' }
 		},
 		comings:
 		{
-			form: { reason: 'Reason', type: 'coming' },
-			new: { action: 'Request Coming' },
-			show: { header: 'Coming Request' },
 			coming: { header: 'Coming Request' },
-			edit: { action: 'Edit Coming Request' }
+			edit: { action: 'Edit Coming Request' },
+			form: { reason: 'Reason' },
+			new: { action: 'Request Coming' }
 		},
 		companions:
 		{
@@ -80,76 +74,57 @@
 		},
 		tickets:
 		{
-			form:
-			{
-				line: 'Line', number: 'Number if exists', type: 'ticket'
-			},
+			edit: { action: 'Edit Ticket Request' },
+			form: { line: 'Line', number: 'Number if exists' },
 			new: { action: 'Request Ticket' },
 			show: { header: 'Ticket Request' },
-			ticket: { header: 'Ticket Request' },
-			edit: { action: 'Edit Ticket Request' }
+			ticket: { header: 'Ticket Request' }
 		},
 		vacations:
 		{
-			form:
-			{
-				duration: 'Duration', type: 'vacation', from: 'From date',
-				to: 'To date'
-			},
+			edit: { action: 'Edit Vacation Request' },
+			form: { duration: 'Duration', from: 'From date', to: 'To date' },
 			new: { action: 'Request Vacation' },
 			show: { header: 'Vacation Request' },
-			vacation: { header: 'Vacation Request' },
-			edit: { action: 'Edit Vacation Request' }
+			vacation: { header: 'Vacation Request' }
 		},
 		alerts:
 		{
-			form: { title: 'Title', body: 'Body' },
-			new: { action: 'Send Alert' },
-			index: { alerts: 'Alerts' },
 			alerts: { empty: "There's no alerts in the mean time" },
 			edit: { action: 'Edit Alert' },
-			show: { header: 'Show Alert', edit: 'Edit', destroy: 'Delete' }
+			form: { title: 'Title', body: 'Body' },
+			index: { alerts: 'Alerts' },
+			new: { action: 'Send Alert' },
+			show: { header: 'Show Alert' }
 		},
 		applicants:
 		{
-			applicants:
-			{
-				empty: "There's no users in the mean time.",
-				requests_count: 'Requests Count', applicant_name: 'Applicant Name'
-			},
+			applicants: { empty: "There's no applicants in the mean time." },
 			index: { applicants: 'Applicants' },
 			form: { name: 'Name' },
 			show: { header: 'Show Applicant' }
 		},
 		users:
 		{
-			form: { username: 'Username', password: 'Password', location: 'Location' },
+			form: { username: 'Username', password: 'Password' },
 			new: { action: 'Register User' },
 			create: { notice: 'The user was updated successfully' },
 			edit: { action: 'Edit User' },
-			users:
-			{
-				empty: "There's no users in the mean time", modify: 'Modify',
-				applicants_count: 'Applicants Count'
-			},
+			users: { empty: "There's no users in the mean time" },
 			index: { users: 'Users' },
-			login:
-			{
-				notice: 'Logged in', warning: 'Invalid username and/or password',
-				page_title: 'Login'
-			},
+			login: { notice: 'Logged in', warning: 'Invalid username and/or password' },
 			logout: { notice: 'Logged out' },
 			show: { header: 'User Applicants' }
 		},
 		decisions:
 		{
-			form: { number: 'Decision Number' },
-			new: { action: 'New Acceptance' },
-			show: { header: 'Acceptance' },
 			decision:
 			{
 				acceptance: 'applicant was granted a type with the decision numbered number.'
-			}
+			},
+			form: { number: 'Decision Number' },
+			new: { action: 'New Acceptance' },
+			show: { header: 'Acceptance' }
 		}
 	}	
 }

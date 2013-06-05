@@ -2,6 +2,4 @@
 
 = render @alert
 
-%div.btn-group{ dir: 'ltr' }
-	= link_to t('.edit'), edit_alert_path(@alert), class: get_btn_class(:edit)
-	= link_to t('.destroy'), @alert, method: :delete, class: get_btn_class(:destroy)
+= render partial: 'btn_group', layout: '/layouts/btn_group'

@@ -5,4 +5,4 @@
 		%h1= action
 	%div= f.text_field :title, placeholder: t('.title'), autofocus: ''
 	%div= f.text_area :body, placeholder: t('.body'), rows: 8
-	= eval render_submit_field
+	= render partial: '/shared/submit_btn_group', layout: '/layouts/btn_group', locals: { f: f, action: action }

@@ -18,9 +18,6 @@
 					%td= link_to user.location_name, user.location
 					%td= user.applicants.count
 					%td= user.requests.count
-					%td
-						%div.btn-group{ dir: 'ltr' }
-							= link_to t(:edit), edit_user_path(user), class: get_btn_class(:edit)
-							= link_to t(:destroy), user, method: :delete, class: get_btn_class(:destroy)
+					%td= render partial: '/users/btn_group', layout: '/layouts/btn_group', locals: { user: user }
 - else
 	%div.lead= t('.empty')

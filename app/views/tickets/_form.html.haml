@@ -10,4 +10,4 @@
 	= render '/passports/passport', passport: @ticket.passport
 	= render '/passports/form', f: f
 	
-	%div= eval render_submit_field
+	= render partial: '/shared/submit_btn_group', layout: '/layouts/btn_group', locals: { f: f, action: action }

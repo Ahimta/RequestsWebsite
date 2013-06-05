@@ -3,4 +3,4 @@
 		%h1= action
 	= f.hidden_field :request_id, value: @request.id
 	%div= f.text_field :number, placeholder: t('.number')
-	= eval render_submit_field
+	= render partial: '/shared/submit_btn_group', layout: '/layouts/btn_group', locals: { f: f, action: action }

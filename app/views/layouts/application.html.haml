@@ -15,9 +15,9 @@
 					%div.container
 						- pull = ar ? 'pull-left' : 'pull-right'
 						%div.navbar-form{ class: pull }
-							= link_to t('.locale'), requests_path(locale: ar ? 'en' : 'ar'), class: 'btn btn-primary'
+							= link_to t('.locale'), requests_path(locale: ar ? 'en' : 'ar'), class: get_btn_class(:link)
 							- if @current_user
-								= link_to t('.logout'), logout_users_path, method: :delete, class: 'btn btn-danger'
+								= link_to t('.logout'), logout_users_path, method: :delete, class: get_btn_class(:destroy)
 						
 						- pull2 = ar ? 'pull-right' : 'pull-left'
 						- if @current_user

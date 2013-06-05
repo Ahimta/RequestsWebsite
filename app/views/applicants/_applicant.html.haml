@@ -1,9 +1,9 @@
 %dl
 	%dt= t('applicants.form.name')
 	%dd= applicant.name
-	%dt User
-	%dd= link_to applicant.user.username, applicant.user
-	%dt Location
+	%dt= t('.user')
+	%dd= link_to applicant.user_username, applicant.user
+	%dt= t('.location')
 	%dd= link_to applicant.location_name, applicant.location
-	%dt Requests Count
+	%dt= t('.requests_count')
 	%dd= applicant.requests.size

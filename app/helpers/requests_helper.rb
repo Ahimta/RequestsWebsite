@@ -31,8 +31,4 @@ module RequestsHelper
 		when 'vacation' then request.vacation
 		end
 	end
-	
-	def back_to_requests
-		"link_to t('requests.back'), requests_path, class: 'btn btn-primary btn-small'"
-	end
 end

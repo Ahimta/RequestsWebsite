@@ -17,7 +17,7 @@ module ApplicationHelper
 	end
 	
 	def back_to_requests
-		"link_to t('requests.back'), requests_path, class: 'btn btn-primary btn-small'"
+		"link_to t(:back), requests_path, class: 'btn btn-primary btn-small'"
 	end
 	
 	def get_login_input_class

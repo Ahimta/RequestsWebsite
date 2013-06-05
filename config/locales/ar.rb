@@ -4,9 +4,17 @@
 {
 	ar:
 	{
-		applicant: 'المستفيد',from: 'من تاريخ',to: 'إلى تاريخ', request: 'طلب',
-		locale: 'English', coming: 'مباشرة', leave: 'مغادرة',
-		ticket: 'تذاكر', vacation: 'إجازة',
+		applicant: 'المستفيد', request: 'طلب', coming: 'مباشرة',
+		leave: 'مغادرة', destroy: 'حذف', edit: 'تعديل', ticket: 'تذاكر',
+		vacation: 'إجازة', name: 'الاسم',type: 'النوع', modify: 'تعديل',
+		location: 'الموقع', requests_count: 'عدد الطلبات', user: 'المستخدم',
+		applicants_count: 'عدد المستفيدين', applicant_name: 'اسم المستفيد',
+		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة',
+		applicants:
+		{
+			form: { name: 'الاسم' },
+			show: { header: 'عرض مستفيد' }
+		},
 		create:
 		{
 			notice: 'تم إرسال طلبك بنجاح',
@@ -16,34 +24,45 @@
 		{
 			application:
 			{
-				users: 'المستخدمين', alerts: 'التنبيهات', logout: 'تسجيل خروج', locale: 'English',
-				requests: 'الطلبات', login: 'تسجيل دخول', username: 'اسم المستخدم',
-				password: 'كلمة المرور', page_title: 'خدمة العطل'
+				alerts: 'التنبيهات', locale: 'English', locations: 'المواقع',
+				login: 'تسجيل دخول', logout: 'تسجيل خروج', page_title: 'خدمة العطل و الإجازات',
+				password: 'كلمة المرور', requests: 'الطلبات', username: 'اسم المستخدم',
+				users: 'المستخدمين', applicants: 'المستفيدين'
 			}
+		},
+		locations:
+		{
+			form: { name: 'الموقع' },
+			index: { locations: 'المواقع' },
+			locations: { empty: "ﻻ يوجد مواقع في الوقت الحالي" },
+			show:
+			{
+				empty: "ﻻ يوجد مستخدمين في هذا الموقع", header: 'بيانات الموقع'
+			},
 		},
 		requests:
 		{
-			index:
+			index: { requests: 'الطلبات' },
+			requests:
 			{
-				empty: "لم تقم بتقديم أي طلب حتى الآن", requests: 'الطلبات',
-				request_type: 'التوع', status: 'الحالة', decide: 'قبول/رفض',
-				page_title: 'الطلبات', accept: 'قبول', reject: 'رفض',
-				pending: 'جاري', accepted: 'تم القبول', rejected: 'تم الرفض'
+				accept: 'قبول', accepted: 'تم القبول', decide: 'قبول/رفض',
+				empty: "لم تقم بتقديم أي طلب حتى الآن", reject: 'رفض',
+				pending: 'جاري', rejected: 'تم الرفض'
 			}
 		},
 		leaves:
 		{
-			form: { reason: 'السبب', type: 'إجازة' },
-			new: { action: 'طلب مغادرة' },
-			show: { header: 'طلب مغادرة' },
-			leave: { header: 'طلب مغادرة' }
+			edit: { action: 'تعديل طلب مغادرة' },
+			form: { reason: 'السبب' },
+			leave: { header: 'طلب مغادرة' },
+			new: { action: 'طلب مغادرة' }
 		},
 		comings:
 		{
-			form: { reason: 'السبب', type: 'مباشرة' },
-			new: { action: 'طلب مباشرة' },
-			show: { header: 'طلب مباشرة' },
-			coming: { header: 'طلب مغادرة' }
+			coming: { header: 'طلب مباشرة' },
+			edit: { action: 'تعديل طلب مباشرة' },
+			form: { reason: 'السبب' },
+			new: { action: 'طلب مباشرة' }
 		},
 		companions:
 		{
@@ -55,42 +74,57 @@
 		},
 		tickets:
 		{
-			form:
-			{
-				line: 'خط السير', number: 'رقم الحجز إن وجد', type: 'تذاكر'
-			},
-			new: { action: 'طلب تذاكر' },
-			show: { header: 'طلب تذاكر' },
+			edit: { action: 'تعديل طلب تذاكر' },
+			form: { line: 'خط السير', number: 'رقم الحجز إن وجد' },
+			new: { action: 'طلب مغادرة' },
+			show: { header: 'طلب مغادرة' },
 			ticket: { header: 'طلب تذاكر' }
 		},
 		vacations:
 		{
-			form:
-			{
-				duration: 'عدد الأيام', type: 'إجازة', from: 'من تاريخ',
-				to: 'إلى تاريخ'
-			},
+			edit: { action: 'تعديل طلب إجازة' },
+			form: { duration: 'عدد الأيام', from: 'من تاريخ', to: 'إلى تاريخ' },
 			new: { action: 'طلب إجازة' },
 			show: { header: 'طلب إجازة' },
 			vacation: { header: 'طلب إجازة' }
 		},
 		alerts:
 		{
+			alerts: { empty: "ﻻ يوجد تنبيهات في الوقت الحالي" },
+			edit: { action: 'تعديل تنبيه' },
 			form: { title: 'العنوان', body: 'المحتوى' },
+			index: { alerts: 'التنبيهات' },
 			new: { action: 'إرسال تنبيه' },
-			index: { alerts: 'التنبيهات', empty: "ﻻ يوجد تنبيهات في الوقت حالياً" }
+			show: { header: 'تنبيه' }
+		},
+		applicants:
+		{
+			applicants: { empty: "ﻻ يوجد مستفيدين في الوقت الحالي." },
+			index: { applicants: 'المستفيدين' },
+			form: { name: 'الاسم' },
+			show: { header: 'بيانات المستفيد' }
 		},
 		users:
 		{
-			form: { username: 'اسم المستخدم', password: 'كلمة المرور', location: 'الموقع' },
-			new: { action: 'سجل مستخدم' },
-			index: { users: 'المستخدمين', empty: "ﻻ يوجد مستخدمين حالياً" },
-			login:
+			form: { username: 'اسم المستخدم', password: 'كلمة المرور' },
+			new: { action: 'تسجيل مستخدم' },
+			create: { notice: 'تم تعديل المستخدم بنجاح' },
+			edit: { action: 'تعديل مستخدم' },
+			users: { empty: "ﻻ يوجد مستخدمين في الموقت الحالي" },
+			index: { users: 'المستخدمين' },
+			login: { notice: 'تم تسجيل الدخول', warning: 'اسم المستخدم أو/و كلمة المرور غير صالحة' },
+			logout: { notice: 'تم تسجيل الدخول' },
+			show: { header: 'المستفيدين' }
+		},
+		decisions:
+		{
+			decision:
 			{
-				notice: 'تم تسجيل الدخول', warning: 'اسم المستخدم و/أو كلمة المرور غير صالحة',
-				page_title: 'تسجيل الدخول'
+				acceptance: 'applicant منح type بقرار رقم number.'
 			},
-			logout: { notice: 'تم تسجيل الخروج' }
+			form: { number: 'رقم القرار' },
+			new: { action: 'إنشاء موافقة' },
+			show: { header: 'موافقة' }
 		}
 	}	
 }

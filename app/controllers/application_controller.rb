@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	
-	def require_owns(record)
+	def require_owner(record)
 		unless User.authenticate(@current_user, record)
 			redirect_to requests_path
 		end

@@ -4,6 +4,7 @@ class ApplicantsController < ApplicationController
 	
 	def get_applicant
 		@applicant = Applicant.find params[:id]
+		# require_owner @applicant
 	end
 	
 	def index

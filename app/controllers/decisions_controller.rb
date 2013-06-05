@@ -1,5 +1,6 @@
 class DecisionsController < ApplicationController
 	before_filter :get_request, only: [:new, :create]
+	# before_filter :require_admin
 	
 	def get_request
 		@request = Request.find params[:request_id]

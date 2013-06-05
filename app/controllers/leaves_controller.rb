@@ -3,6 +3,7 @@ class LeavesController < ApplicationController
 	
 	def get_leave
 		@leave = Leave.find params[:id]
+		# require_owner @leave
 	end
 	
 	def new

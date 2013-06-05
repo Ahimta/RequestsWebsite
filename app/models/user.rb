@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 		user.authenticate password if user
 	end
 	
-	def self.authenticate?(user, record)
+	def self.authenticate(user, record)
 		(record.user == user) or user.try(:admin) or false
 	end
 end

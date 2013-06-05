@@ -4,6 +4,7 @@ class RequestsController < ApplicationController
 	
 	def get_request
 		@request = Request.find params[:id]
+		# require_owner @request
 	end
 	
 	def index

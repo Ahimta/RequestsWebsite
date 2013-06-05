@@ -9,7 +9,7 @@ RequestsWebsite::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true # edited
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -28,7 +28,7 @@ RequestsWebsite::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # See everything in the log (default is :info)
   # config.log_level = :debug
@@ -56,6 +56,7 @@ RequestsWebsite::Application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
+  config.i18n.default_locale = :ar
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners

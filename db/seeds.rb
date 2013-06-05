@@ -5,6 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-requests = [:coming, :leave, :ticket, :vacation]
-
-requests.each { |request| FactoryGirl.create request }
+location = FactoryGirl.create :location, name: 'الرياض'
+FactoryGirl.create :user, username: 'admin', password: 'admin', admin: true, location: location

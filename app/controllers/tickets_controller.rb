@@ -1,11 +1,8 @@
 class TicketsController < ApplicationController
-	before_filter :get_ticket, only: [:show, :edit, :update]
+	before_filter :get_ticket, only: [:edit, :update]
 	
 	def get_ticket
 		@ticket = Ticket.find params[:id]
-	end
-	
-	def show
 	end
 	
 	def new

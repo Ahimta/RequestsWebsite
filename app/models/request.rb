@@ -4,6 +4,9 @@ class Request < ActiveRecord::Base
 	belongs_to :applicant
 	delegate :name, to: :applicant, prefix: true
 	
+	has_one :user, through: :applicant
+	delegate :username, to: :user, prefix: true
+	
 	has_one :coming, dependent: :destroy
 	has_one :leave, dependent: :destroy
 	has_one	:ticket, dependent: :destroy

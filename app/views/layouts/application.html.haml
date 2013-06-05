@@ -17,7 +17,7 @@
 						%div.navbar-form{ class: pull }
 							= link_to t('.locale'), requests_path(locale: ar ? 'en' : 'ar'), class: get_btn_class(:link)
 							- if @current_user
-								= link_to t('.logout'), logout_users_path, method: :delete, class: get_btn_class(:destroy)
+								= link_to t('.logout'), logout_users_path, method: :delete, class: get_btn_class(:logout)
 						
 						- pull2 = ar ? 'pull-right' : 'pull-left'
 						- if @current_user
@@ -29,10 +29,10 @@
 								%li{ class: @users_link }= link_to t('.users'), users_path
 						- else
 							= form_tag login_users_path, class: 'navbar-form ' + pull2 do
-								- username, password = t('.username'), t('.password')
-								= text_field :login, :username, class: 'span2', placeholder: username, autofocus: ''
-								= password_field :login, :password, class: 'span2', placeholder: password
-								= submit_tag t('.login'), class: 'btn btn-success'
+								- username, password = t('users.form.username'), t('users.form.password')
+								= text_field :login, :username, class: get_login_input_class, placeholder: username, autofocus: ''
+								= password_field :login, :password, class: get_login_input_class, placeholder: password
+								= submit_tag t('.login'), class: get_btn_class(:login)
 			
 			- notice, warning = flash[:notice], flash[:warning]
 			

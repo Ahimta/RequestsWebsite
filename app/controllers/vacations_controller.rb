@@ -1,11 +1,8 @@
 class VacationsController < ApplicationController
-	before_filter :get_vacation, only: [:show, :edit, :update]
+	before_filter :get_vacation, only: [:edit, :update]
 	
 	def get_vacation
 		@vacation = Vacation.find params[:id]
-	end
-	
-	def show
 	end
 	
 	def new

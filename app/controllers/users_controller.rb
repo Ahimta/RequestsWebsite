@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_filter { @users_link = 'active' }
 	before_filter :get_user, only: [:show, :edit, :update, :destroy]
-	#before_filter :ensure_admin
+	#before_filter :require_admin
 	
 	def get_user
 		@user = User.find params[:id]

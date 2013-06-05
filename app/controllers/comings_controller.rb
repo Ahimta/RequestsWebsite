@@ -1,11 +1,8 @@
 class ComingsController < ApplicationController
-	before_filter :get_coming, only: [:show, :edit, :update]
+	before_filter :get_coming, only: [:edit, :update]
 	
 	def get_coming
 		@coming = Coming.find params[:id]
-	end
-	
-	def show
 	end
 	
 	def new

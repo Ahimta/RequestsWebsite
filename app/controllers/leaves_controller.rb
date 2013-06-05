@@ -1,11 +1,8 @@
 class LeavesController < ApplicationController
-	before_filter :get_leave, only: [:show, :edit, :update]
+	before_filter :get_leave, only: [:edit, :update]
 	
 	def get_leave
 		@leave = Leave.find params[:id]
-	end
-	
-	def show
 	end
 	
 	def new

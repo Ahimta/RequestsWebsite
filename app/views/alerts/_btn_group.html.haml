@@ -1,2 +1,3 @@
+= link_to t(:back), alerts_path, class: get_btn_class(:back)
 = link_to t('alerts.show.edit'), edit_alert_path(@alert), class: get_btn_class(:edit)
 = link_to t('alerts.show.destroy'), @alert, method: :delete, class: get_btn_class(:destroy)

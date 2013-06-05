@@ -29,8 +29,14 @@ class ApplicationController < ActionController::Base
   	end
 	end
 	
-	def ensure_admin
+	def require_admin
 		unless @current_user.try(:admin)
+			redirect_to requests_path
+		end
+	end
+	
+	def require_owns(record)
+		unless User.authenticate(@current_user, record)
 			redirect_to requests_path
 		end
 	end

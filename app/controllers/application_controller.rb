@@ -40,4 +40,8 @@ class ApplicationController < ActionController::Base
 			redirect_to requests_path
 		end
 	end
+	
+	def require_login
+		redirect_to home_pages unless @current_user
+	end
 end

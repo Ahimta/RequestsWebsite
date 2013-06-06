@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
 	
 	def index
 		@requests = Request.all
+		# @requests = @current_user.try(:admin) ? Request.all : @current_user.try(:requests)
 	end
 	
 	def show

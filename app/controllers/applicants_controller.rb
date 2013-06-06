@@ -9,6 +9,7 @@ class ApplicantsController < ApplicationController
 	
 	def index
 		@applicants = Applicant.all
+		# @applicants = @current_user.try(:admin) ? Applicant.all : @current_user.try(:applicants)
 	end
 	
 	def show

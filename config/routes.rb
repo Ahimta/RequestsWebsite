@@ -17,6 +17,13 @@ RequestsWebsite::Application.routes.draw do
 				delete 'logout'
 			end
 		end
+		
+		resources :pages, only: [] do
+			collection do
+				get 'home'
+				get 'about'
+			end
+		end
 	#end
 	
   root to: 'requests#index'

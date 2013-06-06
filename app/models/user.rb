@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	attr_accessible :password, :username, :location_attributes, :location_id
+	attr_accessible :password, :username, :location_attributes, :location_id,
+		:location, :admin
 	has_secure_password
 	
 	belongs_to :location

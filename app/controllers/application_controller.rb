@@ -43,6 +43,6 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def require_login
-		redirect_to home_pages unless @current_user
+		redirect_to home_pages_path unless @current_user
 	end
 end

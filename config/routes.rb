@@ -1,6 +1,6 @@
 RequestsWebsite::Application.routes.draw do
 
-	#scope '(:locale)' do
+	scope '(:locale)' do
 		resources :alerts
 		resources :applicants
 		resources :locations
@@ -24,7 +24,7 @@ RequestsWebsite::Application.routes.draw do
 				get 'about'
 			end
 		end
-	#end
+	end
 	
   root to: 'requests#index'
 

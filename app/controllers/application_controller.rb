@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 	
 	before_filter :get_locale
 	before_filter :get_session
-	#before_filter :require_login, exept: [:login, :home]
+	before_filter :require_login, exept: [:login, :home]
 	
 	def get_locale
 		locale = params[:locale].try :to_sym
@@ -43,6 +43,6 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def require_login
-		redirect_to home_pages unless @current_user
+		redirect_to home_pages_path unless @current_user
 	end
 end

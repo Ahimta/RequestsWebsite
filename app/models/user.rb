@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	belongs_to :location
 	delegate :name, to: :location, prefix: true
 	
-	has_many :applicants
+	has_many :applicants, dependent: :destroy
 	has_many :requests, through: :applicants
 	has_many :decisions, through: :requests
 	has_many :comings, through: :requests

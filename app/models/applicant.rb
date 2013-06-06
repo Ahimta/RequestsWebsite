@@ -6,7 +6,7 @@ class Applicant < ActiveRecord::Base
 	has_one :location, through: :user
 	delegate :name, to: :location, prefix: true
 	
-	has_many :requests
+	has_many :requests, dependent: :destroy
 	has_many :comings, through: :requests
 	has_many :leaves, through: :requests
 	has_many :tickets, through: :requests

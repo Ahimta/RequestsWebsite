@@ -3,13 +3,15 @@
 	
 - else
 	%table.table
+		- admin = @current_user.try(:admin)
 		%thead
 			%tr
 				%th #
 				%th= t(:applicant)
 				%th= t(:type)
 				%th= t(:status)
-				%th= t('.decide')
+				- if admin
+					%th= t('.decide')
 		%tbody
 			- i = 1
 			- requests.each do |request|
@@ -24,4 +26,5 @@
 							= link_to t('.accepted'), request_decision_path(request, request.decision)
 						- else
 							= get_status(request.accepted)
-					%td= render partial: '/requests/requests_btn_group', layout: '/layouts/btn_group', locals: { request: request }
+					- if admin
+						%td= render partial: '/requests/requests_btn_group', layout: '/layouts/btn_group', locals: { request: request }

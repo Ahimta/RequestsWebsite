@@ -159,6 +159,7 @@ GEM
       rspec (~> 2.13.0)
       to_source (~> 0.2.19)
     mutant-melbourne (2.0.3)
+    mysql2 (0.3.11)
     nokogiri (1.5.9)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -297,6 +298,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mutant
+  mysql2
   paperclip (~> 3.0)
   pg
   pickle

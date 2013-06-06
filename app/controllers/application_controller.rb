@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 	
 	before_filter :get_locale
 	before_filter :get_session
+	#before_filter :require_login, exept: [:login, :home]
 	
 	def get_locale
 		locale = params[:locale].try :to_sym
@@ -25,7 +26,7 @@ class ApplicationController < ActionController::Base
   	begin
   		@current_user ||= User.find id if id
   	rescue ActiveRecord::RecordNotFound
-  		reset_session and redirect_to requests_path
+  		reset_session and redirect_to home_pages_path
   	end
 	end
 	

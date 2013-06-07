@@ -8,7 +8,7 @@ class AlertsController < ApplicationController
 	end
 	
 	def index
-		@alerts = Alert.all
+		@alerts = Alert.scoped
 	end
 	
 	def show

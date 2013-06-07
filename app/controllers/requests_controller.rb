@@ -8,8 +8,8 @@ class RequestsController < ApplicationController
 	end
 	
 	def index
-		@requests = Request.all
-		@requests = @current_user.try(:admin) ? Request.all : @current_user.try(:requests)
+		#@requests = Request.scoped
+		@requests = @current_user.try(:admin) ? Request.scoped : @current_user.try(:requests)
 	end
 	
 	def show

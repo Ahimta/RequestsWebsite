@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
 	before_filter :require_admin
 	
 	def index
-		@locations = Location.all
+		@locations = Location.scoped
 	end
 	
 	def show

@@ -1,10 +1,12 @@
 - if users.present?
 	%table.table.table-striped
+		- location_col ||= false
 		%thead
 			%tr
 				%th #
 				%th= t('users.form.username')
-				%th= t('locations.form.name')
+				- if location_col
+					%th= t('locations.form.name')
 				%th= t(:applicants_count)
 				%th= t(:requests_count)
 				%th= t(:modify)
@@ -15,7 +17,8 @@
 					%td= i
 					- i += 1
 					%td= link_to user.username, user
-					%td= link_to user.location_name, user.location
+					- if location_col
+						%td= link_to user.location_name, user.location
 					%td= user.applicants.count
 					%td= user.requests.count
 					%td= render partial: '/users/btn_group', layout: '/layouts/btn_group', locals: { user: user }

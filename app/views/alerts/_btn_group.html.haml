@@ -1,3 +1,4 @@
 = link_to t(:back), alerts_path, class: get_btn_class(:back)
-= link_to t(:edit), edit_alert_path(@alert), class: get_btn_class(:edit)
-= link_to t(:destroy), @alert, method: :delete, class: get_btn_class(:destroy)
+- if @current_user.try(:admin)
+	= link_to t(:edit), edit_alert_path(@alert), class: get_btn_class(:edit)
+	= link_to t(:destroy), @alert, method: :delete, class: get_btn_class(:destroy)

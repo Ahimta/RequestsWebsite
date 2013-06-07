@@ -8,6 +8,8 @@
 				%th #
 				%th= t('locations.form.name')
 				%th= t(:users_count)
+				%th= t(:applicants_count)
+				%th= t(:requests_count)
 		%tbody
 			- i = 1
 			- locations.each do |location|
@@ -15,4 +17,6 @@
 					%td= i
 					- i += 1
 					%td= link_to location.name, location
-					%td= location.users.count
+					%td= location.users.size
+					%td= location.applicants.size
+					%td= location.requests.size

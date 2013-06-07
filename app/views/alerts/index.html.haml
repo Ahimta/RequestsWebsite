@@ -6,4 +6,5 @@
 
 = render 'alerts', alerts: @alerts
 
-%div= link_to t('alerts.new.action'), new_alert_path, class: get_btn_class(:create)
+- if @current_user.try(:admin)
+	%div= link_to t('alerts.new.action'), new_alert_path, class: get_btn_class(:create)

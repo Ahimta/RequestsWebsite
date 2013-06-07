@@ -4,6 +4,6 @@
 %div.page-header
 	%h1= users
 
-= render 'users', users: @users, link_location: true
+= render 'users', users: @users, location_col: true
 
 = link_to t('users.new.action'), new_user_path, class: get_btn_class(:create)

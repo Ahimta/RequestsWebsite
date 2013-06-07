@@ -3,11 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 group :development, :test do
-	gem 'brakeman'
-	gem 'rails_best_practices'
 	gem 'factory_girl_rails'
+	gem 'sqlite3'
 	gem 'debugger'# To use debugger
-	gem 'mysql2'
 end
 
 group :development, :production do
@@ -15,6 +13,8 @@ group :development, :production do
 end
 
 group :development do
+	gem 'brakeman'
+	gem 'rails_best_practices'
 	gem 'guard-cucumber'
 	gem 'guard-rspec'
 end
@@ -28,7 +28,6 @@ group :test do
 	gem 'rspec-rails'
 	gem 'pickle'
 	gem 'mutant'
-	gem 'sqlite3'
 end
 
 group :production do
@@ -42,10 +41,8 @@ group :assets do
 end
 
 gem 'paperclip', "~> 3.0"
-
 gem 'jquery-rails'
 gem 'bcrypt-ruby'# To use ActiveModel has_secure_password
-gem 'haml'
-
 gem 'rails-i18n'
 gem 'turbolinks'
+gem 'haml'

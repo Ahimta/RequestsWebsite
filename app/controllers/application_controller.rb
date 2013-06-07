@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 	
 	before_filter :get_locale
 	before_filter :get_session
-	before_filter :require_login
+	# before_filter :require_login
 	
 	def get_locale
 		locale = params[:locale].try :to_sym

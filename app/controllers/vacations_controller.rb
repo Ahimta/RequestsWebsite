@@ -3,7 +3,7 @@ class VacationsController < ApplicationController
 	
 	def get_vacation
 		@vacation = Vacation.find params[:id]
-		require_owner @vacation
+		# require_owner @vacation
 	end
 	
 	def new

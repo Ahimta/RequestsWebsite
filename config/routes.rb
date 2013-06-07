@@ -1,16 +1,16 @@
 RequestsWebsite::Application.routes.draw do
 
-	scope '(:locale)' do
+	#scope '(:locale)' do
 		resources :alerts
 		resources :applicants
-		resources :locations
-		resources :requests do
+		resources :locations, only: [:index, :show]
+		resources :requests, only: [:index, :show, :destroy] do
 			resources :decisions, only: [:show, :new, :create]
 		end
-		resources :comings
-		resources :leaves
-		resources :tickets
-		resources :vacations
+		resources :comings, only: [:new, :create, :edit, :update]
+		resources :leaves, only: [:new, :create, :edit, :update]
+		resources :tickets, only: [:new, :create, :edit, :update]
+		resources :vacations, only: [:new, :create, :edit, :update]
 		resources :users do
 			collection do
 				post 'login'
@@ -21,10 +21,9 @@ RequestsWebsite::Application.routes.draw do
 		resources :pages, only: [] do
 			collection do
 				get 'home'
-				get 'about'
 			end
 		end
-	end
+	#end
 	
   root to: 'requests#index'
 

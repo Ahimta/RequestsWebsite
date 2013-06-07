@@ -4,4 +4,4 @@
 	%b= t('comings.form.reason') + ': '
 	= coming.reason
 
-= render '/shared/request_footer', edit_link: edit_coming_path(coming), request: coming
+= render '/shared/resource_footer', back_path: requests_path, edit_path: edit_coming_path(coming), resource: coming.request

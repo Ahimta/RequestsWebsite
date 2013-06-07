@@ -1,8 +1,4 @@
-- alerts = t('.alerts')
-= provide :title, alerts
-
-%div.page-header
-	%h1= alerts
+= render '/shared/page_header', header: t('.alerts')
 
 = render 'alerts', alerts: @alerts
 

@@ -1,7 +1,3 @@
-- applicants = t('.applicants')
-= provide :title, applicants
-
-%div.page-header
-	%h1= applicants
+= render '/shared/page_header', header: t('.applicants')
 
 = render 'applicants', applicants: @applicants

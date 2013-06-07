@@ -2,4 +2,4 @@
 
 = render @alert
 
-= render partial: 'btn_group', layout: '/layouts/btn_group'
+= render '/shared/resource_footer', back_path: alerts_path, edit_path: edit_alert_path(@alert), resource: @alert

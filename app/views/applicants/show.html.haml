@@ -1,8 +1,4 @@
-- header = t('.header') + " - #{@applicant.name}"
-= provide :title, header
-
-%div.page-header
-	%h1= header
+= render '/shared/page_header', header: t('.header')
 
 = render @applicant
 %hr

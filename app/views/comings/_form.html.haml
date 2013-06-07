@@ -5,4 +5,4 @@
 	
 	%div= f.text_field :reason, placeholder: t('.reason')
 	
-	= render partial: '/shared/submit_btn_group', layout: '/layouts/btn_group', locals: { f: f, action: action }
+	= render '/shared/form_footer', f: f, action: action

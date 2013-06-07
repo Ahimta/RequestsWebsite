@@ -1,7 +1,7 @@
 class AlertsController < ApplicationController
 	before_filter { @alerts_link = 'active' }
 	before_filter :get_alert, only: [:show, :edit, :update, :destroy]
-	before_filter :require_admin, except: [:index, :show]
+	# before_filter :require_admin, except: [:index, :show]
 	
 	def get_alert
 		@alert = Alert.find params[:id]

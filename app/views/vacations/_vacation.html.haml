@@ -14,4 +14,4 @@
 
 = render '/passports/passport', passport: vacation.passport
 
-= render '/shared/request_footer', edit_link: edit_vacation_path(vacation), request: vacation
+= render '/shared/resource_footer', back_path: requests_path, edit_path: edit_vacation_path(vacation), resource: vacation.request

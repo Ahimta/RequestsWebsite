@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
 	end
 	
 	def self.authenticate(user, record)
-		(record.user == user) or user.try(:admin) or false
+		(record.user == user) or user.try(:admin)
 	end
 end

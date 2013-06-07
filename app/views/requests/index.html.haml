@@ -1,8 +1,4 @@
-- requests = t('.requests')
-= provide :title, requests
-
-%div.page-header
-	%h1= requests
+= render '/shared/page_header', header: t('.requests')
 
 = render 'requests', requests: @requests
 

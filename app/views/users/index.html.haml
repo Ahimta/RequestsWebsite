@@ -1,8 +1,4 @@
-- users = t('.users')
-= provide :title, users
-
-%div.page-header
-	%h1= users
+= render '/shared/page_header', header: t('.users')
 
 = render 'users', users: @users, location_col: true
 

@@ -4,4 +4,4 @@
 	%b= t('leaves.form.reason') + ': '
 	= leave.reason
 
-= render '/shared/request_footer', edit_link: edit_leafe_path(leave), request: leave
+= render '/shared/resource_footer', back_path: requests_path, edit_path: edit_leafe_path(leave), resource: leave.request

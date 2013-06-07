@@ -6,4 +6,5 @@
 	%div= f.text_field :username, placeholder: t('.username')
 	%div= f.password_field :password, placeholder: t('.password')
 	= render '/locations/form', f: f
-	= render partial: '/shared/submit_btn_group', layout: '/layouts/btn_group', locals: { f: f, action: action }
+	
+	= render '/shared/form_footer', f: f, action: action

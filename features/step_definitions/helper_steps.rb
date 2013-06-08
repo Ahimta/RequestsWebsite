@@ -15,3 +15,11 @@ Then(/^I should see the following: (.*)$/) do |words|
 		step %Q{I should see "#{word}"}
 	end
 end
+
+When(/^I destroy all (\w+)$/) do |model|
+  eval "#{model.classify}.destroy_all"
+end
+
+Then(/^(\w+) model should be empty$/) do |model|
+  eval "#{model.classify}.all.should be_empty"
+end

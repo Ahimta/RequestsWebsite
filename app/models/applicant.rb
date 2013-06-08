@@ -1,5 +1,5 @@
 class Applicant < ActiveRecord::Base
-	attr_accessible :name, :user_id, :user
+	attr_accessible :name, :user, :user_id
 	
 	belongs_to :user
 	delegate :username, to: :user, prefix: true

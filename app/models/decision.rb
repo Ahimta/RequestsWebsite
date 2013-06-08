@@ -5,6 +5,5 @@ class Decision < ActiveRecord::Base
 	
 	delegate :applicant, :rtype, to: :request, prefix: true
 	
-	validates :request_id, presence: true
-	validates :number, presence: true
+	validates :number, :request_id, presence: true
 end

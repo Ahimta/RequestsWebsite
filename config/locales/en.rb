@@ -9,7 +9,7 @@
 		vacation: 'Vacation', name: 'Name',type: 'Type', modify: 'Modify',
 		location: 'Location', requests_count: 'Requests Count', user: 'User',
 		applicants_count: 'Applicants Count', applicant_name: 'Applicant Name',
-		users_count: 'Users Count', status: 'Status',
+		users_count: 'Users Count', status: 'Status', back: 'Back',
 		applicants:
 		{
 			form: { name: 'Name' },

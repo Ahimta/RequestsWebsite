@@ -2,7 +2,7 @@ RequestsWebsite::Application.routes.draw do
 
 	#scope '(:locale)' do
 		resources :alerts
-		resources :applicants
+		resources :applicants, only: [:index, :show, :destroy]
 		resources :locations, only: [:index, :show]
 		resources :requests, only: [:index, :show, :destroy] do
 			resources :decisions, only: [:show, :new, :create]

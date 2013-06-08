@@ -1,5 +1,6 @@
-- klass = get_btn_class(:new_request_link)
-= link_to t(:coming), new_coming_path, class: klass
-= link_to t(:leave), new_leafe_path, class: klass
-= link_to t(:ticket), new_ticket_path, class: klass
-= link_to t(:vacation), new_vacation_path, class: klass
+%div.btn-group{ dir: 'ltr' }
+	- klass = get_btn_class(:new_request_link)
+	= link_to t(:coming), new_coming_path, class: klass
+	= link_to t(:leave), new_leafe_path, class: klass
+	= link_to t(:ticket), new_ticket_path, class: klass
+	= link_to t(:vacation), new_vacation_path, class: klass

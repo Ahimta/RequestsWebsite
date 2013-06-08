@@ -1,9 +1,5 @@
-%dl
-	%dt= t('locations.form.name')
-	%dd= location.name
-	%dt= t(:users_count)
-	%dd= location.users.size
-	%dt= t(:applicants_count)
-	%dd= location.applicants.size
-	%dt= t(:requests_count)
-	%dd= location.requests.size
+= render('/shared/resource_attributes',
+	attributes: { t('locations.form.name') => location.name,
+	t(:users_count) => location.users.size,
+	t(:applicants_count) => location.applicants.size,
+	t(:requests_count) => location.requests.size })

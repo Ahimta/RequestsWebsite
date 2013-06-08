@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe LeavesController do
-	it_behaves_like 'new', Leave
+	describe 'new' do
+		it_behaves_like 'new', Leave
+		it_behaves_like 'new request', Leave
+	end
 	
 	it_behaves_like 'create', Leave
 	

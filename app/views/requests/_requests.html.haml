@@ -27,4 +27,4 @@
 						- else
 							= get_status(request.accepted)
 					- if admin
-						%td= render partial: '/requests/requests_btn_group', layout: '/layouts/btn_group', locals: { request: request }
+						%td= render '/requests/requests_btn_group', request: request

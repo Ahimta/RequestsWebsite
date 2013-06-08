@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe VacationsController do
-	it_behaves_like 'new', Vacation
+	describe 'new' do
+		it_behaves_like 'new', Vacation
+		it_behaves_like 'new request', Vacation
+	end
 	
 	it_behaves_like 'create', Vacation
 	

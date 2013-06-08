@@ -9,9 +9,11 @@
 		= csrf_meta_tags
 	- ar = I18n.locale == :ar
 	- admin = @current_user.try(:admin)
-	%body{ dir: ar ? 'rtl' : 'ltr', style: 'background-color: #888' }
-		%header{ style: 'margin-bottom: 50px' }
-			%div.navbar.navbar-static-top
+	%style
+		header { margin-bottom: 90px }
+	%body{ dir: ar ? 'rtl' : 'ltr' }
+		%header
+			%div.navbar.navbar-fixed-top.navbar-inverse
 				%div.navbar-inner
 					%div.container
 						- pull = ar ? 'pull-left' : 'pull-right'
@@ -36,20 +38,20 @@
 								= password_field :login, :password, class: get_login_input_class, placeholder: password
 								= submit_tag t('.login'), class: get_btn_class(:login)
 			
-			- notice, warning = flash[:notice], flash[:warning]
-			
-			- if notice
-				%div.alert.alert-success.text-center
-					%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
-					= notice
-			- elsif warning
-				%div.alert.alert-error.text-center
-					%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
-					= warning
+		- notice, warning = flash[:notice], flash[:warning]
 		
-		%div.container.text-center.well.well-small
+		- if notice
+			%div.alert.alert-success.text-center
+				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
+				= notice
+		- elsif warning
+			%div.alert.alert-error.text-center
+				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
+				= warning
+		
+		%div.container.text-center
 			= yield
 			
-			%hr
-			%footer.footer
-				%p.lead © Saleh Saifi
+		%hr
+		%footer.footer.text-center
+			%p.lead © Saleh Saifi

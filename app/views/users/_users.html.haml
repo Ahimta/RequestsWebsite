@@ -21,6 +21,7 @@
 						%td= link_to user.location_name, user.location
 					%td= user.applicants.count
 					%td= user.requests.count
-					%td= render partial: '/users/btn_group', layout: '/layouts/btn_group', locals: { user: user }
+					%td= render '/shared/modify_btn_group', edit_path: edit_user_path(user), resource: user
+					-# %td= render partial: '/users/btn_group', layout: '/layouts/btn_group', locals: { user: user }
 - else
 	%div.lead= t('.empty')

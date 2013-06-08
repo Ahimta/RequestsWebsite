@@ -15,19 +15,6 @@ class ApplicantsController < ApplicationController
 	def show
 	end
 	
-	def edit
-	end
-	
-	def update
-		@applicant.attributes = params[:applicant]
-		
-		if @applicant.save
-			redirect_to requests_path
-		else
-			render :edit
-		end
-	end
-	
 	def destroy
 		@applicant.destroy
 		redirect_to requests_path

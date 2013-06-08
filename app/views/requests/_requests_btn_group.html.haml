@@ -1,2 +1,3 @@
-= link_to t('requests.requests.accept'), new_request_decision_path(request, d: 'accept'), class: get_btn_class(:accept)
-= link_to t('requests.requests.reject'), new_request_decision_path(request, d: 'reject'), class: get_btn_class(:reject)
+%div.btn-group{ dir: 'ltr' }
+	= link_to t('requests.requests.accept'), new_request_decision_path(request, d: 'accept'), class: get_btn_class(:accept)
+	= link_to t('requests.requests.reject'), new_request_decision_path(request, d: 'reject'), class: get_btn_class(:reject)

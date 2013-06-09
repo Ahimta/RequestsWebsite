@@ -1,9 +1,6 @@
-%dl
-	%dt= t(:name)
-	%dd= applicant.name
-	%dt= t(:user)
-	%dd= link_to applicant.user_username, applicant.user
-	%dt= t(:location)
-	%dd= link_to applicant.location_name, applicant.location
-	%dt= t(:requests_count)
-	%dd= applicant.requests.size
+= render('/shared/resource_attributes',
+	attributes: { t(:name) => applicant.name,
+	t(:user) => link_to(applicant.user_username,
+	applicant.user),
+	t(:location) => link_to(applicant.location_name, applicant.location),
+	t(:requests_count) => applicant.requests.size })

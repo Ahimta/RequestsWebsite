@@ -3,7 +3,7 @@ class ComingsController < ApplicationController
 	
 	def get_coming
 		@coming = Coming.find params[:id]
-		# require_owner @coming
+		require_owner @coming
 	end
 	
 	def new

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 	before_filter { @users_link = 'active' }
 	before_filter :get_user, only: [:show, :edit, :update, :destroy]
-	# before_filter :require_admin, except: [:login, :logout]
-	# skip_before_filter :require_login, only: [:login]
+	before_filter :require_admin, except: [:login, :logout]
+	skip_before_filter :require_login, only: [:login]
 	
 	def get_user
 		@user = User.find params[:id]

@@ -4,12 +4,12 @@ class RequestsController < ApplicationController
 	
 	def get_request
 		@request = Request.find params[:id]
-		# require_owner @request
+		require_owner @request
 	end
 	
 	def index
 		@requests = Request.scoped
-		# @requests = @current_user.try(:admin) ? Request.scoped : @current_user.try(:requests)
+		@requests = @current_user.try(:admin) ? Request.scoped : @current_user.try(:requests)
 	end
 	
 	def show

@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
 	
 	def get_ticket
 		@ticket = Ticket.find params[:id]
-		# require_owner @ticket
+		require_owner @ticket
 	end
 	
 	def new

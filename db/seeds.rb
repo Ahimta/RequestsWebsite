@@ -5,8 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Location.destroy_all if Location.all.any?
-User.destroy_all if User.all.any?
-
-location = Location.create! name: 'SA'
-User.create! username: 'admin', password: 'admin', admin: true, location: location
+User.where(username: 'admin').first.try :destroy
+User.create!(username: 'admin', password: 'admin', admin: true,
+	location_attributes: { name: 'SA' })

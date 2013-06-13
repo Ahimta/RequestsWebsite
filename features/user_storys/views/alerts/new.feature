@@ -1,11 +1,11 @@
-Feature: Users can request alerts
+Feature: admins can create alerts
 
 Scenario Outline: alert_create
 	When I send an alert:
-	|	alert_title	|	<title>	|
-	|	alert_body	|	<body>	|
+		|	alert_title	|	<title>	|
+		|	alert_body	|	<body>	|
 	Then I should be on the alerts page
-	And I should see "<should_see>"
+		And I should see "<should_see>"
 
 Examples:
 	|	title	|	body	|	should_see							|

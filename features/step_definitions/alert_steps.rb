@@ -7,3 +7,13 @@ When(/^I send an alert:$/) do |data|
   
   click_button 'Send Alert'
 end
+
+When(/^I edit the first alert:$/) do |data|
+  visit edit_alert_path(id: 1)
+
+  data.rows_hash.each do |field, value|
+  	fill_in field, with: value
+  end
+  
+  click_button 'Edit Alert'
+end

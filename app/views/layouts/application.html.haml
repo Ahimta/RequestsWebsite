@@ -1,5 +1,6 @@
 !!! 5
-%html
+- ar = I18n.locale == :ar
+%html{ dir: ar ? 'rtl' : 'ltr' }
 	%head
 		%title
 			= t('.page_title') + ' -'
@@ -7,11 +8,10 @@
 		= stylesheet_link_tag :application
 		= javascript_include_tag :application
 		= csrf_meta_tags
-	- ar = I18n.locale == :ar
 	- admin = @current_user.try(:admin)
 	%style
 		header { margin-bottom: 90px }
-	%body{ dir: ar ? 'rtl' : 'ltr' }
+	%body
 		%header
 			%div.navbar.navbar-fixed-top.navbar-inverse
 				%div.navbar-inner

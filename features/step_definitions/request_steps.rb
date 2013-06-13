@@ -1,11 +1,7 @@
 When(/^I request a (\w+):$/) do |model, data|
   visit eval("new_#{model.pluralize.singularize}_path")
-  
-  data.rows_hash.each do |field, value|
-  	fill_in field, with: value
-  end
-  
-  click_button "Request #{model.titleize}"
+
+  submit data, "Request #{model.titleize}"
 end
 
 Then(/^all request models should be empty$/) do

@@ -1,4 +1,4 @@
-Feature: Users can see individual requests
+Feature: users can see individual requests
 
 Scenario Outline: comings
 	Given a <type> <model> exist

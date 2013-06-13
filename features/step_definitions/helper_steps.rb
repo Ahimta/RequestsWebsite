@@ -24,6 +24,13 @@ Then(/^(\w+) model should be empty$/) do |model|
   eval "#{model.classify}.all.should be_empty"
 end
 
+When(/^I edit the first (\w+):$/) do |model, data|
+  visit eval("edit_#{model}_path(id: 1)")
+
+  submit data, "Edit #{model.capitalize}"
+end
+
+
 def submit(data, button)
   data.rows_hash.each do |field, value|
     fill_in field, with: value

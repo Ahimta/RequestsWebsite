@@ -29,8 +29,9 @@ class ComingsController < ApplicationController
 		@coming.attributes = params[:coming]
 		
 		if @coming.save
-			redirect_to requests_path, notice: t('coming.update.notice')
+			redirect_to requests_path, notice: t('create.notice')
 		else
+			flash.now[:warning] = t('create.warning')
 			render :edit
 		end
 	end

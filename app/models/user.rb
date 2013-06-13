@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	PROTECTED = false
+
 	attr_accessible :admin, :location, :location_attributes, :location_id,
 	:password, :username
 
@@ -30,6 +32,6 @@ class User < ActiveRecord::Base
 	end
 
 	def username_available?
-		not User.where('lower(username) = ?', self.username).first.nil?
+		not User.where('lower(username) = ?', self.username).first
 	end
 end

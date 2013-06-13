@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 	
 	before_filter :get_locale
 	before_filter :get_session
-	before_filter :require_login
+	before_filter :require_login if User::PROTECTED
 	
 	def get_locale
 		locale = params[:locale].try :to_sym
@@ -32,17 +32,19 @@ class ApplicationController < ActionController::Base
 	
 	def require_admin
 		unless @current_user.try(:admin)
-			redirect_to requests_path
+			redirect_to requests_path if User::PROTECTED
 		end
 	end
 	
 	def require_owner(record)
 		unless User.authenticate(@current_user, record)
-			redirect_to requests_path
+			redirect_to requests_path if User::PROTECTED
 		end
 	end
 	
 	def require_login
-		redirect_to home_pages_path unless @current_user
+		unless @current_user
+			redirect_to home_pages_path if User::PROTECTED
+		end
 	end
 end

@@ -1,5 +1,6 @@
 class Ticket < ActiveRecord::Base
 	Type = 'ticket'
+	LIMIT = 1.minute
 
 	attr_accessible :companions, :companions_attributes, :line, :number,
 	:passport_attributes, :request_attributes, :request_id

@@ -8,8 +8,11 @@ class RequestsController < ApplicationController
 	end
 	
 	def index
-		@requests = Request.scoped
-		@requests = @current_user.try(:admin) ? Request.scoped : @current_user.try(:requests)
+		if User::PROTECTED
+			@requests = @current_user.try(:admin) ? Request.scoped : @current_user.try(:requests)
+		else
+			@requests = Request.scoped
+		end
 	end
 	
 	def show

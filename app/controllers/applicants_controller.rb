@@ -8,8 +8,11 @@ class ApplicantsController < ApplicationController
 	end
 	
 	def index
-		@applicants = Applicant.scoped
-		@applicants = @current_user.try(:admin) ? Applicant.scoped : @current_user.try(:applicants)
+		if User::PROTECTED
+			@applicants = @current_user.try(:admin) ? Applicant.scoped : @current_user.try(:applicants)
+		else
+			@applicants = Applicant.scoped
+		end
 	end
 	
 	def show

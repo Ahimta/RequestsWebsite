@@ -1,4 +1,4 @@
-- if requests.empty?
+- unless requests.try(:present?)
 	%p.lead= t('.empty')
 	
 - else

@@ -29,3 +29,22 @@ Examples:
 	|				|	line	|	number		|	Please fill in all fields			|
 	|	applicant	|			|	number		|	Please fill in all fields			|
 	|				|	line	|	number		|	Please fill in all fields			|
+
+
+Scenario Outline: vacation
+	Given a vacation exists
+	When I edit the first vacation:
+		|	vacation_request_attributes_applicant_attributes_name	|	<applicant>	|
+		|	vacation_duration										|	<duration>	|
+		|	vacation_from											|	<from>		|
+		|	vacation_duration										|	<to>		|
+	Then I should see "<should_see>"
+
+Examples:
+	|	applicant	|	duration	|	from	|	to	|	should_see							|
+	|	applicant	|	1			|	2		|	3	|	Your Request was sent successfully	|
+	|	applicant	|	1			|	2		|		|	Please fill in all fields			|
+	|	applicant	|	1			|			|		|	Please fill in all fields			|
+	|	applicant	|				|	2		|		|	Please fill in all fields			|
+	|				|	1			|	2		|		|	Please fill in all fields			|
+	|	applicant	|				|			|	3	|	Please fill in all fields			|

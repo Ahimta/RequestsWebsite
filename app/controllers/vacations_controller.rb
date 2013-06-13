@@ -29,8 +29,9 @@ class VacationsController < ApplicationController
 		@vacation.attributes = params[:vacation]
 		
 		if @vacation.save
-			redirect_to requests_path
+			redirect_to requests_path, notice: t('create.notice')
 		else
+			flash.now[:warning] = t('create.warning')
 			render :edit
 		end
 	end

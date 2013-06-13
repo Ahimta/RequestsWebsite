@@ -23,3 +23,11 @@ end
 Then(/^(\w+) model should be empty$/) do |model|
   eval "#{model.classify}.all.should be_empty"
 end
+
+def submit(data, button)
+  data.rows_hash.each do |field, value|
+    fill_in field, with: value
+  end
+
+  click_button button
+end

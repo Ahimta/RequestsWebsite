@@ -25,7 +25,7 @@ Then(/^(\w+) model should be empty$/) do |model|
 end
 
 When(/^I edit the first (\w+):$/) do |model, data|
-  visit eval("edit_#{model}_path(id: 1)")
+  visit eval("edit_#{model.downcase}_path(id: 1)")
 
   submit data, "Edit #{model.capitalize}"
 end

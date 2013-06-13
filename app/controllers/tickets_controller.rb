@@ -29,8 +29,9 @@ class TicketsController < ApplicationController
 		@ticket.attributes = params[:ticket]
 		
 		if @ticket.save
-			redirect_to requests_path
+			redirect_to requests_path, notice: t('create.notice')
 		else
+			flash.now[:warning] = t('create.warning')
 			render :edit
 		end
 	end

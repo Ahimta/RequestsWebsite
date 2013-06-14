@@ -14,5 +14,5 @@ class Vacation < ActiveRecord::Base
 
 	accepts_nested_attributes_for :passport, :request
 
-	validates :duration, :from, :to, :request, presence: true
+	validates :duration, :from, :to, presence: true
 end

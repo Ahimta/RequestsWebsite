@@ -16,5 +16,5 @@ class Ticket < ActiveRecord::Base
 
 	accepts_nested_attributes_for :companions, :passport, :request
 
-	validates :line, :request, presence: true
+	validates :line, presence: true
 end

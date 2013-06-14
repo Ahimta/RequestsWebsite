@@ -12,5 +12,5 @@ class Coming < ActiveRecord::Base
 
 	accepts_nested_attributes_for :request
 
-	validates :reason, :request, presence: true
+	validates :reason, presence: true
 end

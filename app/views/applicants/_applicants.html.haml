@@ -1,4 +1,4 @@
-- if applicants.empty?
+- unless applicants.try :present?
 	%p.lead= t('.empty')
 
 - else

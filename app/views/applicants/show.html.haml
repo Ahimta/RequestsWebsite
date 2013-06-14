@@ -3,4 +3,4 @@
 = render @applicant
 %hr
 
-= render '/requests/requests', requests: @applicant.requests
+= render '/requests/requests', requests: @applicant.try(:requests)

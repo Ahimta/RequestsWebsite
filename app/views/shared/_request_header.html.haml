@@ -5,6 +5,4 @@
 	%span{ class: get_label_class(request.request.accepted) }
 		= get_status(request.request.accepted)
 
-%p
-	%b= t(:applicant) + ': '
-	= request.applicant_name
+= render '/shared/resource_attributes', attributes: { t(:applicant) => request.applicant_name }

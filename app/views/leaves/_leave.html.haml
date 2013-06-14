@@ -1,7 +1,5 @@
 = render '/shared/request_header', header: t('.header'), request: leave
 
-%p
-	%b= t('leaves.form.reason') + ': '
-	= leave.reason
+= render '/shared/resource_attributes', attributes: { t('leaves.form.reason') => leave.reason }
 
 = render '/shared/resource_footer', back_path: requests_path, edit_path: edit_leafe_path(leave), resource: leave.request

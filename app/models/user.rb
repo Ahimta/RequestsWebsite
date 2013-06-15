@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
 	validates :username, presence: true #, uniqueness: { case_insensetive: true }
 	validates :location, presence: true
+	
 	def self.login(login)
 		username, password = login[:username], login[:password]
 		user = User.where("lower(username) = ?", username.downcase).first
@@ -32,6 +33,6 @@ class User < ActiveRecord::Base
 	end
 
 	def username_available?
-		not User.where('lower(username) = ?', self.username).first
+		not User.where('lower(username) = ?', self.username.downcase).first
 	end
 end

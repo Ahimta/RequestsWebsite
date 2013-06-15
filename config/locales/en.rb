@@ -10,6 +10,7 @@
 		location: 'Location', requests_count: 'Requests Count', user: 'User',
 		applicants_count: 'Applicants Count', applicant_name: 'Applicant Name',
 		users_count: 'Users Count', status: 'Status', back: 'Back',
+		passport: 'Passport image',
 		applicants:
 		{
 			form: { name: 'Name' },

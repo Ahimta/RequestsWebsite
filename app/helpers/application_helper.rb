@@ -23,4 +23,8 @@ module ApplicationHelper
 	def get_login_input_class
 		'span2'
 	end
+	
+	def set_title(title)
+		provide :title, title
+	end
 end

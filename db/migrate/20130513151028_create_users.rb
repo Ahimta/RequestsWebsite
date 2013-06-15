@@ -9,6 +9,6 @@ class CreateUsers < ActiveRecord::Migration
 			t.timestamps
 		end
 
-		add_index :users, [:username, :location_id]
+		add_index :users, :location_id
 	end
 end

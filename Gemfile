@@ -8,9 +8,9 @@ group :development, :test do
 	gem 'debugger'# To use debugger
 end
 
-# group :development, :production do
-# 	gem 'unicorn'
-# end
+group :development, :production do
+	gem 'unicorn'
+end
 
 group :development do
 	gem 'brakeman'

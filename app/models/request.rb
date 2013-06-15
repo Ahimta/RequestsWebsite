@@ -11,7 +11,7 @@ class Request < ActiveRecord::Base
 	has_one :leave, dependent: :destroy
 	has_one	:ticket, dependent: :destroy
 	has_one :vacation, dependent: :destroy
-	has_one :decision
+	has_one :decision, dependent: :destroy
 
 	accepts_nested_attributes_for :applicant
 	

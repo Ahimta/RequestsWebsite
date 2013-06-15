@@ -10,6 +10,7 @@
 		location: 'الموقع', requests_count: 'عدد الطلبات', user: 'المستخدم',
 		applicants_count: 'عدد المستفيدين', applicant_name: 'اسم المستفيد',
 		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة',
+		reason: 'السبب', passport: 'صورة الجواز',
 		applicants:
 		{
 			form: { name: 'الاسم' },
@@ -74,6 +75,7 @@
 		},
 		tickets:
 		{
+			create: { warning: 'يجب أن ﻻ تقل المدة بين طلبات التذاكر عن 11 شهراً' },
 			edit: { action: 'تعديل طلب تذاكر' },
 			form: { line: 'خط السير', number: 'رقم الحجز إن وجد' },
 			new: { action: 'طلب مغادرة' },
@@ -123,7 +125,7 @@
 				acceptance: 'applicant منح type بقرار رقم number.'
 			},
 			form: { number: 'رقم القرار' },
-			new: { action: 'إنشاء موافقة' },
+			new: { action: 'إصدار موافقة' },
 			show: { header: 'موافقة' }
 		}
 	}	

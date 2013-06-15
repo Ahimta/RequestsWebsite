@@ -7,6 +7,8 @@
 		%thead
 			%tr
 				%th #
+				- if admin
+					%th= t(:user)
 				%th= t(:applicant)
 				%th= t(:type)
 				%th= t(:status)
@@ -19,6 +21,8 @@
 					%td
 						= link_to i, request
 						- i += 1
+					- if admin
+						%td= link_to request.user_username, request.user
 					%td= link_to request.applicant_name, request.applicant
 					%td= t(request.rtype.try :to_sym)
 					%td

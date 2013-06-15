@@ -15,6 +15,12 @@ class TicketsController < ApplicationController
 		@ticket = Ticket.new params[:ticket]
 		
 		if @ticket.save
+			if not Ticket.has_right?(@ticket.applicant) and User::PROTECTED
+				@ticket.request.destroy
+				flash[:warning] = t('tickets.create.warning')
+				redirect_to requests_path and return
+			end
+			
 			redirect_to requests_path, notice: t('create.notice')
 		else
 			flash.now[:warning] = t('create.warning')

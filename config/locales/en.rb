@@ -75,6 +75,7 @@
 		},
 		tickets:
 		{
+			create: { warning: 'You cannot request tickets more than once every 11 months' },
 			edit: { action: 'Edit Ticket Request' },
 			form: { line: 'Line', number: 'Number if exists' },
 			new: { action: 'Request Ticket' },

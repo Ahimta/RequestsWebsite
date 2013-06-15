@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	PROTECTED = false
+	PROTECTED = true
 
 	attr_accessible :admin, :location, :location_attributes, :location_id,
 	:password, :username

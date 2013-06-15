@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
 	end
 
 	def username_available?
-		not User.where('lower(username) = ?', self.username.downcase).first
+		not User.where('lower(username) = ?', username.downcase).first
 	end
 end

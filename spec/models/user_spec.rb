@@ -2,7 +2,24 @@ require 'spec_helper'
 
 describe User do
 	describe '.login' do
+		let!(:user) { FactoryGirl.create :user, username: 'x', password: 'y' }
+		let!(:admin) { FactoryGirl.create :user, username: 'admin', admin: true, password: 'z' }
 		
+		context 'valid' do
+			it { User.login(username: 'x', password: 'y').should == user }
+			it { User.login(username: 'X', password: 'y').should == user }
+			it { User.login(username: 'admin', password: 'z').should == admin }
+			it { User.login(username: 'ADMIN', password: 'z').should == admin }
+		end
+		
+		context 'invalid' do
+			it { User.login(username: 'x', password: 'Y').should be_false }
+			it { User.login(username: 'x', password: 'z').should be_false }
+			it { User.login(username: 'x', password: 'Z').should be_false }
+			it { User.login(username: 'admin', password: 'Z').should be_false }
+			it { User.login(username: 'admin', password: 'y').should be_false }
+			it { User.login(username: 'admin', password: 'Y').should be_false }
+		end
 	end
 	
 	describe '.authenticate' do
@@ -36,26 +53,33 @@ describe User do
 	
 	describe '#username_available?' do
 		let!(:records) { FactoryGirl.create_list :user, 3 }
-		let!(:invalid) { FactoryGirl.build_list :user, 3 }
-		let!(:invalid_upcased) { invalid.each { |e| e.username.upcase } }
-		let!(:invalid_downcased) { invalid.each { |e| e.username.downcase } }
-		let!(:valid) { FactoryGirl.build :user, username: 'hi' }
 		
-		it do
-			invalid.each do |e|
-				e.username_available?.should == false
+		context 'invalid' do
+			let!(:invalid) { FactoryGirl.build_list :user, 3 }
+			let!(:invalid_upcased) { invalid.each { |e| e.username.upcase } }
+			let!(:invalid_downcased) { invalid.each { |e| e.username.downcase } }
+			
+			it do
+				invalid.each do |e|
+					e.username_available?.should == false
+				end
+			end
+			it do
+				invalid_upcased.each do |e|
+					e.username_available?.should == false
+				end
+			end
+			it do
+				invalid_downcased.each do |e|
+					e.username_available?.should == false
+				end
 			end
 		end
-		it do
-			invalid_upcased.each do |e|
-				e.username_available?.should == false
-			end
+		
+		context 'valid' do
+			let!(:valid) { FactoryGirl.build :user, username: 'hi' }
+			
+			it { valid.username_available?.should be_true }
 		end
-		it do
-			invalid_downcased.each do |e|
-				e.username_available?.should == false
-			end
-		end
-		it { valid.username_available?.should == true }
 	end
 end

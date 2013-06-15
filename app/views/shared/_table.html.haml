@@ -1,22 +1,18 @@
-%table.table
-	%thead
-		%tr
-			%th #
-			- columns.each do |column|
-				%th= column
-	%tbody
-		- i = 1
-		- rows.each do |row|
-			%tr{ class: get_row_class(request.accepted) }
-				%td
-					= link_to i, request
-					- i += 1
-				%td= link_to request.applicant_name, request.applicant
-				%td= t(request.rtype.try :to_sym)
-				%td
-					- if request.decision
-						= link_to t('.accepted'), request_decision_path(request, request.decision)
-					- else
-						= get_status(request.accepted)
-				- if admin
-					%td= render '/requests/requests_btn_group', request: request
+- if items.empty?
+	%p.lead= empty
+
+- else
+	%table.table.table-striped
+		%thead
+			%tr
+				%th #
+				- columns.each do |column|
+					%th= column
+		%tbody
+			- i = 1
+			- items.each do |item|
+				%tr
+				%td= i
+				- i += 1
+				- cells.each do |cell|
+					%td= cell

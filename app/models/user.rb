@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 	end
 
 	def self.authenticate(user, record)
-		(record.user == user) or user.try(:admin)
+		(record.try(:user) == user) or user.try(:admin)
 	end
 
 	def username_available?

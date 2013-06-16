@@ -1,6 +1,28 @@
 require 'spec_helper'
 
 describe User do
+	describe 'associations' do
+		subject! { User.new }
+		
+		its(:location) { should be_nil }
+		its(:applicants) { should be_empty }
+		its(:comings) { should be_empty }
+		its(:decisions) { should be_empty }
+		its(:leaves) { should be_empty }
+		its(:requests) { should be_empty }
+		its(:tickets) { should be_empty }
+		its(:vacations) { should be_empty }
+	end
+	
+	describe 'default values' do
+		subject! { User.new }
+		
+		its(:admin) { should be_nil }
+		its(:location_id) { should be_nil }
+		its(:password) { should be_nil }
+		its(:username) { should be_nil }
+	end
+	
 	describe '.login' do
 		let!(:user) { FactoryGirl.create :user, username: 'x', password: 'y' }
 		let!(:admin) { FactoryGirl.create :user, username: 'admin', admin: true, password: 'z' }
@@ -36,12 +58,12 @@ describe User do
 		
 		it 'should return true for a valid user' do
 			records.each do |record|
-				User.authenticate(user, record).should == true
+				User.authenticate(user, record).should be_true
 			end
 		end
 		it 'should return true for admin user' do
 			records.each do |record|
-				User.authenticate(admin, record).should == true
+				User.authenticate(admin, record).should be_true
 			end
 		end
 		it 'should return false for invalid user' do
@@ -61,17 +83,17 @@ describe User do
 			
 			it do
 				invalid.each do |e|
-					e.username_available?.should == false
+					e.username_available?.should be_false
 				end
 			end
 			it do
 				invalid_upcased.each do |e|
-					e.username_available?.should == false
+					e.username_available?.should be_false
 				end
 			end
 			it do
 				invalid_downcased.each do |e|
-					e.username_available?.should == false
+					e.username_available?.should be_false
 				end
 			end
 		end

@@ -1,6 +1,26 @@
 require 'spec_helper'
 
 describe Request do
+	describe 'associations' do
+		subject! { Request.new }
+		
+		its(:applicant) { should be_nil }
+		its(:coming) { should be_nil }
+		its(:decision) { should be_nil }
+		its(:leave) { should be_nil }
+		its(:ticket) { should be_nil }
+		its(:vacation) { should be_nil }
+		its(:user) { should be_nil }
+	end
+	
+	describe 'default values' do
+		subject! { Request.new }
+		
+		its(:accepted) { should be_nil }
+		its(:rtype) { should be_nil }
+		its(:applicant_id) { should be_nil }
+	end
+	
 	describe '.build_associations' do
 		let!(:coming) { Coming.new }
 		let!(:leave) { Leave.new }

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	PROTECTED = true
+	PROTECTED = false
 
 	attr_accessible :admin, :location, :location_attributes, :location_id,
 	:password, :username
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 	has_many :requests, through: :applicants
 	has_many :decisions, through: :requests
 	has_many :comings, through: :requests
-	has_many :leaves, through: :requests
+	has_many :leaves, through: :requests, source: :leave
 	has_many :tickets, through: :requests
 	has_many :vacations, through: :requests
 

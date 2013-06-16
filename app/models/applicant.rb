@@ -8,7 +8,7 @@ class Applicant < ActiveRecord::Base
 	
 	has_many :requests, dependent: :destroy
 	has_many :comings, through: :requests
-	has_many :leaves, through: :requests
+	has_many :leaves, through: :requests, source: :leave
 	has_many :tickets, through: :requests
 	has_many :vacations, through: :requests
 	

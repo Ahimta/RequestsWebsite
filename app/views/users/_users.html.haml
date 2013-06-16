@@ -1,26 +1,8 @@
-- if users.present?
-	%table.table.table-striped
-		- location_col ||= false
-		%thead
-			%tr
-				%th #
-				%th= t('users.form.username')
-				- if location_col
-					%th= t('locations.form.name')
-				%th= t(:applicants_count)
-				%th= t(:requests_count)
-				%th= t(:modify)
-		%tbody
-			- i = 1
-			- users.each do |user|
-				%tr
-					%td= i
-					- i += 1
-					%td= link_to user.username, user
-					- if location_col
-						%td= link_to user.location_name, user.location
-					%td= user.applicants.count
-					%td= user.requests.count
-					%td= render '/shared/modify_btn_group', edit_path: edit_user_path(user), resource: user
-- else
-	%div.lead= t('.empty')
+- cells   = ['link_to item.username, item', 'link_to item.location_name, item.location',
+	'item.applicants.size', 'item.requests.size',
+	"render '/shared/modify_btn_group', edit_path: edit_user_path(item), resource: item"]
+- columns = [t('users.form.username'), t('locations.form.name'),
+	t(:applicants_count), t(:requests_count), t(:modify)]
+
+= render('/shared/table', columns: columns, items: users, cells: cells,
+	empty_phrase: t('.empty'))

@@ -1,0 +1,18 @@
+- if items.try :any?
+	%table.table.table-striped
+		%thead
+			%tr
+				%th #
+				- columns.each do |column|
+					%th= column
+		%tbody
+			- i = 1
+			- items.each do |item|
+				%tr
+					%td= i
+					- i += 1
+					- cells.each do |cell|
+						%td= eval cell
+
+- elsif empty_phrase
+	%p.lead= empty_phrase

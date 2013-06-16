@@ -1,22 +1,5 @@
-- if locations.empty?
-	%p= t('.empty')
+- cells   = ['link_to item.name, item', 'item.users.size', 'item.applicants.size', 'item.requests.size']
+- columns = [t('locations.form.name'), t(:users_count), t(:applicants_count), t(:requests_count)]
 
-- else
-	%table.table.table-striped
-		%thead
-			%tr
-				%th #
-				%th= t('locations.form.name')
-				%th= t(:users_count)
-				%th= t(:applicants_count)
-				%th= t(:requests_count)
-		%tbody
-			- i = 1
-			- locations.each do |location|
-				%tr
-					%td= i
-					- i += 1
-					%td= link_to location.name, location
-					%td= location.users.size
-					%td= location.applicants.size
-					%td= location.requests.size
+= render('/shared/table', columns: columns, items: locations, cells: cells,
+	empty_phrase: t('.empty'))

@@ -1,9 +1,9 @@
 !!! 5
-- ar = I18n.locale == :ar
-%html{ dir: ar ? 'rtl' : 'ltr' }
+- ar = I18n.locale.to_sym == :ar
+%html
 	%head
 		%title
-			= t('.page_title') + ' -'
+			= "#{t('.page_title')} -"
 			= yield :title
 		= stylesheet_link_tag :application
 		= javascript_include_tag :application
@@ -11,7 +11,7 @@
 	- admin = @current_user.try(:admin)
 	%style
 		header { margin-bottom: 90px }
-	%body
+	%body{ dir: ar ? 'rtl' : 'ltr' }
 		%header
 			%div.navbar.navbar-fixed-top.navbar-inverse
 				%div.navbar-inner

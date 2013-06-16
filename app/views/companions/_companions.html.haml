@@ -1,19 +1,5 @@
-- if companions.try :any?
-	%table.table.table-striped
-		%thead
-			%tr
-				%th{colspan: 0, style: 'text-align: center' }= t('companions.form.companions')
-			%tr
-				%th #
-				%th= t('companions.form.name')
-				%th= t('companions.form.relation')
-				%th= t('companions.form.birthdate')
-		%tbody
-			- i = 1
-			- companions.each do |companion|
-				%tr
-					%td= i
-					- i += 1
-					%td= companion.name
-					%td= companion.relation
-					%td= companion.birthdate
+- columns = [t('companions.form.name'), t('companions.form.relation'), t('companions.form.birthdate')]
+- cells   = ['item.name', 'item.relation', 'item.birthdate']
+
+= render('/shared/table', columns: columns, items: companions, cells: cells,
+	empty_phrase: false)

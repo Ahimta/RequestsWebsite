@@ -1,34 +1,15 @@
-- unless requests.try(:present?)
-	%p.lead= t('.empty')
+- admin = @current_user.try(:admin)
+
+- columns   = []
+- columns << t(:user) if admin
+- columns.push(t(:applicant), t(:type), t(:status))
+- columns << t('.decide') if admin
+
+- cells = ['link_to i, item']
+- cells << 'link_to item.user_username, item.user' if admin
+- cells.push('link_to item.applicant_name, item.applicant',
+	't(item.rtype.try :to_sym)', 'get_decision_cell(item)')
+- cells << "render('/requests/requests_btn_group', request: item)" if admin
 	
-- else
-	%table.table
-		- admin = @current_user.try(:admin)
-		%thead
-			%tr
-				%th #
-				- if admin
-					%th= t(:user)
-				%th= t(:applicant)
-				%th= t(:type)
-				%th= t(:status)
-				- if admin
-					%th= t('.decide')
-		%tbody
-			- i = 1
-			- requests.each do |request|
-				%tr{ class: get_row_class(request.accepted) }
-					%td
-						= link_to i, request
-						- i += 1
-					- if admin
-						%td= link_to request.user_username, request.user
-					%td= link_to request.applicant_name, request.applicant
-					%td= t(request.rtype.try :to_sym)
-					%td
-						- if request.decision
-							= link_to t('.accepted'), request_decision_path(request, request.decision)
-						- else
-							= get_status(request.accepted)
-					- if admin
-						%td= render '/requests/requests_btn_group', request: request
+= render('/shared/table', columns: columns, items: requests, cells: cells,
+	empty_phrase: t('.empty'), requests: true)

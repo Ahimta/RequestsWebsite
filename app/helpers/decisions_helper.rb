@@ -8,4 +8,8 @@ module DecisionsHelper
 		
 		phrase.gsub pattern, matcher
 	end
+	
+	def get_accepted_link(item)
+		get_row_class(item.accepted) if item.class == Request
+	end
 end

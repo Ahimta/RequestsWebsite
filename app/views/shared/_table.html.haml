@@ -1,3 +1,5 @@
+- requests ||= false
+
 - if items.try :any?
 	%table.table.table-striped
 		%thead
@@ -8,11 +10,12 @@
 		%tbody
 			- i = 1
 			- items.each do |item|
-				%tr
-					%td= i
-					- i += 1
+				%tr{ class: get_accepted_link(item) }
+					- unless requests
+						%td= i
 					- cells.each do |cell|
 						%td= eval cell
+					- i += 1
 
 - elsif empty_phrase
 	%p.lead= empty_phrase

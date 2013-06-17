@@ -31,4 +31,13 @@ module RequestsHelper
 		when 'vacation' then request.vacation
 		end
 	end
+	
+	def get_decision_cell(request)
+		if request.decision
+			link_to(t('requests.requests.accepted'),
+				request_decision_path(request, request.decision))
+		else
+			get_status(request.accepted)
+		end
+	end
 end

@@ -1,8 +1,9 @@
-= provide :title, header
+= title header
 
 %div.page-header
 	%h1= header
 	%span{ class: get_label_class(request.request.accepted) }
 		= get_status(request.request.accepted)
 
-= render '/shared/resource_attributes', attributes: { t(:applicant) => request.applicant_name }
+= render('/shared/resource_attributes',
+	attributes: { t(:applicant) => request.applicant_name })

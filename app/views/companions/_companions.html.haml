@@ -1,5 +1,4 @@
-- columns = [t('companions.form.name'), t('companions.form.relation'), t('companions.form.birthdate')]
-- cells   = ['item.name', 'item.relation', 'item.birthdate']
+- cells, columns = get_companions_table
 
 = render('/shared/table', columns: columns, items: companions, cells: cells,
 	empty_phrase: false)

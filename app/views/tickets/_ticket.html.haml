@@ -8,4 +8,5 @@
 
 = render '/companions/companions', companions: ticket.companions
 
-= render '/shared/resource_footer', back_path: requests_path, edit_path: edit_ticket_path(ticket), resource: ticket.request
+= render('/shared/resource_footer', back_path: requests_path,
+	edit_path: edit_ticket_path(ticket), resource: ticket.request)

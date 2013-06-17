@@ -7,7 +7,7 @@
 	%div= f.text_field :from, placeholder: t('.from')
 	%div= f.text_field :to, placeholder: t('.to')
 	
-	= render '/passports/passport', passport: @vacation.passport if @vacation.passport
+	= render '/passports/passport', passport: @vacation.passport
 	= render '/passports/form', f: f
 	
 	= render '/shared/form_footer', f: f, action: action

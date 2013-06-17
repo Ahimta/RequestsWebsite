@@ -1,5 +1,7 @@
 = render '/shared/request_header', header: t('.header'), request: coming
 
-= render '/shared/resource_attributes', attributes: { t(:reason) => coming.reason }
+= render('/shared/resource_attributes',
+	attributes: { t(:reason) => coming.reason })
 
-= render '/shared/resource_footer', back_path: requests_path, edit_path: edit_coming_path(coming), resource: coming.request
+= render('/shared/resource_footer', back_path: requests_path,
+	edit_path: edit_coming_path(coming), resource: coming.request)

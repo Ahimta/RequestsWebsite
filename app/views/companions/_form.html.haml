@@ -3,5 +3,7 @@
 = f.fields_for :companions, id: 'companions' do |h|
 	%div
 		= h.text_field :name, placeholder: t('.name'), class: get_mini_input_class
-		= h.text_field :relation, placeholder: t('.relation'), class: get_mini_input_class
-		= h.text_field :birthdate, placeholder: t('.birthdate'), class: get_mini_input_class
+		= h.text_field(:relation, placeholder: t('.relation'),
+			class: get_mini_input_class)
+		= h.text_field(:birthdate, placeholder: t('.birthdate'),
+			class: get_mini_input_class)

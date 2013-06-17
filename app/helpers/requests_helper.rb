@@ -40,4 +40,19 @@ module RequestsHelper
 			get_status(request.accepted)
 		end
 	end
+	
+	def get_requests_table(admin)
+		columns   = []
+		columns << t(:user) if admin
+		columns.push(t(:applicant), t(:type), t(:status))
+		columns << t('requests.requests.decide') if admin
+		
+		cells = ['link_to i, item']
+		cells << 'link_to item.user_username, item.user' if admin
+		cells.push('link_to item.applicant_name, item.applicant',
+		't(item.rtype.try :to_sym)', 'get_decision_cell(item)')
+		cells << "render('/requests/requests_btn_group', request: item)" if admin
+		
+		[cells, columns]
+	end
 end

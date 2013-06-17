@@ -1,5 +1,4 @@
-- cells   = ['link_to item.name, item', 'item.requests.size']
-- columns = [t(:applicant_name), t(:requests_count)]
+- cells, columns = get_applicants_table
 
 = render('/shared/table', columns: columns, items: applicants, cells: cells,
 	empty_phrase: t('.empty'))

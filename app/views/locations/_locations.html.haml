@@ -1,5 +1,4 @@
-- cells   = ['link_to item.name, item', 'item.users.size', 'item.applicants.size', 'item.requests.size']
-- columns = [t('locations.form.name'), t(:users_count), t(:applicants_count), t(:requests_count)]
+- cells, columns = get_locations_table
 
 = render('/shared/table', columns: columns, items: locations, cells: cells,
 	empty_phrase: t('.empty'))

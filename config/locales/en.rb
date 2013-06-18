@@ -6,11 +6,11 @@
 	{
 		applicant: 'Applicant', request: 'Request', coming: 'Coming',
 		leave: 'Leave', destroy: 'Delete', edit: 'Edit', ticket: 'Ticket',
-		vacation: 'Vacation', name: 'Name',type: 'Type', modify: 'Modify',
+		vacation: 'Vacation', name: 'Name', type: 'Type', modify: 'Modify',
 		location: 'Location', requests_count: 'Requests Count', user: 'User',
 		applicants_count: 'Applicants Count', applicant_name: 'Applicant Name',
 		users_count: 'Users Count', status: 'Status', back: 'Back',
-		passport: 'Passport image',
+		passport: 'Passport image', reason: 'Reason',
 		applicants:
 		{
 			form: { name: 'Name' },
@@ -25,10 +25,10 @@
 		{
 			application:
 			{
-				alerts: 'Alerts', locale: 'Arabic', locations: 'Locations',
-				login: 'Login', logout: 'Logout', page_title: 'RequestsWebsite',
-				password: 'Password', requests: 'Requests', username: 'Username',
-				users: 'Users'
+				alerts: 'Alerts', applicants: 'Applicants', locale: 'Arabic',
+				locations: 'Locations', login: 'Login', logout: 'Logout',
+				page_title: 'RequestsWebsite', password: 'Password',
+				requests: 'Requests', username: 'Username', users: 'Users'
 			}
 		},
 		locations:

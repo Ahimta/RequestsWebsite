@@ -1,10 +1,11 @@
 - link ||= false
 
-%div
-	- if link
-		%h2= link_to alert.title, alert
-	- else
-		%h2= alert.title
+%article
+	%h2
+		- if link
+			= link_to alert.title, alert
+		- else
+			= alert.title
 	
 	%p.lead= alert.body
 	

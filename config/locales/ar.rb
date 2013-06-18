@@ -10,7 +10,7 @@
 		location: 'الموقع', requests_count: 'عدد الطلبات', user: 'المستخدم',
 		applicants_count: 'عدد المستفيدين', applicant_name: 'اسم المستفيد',
 		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة',
-		reason: 'السبب', passport: 'صورة الجواز',
+		reason: 'السبب', passport: 'صورة الجواز', reason: 'السبب',
 		applicants:
 		{
 			form: { name: 'الاسم' },

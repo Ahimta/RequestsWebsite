@@ -3,7 +3,9 @@
 = form_for @alert do |f|
 	%div.page-header
 		%h1= action
-	%div= f.text_field :title, placeholder: t('.title'), autofocus: 'autofocus'
-	%div= f.text_area :body, placeholder: t('.body'), rows: 8
+	%div= f.text_field(:title, placeholder: t('.title'), autofocus: 'autofocus',
+		required: 'required')
+	%div= f.text_area(:body, placeholder: t('.body'), rows: 8,
+		required: 'required')
 	
 	= render '/shared/form_footer', f: f, action: action

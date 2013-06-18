@@ -16,27 +16,32 @@
 			%div.navbar.navbar-fixed-top.navbar-inverse
 				%div.navbar-inner
 					%div.container
-						- pull = ar ? 'pull-left' : 'pull-right'
-						%div.navbar-form{ class: pull }
-							= link_to t('.locale'), requests_path(locale: ar ? 'en' : 'ar'), class: get_btn_class(:link)
-							- if @current_user
-								= link_to t('.logout'), logout_users_path, method: :delete, class: get_btn_class(:logout)
+						%a.btn.btn-navbar{ 'data-toggle' => "collapse", 'data-target' => ".nav-collapse" }
+							- 3.times do
+								%span.icon-bar
 						
-						- pull2 = ar ? 'pull-right' : 'pull-left'
-						- if @current_user
-							%ul.nav{ class: pull2 }
-								%li{ class: @requests_link }= link_to t('.requests'), requests_path
-								%li{ class: @alerts_link }= link_to t('.alerts'), alerts_path
-								%li{ class: @applicants_link }= link_to t('.applicants'), applicants_path
-								- if admin
-									%li{ class: @locations_link }= link_to t('.locations'), locations_path
-									%li{ class: @users_link }= link_to t('.users'), users_path
-						- else
-							= form_tag login_users_path, class: 'navbar-form ' + pull2 do
-								- username, password = t('users.form.username'), t('users.form.password')
-								= text_field :login, :username, class: get_login_input_class, placeholder: username, autofocus: ''
-								= password_field :login, :password, class: get_login_input_class, placeholder: password
-								= submit_tag t('.login'), class: get_btn_class(:login)
+						%div.nav-collapse.collapse
+							- pull = ar ? 'pull-left' : 'pull-right'
+							%div.navbar-form{ class: pull }
+								= link_to t('.locale'), requests_path(locale: ar ? 'en' : 'ar'), class: get_btn_class(:link)
+								- if @current_user
+									= link_to t('.logout'), logout_users_path, method: :delete, class: get_btn_class(:logout)
+							
+							- pull2 = ar ? 'pull-right' : 'pull-left'
+							- if @current_user
+								%ul.nav{ class: pull2 }
+									%li{ class: @requests_link }= link_to t('.requests'), requests_path
+									%li{ class: @alerts_link }= link_to t('.alerts'), alerts_path
+									%li{ class: @applicants_link }= link_to t('.applicants'), applicants_path
+									- if admin
+										%li{ class: @locations_link }= link_to t('.locations'), locations_path
+										%li{ class: @users_link }= link_to t('.users'), users_path
+							- else
+								= form_tag login_users_path, class: 'navbar-form ' + pull2 do
+									- username, password = t('users.form.username'), t('users.form.password')
+									= text_field :login, :username, class: get_login_input_class, placeholder: username, autofocus: ''
+									= password_field :login, :password, class: get_login_input_class, placeholder: password
+									= submit_tag t('.login'), class: get_btn_class(:login)
 			
 		- notice, warning = flash[:notice], flash[:warning]
 		

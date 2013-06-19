@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20130602183153) do
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "users", ["username", "location_id"], :name => "index_users_on_username_and_location_id"
+  add_index "users", ["location_id"], :name => "index_users_on_location_id"
 
   create_table "vacations", :force => true do |t|
     t.integer  "duration"

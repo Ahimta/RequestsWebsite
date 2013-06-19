@@ -1,4 +1,6 @@
 class Request < ActiveRecord::Base
+	Requestable.dry_out
+	
 	attr_accessible :accepted, :applicant_attributes, :applicant_id, :rtype
 
 	belongs_to :applicant

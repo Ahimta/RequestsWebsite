@@ -1,8 +1,8 @@
-= provide :title, action
+= title action
 
 = form_for @coming do |f|
 	= render '/requests/form', f: f, type: Coming::Type, action: action
 	
-	%div= f.text_field :reason, placeholder: t('.reason')
+	%div= reason_field f
 	
 	= render '/shared/form_footer', f: f, action: action

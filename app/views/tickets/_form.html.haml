@@ -3,8 +3,8 @@
 = form_for @ticket do |f|
 	= render '/requests/form', f: f, type: Ticket::Type, action: action
 	
-	%div= f.text_field :line, placeholder: t('.line')
-	%div= f.text_field :number, placeholder: t('.number')
+	%div= my_text_field f, :line, t('.line'), required: true
+	%div= my_text_field f, :number, t('.number')
 	
 	= render '/companions/form', f: f
 	= render '/passports/passport', passport: @ticket.passport

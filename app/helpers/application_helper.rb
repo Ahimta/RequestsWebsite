@@ -24,11 +24,19 @@ module ApplicationHelper
 		'span2'
 	end
 	
-	def set_title(title)
+	def title(title)
 		provide :title, title
 	end
 	
-	def title(title)
-		provide :title, title
+	alias :set_title :title
+	
+	def my_text_field(f, symbol, text, options={})
+		f.text_field(symbol, placeholder: text, title: text,
+			autofocus: options[:autofocus], required: options[:required],
+			class: options[:klass])
+	end
+	
+	def reason_field(f)
+		my_text_field f, :reason, t(:reason), required: true
 	end
 end

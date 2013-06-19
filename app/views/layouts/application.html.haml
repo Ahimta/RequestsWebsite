@@ -38,9 +38,13 @@
 										%li{ class: @users_link }= link_to t('.users'), users_path
 							- else
 								= form_tag login_users_path, class: 'navbar-form ' + pull2 do
-									- username, password = t('users.form.username'), t('users.form.password')
-									= text_field :login, :username, class: get_login_input_class, placeholder: username, autofocus: ''
-									= password_field :login, :password, class: get_login_input_class, placeholder: password
+									- username, password = t(:username), t(:password)
+									- klass = get_login_input_class
+									= text_field(:login, :username, placeholder: username,
+											title: username, autofocus: true,
+											required: true, class: klass)
+									= password_field(:login, :password, placeholder: password,
+											title: password, required: true, class: klass)
 									= submit_tag t('.login'), class: get_btn_class(:login)
 			
 		- notice, warning = flash[:notice], flash[:warning]

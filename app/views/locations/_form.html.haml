@@ -1,2 +1,2 @@
 = f.fields_for :location do |h|
-	%div= h.text_field :name, placeholder: t('.name')
+	%div= my_text_field h, :name, t('.name'), required: true

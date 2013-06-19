@@ -3,8 +3,9 @@
 = form_for @user do |f|
 	%div.page-header
 		%h1= action
-	%div= f.text_field :username, placeholder: t('.username')
-	%div= f.password_field :password, placeholder: t('.password')
+	%div= my_text_field(f, :username, t(:username), autofocus: true,
+		required: true)
+	%div= f.password_field :password, placeholder: t(:password)
 	= render '/locations/form', f: f
 	
 	= render '/shared/form_footer', f: f, action: action

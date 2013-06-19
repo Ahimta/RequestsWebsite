@@ -3,9 +3,9 @@
 = form_for @vacation do |f|
 	= render '/requests/form', f: f, type: Vacation::Type, action: action
 	
-	%div= f.text_field :duration, placeholder: t('.duration')
-	%div= f.text_field :from, placeholder: t('.from')
-	%div= f.text_field :to, placeholder: t('.to')
+	%div= my_text_field f, :duration, t(:duration), required: true
+	%div= my_text_field f, :from, t(:from), required: true
+	%div= my_text_field f, :to, t(:to), required: true
 	
 	= render '/passports/passport', passport: @vacation.passport
 	= render '/passports/form', f: f

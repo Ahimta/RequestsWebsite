@@ -9,8 +9,13 @@
 		vacation: 'Vacation', name: 'Name', type: 'Type', modify: 'Modify',
 		location: 'Location', requests_count: 'Requests Count', user: 'User',
 		applicants_count: 'Applicants Count', applicant_name: 'Applicant Name',
-		users_count: 'Users Count', status: 'Status', back: 'Back',
-		passport: 'Passport image', reason: 'Reason',
+		users_count: 'Users Count', status: 'Status', back: 'Back', body: 'Body',
+		passport: 'Passport image', reason: 'Reason', relation: 'Relation',
+		birthdate: 'Birthdate', notice: 'Your Request was sent successfully',
+		warning: 'Please fill in all fields', locale: 'Arabic', number: 'Number',
+		duration: 'Duration', decision_number: 'Decision Number', title: 'Title',
+		username: 'Username', from: 'From date', to: 'To date',
+		password: 'Password',
 		applicants:
 		{
 			form: { name: 'Name' },
@@ -85,7 +90,6 @@
 		vacations:
 		{
 			edit: { action: 'Edit Vacation Request' },
-			form: { duration: 'Duration', from: 'From date', to: 'To date' },
 			new: { action: 'Request Vacation' },
 			show: { header: 'Vacation Request' },
 			vacation: { header: 'Vacation Request' }
@@ -124,7 +128,6 @@
 			{
 				acceptance: 'applicant was granted a type with the decision numbered number.'
 			},
-			form: { number: 'Decision Number' },
 			new: { action: 'New Acceptance' },
 			show: { header: 'Acceptance' }
 		}

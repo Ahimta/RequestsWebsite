@@ -10,7 +10,7 @@
 		location: 'الموقع', requests_count: 'عدد الطلبات', user: 'المستخدم',
 		applicants_count: 'عدد المستفيدين', applicant_name: 'اسم المستفيد',
 		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة',
-		reason: 'السبب', passport: 'صورة الجواز', reason: 'السبب',
+		reason: 'السبب', passport: 'صورة الجواز', reason: 'السبب', locale: 'English',
 		applicants:
 		{
 			form: { name: 'الاسم' },
@@ -25,7 +25,7 @@
 		{
 			application:
 			{
-				alerts: 'التنبيهات', locale: 'English', locations: 'المواقع',
+				alerts: 'التنبيهات', locations: 'المواقع',
 				login: 'تسجيل دخول', logout: 'تسجيل خروج', page_title: 'خدمة العطل و الإجازات',
 				password: 'كلمة المرور', requests: 'الطلبات', username: 'اسم المستخدم',
 				users: 'المستخدمين', applicants: 'المستفيدين'

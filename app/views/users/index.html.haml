@@ -1,5 +1,5 @@
-= render '/shared/page_header', header: t('.users')
+= render '/shared/page_header', header: t('plurals.user')
 
 = render 'users', users: @users, location_col: true
 
-= link_to t('users.new.action'), new_user_path, class: get_btn_class(:create)
+= link_to t(:new_user), new_user_path, class: get_btn_class(:create)

@@ -1,4 +1,4 @@
-= render '/shared/request_header', header: t('.header'), request: ticket
+= render '/shared/request_header', header: t(:show_ticket), request: ticket
 
 = render('/shared/resource_attributes',
 	attributes: { t('tickets.form.line') => ticket.line,

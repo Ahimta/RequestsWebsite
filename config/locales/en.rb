@@ -14,113 +14,55 @@
 		birthdate: 'Birthdate', notice: 'Your Request was sent successfully',
 		warning: 'Please fill in all fields', locale: 'Arabic', number: 'Number',
 		duration: 'Duration', decision_number: 'Decision Number', title: 'Title',
-		username: 'Username', from: 'From date', to: 'To date',
-		password: 'Password',
-		applicants:
+		username: 'Username', from: 'From date', to: 'To date', reject: 'Reject',
+		password: 'Password', accept: 'Accept', accepted: 'Accepted',
+		decide: 'Accept/Reject', pending: 'Pending', rejected: 'Rejected',
+		new_acceptance: 'Issue Acceptance', login: 'Login', logout: 'Logout',
+		show_applicant: 'Applicant Data', show_location: 'Location Data',
+		edit_leave: 'Edit Leave Request', edit_coming: 'Edit Coming Request',
+		new_coming: 'Request Coming', new_user: 'Register User',
+		edit_ticket: 'Edit Ticket Request', new_ticket: 'Request Ticket',
+		new_decision: 'New Acceptance', show_acceptance: 'Acceptance',
+		show_user: 'User Data', show_alert: 'Alert', new_alert: 'Send Alert',
+		edit_alert: 'Edit Alert', show_ticket: 'Ticket Request',
+		show_vacation: 'Vacation Request', edit_user: 'Edit User',
+		new_vacation: 'Request Vacation', edit_vacation: 'Edit Vacation Request',
+		new_leave: 'Request Leave', edit_leave: 'Edit Leave Request',
+		page_title: 'RequestsWebsite', 
+		plurals:
 		{
-			form: { name: 'Name' },
-			show: { header: 'Show Applicant' }
+			alert: 'Alerts', applicant: 'Applicants', location: 'Locations',
+			request: 'Requests', user: 'Users', companions: 'Companions'
 		},
 		create:
 		{
 			notice: 'Your Request was sent successfully',
 			warning: 'Please fill in all fields'
 		},
-		layouts:
-		{
-			application:
-			{
-				alerts: 'Alerts', applicants: 'Applicants', locale: 'Arabic',
-				locations: 'Locations', login: 'Login', logout: 'Logout',
-				page_title: 'RequestsWebsite', password: 'Password',
-				requests: 'Requests', username: 'Username', users: 'Users'
-			}
-		},
 		locations:
 		{
-			form: { name: 'Location' },
-			index: { locations: 'Locations' },
-			locations: { empty: "There's no locations in the mean time." },
-			show:
-			{
-				empty: "There's no locations in the mean time", header: 'Show Location'
-			},
+			locations: { empty: "There's no locations in the mean time." }
 		},
 		requests:
 		{
-			index: { requests: 'Requests' },
-			requests:
-			{
-				accept: 'Accept', accepted: 'Accepted', decide: 'Accept/Reject',
-				empty: "You haven't requested anything yet", reject: 'Reject',
-				pending: 'Pending', rejected: 'Rejected'
-			}
-		},
-		leaves:
-		{
-			edit: { action: 'Edit Leave Request' },
-			form: { reason: 'Reason' },
-			leave: { header: 'Leave Request' },
-			new: { action: 'Request Leave' }
-		},
-		comings:
-		{
-			coming: { header: 'Coming Request' },
-			edit: { action: 'Edit Coming Request' },
-			form: { reason: 'Reason' },
-			new: { action: 'Request Coming' }
-		},
-		companions:
-		{
-			form:
-			{
-				name: 'Name', relation: 'Relation', companions: 'Companions',
-				birthdate: 'Birthdate'
-			}
+			requests: { empty: "You haven't requested anything yet" }
 		},
 		tickets:
 		{
 			create: { warning: 'You cannot request tickets more than once every 11 months' },
-			edit: { action: 'Edit Ticket Request' },
-			form: { line: 'Line', number: 'Number if exists' },
-			new: { action: 'Request Ticket' },
-			show: { header: 'Ticket Request' },
-			ticket: { header: 'Ticket Request' }
+			form: { line: 'Line', number: 'Number if exists' }
 		},
-		vacations:
-		{
-			edit: { action: 'Edit Vacation Request' },
-			new: { action: 'Request Vacation' },
-			show: { header: 'Vacation Request' },
-			vacation: { header: 'Vacation Request' }
-		},
-		alerts:
-		{
-			alerts: { empty: "There's no alerts in the mean time" },
-			edit: { action: 'Edit Alert' },
-			form: { title: 'Title', body: 'Body' },
-			index: { alerts: 'Alerts' },
-			new: { action: 'Send Alert' },
-			show: { header: 'Show Alert' }
-		},
+		alerts: { alerts: { empty: "There's no alerts in the mean time" } },
 		applicants:
 		{
-			applicants: { empty: "There's no applicants in the mean time." },
-			index: { applicants: 'Applicants' },
-			form: { name: 'Name' },
-			show: { header: 'Show Applicant' }
+			applicants: { empty: "There's no applicants in the mean time." }
 		},
 		users:
 		{
-			form: { username: 'Username', password: 'Password' },
-			new: { action: 'Register User' },
 			create: { notice: 'The user was updated successfully' },
-			edit: { action: 'Edit User' },
 			users: { empty: "There's no users in the mean time" },
-			index: { users: 'Users' },
 			login: { notice: 'Logged in', warning: 'Invalid username and/or password' },
 			logout: { notice: 'Logged out' },
-			show: { header: 'User Applicants' }
 		},
 		decisions:
 		{
@@ -128,8 +70,6 @@
 			{
 				acceptance: 'applicant was granted a type with the decision numbered number.'
 			},
-			new: { action: 'New Acceptance' },
-			show: { header: 'Acceptance' }
 		}
 	}	
 }

@@ -1,9 +1,8 @@
-= render '/shared/request_header', header: t('.header'), request: vacation
+= render '/shared/request_header', header: t(:show_vacation), request: vacation
 
 = render('/shared/resource_attributes',
-	attributes: { t('vacations.form.duration') => vacation.duration,
-	t('vacations.form.from') => vacation.from,
-	t('vacations.form.to') => vacation.to })
+	attributes: { t(:duration) => vacation.duration, t(:from) => vacation.from,
+	t(:to) => vacation.to })
 
 = render '/passports/passport', passport: vacation.passport
 

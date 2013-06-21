@@ -1,9 +1,9 @@
 module RequestsHelper
 	def get_status(status)
 		case status
-		when nil then t('requests.requests.pending')
-		when true then t('requests.requests.accepted')
-		when false then t('requests.requests.rejected')
+		when nil then t(:pending)
+		when true then t(:accepted)
+		when false then t(:rejected)
 		end
 	end
 	
@@ -34,7 +34,7 @@ module RequestsHelper
 	
 	def get_decision_cell(request)
 		if request.decision
-			link_to(t('requests.requests.accepted'),
+			link_to(t(:accepted),
 				request_decision_path(request, request.decision))
 		else
 			get_status(request.accepted)
@@ -45,7 +45,7 @@ module RequestsHelper
 		columns   = []
 		columns << t(:user) if admin
 		columns.push(t(:applicant), t(:type), t(:status))
-		columns << t('requests.requests.decide') if admin
+		columns << t(:decide) if admin
 		
 		cells = ['link_to i, item']
 		cells << 'link_to item.user_username, item.user' if admin

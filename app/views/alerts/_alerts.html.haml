@@ -1,5 +1,5 @@
 - unless alerts.try :present?
-	%div.lead= t('.empty')
+	%div.lead= t(:empty_alerts)
 
 - else
 	= render alerts, link: true

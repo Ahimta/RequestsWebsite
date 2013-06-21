@@ -4,7 +4,7 @@ module DecisionsHelper
 			'type' => t(decision.request_rtype.try(:to_sym)),
 			'number.' => decision.number }
 		pattern = /applicant|type|number\./
-		phrase = t('decisions.decision.acceptance')
+		phrase = t(:acceptance)
 		
 		phrase.gsub pattern, matcher
 	end

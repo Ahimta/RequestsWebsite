@@ -28,7 +28,13 @@
 		show_vacation: 'Vacation Request', edit_user: 'Edit User',
 		new_vacation: 'Request Vacation', edit_vacation: 'Edit Vacation Request',
 		new_leave: 'Request Leave', edit_leave: 'Edit Leave Request',
-		page_title: 'RequestsWebsite', 
+		page_title: 'RequestsWebsite',
+		empty_locations: "There's no locations in the mean time.",
+		empty_requests: "You haven't requested anything yet",
+		empty_alerts: "There's no alerts in the mean time",
+		empty_applicants: "There's no applicants in the mean time.",
+		empty_users: "There's no users in the mean time",
+		acceptance: 'applicant was granted a type with the decision numbered number.',
 		plurals:
 		{
 			alert: 'Alerts', applicant: 'Applicants', location: 'Locations',
@@ -39,37 +45,17 @@
 			notice: 'Your Request was sent successfully',
 			warning: 'Please fill in all fields'
 		},
-		locations:
-		{
-			locations: { empty: "There's no locations in the mean time." }
-		},
-		requests:
-		{
-			requests: { empty: "You haven't requested anything yet" }
-		},
 		tickets:
 		{
 			create: { warning: 'You cannot request tickets more than once every 11 months' },
 			form: { line: 'Line', number: 'Number if exists' }
 		},
-		alerts: { alerts: { empty: "There's no alerts in the mean time" } },
-		applicants:
-		{
-			applicants: { empty: "There's no applicants in the mean time." }
-		},
 		users:
 		{
 			create: { notice: 'The user was updated successfully' },
-			users: { empty: "There's no users in the mean time" },
+			users: {  },
 			login: { notice: 'Logged in', warning: 'Invalid username and/or password' },
 			logout: { notice: 'Logged out' },
-		},
-		decisions:
-		{
-			decision:
-			{
-				acceptance: 'applicant was granted a type with the decision numbered number.'
-			},
 		}
 	}	
 }

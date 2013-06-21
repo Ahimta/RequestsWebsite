@@ -4,7 +4,7 @@ module UsersHelper
 			'link_to item.location_name, item.location', 'item.applicants.size',
 			'item.requests.size',
 		"render '/shared/modify_btn_group', edit_path: edit_user_path(item), resource: item"],
-		columns = [t('users.form.username'), t('locations.form.name'),
-		t(:applicants_count), t(:requests_count), t(:modify)]]
+		columns = [t(:username), t(:location), t(:applicants_count),
+			t(:requests_count), t(:modify)]]
 	end
 end

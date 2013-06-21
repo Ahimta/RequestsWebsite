@@ -1,4 +1,4 @@
 - cells, columns = get_requests_table(@current_user.try(:admin))
 	
 = render('/shared/table', columns: columns, items: requests, cells: cells,
-	empty_phrase: t('.empty'), requests: true)
+	empty_phrase: t(:empty_requests), requests: true)

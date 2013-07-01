@@ -67,36 +67,4 @@ describe User do
 			end
 		end
 	end
-	
-	describe '#username_available?' do
-		let!(:records) { FactoryGirl.create_list :user, 3 }
-		
-		context 'invalid' do
-			let!(:invalid) { FactoryGirl.build_list :user, 3 }
-			let!(:invalid_upcased) { invalid.each { |e| e.username.upcase } }
-			let!(:invalid_downcased) { invalid.each { |e| e.username.downcase } }
-			
-			it do
-				invalid.each do |e|
-					e.username_available?.should be_false
-				end
-			end
-			it do
-				invalid_upcased.each do |e|
-					e.username_available?.should be_false
-				end
-			end
-			it do
-				invalid_downcased.each do |e|
-					e.username_available?.should be_false
-				end
-			end
-		end
-		
-		context 'valid' do
-			let!(:valid) { FactoryGirl.build :user, username: 'hi' }
-			
-			it { valid.username_available?.should be_true }
-		end
-	end
 end

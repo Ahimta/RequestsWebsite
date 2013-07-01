@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 	before_filter :get_ticket, only: [:edit, :update]
 	
 	def get_ticket
-		@ticket = Ticket.includes(:applicant, :request, :user).find params[:id]
+		@ticket = Ticket.includes(Ticket::INCLUDES_FIND).find params[:id]
 		require_owner @ticket
 	end
 	

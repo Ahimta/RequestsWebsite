@@ -2,7 +2,7 @@ class ComingsController < ApplicationController
 	before_filter :get_coming, only: [:edit, :update]
 	
 	def get_coming
-		@coming = Coming.includes(:applicant, :request, :user).find params[:id]
+		@coming = Coming.includes(Coming::INCLUDES_FIND).find params[:id]
 		require_owner @coming
 	end
 	

@@ -1,4 +1,8 @@
 class Applicant < ActiveRecord::Base
+	INCLUDES_FIND = { location: nil, requests: [:applicant, :decision,
+		:requestable, :user], user: nil }
+	INCLUDES_ALL  = :requests
+	
 	attr_accessible :name, :user, :user_id
 	
 	belongs_to :user

@@ -2,7 +2,7 @@ class CreateDecisions < ActiveRecord::Migration
 	def change
 		create_table :decisions do |t|
 			t.integer :number
-			t.references :request
+			t.belongs_to :request
 
 			t.timestamps
 		end

@@ -1,14 +1,20 @@
-shared_examples_for 'update' do |model, index = '/requests?locale=en'|
-	before do
+shared_examples_for 'update' do |model, index = '/requests?locale=en', includes=true|
+	before(:all) do
 		@symbol = model.to_s.downcase.to_sym
 		@double = FactoryGirl.build_stubbed @symbol
-		model.stub(:find).and_return @double
+	end
+
+	before do
+		includes_stub model, includes, :find
+
 		@double.stub(:attributes=).and_return @double
 		@double.stub(:save)
 	end
 	after { put :update, @symbol => 'record', id: 0 }
 	
-	it { model.should_receive(:find).with('0') }
+	it 'should call Model.find' do
+		includes_method model, includes, :find
+	end
 	it { @double.should_receive(:save).with(no_args) }
 	it { @double.should_receive(:attributes=).with('record') }
 	it 'should assign @record' do

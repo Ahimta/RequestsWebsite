@@ -2,7 +2,7 @@ class LeavesController < ApplicationController
 	before_filter :get_leave, only: [:edit, :update]
 	
 	def get_leave
-		@leave = Leave.includes(:applicant, :request, :user).find params[:id]
+		@leave = Leave.includes(Leave::INCLUDES_FIND).find params[:id]
 		require_owner @leave
 	end
 	

@@ -17,6 +17,7 @@ group :development do
 	gem 'rails_best_practices'
 	gem 'guard-cucumber'
 	gem 'guard-rspec'
+	gem 'bullet'
 end
 
 group :test do

@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
+	INCLUDES_FIND = Coming::INCLUDES_FIND + [:companions, :passport]
 	LIMIT = 11.months
 
 	attr_accessible :companions, :companions_attributes, :line, :number

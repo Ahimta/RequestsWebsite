@@ -2,7 +2,7 @@ class VacationsController < ApplicationController
 	before_filter :get_vacation, only: [:edit, :update]
 	
 	def get_vacation
-		@vacation = Vacation.includes(:applicant, :request, :user).find params[:id]
+		@vacation = Vacation.includes(Vacation::INCLUDES_FIND).find params[:id]
 		require_owner @vacation
 	end
 	

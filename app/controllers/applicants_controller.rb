@@ -3,16 +3,15 @@ class ApplicantsController < ApplicationController
 	before_filter :get_applicant, except: :index
 	
 	def get_applicant
-		@applicant = Applicant.includes(location: nil, requests: [:applicant,
-			:decision, :requestable, :user], user: nil).find params[:id]
+		@applicant = Applicant.includes(Applicant::INCLUDES_FIND).find params[:id]
 		require_owner @applicant
 	end
 	
 	def index
 		if User::PROTECTED
-			@applicants = @current_user.try(:admin) ? Applicant.includes(:requests).scoped : @current_user.try(:applicants)
+			@applicants = @current_user.try(:admin) ? Applicant.includes(Applicant::INCLUDES_ALL).scoped : @current_user.try(:applicants)
 		else
-			@applicants = Applicant.includes(:requests).scoped
+			@applicants = Applicant.includes(Applicant::INCLUDES_ALL).scoped
 		end
 	end
 	

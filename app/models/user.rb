@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	PROTECTED = false
+	INCLUDES_FIND  = { requests: :applicant, applicants: :requests, location: nil }
+	INCLUDES_ALL = [:requests, :applicants, :location]
 
 	attr_accessible :admin, :location, :location_attributes, :location_id,
 	:password, :username
@@ -24,15 +26,5 @@ class User < ActiveRecord::Base
 
 	def self.authenticate(user, record)
 		(record.try(:user) == user) or user.try(:admin)
-	end
-
-	def username_available?
-		not User.where('lower(username) = ?', username.try(:downcase)).first
-	end
-	
-	def eligible?
-		if not self.username_available? and User::PROTECTED
-			errors.add :taken, I18n.t(:taken_username)
-		end
 	end
 end

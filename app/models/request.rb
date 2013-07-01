@@ -1,4 +1,7 @@
 class Request < ActiveRecord::Base
+	INCLUDES_FIND = [:decision, :requestable, :user, :applicant]
+	INCLUDES_ALL  = [:decision, :user, :applicant]
+	
 	DryOut.dry_out
 	
 	attr_accessible :accepted, :applicant_attributes, :applicant_id

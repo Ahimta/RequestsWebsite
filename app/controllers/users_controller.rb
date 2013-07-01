@@ -5,12 +5,11 @@ class UsersController < ApplicationController
 	skip_before_filter :require_login, only: [:login]
 	
 	def get_user
-		@user = User.includes(requests: [:applicant], applicants: :requests,
-			location: nil).find params[:id]
+		@user = User.includes(User::INCLUDES_FIND).find params[:id]
 	end
 	
 	def index
-		@users = User.includes(:requests, :applicants, :location).scoped
+		@users = User.includes(User::INCLUDES_ALL).scoped
 	end
 	
 	def show

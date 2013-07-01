@@ -31,8 +31,9 @@ module ApplicationHelper
 	alias :set_title :title
 	
 	def my_text_field(f, symbol, text, options={})
+		f.label symbol
 		f.text_field(symbol, placeholder: text, title: text,
-			autofocus: options[:autofocus], required: options[:required],
+			autofocus: options[:autofocus], required: options[:extra],
 			class: options[:klass])
 	end
 	

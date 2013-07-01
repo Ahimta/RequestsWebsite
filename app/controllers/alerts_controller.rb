@@ -22,9 +22,9 @@ class AlertsController < ApplicationController
 		@alert = Alert.new params[:alert]
 		
 		if @alert.save
-			redirect_to alerts_path, notice: t('create.notice')
+			redirect_to alerts_path, notice: t(:create_alert_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end
@@ -36,9 +36,9 @@ class AlertsController < ApplicationController
 		@alert.attributes = params[:alert]
 		
 		if @alert.save
-			redirect_to alerts_path, notice: t('create.notice')
+			redirect_to alerts_path, notice: t(:update_alert_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
 	end

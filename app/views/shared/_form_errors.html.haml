@@ -1,0 +1,6 @@
+- if record.errors.any?
+	%section.alert.alert-warning
+		%ul
+			- record.errors.full_messages.each do |message|
+				%li= message
+		

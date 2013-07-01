@@ -4,11 +4,8 @@ class CreateVacations < ActiveRecord::Migration
       t.integer :duration
       t.string :from
       t.string :to
-      t.belongs_to :request
 
       t.timestamps
     end
-		
-		add_index :vacations, :request_id
   end
 end

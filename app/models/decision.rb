@@ -3,7 +3,7 @@ class Decision < ActiveRecord::Base
 	
 	belongs_to :request
 	
-	delegate :applicant, :rtype, to: :request, prefix: true
+	delegate :applicant, to: :request, prefix: true
 	
 	validates :number, :request_id, presence: true
 end

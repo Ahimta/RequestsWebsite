@@ -33,7 +33,7 @@ class DecisionsController < ApplicationController
 			@request.update_attributes accepted: true
 			redirect_to [@request, @decision]
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end

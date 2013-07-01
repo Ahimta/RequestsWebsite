@@ -6,12 +6,7 @@ describe User do
 		
 		its(:location) { should be_nil }
 		its(:applicants) { should be_empty }
-		its(:comings) { should be_empty }
-		its(:decisions) { should be_empty }
-		its(:leaves) { should be_empty }
 		its(:requests) { should be_empty }
-		its(:tickets) { should be_empty }
-		its(:vacations) { should be_empty }
 	end
 	
 	describe 'default values' do

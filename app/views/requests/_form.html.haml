@@ -2,5 +2,4 @@
 	%h1= action
 
 = f.fields_for :request do |h|
-	= h.hidden_field :rtype, value: type
 	= render '/applicants/form', f: h

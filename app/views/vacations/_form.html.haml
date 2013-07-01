@@ -1,7 +1,9 @@
 = title action
 
 = form_for @vacation do |f|
-	= render '/requests/form', f: f, type: Vacation::Type, action: action
+	= render '/shared/form_errors', record: @vacation
+	
+	= render '/requests/form', f: f, action: action
 	
 	%div= my_text_field f, :duration, t(:duration), required: true
 	%div= my_text_field f, :from, t(:from), required: true

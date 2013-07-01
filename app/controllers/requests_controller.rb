@@ -3,15 +3,16 @@ class RequestsController < ApplicationController
 	before_filter :get_request, only: [:show, :destroy]
 	
 	def get_request
-		@request = Request.find params[:id]
+		@request = Request.includes(:decision, :requestable, :user, :applicant)
+			.find params[:id]
 		require_owner @request
 	end
 	
 	def index
 		if User::PROTECTED
-			@requests = @current_user.try(:admin) ? Request.scoped : @current_user.try(:requests)
+			@requests = @current_user.try(:admin) ? Request.includes(:decision, :user, :applicant).scoped : @current_user.try(:requests)
 		else
-			@requests = Request.scoped
+			@requests = Request.includes(:decision, :user, :applicant).scoped
 		end
 	end
 	

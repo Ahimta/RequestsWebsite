@@ -1,5 +1,4 @@
 class Ticket < ActiveRecord::Base
-	Type = 'ticket'
 	LIMIT = 11.months
 
 	attr_accessible :companions, :companions_attributes, :line, :number
@@ -11,8 +10,8 @@ class Ticket < ActiveRecord::Base
 	validates :line, presence: true
 	
 	def self.has_right?(applicant)
-		requested = applicant.tickets.any? do |ticket|
-			ticket.created_at > LIMIT.ago and ticket.request.accepted
+		requested = applicant.tickets.any? do |request|
+			request.created_at > LIMIT.ago and request.accepted
 		end
 		
 		not requested

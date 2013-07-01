@@ -1,6 +1,6 @@
-= render '/shared/page_header', header: t('plurals.alert')
+= render '/shared/page_header', header: t(:alerts)
 
 = render 'alerts', alerts: @alerts
 
 - if @current_user.try(:admin)
-	%div= link_to t(:new_alert), new_alert_path, class: get_btn_class(:create)
+	%footer= link_to t(:new_alert), new_alert_path, class: get_btn_class(:create)

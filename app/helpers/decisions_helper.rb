@@ -1,7 +1,7 @@
 module DecisionsHelper
 	def get_acceptance(decision)
 		matcher = { 'applicant' => decision.request_applicant.name,
-			'type' => t(decision.request_rtype.try(:to_sym)),
+			'type' => t(decision.request.requestable_type.downcase.to_sym),
 			'number.' => decision.number }
 		pattern = /applicant|type|number\./
 		phrase = t(:acceptance)

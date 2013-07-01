@@ -1,4 +1,4 @@
-class Requestable < ActiveRecord::Base
+class DryOut < ActiveRecord::Base
 	def self.dry_out
 		requestables  = [Coming, Leave, Ticket, Vacation]
 		movables      = [Coming, Leave]
@@ -6,8 +6,8 @@ class Requestable < ActiveRecord::Base
 		
 		requestables.each do |requestable|
 			requestable.class_eval do
-				attr_accessible :request_attributes, :request_id
-				belongs_to :request
+				attr_accessible :request_attributes
+				has_one :request, as: :requestable
 				has_one :applicant, through: :request
 				delegate :name, to: :applicant, prefix: true
 			

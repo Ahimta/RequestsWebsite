@@ -2,7 +2,7 @@ class VacationsController < ApplicationController
 	before_filter :get_vacation, only: [:edit, :update]
 	
 	def get_vacation
-		@vacation = Vacation.find params[:id]
+		@vacation = Vacation.includes(:applicant, :request, :user).find params[:id]
 		require_owner @vacation
 	end
 	
@@ -15,9 +15,9 @@ class VacationsController < ApplicationController
 		@vacation = Vacation.new params[:vacation]
 		
 		if @vacation.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:create_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end
@@ -29,9 +29,9 @@ class VacationsController < ApplicationController
 		@vacation.attributes = params[:vacation]
 		
 		if @vacation.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:update_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
 	end

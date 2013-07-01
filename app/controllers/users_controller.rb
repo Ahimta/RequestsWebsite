@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 	skip_before_filter :require_login, only: [:login]
 	
 	def get_user
-		@user = User.find params[:id]
+		@user = User.includes(requests: [:applicant], applicants: :requests,
+			location: nil).find params[:id]
 	end
 	
 	def index
-		@users = User.scoped
+		@users = User.includes(:requests, :applicants, :location).scoped
 	end
 	
 	def show
@@ -24,9 +25,9 @@ class UsersController < ApplicationController
 		@user = User.new params[:user]
 		
 		if @user.save
-			redirect_to users_path, notice: t('create.notice')
+			redirect_to users_path, notice: t(:create_user_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end
@@ -38,8 +39,9 @@ class UsersController < ApplicationController
 		@user.attributes = params[:user]
 		
 		if @user.save
-			redirect_to users_path
+			redirect_to users_path, notice: t(:update_user_notice)
 		else
+			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
 	end
@@ -54,9 +56,9 @@ class UsersController < ApplicationController
 		
 		if user
 			session[:user_id] = user.id
-			flash[:notice] = t('users.login.notice')
+			flash[:notice] = t(:login_notice)
 		else
-			flash[:warning] = t('users.login.warning')
+			flash[:warning] = t(:login_warning)
 		end
 		
 		redirect_to requests_path
@@ -64,6 +66,6 @@ class UsersController < ApplicationController
 	
 	def logout
 		reset_session
-		redirect_to requests_path, notice: t('users.logout.notice')
+		redirect_to requests_path, notice: t(:logout_notice)
 	end
 end

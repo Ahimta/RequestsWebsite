@@ -11,16 +11,10 @@ class User < ActiveRecord::Base
 
 	has_many :applicants, dependent: :destroy
 	has_many :requests, through: :applicants
-	has_many :decisions, through: :requests
-	has_many :comings, through: :requests
-	has_many :leaves, through: :requests, source: :leave
-	has_many :tickets, through: :requests
-	has_many :vacations, through: :requests
 
 	accepts_nested_attributes_for :location
 
-	validates :username, presence: true #, uniqueness: { case_insensetive: true }
-	validates :location, presence: true
+	validates :username, presence: true #, uniqueness: { case_sensetive: false, case_insensetive: true }
 	
 	def self.login(login)
 		username, password = login[:username], login[:password]
@@ -33,6 +27,12 @@ class User < ActiveRecord::Base
 	end
 
 	def username_available?
-		not User.where('lower(username) = ?', username.downcase).first
+		not User.where('lower(username) = ?', username.try(:downcase)).first
+	end
+	
+	def eligible?
+		if not self.username_available? and User::PROTECTED
+			errors.add :taken, I18n.t(:taken_username)
+		end
 	end
 end

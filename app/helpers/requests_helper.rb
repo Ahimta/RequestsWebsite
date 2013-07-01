@@ -23,15 +23,6 @@ module RequestsHelper
 		end
 	end
 	
-	def get_request(request)
-		case request.rtype
-		when 'coming' then request.coming
-		when 'leave' then request.leave
-		when 'ticket' then request.ticket
-		when 'vacation' then request.vacation
-		end
-	end
-	
 	def get_decision_cell(request)
 		if request.decision
 			link_to(t(:accepted),
@@ -50,7 +41,7 @@ module RequestsHelper
 		cells = ['link_to i, item']
 		cells << 'link_to item.user_username, item.user' if admin
 		cells.push('link_to item.applicant_name, item.applicant',
-		't(item.rtype.try :to_sym)', 'get_decision_cell(item)')
+		't(item.requestable_type.downcase.to_sym)', 'get_decision_cell(item)')
 		cells << "render('/requests/requests_btn_group', request: item)" if admin
 		
 		[cells, columns]

@@ -3,6 +3,9 @@
 = form_for @alert do |f|
 	%div.page-header
 		%h1= action
+	
+	= render '/shared/form_errors', record: @alert
+	
 	%div= my_text_field f, :title, t(:title), autofocus: true, required: true
 	%div= f.text_area(:body, placeholder: t(:body), rows: 8,
 		required: true)

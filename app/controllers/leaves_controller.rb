@@ -2,7 +2,7 @@ class LeavesController < ApplicationController
 	before_filter :get_leave, only: [:edit, :update]
 	
 	def get_leave
-		@leave = Leave.find params[:id]
+		@leave = Leave.includes(:applicant, :request, :user).find params[:id]
 		require_owner @leave
 	end
 	
@@ -15,9 +15,9 @@ class LeavesController < ApplicationController
 		@leave = Leave.new params[:leave]
 		
 		if @leave.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:create_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end
@@ -29,8 +29,9 @@ class LeavesController < ApplicationController
 		@leave.attributes = params[:leave]
 		
 		if @leave.save
-			redirect_to requests_path
+			redirect_to requests_path, notice: t(:update_notice)
 		else
+			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
 	end

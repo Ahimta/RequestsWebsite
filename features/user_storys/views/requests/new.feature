@@ -9,7 +9,7 @@ Scenario Outline: request a coming
 
 Examples:
 	|	applicant	|	reason	|	page		|	should_see							|
-	|	applicant	|	reason	|	requests	|	Your Request was sent successfully	|
+	|	applicant	|	reason	|	requests	|	Your request was sent successfully	|
 	|	applicant	|			|	comings		|	Please fill in all fields			|
 	|				|	reason	|	comings		|	Please fill in all fields			|
 	|				|			|	comings		|	Please fill in all fields			|
@@ -23,7 +23,7 @@ Scenario Outline: request a leave
 
 Examples:
 	|	applicant	|	reason	|	page		|	should_see							|
-	|	applicant	|	reason	|	requests	|	Your Request was sent successfully	|
+	|	applicant	|	reason	|	requests	|	Your request was sent successfully	|
 	|	applicant	|			|	leaves		|	Please fill in all fields			|
 	|				|	reason	|	leaves		|	Please fill in all fields			|
 	|				|			|	leaves		|	Please fill in all fields			|
@@ -38,8 +38,8 @@ Scenario Outline: request a ticket
 
 Examples:
 	|	applicant	|	line	|	number	|	page		|	should_see							|
-	|	applicant	|	line	|	number	|	requests	|	Your Request was sent successfully	|
-	|	applicant	|	line	|			|	requests	|	Your Request was sent successfully	|
+	|	applicant	|	line	|	number	|	requests	|	Your request was sent successfully	|
+	|	applicant	|	line	|			|	requests	|	Your request was sent successfully	|
 	|	applicant	|			|	number	|	tickets		|	Please fill in all fields			|
 	|				|	line	|	number	|	tickets		|	Please fill in all fields			|
 	|	applicant	|			|			|	tickets		|	Please fill in all fields			|
@@ -58,7 +58,7 @@ Scenario Outline: request a vacation
 
 Examples:
 	|	applicant	|	duration	|	from	|	to	|	page		|	should_see							|
-	|	applicant	|	1			|	2		|	3	|	requests	|	Your Request was sent successfully	|
+	|	applicant	|	1			|	2		|	3	|	requests	|	Your request was sent successfully	|
 	|	applicant	|	1			|	2		|		|	vacations	|	Please fill in all fields			|
 	|	applicant	|	1			|			|		|	vacations	|	Please fill in all fields			|
 	|	applicant	|				|	2		|	3	|	vacations	|	Please fill in all fields			|

@@ -3,6 +3,9 @@
 = form_for @user do |f|
 	%div.page-header
 		%h1= action
+		
+	= render '/shared/form_errors', record: @user
+	
 	%div= my_text_field(f, :username, t(:username), autofocus: true,
 		required: true)
 	%div= f.password_field :password, placeholder: t(:password)

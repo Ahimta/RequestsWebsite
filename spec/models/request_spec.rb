@@ -5,11 +5,8 @@ describe Request do
 		subject! { Request.new }
 		
 		its(:applicant) { should be_nil }
-		its(:coming) { should be_nil }
 		its(:decision) { should be_nil }
-		its(:leave) { should be_nil }
-		its(:ticket) { should be_nil }
-		its(:vacation) { should be_nil }
+		its(:requestable) { should be_nil }
 		its(:user) { should be_nil }
 	end
 	
@@ -17,7 +14,6 @@ describe Request do
 		subject! { Request.new }
 		
 		its(:accepted) { should be_nil }
-		its(:rtype) { should be_nil }
 		its(:applicant_id) { should be_nil }
 	end
 	
@@ -38,9 +34,7 @@ describe Request do
 			let!(:pairs) { records.zip built_records }
 			
 			it do
-				pairs.each do |e|
-					Request.build_associations(e.first).should == e.last
-				end
+				pairs.each { |e| Request.build_associations(e.first).should == e.last }
 			end
 		end
 		

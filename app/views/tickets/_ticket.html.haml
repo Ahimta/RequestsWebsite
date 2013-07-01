@@ -1,8 +1,8 @@
 = render '/shared/request_header', header: t(:show_ticket), request: ticket
 
 = render('/shared/resource_attributes',
-	attributes: { t('tickets.form.line') => ticket.line,
-	t('tickets.form.number') => ticket.number })
+	attributes: { t(:line) => ticket.line,
+	t(:number) => ticket.number })
 
 = render '/passports/passport', passport: ticket.passport
 

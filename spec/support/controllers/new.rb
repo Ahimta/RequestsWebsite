@@ -4,6 +4,7 @@ shared_examples_for 'new' do |model|
 		@double = FactoryGirl.build_stubbed @symbol
 		
 		model.stub(:new).and_return @double
+		Request.stub(:build_associations).and_return @double
 	end
 	
 	it 'should call Model.new' do

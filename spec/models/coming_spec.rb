@@ -1,18 +1,11 @@
 require 'spec_helper'
 
 describe Coming do
-	describe 'associations' do
-		subject! { Coming.new }
-		
-		its(:applicant) { should be_nil }
-		its(:request) { should be_nil }
-		its(:user) { should be_nil }
-	end
+	it_behaves_like 'request associations'
 	
 	describe 'default values' do
 		subject! { Coming.new }
 		
 		its(:reason) { should be_nil }
-		its(:request_id) { should be_nil }
 	end
 end

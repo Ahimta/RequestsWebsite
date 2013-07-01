@@ -1,7 +1,9 @@
 = title action
 
 = form_for @coming do |f|
-	= render '/requests/form', f: f, type: Coming::Type, action: action
+	= render '/shared/form_errors', record: @coming
+	
+	= render '/requests/form', f: f, action: action
 	
 	%div= reason_field f
 	

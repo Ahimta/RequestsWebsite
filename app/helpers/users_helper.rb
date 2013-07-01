@@ -7,4 +7,10 @@ module UsersHelper
 		columns = [t(:username), t(:location), t(:applicants_count),
 			t(:requests_count), t(:modify)]]
 	end
+	
+	def user_taken_msg(user)
+		if user.errors.messages[:taken].try :first
+			content_tag :div, t(:taken_username), class: 'label label-warning'
+		end
+	end
 end

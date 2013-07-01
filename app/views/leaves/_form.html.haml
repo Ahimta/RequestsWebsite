@@ -1,7 +1,9 @@
 = title action
 
 = form_for @leave do |f|
-	= render '/requests/form', f: f, type: Leave::Type, action: action
+	= render '/shared/form_errors', record: @leave
+	
+	= render '/requests/form', f: f, action: action
 	
 	%div= reason_field f
 	

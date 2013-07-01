@@ -3,10 +3,11 @@ class LocationsController < ApplicationController
 	before_filter :require_admin
 	
 	def index
-		@locations = Location.scoped
+		@locations = Location.includes(:requests, :applicants, :users).scoped
 	end
 	
 	def show
-		@location = Location.find params[:id]
+		@location = Location.includes(requests: nil, applicants: nil,
+			users: [:requests, :applicants, :location]).find params[:id]
 	end
 end

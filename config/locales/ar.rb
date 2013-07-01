@@ -4,129 +4,76 @@
 {
 	ar:
 	{
+		activerecord:
+		{
+			attributes:
+			{
+				alert: { title: 'العنوان', body: 'المحتوى' },
+				applicant: { name: 'المستفيد' },
+				coming: { reason: 'السبب' },
+				companion: { birthdate: 'تاريخ الميلاد', name: 'الاسم', relation: 'صلة القرابة' },
+				decision: { number: 'رقم القرار' },
+				leave: { reason: 'السبب' },
+				location: { name: 'الموقع' },
+				passport: { picture: 'صورة الجواز' },
+				request: { accepted: 'موافق عليه', applicant: { name: 'المستفيد' } },
+				ticket: { line: 'خط السير', number: 'رقم الحجز' },
+				user: {  admin: 'مسؤول', password_digest: 'كلمة المرور', username: 'اسم المستخدم' },
+				vacation: { duration: 'عدد الأيام', from: 'من تاريخ', to: 'إلى تاريخ' }
+			},
+			models:
+			{
+				alert: 'تنبيه', applicant: 'مستفيد', coming: 'مباشرة', companion: 'مرافق',
+				decision: 'موافقة', leave: 'مغادرة', location: 'موقع',
+				passport: 'صورة جواز', request: 'طلب', ticket: 'تذاكر',
+				user: 'مستخدم', vacation: 'إجازة'
+			}
+		},
 		applicant: 'المستفيد', request: 'طلب', coming: 'مباشرة',
 		leave: 'مغادرة', destroy: 'حذف', edit: 'تعديل', ticket: 'تذاكر',
-		vacation: 'إجازة', name: 'الاسم',type: 'النوع', modify: 'تعديل',
+		vacation: 'إجازة', name: 'الاسم', type: 'النوع', modify: 'تعديل',
 		location: 'الموقع', requests_count: 'عدد الطلبات', user: 'المستخدم',
 		applicants_count: 'عدد المستفيدين', applicant_name: 'اسم المستفيد',
-		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة',
-		reason: 'السبب', passport: 'صورة الجواز', reason: 'السبب', locale: 'English',
-		applicants:
-		{
-			form: { name: 'الاسم' },
-			show: { header: 'عرض مستفيد' }
-		},
-		create:
-		{
-			notice: 'تم إرسال طلبك بنجاح',
-			warning: 'الرجاء تعبئة جميع الحقول'
-		},
-		layouts:
-		{
-			application:
-			{
-				alerts: 'التنبيهات', locations: 'المواقع',
-				login: 'تسجيل دخول', logout: 'تسجيل خروج', page_title: 'خدمة العطل و الإجازات',
-				password: 'كلمة المرور', requests: 'الطلبات', username: 'اسم المستخدم',
-				users: 'المستخدمين', applicants: 'المستفيدين'
-			}
-		},
-		locations:
-		{
-			form: { name: 'الموقع' },
-			index: { locations: 'المواقع' },
-			locations: { empty: "ﻻ يوجد مواقع في الوقت الحالي" },
-			show:
-			{
-				empty: "ﻻ يوجد مستخدمين في هذا الموقع", header: 'بيانات الموقع'
-			},
-		},
-		requests:
-		{
-			index: { requests: 'الطلبات' },
-			requests:
-			{
-				accept: 'قبول', accepted: 'تم القبول', decide: 'قبول/رفض',
-				empty: "لم تقم بتقديم أي طلب حتى الآن", reject: 'رفض',
-				pending: 'جاري', rejected: 'تم الرفض'
-			}
-		},
-		leaves:
-		{
-			edit: { action: 'تعديل طلب مغادرة' },
-			form: { reason: 'السبب' },
-			leave: { header: 'طلب مغادرة' },
-			new: { action: 'طلب مغادرة' }
-		},
-		comings:
-		{
-			coming: { header: 'طلب مباشرة' },
-			edit: { action: 'تعديل طلب مباشرة' },
-			form: { reason: 'السبب' },
-			new: { action: 'طلب مباشرة' }
-		},
-		companions:
-		{
-			form:
-			{
-				name: 'الاسم', relation: 'صلة القرابة', companions: 'المرافقون',
-				birthdate: 'تاريخ الميلاد'
-			}
-		},
-		tickets:
-		{
-			create: { warning: 'يجب أن ﻻ تقل المدة بين طلبات التذاكر عن 11 شهراً' },
-			edit: { action: 'تعديل طلب تذاكر' },
-			form: { line: 'خط السير', number: 'رقم الحجز إن وجد' },
-			new: { action: 'طلب مغادرة' },
-			show: { header: 'طلب مغادرة' },
-			ticket: { header: 'طلب تذاكر' }
-		},
-		vacations:
-		{
-			edit: { action: 'تعديل طلب إجازة' },
-			form: { duration: 'عدد الأيام', from: 'من تاريخ', to: 'إلى تاريخ' },
-			new: { action: 'طلب إجازة' },
-			show: { header: 'طلب إجازة' },
-			vacation: { header: 'طلب إجازة' }
-		},
-		alerts:
-		{
-			alerts: { empty: "ﻻ يوجد تنبيهات في الوقت الحالي" },
-			edit: { action: 'تعديل تنبيه' },
-			form: { title: 'العنوان', body: 'المحتوى' },
-			index: { alerts: 'التنبيهات' },
-			new: { action: 'إرسال تنبيه' },
-			show: { header: 'تنبيه' }
-		},
-		applicants:
-		{
-			applicants: { empty: "ﻻ يوجد مستفيدين في الوقت الحالي." },
-			index: { applicants: 'المستفيدين' },
-			form: { name: 'الاسم' },
-			show: { header: 'بيانات المستفيد' }
-		},
-		users:
-		{
-			form: { username: 'اسم المستخدم', password: 'كلمة المرور' },
-			new: { action: 'تسجيل مستخدم' },
-			create: { notice: 'تم تعديل المستخدم بنجاح' },
-			edit: { action: 'تعديل مستخدم' },
-			users: { empty: "ﻻ يوجد مستخدمين في الموقت الحالي" },
-			index: { users: 'المستخدمين' },
-			login: { notice: 'تم تسجيل الدخول', warning: 'اسم المستخدم أو/و كلمة المرور غير صالحة' },
-			logout: { notice: 'تم تسجيل الدخول' },
-			show: { header: 'المستفيدين' }
-		},
-		decisions:
-		{
-			decision:
-			{
-				acceptance: 'applicant منح type بقرار رقم number.'
-			},
-			form: { number: 'رقم القرار' },
-			new: { action: 'إصدار موافقة' },
-			show: { header: 'موافقة' }
-		}
-	}	
+		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة', body: 'المحتوى',
+		passport: 'صورة الجواز', reason: 'السبب', relation: 'صلة القرابة',
+		birthdate: 'تاريخ الميلاد', notice: 'تم إرسال طلبك بنجاح',
+		warning: 'الرجاء ملء الحقول المطلوبة', locale: 'English', number: 'رقم الحجز',
+		duration: 'عدد الأيام', decision_number: 'رقم القرار', title: 'العنوان',
+		username: 'اسم المستخدم', from: 'من تاريخ', to: 'إلى تاريخ', reject: 'رفض',
+		password: 'كلمة المرور', accept: 'قبول', accepted: 'تم القبول',
+		decide: 'قبول/رفض', pending: 'جاري', rejected: 'تم الرفض',
+		new_acceptance: 'إصدار موافقة', login: 'تسجيل دخول', logout: 'تسجيل خروج',
+		show_applicant: 'بيانات المستفيد', show_location: 'بيانات الموقع',
+		edit_leave: 'تعديل طلب مغادرة', edit_coming: 'تعديل طلب المباشرة',
+		new_coming: 'طلب مباشرة', new_user: 'تسجيل مستخدم',
+		edit_ticket: 'تعديل طلب تذاكر', new_ticket: 'طلب تذاكر',
+		new_decision: 'إصدار موافقة', show_acceptance: 'موافقة',
+		show_user: 'بيانات المستخدم', show_alert: 'تنبيه', new_alert: 'إرسال تنبيه',
+		edit_alert: 'تعديل تنبيه', show_ticket: 'طلب تذاكر',
+		show_vacation: 'طلب إجازة', edit_user: 'تعديل مستخدم',
+		new_vacation: 'طلب إجازة', edit_vacation: 'تعديل طلب إجازة',
+		new_leave: 'طلب مغادرة', edit_leave: 'تعديل طلب مغادرة',
+		page_title: 'خدمة العطل', line: 'خط السير',
+		empty_locations: "ﻻ يوجد مواقع في الوقت الحالي",
+		empty_requests: "ﻻ يوجد طلبات في الوقت الحالي",
+		empty_alerts: "ﻻ يوجد تنبيهات في الوقت الحالي",
+		empty_applicants: "ﻻ يوجد مستفيدين في الوقت الحالي",
+		empty_users: "ﻻ يوجد مستخدمين في الوقت الحالي",
+		acceptance: 'تم منح applicant type بقرار رقم number..',
+		taken_username: 'Username is taken',
+		create_user_notice: 'تم تسجيل المستخدم بنجاح',
+		login_notice: 'تم تسجيل الدخول بنجاح', login_warning: 'اسم المستخد أو كلمة المرور غير صالحين',
+		logout_notice: 'تم تسجيل الخروج بنجاح',
+		alerts: 'التنبيهات', applicants: 'المستفيدين', locations: 'المواقع',
+		requests: 'الطلبات', users: 'المستخدمين', companions: 'المرافقون',
+		create_ticket_warning: 'ﻻ يمكن تقديم أكثر من طلب تذاكر واحد في فترة 11 شهر',
+		create_notice: 'تم إرسال طلبك بنجاح',
+		create_warning: 'الرجاء ملء جميع الحقول المطلوبة',
+		create_alert_notice: 'تم إرسال التنبيه بنجاح',
+		update_alert_notice: 'تم تعديل التنبيه بنجاح',
+		update_notice: 'تم تعديل طلبك بنجاح',
+		update_user_notice: 'تم تحديث بيانات المستخدم بنجاح',
+		show_coming: 'طلب مباشرة', show_leave: 'طلب مغادرة', na: 'ﻻ يوجد',
+		show_decision: 'موافقة'
+	}
 }

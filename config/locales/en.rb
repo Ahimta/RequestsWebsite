@@ -4,6 +4,31 @@
 {
 	en:
 	{
+		activerecord:
+		{
+			attributes:
+			{
+				alert: { title: 'Title', body: 'Body' },
+				applicant: { name: 'Name' },
+				coming: { reason: 'Reason' },
+				companion: { birthdate: 'Birthdate', name: 'Name', relation: 'Relation' },
+				decision: { number: 'Decision number' },
+				leave: { reason: 'Reason' },
+				location: { name: 'Location' },
+				passport: { picture: 'Passport image' },
+				request: { accepted: 'Accepted', applicant: { name: 'Applicant' } },
+				ticket: { line: 'Line', number: 'Reservation number' },
+				user: {  admin: 'Admin', password: 'Password', username: 'Username' },
+				vacation: { duration: 'Number of days', from: 'From date', to: 'To date' }
+			},
+			models:
+			{
+				alert: 'Alert', applicant: 'Applicant', coming: 'Coming', companion: 'Companion',
+				decision: 'Acceptance', leave: 'Leave', location: 'Location',
+				passport: 'Passport image', request: 'Request', ticket: 'Ticket',
+				user: 'User', vacation: 'Vacation'
+			}
+		},
 		applicant: 'Applicant', request: 'Request', coming: 'Coming',
 		leave: 'Leave', destroy: 'Delete', edit: 'Edit', ticket: 'Ticket',
 		vacation: 'Vacation', name: 'Name', type: 'Type', modify: 'Modify',
@@ -28,34 +53,27 @@
 		show_vacation: 'Vacation Request', edit_user: 'Edit User',
 		new_vacation: 'Request Vacation', edit_vacation: 'Edit Vacation Request',
 		new_leave: 'Request Leave', edit_leave: 'Edit Leave Request',
-		page_title: 'RequestsWebsite',
+		page_title: 'RequestsWebsite', line: 'Line',
 		empty_locations: "There's no locations in the mean time.",
 		empty_requests: "You haven't requested anything yet",
 		empty_alerts: "There's no alerts in the mean time",
 		empty_applicants: "There's no applicants in the mean time.",
 		empty_users: "There's no users in the mean time",
-		acceptance: 'applicant was granted a type with the decision numbered number.',
-		plurals:
-		{
-			alert: 'Alerts', applicant: 'Applicants', location: 'Locations',
-			request: 'Requests', user: 'Users', companions: 'Companions'
-		},
-		create:
-		{
-			notice: 'Your Request was sent successfully',
-			warning: 'Please fill in all fields'
-		},
-		tickets:
-		{
-			create: { warning: 'You cannot request tickets more than once every 11 months' },
-			form: { line: 'Line', number: 'Number if exists' }
-		},
-		users:
-		{
-			create: { notice: 'The user was updated successfully' },
-			users: {  },
-			login: { notice: 'Logged in', warning: 'Invalid username and/or password' },
-			logout: { notice: 'Logged out' },
-		}
-	}	
+		acceptance: 'applicant was granted a type with the decision numbered number..',
+		taken_username: 'Username is taken',
+		create_user_notice: 'The user was registered successfully',
+		login_notice: 'Logged in', login_warning: 'Invalid username and/or password',
+		logout_notice: 'Logged out',
+		alerts: 'Alerts', applicants: 'Applicants', locations: 'Locations',
+		requests: 'Requests', users: 'Users', companions: 'Companions',
+		create_ticket_warning: 'You cannot request tickets more than once every 11 months',
+		create_notice: 'Your request was sent successfully',
+		create_warning: 'Please fill in all fields',
+		create_alert_notice: 'The alert was sent successfully',
+		update_alert_notice: 'The alert was updated successfully',
+		update_notice: 'Your request was updated successfully',
+		update_user_notice: 'User data was updated successfully',
+		show_coming: 'Coming Request', show_leave: 'Leave Request',
+		na: 'None', show_decision: 'Acceptance'
+	}
 }

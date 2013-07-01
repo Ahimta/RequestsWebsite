@@ -10,7 +10,7 @@ Scenario Outline:
 
 Examples:
 	|	title	|	body	|	should_see							|
-	|	title	|	body	|	Your Request was sent successfully	|
+	|	title	|	body	|	The alert was updated successfully	|
 	|	title	|			|	Please fill in all fields			|
 	|			|	body	|	Please fill in all fields			|
 	|			|			|	Please fill in all fields			|

@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 	before_filter :get_ticket, only: [:edit, :update]
 	
 	def get_ticket
-		@ticket = Ticket.find params[:id]
+		@ticket = Ticket.includes(:applicant, :request, :user).find params[:id]
 		require_owner @ticket
 	end
 	
@@ -15,15 +15,15 @@ class TicketsController < ApplicationController
 		@ticket = Ticket.new params[:ticket]
 		
 		if @ticket.save
-			if not Ticket.has_right?(@ticket.applicant) and User::PROTECTED
+			if not Ticket.has_right?(@ticket.request.applicant) and User::PROTECTED
 				@ticket.request.destroy
-				flash[:warning] = t('tickets.create.warning')
+				flash[:warning] = t(:create_ticket_warning)
 				redirect_to requests_path and return
 			end
 			
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:create_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end
@@ -35,9 +35,9 @@ class TicketsController < ApplicationController
 		@ticket.attributes = params[:ticket]
 		
 		if @ticket.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:update_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
 	end

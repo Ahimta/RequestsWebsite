@@ -31,12 +31,9 @@ ActiveRecord::Schema.define(:version => 20130602183153) do
 
   create_table "comings", :force => true do |t|
     t.string   "reason"
-    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "comings", ["request_id"], :name => "index_comings_on_request_id"
 
   create_table "companions", :force => true do |t|
     t.string   "name"
@@ -60,12 +57,9 @@ ActiveRecord::Schema.define(:version => 20130602183153) do
 
   create_table "leaves", :force => true do |t|
     t.string   "reason"
-    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "leaves", ["request_id"], :name => "index_leaves_on_request_id"
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -88,23 +82,22 @@ ActiveRecord::Schema.define(:version => 20130602183153) do
 
   create_table "requests", :force => true do |t|
     t.boolean  "accepted"
-    t.string   "rtype"
     t.integer  "applicant_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "requestable_id"
+    t.string   "requestable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "requests", ["applicant_id"], :name => "index_requests_on_applicant_id"
+  add_index "requests", ["requestable_id", "requestable_type"], :name => "index_requests_on_requestable_id_and_requestable_type"
 
   create_table "tickets", :force => true do |t|
     t.string   "line"
     t.string   "number"
-    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "tickets", ["request_id"], :name => "index_tickets_on_request_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -121,11 +114,8 @@ ActiveRecord::Schema.define(:version => 20130602183153) do
     t.integer  "duration"
     t.string   "from"
     t.string   "to"
-    t.integer  "request_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "vacations", ["request_id"], :name => "index_vacations_on_request_id"
 
 end

@@ -2,7 +2,7 @@ class ComingsController < ApplicationController
 	before_filter :get_coming, only: [:edit, :update]
 	
 	def get_coming
-		@coming = Coming.find params[:id]
+		@coming = Coming.includes(:applicant, :request, :user).find params[:id]
 		require_owner @coming
 	end
 	
@@ -15,9 +15,9 @@ class ComingsController < ApplicationController
 		@coming = Coming.new params[:coming]
 		
 		if @coming.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:create_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
 	end
@@ -29,9 +29,9 @@ class ComingsController < ApplicationController
 		@coming.attributes = params[:coming]
 		
 		if @coming.save
-			redirect_to requests_path, notice: t('create.notice')
+			redirect_to requests_path, notice: t(:update_notice)
 		else
-			flash.now[:warning] = t('create.warning')
+			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
 	end

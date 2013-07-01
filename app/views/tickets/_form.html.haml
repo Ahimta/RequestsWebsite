@@ -1,10 +1,12 @@
 = title action
 
 = form_for @ticket do |f|
-	= render '/requests/form', f: f, type: Ticket::Type, action: action
+	= render '/shared/form_errors', record: @ticket
 	
-	%div= my_text_field f, :line, t('.line'), required: true
-	%div= my_text_field f, :number, t('.number')
+	= render '/requests/form', f: f, action: action
+	
+	%div= my_text_field f, :line, t(:line), required: true
+	%div= my_text_field f, :number, t(:number)
 	
 	= render '/companions/form', f: f
 	= render '/passports/passport', passport: @ticket.passport

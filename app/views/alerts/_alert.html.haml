@@ -1,11 +1,8 @@
 - link ||= false
 
 %article
-	%h2
-		- if link
-			= link_to alert.title, alert
-		- else
-			= alert.title
+	%header
+		%h2= link ? link_to(alert.title, alert) : alert.title
 	
 	%p.lead= alert.body
 	

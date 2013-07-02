@@ -16,9 +16,9 @@
 				leave: { reason: 'Reason' },
 				location: { name: 'Location' },
 				passport: { picture: 'Passport image' },
-				request: { accepted: 'Accepted', applicant: { name: 'Applicant' } },
+				request: { accepted: 'Accepted' },
 				ticket: { line: 'Line', number: 'Reservation number' },
-				user: {  admin: 'Admin', password: 'Password', username: 'Username' },
+				user: {  admin: 'Admin', password_digest: 'Password', username: 'Username' },
 				vacation: { duration: 'Number of days', from: 'From date', to: 'To date' }
 			},
 			models:

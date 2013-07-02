@@ -31,13 +31,10 @@ group :test do
 end
 
 group :production do
-	gem 'pg'
-end
-
-group :assets do
 	gem 'sass-rails'
 	gem 'coffee-rails'
 	gem 'uglifier'
+	gem 'pg'
 end
 
 gem 'paperclip', "~> 3.0"

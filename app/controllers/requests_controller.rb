@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 	
 	def index
 		if User::PROTECTED
-			@requests = @current_user.try(:admin) ? Request.includes(Request::INCLUDES_ALL).scoped : @current_user.try(:requests)
+			@requests = @current_user.try(:admin) ? Request.includes(Request::INCLUDES_ALL).scoped : @current_user.try(:requests).includes(Request::INCLUDES_ALL)
 		else
 			@requests = Request.includes(Request::INCLUDES_ALL).scoped
 		end

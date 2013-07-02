@@ -16,7 +16,7 @@
 				leave: { reason: 'السبب' },
 				location: { name: 'الموقع' },
 				passport: { picture: 'صورة الجواز' },
-				request: { accepted: 'موافق عليه', applicant: { name: 'المستفيد' } },
+				request: { accepted: 'موافق عليه' },
 				ticket: { line: 'خط السير', number: 'رقم الحجز' },
 				user: {  admin: 'مسؤول', password_digest: 'كلمة المرور', username: 'اسم المستخدم' },
 				vacation: { duration: 'عدد الأيام', from: 'من تاريخ', to: 'إلى تاريخ' }

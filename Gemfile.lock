@@ -285,7 +285,7 @@ DEPENDENCIES
   haml
   jquery-rails
   launchy
-  paperclip (~> 3.0)
+  paperclip
   pg
   pickle
   rails (= 3.2.13)

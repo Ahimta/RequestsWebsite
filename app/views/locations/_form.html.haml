@@ -1,2 +1,2 @@
 = f.fields_for :location do |h|
-	%div= my_text_field h, :name, t(:location), required: true
+	= render '/shared/my_text_field', f: h, symbol: :name, text: t(:location)

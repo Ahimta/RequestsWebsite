@@ -1,6 +1,5 @@
 class Location < ActiveRecord::Base
-	INCLUDES_FIND = { requests: nil, applicants: nil, users: [:requests,
-		:applicants, :location] }
+	INCLUDES_FIND = { requests: nil, applicants: nil, users: User::INCLUDES_ALL }
 	INCLUDES_ALL  = [:requests, :applicants, :users]
 	
 	attr_accessible :name

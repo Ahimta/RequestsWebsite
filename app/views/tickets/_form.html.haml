@@ -5,8 +5,8 @@
 	
 	= render '/requests/form', f: f, action: action
 	
-	%div= my_text_field f, :line, t(:line), required: true
-	%div= my_text_field f, :number, t(:number)
+	= render '/shared/my_text_field', f: f, symbol: :line, text: t(:line)
+	= render '/shared/my_text_field', f: f, symbol: :number, text: t(:number)
 	
 	= render '/companions/form', f: f
 	= render '/passports/passport', passport: @ticket.passport

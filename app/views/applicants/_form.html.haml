@@ -1,3 +1,4 @@
 = f.fields_for :applicant do |h|
 	= h.hidden_field :user_id, value: (@current_user.try(:id) or 1)
-	%div= my_text_field h, :name, t(:applicant), autofocus: true, required: true
+	= render('/shared/my_text_field', f: h, symbol: :name, text: t(:applicant),
+	options: { autofocus: true })

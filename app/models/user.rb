@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	belongs_to :location
-	delegate :name, to: :location, prefix: true
+	delegate :name, to: :location, prefix: true, allow_nil: true
 
 	has_many :applicants, dependent: :destroy
 	has_many :requests, through: :applicants

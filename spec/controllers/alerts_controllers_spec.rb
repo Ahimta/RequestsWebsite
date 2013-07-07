@@ -13,5 +13,5 @@ describe AlertsController do
 	
 	it_behaves_like 'update', Alert, '/alerts?locale=en', false
 	
-	it_behaves_like 'destroy', Alert, '/alerts?locale=en'
+	it_behaves_like 'destroy', Alert, false, '/alerts?locale=en'
 end

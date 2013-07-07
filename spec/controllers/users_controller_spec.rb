@@ -15,7 +15,7 @@ describe UsersController do
 	
 	it_behaves_like 'update', User, '/users?locale=en'
 	
-	it_behaves_like 'destroy', User, '/users?locale=en'
+	it_behaves_like 'destroy', User, true, '/users?locale=en'
 	
 	describe 'login' do
 		before do

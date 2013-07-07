@@ -74,6 +74,7 @@
 		update_notice: 'Your request was updated successfully',
 		update_user_notice: 'User data was updated successfully',
 		show_coming: 'Coming Request', show_leave: 'Leave Request',
-		na: 'None', show_decision: 'Acceptance'
+		na: 'None', show_decision: 'Acceptance', required_field: 'Required',
+		optional_field: 'Optional'
 	}
 }

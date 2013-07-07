@@ -17,7 +17,7 @@ module ApplicationHelper
 	end
 	
 	def back_to_requests
-		link_to t(:back), requests_path, class: 'btn btn-primary'
+		link_to t(:back), requests_path, class: get_btn_class(:back_normal)
 	end
 	
 	def get_login_input_class
@@ -39,5 +39,27 @@ module ApplicationHelper
 	
 	def reason_field(f)
 		my_text_field f, :reason, t(:reason), required: true
+	end
+	
+	def get_table_class
+		'table table-striped'
+	end
+	
+	def get_required_label(required)
+		content_tag :span, class: get_required_label_class(required) do
+			get_required_field(required)
+		end
+	end
+	
+	def get_required_label_class(required)
+		if required then 'label label-important'
+		else 'label label-success'
+		end
+	end
+	
+	def get_required_field(required)
+		if required then t(:required_field)
+		else t(:optional_field)
+		end
 	end
 end

@@ -74,6 +74,6 @@
 		update_notice: 'تم تعديل طلبك بنجاح',
 		update_user_notice: 'تم تحديث بيانات المستخدم بنجاح',
 		show_coming: 'طلب مباشرة', show_leave: 'طلب مغادرة', na: 'ﻻ يوجد',
-		show_decision: 'موافقة'
+		show_decision: 'موافقة', required_field: 'إجباري', optional_field: 'اختياري'
 	}
 }

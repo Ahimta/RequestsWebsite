@@ -6,9 +6,13 @@
 		
 	= render '/shared/form_errors', record: @user
 	
-	%div= my_text_field(f, :username, t(:username), autofocus: true,
-		required: true)
-	%div= f.password_field :password, placeholder: t(:password)
+	= render('/shared/my_text_field', f: f, symbol: :username, text: t(:username),
+	options: { autofocus: true })
+	
+	%div
+		= f.password_field :password, placeholder: t(:password)
+		= get_required_label true
+	
 	= render '/locations/form', f: f
 	
 	= render '/shared/form_footer', f: f, action: action

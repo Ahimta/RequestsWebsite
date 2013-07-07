@@ -5,6 +5,6 @@
 	
 	= render '/requests/form', f: f, action: action
 	
-	%div= reason_field f
+	= render '/shared/reason_field', f: f
 	
 	= render '/shared/form_footer', f: f, action: action

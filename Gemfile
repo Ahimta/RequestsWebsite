@@ -37,7 +37,7 @@ group :production do
 	gem 'pg'
 end
 
-gem 'paperclip', "~> 3.0"
+gem 'paperclip' #, "~> 3.0"
 gem 'jquery-rails'
 gem 'bcrypt-ruby'# To use ActiveModel has_secure_password
 gem 'rails-i18n'

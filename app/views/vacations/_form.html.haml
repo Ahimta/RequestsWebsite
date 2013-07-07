@@ -5,9 +5,9 @@
 	
 	= render '/requests/form', f: f, action: action
 	
-	%div= my_text_field f, :duration, t(:duration), required: true
-	%div= my_text_field f, :from, t(:from), required: true
-	%div= my_text_field f, :to, t(:to), required: true
+	= render '/shared/my_text_field', f: f, symbol: :duration, text: t(:duration)
+	= render '/shared/my_text_field', f: f, symbol: :from, text: t(:from)
+	= render '/shared/my_text_field', f: f, symbol: :to, text: t(:to)
 	
 	= render '/passports/passport', passport: @vacation.passport
 	= render '/passports/form', f: f

@@ -18,6 +18,21 @@ class User < ActiveRecord::Base
 
 	validates :username, presence: true #, uniqueness: { case_sensetive: false, case_insensetive: true }
 	
+	# prevent duplicate Location records
+	before_save do
+		location = self.location
+		
+		self.location = Location.where(name: location.name).
+			first_or_create
+
+		location.destroy unless self.location == location
+	end
+	
+	# prevent admin users from being destroyed
+	before_destroy do
+		false if admin
+	end
+	
 	def self.login(login)
 		username, password = login[:username], login[:password]
 		user = User.where("lower(username) = ?", username.downcase).first

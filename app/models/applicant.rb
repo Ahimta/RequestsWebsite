@@ -19,7 +19,9 @@ class Applicant < ActiveRecord::Base
 		get_requests 'Ticket'
 	end
 	
+	
 	private
+	
 	def get_requests(type)
 		Request.where requestable_type: type, applicant_id: id
 	end

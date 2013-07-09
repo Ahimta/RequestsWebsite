@@ -16,6 +16,12 @@ class Request < ActiveRecord::Base
 
 	accepts_nested_attributes_for :applicant
 	
+	# prevent duplicate Applicant records
+	before_save do
+		self.applicant = Applicant.where(name: applicant.name,
+			user_id: applicant.user_id).first_or_create
+	end
+	
 	def self.build_associations(record, options={})
 		record.build_passport if options[:passportable]
 		3.times { record.companions.build } if options[:companions]

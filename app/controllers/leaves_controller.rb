@@ -1,11 +1,6 @@
 class LeavesController < ApplicationController
 	before_filter :get_leave, only: [:edit, :update]
 	
-	def get_leave
-		@leave = Leave.includes(Leave::INCLUDES_FIND).find params[:id]
-		require_owner @leave
-	end
-	
 	def new
 		@leave = Leave.new
 		@leave = Request.build_associations(@leave)
@@ -34,5 +29,12 @@ class LeavesController < ApplicationController
 			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
+	end
+	
+	private
+	
+	def get_leave
+		@leave = Leave.includes(Leave::INCLUDES_FIND).find params[:id]
+		require_owner @leave
 	end
 end

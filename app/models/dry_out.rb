@@ -30,6 +30,10 @@ class DryOut < ActiveRecord::Base
 				attr_accessible :passport_attributes
 				has_one :passport, as: :passportable, dependent: :destroy
 				accepts_nested_attributes_for :passport
+
+				after_validation do
+					build_passport if passport.nil?
+				end
 			end
 		end
 	end

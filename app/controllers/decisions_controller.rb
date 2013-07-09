@@ -2,10 +2,6 @@ class DecisionsController < ApplicationController
 	before_filter :get_request, only: [:new, :create]
 	before_filter :require_admin
 	
-	def get_request
-		@request = Request.find params[:request_id]
-	end
-	
 	def show
 		@decision = Decision.find params[:id]
 	end
@@ -16,6 +12,12 @@ class DecisionsController < ApplicationController
 			if @request.accepted
 				redirect_to requests_path
 			else
+				if @request.requestable_type == 'Ticket' and
+					not Ticket.has_right?(@ticket.request.applicant) and User::PROTECTED
+					flash[:warning] = t(:create_ticket_warning)
+					redirect_to requests_path and return
+				end
+					
 				@decision = Decision.new
 			end
 		when 'reject'
@@ -36,5 +38,11 @@ class DecisionsController < ApplicationController
 			flash.now[:warning] = t(:create_warning)
 			render :new
 		end
+	end
+	
+	private
+	
+	def get_request
+		@request = Request.find params[:request_id]
 	end
 end

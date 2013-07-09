@@ -3,10 +3,6 @@ class AlertsController < ApplicationController
 	before_filter :get_alert, only: [:show, :edit, :update, :destroy]
 	before_filter :require_admin, except: [:index, :show]
 	
-	def get_alert
-		@alert = Alert.find params[:id]
-	end
-	
 	def index
 		@alerts = Alert.scoped
 	end
@@ -46,5 +42,11 @@ class AlertsController < ApplicationController
 	def destroy
 		@alert.destroy
 		redirect_to alerts_path
+	end
+	
+	private
+	
+	def get_alert
+		@alert = Alert.find params[:id]
 	end
 end

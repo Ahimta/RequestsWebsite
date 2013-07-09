@@ -1,11 +1,6 @@
 class VacationsController < ApplicationController
 	before_filter :get_vacation, only: [:edit, :update]
 	
-	def get_vacation
-		@vacation = Vacation.includes(Vacation::INCLUDES_FIND).find params[:id]
-		require_owner @vacation
-	end
-	
 	def new
 		@vacation = Vacation.new
 		@vacation = Request.build_associations(@vacation, passportable: true)
@@ -34,5 +29,13 @@ class VacationsController < ApplicationController
 			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
+	end
+	
+	
+	private
+	
+	def get_vacation
+		@vacation = Vacation.includes(Vacation::INCLUDES_FIND).find params[:id]
+		require_owner @vacation
 	end
 end

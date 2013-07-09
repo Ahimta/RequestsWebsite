@@ -1,11 +1,6 @@
 class TicketsController < ApplicationController
 	before_filter :get_ticket, only: [:edit, :update]
 	
-	def get_ticket
-		@ticket = Ticket.includes(Ticket::INCLUDES_FIND).find params[:id]
-		require_owner @ticket
-	end
-	
 	def new
 		@ticket = Ticket.new
 		@ticket = Request.build_associations(@ticket, passportable: true, companions: true)
@@ -40,5 +35,13 @@ class TicketsController < ApplicationController
 			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
+	end
+	
+	
+	private
+	
+	def get_ticket
+		@ticket = Ticket.includes(Ticket::INCLUDES_FIND).find params[:id]
+		require_owner @ticket
 	end
 end

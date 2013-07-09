@@ -17,8 +17,4 @@ class Ticket < ActiveRecord::Base
 		
 		not requested
 	end
-
-	# before_validation do
-	# 	self.build_passport if passport.nil?
-	# end
 end

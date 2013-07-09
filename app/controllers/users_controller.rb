@@ -4,10 +4,6 @@ class UsersController < ApplicationController
 	before_filter :require_admin, except: [:login, :logout]
 	skip_before_filter :require_login, only: [:login]
 	
-	def get_user
-		@user = User.includes(User::INCLUDES_FIND).find params[:id]
-	end
-	
 	def index
 		@users = User.includes(User::INCLUDES_ALL).scoped
 	end
@@ -46,7 +42,7 @@ class UsersController < ApplicationController
 	end
 	
 	def destroy
-		@user.destroy unless @user.admin
+		@user.destroy
 		redirect_to users_path
 	end
 	
@@ -66,5 +62,12 @@ class UsersController < ApplicationController
 	def logout
 		reset_session
 		redirect_to requests_path, notice: t(:logout_notice)
+	end
+	
+	
+	private
+	
+	def get_user
+		@user = User.includes(User::INCLUDES_FIND).find params[:id]
 	end
 end

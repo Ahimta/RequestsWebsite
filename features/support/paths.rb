@@ -8,7 +8,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 		
-		when /^the first (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.last)"
+		when /^the first (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.first)"
 		
     when /the home\s?page/
       '/'

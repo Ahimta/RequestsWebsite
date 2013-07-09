@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
 	before_filter :get_session
 	before_filter :require_login if User::PROTECTED
 	
+	
+	private
+	
 	def get_locale
-		locale = params[:locale].try :to_sym
-  	
-  	case locale
-  	when :ar then I18n.locale = :ar
-  	when :en then I18n.locale = :en
-  	end
+		I18n.locale = if params[:locale] == 'ar' then :ar
+		else :en
+		end
 	end
 	
 	def get_session

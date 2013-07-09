@@ -1,11 +1,6 @@
 class ComingsController < ApplicationController
 	before_filter :get_coming, only: [:edit, :update]
 	
-	def get_coming
-		@coming = Coming.includes(Coming::INCLUDES_FIND).find params[:id]
-		require_owner @coming
-	end
-	
 	def new
 		@coming = Coming.new
 		@coming = Request.build_associations(@coming)
@@ -34,5 +29,12 @@ class ComingsController < ApplicationController
 			flash.now[:warning] = t(:create_warning)
 			render :edit
 		end
+	end
+	
+	private
+	
+	def get_coming
+		@coming = Coming.includes(Coming::INCLUDES_FIND).find params[:id]
+		require_owner @coming
 	end
 end

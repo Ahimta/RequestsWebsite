@@ -3,6 +3,6 @@
 = f.fields_for :companions, id: 'companions' do |h|
 	%div
 		- klass = get_mini_input_class
-		= my_text_field h, :name, t(:name), klass: klass
-		= my_text_field h, :relation, t(:relation), klass: klass
-		= my_text_field h, :birthdate, t(:birthdate), klass: klass
+		- [:name, :relation, :birthdate].each do |field|
+			= my_text_field(h, field, t(field), klass: klass, inline: true,
+				extra: true)

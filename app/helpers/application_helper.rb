@@ -31,10 +31,8 @@ module ApplicationHelper
 	alias :set_title :title
 	
 	def my_text_field(f, symbol, text, options={})
-		f.label symbol
-		f.text_field(symbol, placeholder: text, title: text,
-			autofocus: options[:autofocus], required: options[:extra],
-			class: options[:klass])
+		render('/shared/my_text_field', f: f, symbol: symbol, text: text,
+			options: options)
 	end
 	
 	def reason_field(f)
@@ -61,5 +59,16 @@ module ApplicationHelper
 		if required then t(:required_field)
 		else t(:optional_field)
 		end
+	end
+
+	def get_page_dir(locale)
+		if locale == :ar then 'rtl'
+		else 'ltr'
+		end
+	end
+
+	def get_locale_link(locale)
+		locale = locale == :ar ? :en : :ar
+		link_to t(:locale), requests_path(locale: locale), class: get_btn_class(:link)	
 	end
 end

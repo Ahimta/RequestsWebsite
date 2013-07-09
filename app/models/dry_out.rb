@@ -1,4 +1,4 @@
-class DryOut < ActiveRecord::Base
+class DryOut
 	def self.dry_out
 		requestables  = [Coming, Leave, Ticket, Vacation]
 		movables      = [Coming, Leave]

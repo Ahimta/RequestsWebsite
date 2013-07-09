@@ -1,8 +1,6 @@
 = title action
 
 = form_for @vacation do |f|
-	= render '/shared/form_errors', record: @vacation
-	
 	= render '/requests/form', f: f, action: action
 	
 	= render '/shared/my_text_field', f: f, symbol: :duration, text: t(:duration)

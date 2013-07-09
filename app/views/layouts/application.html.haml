@@ -1,5 +1,5 @@
 !!! 5
-- ar = I18n.locale.to_sym == :ar
+- ar = I18n.locale == :ar
 %html
 	%head
 		%title
@@ -12,7 +12,7 @@
 	%style
 		nav { margin-bottom: 90px }
 		div.field_with_errors { display: inline }
-	%body{ dir: ar ? 'rtl' : 'ltr' }
+	%body{ dir: get_page_dir(I18n.locale) }
 		%nav
 			%div.navbar.navbar-fixed-top.navbar-inverse
 				%div.navbar-inner
@@ -24,11 +24,13 @@
 						%div.nav-collapse.collapse
 							- pull = ar ? 'pull-left' : 'pull-right'
 							%div.navbar-form{ class: pull }
-								= link_to t(:locale), requests_path(locale: ar ? 'en' : 'ar'), class: get_btn_class(:link)
+								= get_locale_link I18n.locale
+
 								- if @current_user
 									= link_to t(:logout), logout_users_path, method: :delete, class: get_btn_class(:logout)
 							
 							- pull2 = ar ? 'pull-right' : 'pull-left'
+
 							- if @current_user
 								%ul.nav{ class: pull2 }
 									%li{ class: @requests_link }= link_to t(:requests), requests_path
@@ -37,6 +39,18 @@
 									- if admin
 										%li{ class: @locations_link }= link_to t(:locations), locations_path
 										%li{ class: @users_link }= link_to t(:users), users_path
+
+								%ul.nav{ class: pull2 }
+									%li
+										%div.dropdown
+										%a.dropdown-toggle#dLabel{ role: 'button', 'data-toggle' => 'dropdown', 'data-target' => '#', href: '#' }
+											= t(:new_request)
+											%b.caret
+										%ul.dropdown-menu{ role: 'menu', 'aria-labelledby' => 'dLabel' }
+											%li= link_to t(:coming), new_coming_path
+											%li= link_to t(:leave), new_leafe_path
+											%li= link_to t(:ticket), new_ticket_path
+											%li= link_to t(:vacation), new_vacation_path
 							- else
 								= form_tag login_users_path, class: 'navbar-form ' + pull2 do
 									- username, password = t(:username), t(:password)
@@ -51,11 +65,11 @@
 		- notice, warning = flash[:notice], flash[:warning]
 		
 		- if notice
-			%div.alert.alert-success.text-center
+			%section.alert.alert-success.text-center
 				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 				= notice
 		- elsif warning
-			%div.alert.alert-error.text-center
+			%section.alert.alert-error.text-center
 				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
 				= warning
 		

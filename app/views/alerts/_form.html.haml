@@ -4,14 +4,11 @@
 	%div.page-header
 		%h1= action
 	
-	= render '/shared/form_errors', record: @alert
-	
-	= render('/shared/my_text_field', f: f, symbol: :title, text: t(:title),
-		options: { autofocus: true })
+	= my_text_field f, :title, t(:title), { autofocus: true }
 	
 	%div
 		= f.text_area(:body, placeholder: t(:body), rows: 8,
 			required: true)
-		= get_required_label(true)
+		-# = get_required_label(true)
 	
 	= render '/shared/form_footer', f: f, action: action

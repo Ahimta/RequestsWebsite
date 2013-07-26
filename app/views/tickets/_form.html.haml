@@ -6,7 +6,7 @@
 	= render '/requests/form', f: f, action: action
 	
 	= render '/shared/my_text_field', f: f, symbol: :line, text: t(:line)
-	= render('/shared/my_text_field', f: f, symbol: :number, text: t(:number),
+	= render('/shared/my_text_field', f: f, symbol: :number, text: t(:res_number),
 		options: { extra: true })
 	
 	= render '/companions/form', f: f

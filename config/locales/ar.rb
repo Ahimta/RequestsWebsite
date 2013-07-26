@@ -37,7 +37,7 @@
 		users_count: 'عدد المستخدمين', status: 'الحالة', back: 'عودة', body: 'المحتوى',
 		passport: 'صورة الجواز', reason: 'السبب', relation: 'صلة القرابة',
 		birthdate: 'تاريخ الميلاد', notice: 'تم إرسال طلبك بنجاح',
-		warning: 'الرجاء ملء الحقول المطلوبة', locale: 'English', number: 'رقم الحجز',
+		warning: 'الرجاء ملء الحقول المطلوبة', locale: 'English', res_number: 'رقم الحجز',
 		duration: 'عدد الأيام', decision_number: 'رقم القرار', title: 'العنوان',
 		username: 'اسم المستخدم', from: 'من تاريخ', to: 'إلى تاريخ', reject: 'رفض',
 		password: 'كلمة المرور', accept: 'قبول', accepted: 'تم القبول',
@@ -75,6 +75,7 @@
 		update_user_notice: 'تم تحديث بيانات المستخدم بنجاح',
 		show_coming: 'طلب مباشرة', show_leave: 'طلب مغادرة', na: 'ﻻ يوجد',
 		show_decision: 'موافقة', required_field: 'إجباري', optional_field: 'اختياري',
-		new_request: 'طلب جديد'
+		new_request: 'طلب جديد',
+		number: { human: { storage_units: { format: '' } } }
 	}
 }

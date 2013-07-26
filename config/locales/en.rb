@@ -37,8 +37,9 @@
 		users_count: 'Users Count', status: 'Status', back: 'Back', body: 'Body',
 		passport: 'Passport image', reason: 'Reason', relation: 'Relation',
 		birthdate: 'Birthdate', notice: 'Your Request was sent successfully',
-		warning: 'Please fill in all fields', locale: 'Arabic', number: 'Number',
-		duration: 'Duration', decision_number: 'Decision Number', title: 'Title',
+		warning: 'Please fill in all fields', locale: 'Arabic',
+		res_number: 'Reservation number', duration: 'Duration',
+		decision_number: 'Decision Number', title: 'Title',
 		username: 'Username', from: 'From date', to: 'To date', reject: 'Reject',
 		password: 'Password', accept: 'Accept', accepted: 'Accepted',
 		decide: 'Accept/Reject', pending: 'Pending', rejected: 'Rejected',
@@ -76,6 +77,6 @@
 		show_coming: 'Coming Request', show_leave: 'Leave Request',
 		na: 'None', show_decision: 'Acceptance', required_field: 'Required',
 		optional_field: 'Optional', new_request: 'New Request',
-		# number: { human: { storage_units: { format: 'hi' } } }
+		number: { human: { storage_units: { format: '' } } }
 	}
 }

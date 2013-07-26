@@ -2,7 +2,7 @@
 
 = render('/shared/resource_attributes',
 	attributes: { t(:line) => ticket.line,
-	t(:number) => (ticket.number.presence or t(:na)) })
+	t(:res_number) => (ticket.number.presence or t(:na)) })
 
 = render '/passports/passport', passport: ticket.passport
 

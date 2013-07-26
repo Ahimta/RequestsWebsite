@@ -8,9 +8,9 @@ module UsersHelper
 			t(:requests_count), t(:modify)]]
 	end
 	
-	def user_taken_msg(user)
-		if user.errors.messages[:taken].try :first
-			content_tag :div, t(:taken_username), class: 'label label-warning'
+	def username_taken_msg(user)
+		if user.taken?
+			content_tag :section, t(:taken_username), class: 'label label-warning'
 		end
 	end
 end

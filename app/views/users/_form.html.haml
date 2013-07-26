@@ -6,12 +6,11 @@
 		
 	= render '/shared/form_errors', record: @user
 	
+	%section= username_taken_msg @user
 	= render('/shared/my_text_field', f: f, symbol: :username, text: t(:username),
 	options: { autofocus: true })
 	
-	%div
-		= f.password_field :password, placeholder: t(:password)
-		-#= get_required_label true
+	%div= f.password_field :password, placeholder: t(:password)
 	
 	= render '/locations/form', f: f
 	

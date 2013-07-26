@@ -16,7 +16,11 @@ class User < ActiveRecord::Base
 
 	accepts_nested_attributes_for :location
 
-	validates :username, presence: true #, uniqueness: { case_sensetive: false, case_insensetive: true }
+	validates :username, presence: true
+	if PROTECTED
+		validates :username, uniqueness: { case_sensetive: false,
+			case_insensetive: true }
+	end
 	
 	# prevent duplicate Location records
 	before_save do
@@ -26,6 +30,10 @@ class User < ActiveRecord::Base
 			first_or_create
 
 		location.destroy unless self.location == location
+	end
+	
+	before_validation do
+		username.downcase!
 	end
 	
 	# prevent admin users from being destroyed
@@ -41,5 +49,9 @@ class User < ActiveRecord::Base
 
 	def self.authenticate(user, record)
 		(record.try(:user) == user) or user.try(:admin)
+	end
+	
+	def taken?
+		username.try(:present?) and User.where(username: username).first
 	end
 end

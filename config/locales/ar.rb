@@ -60,7 +60,7 @@
 		empty_applicants: "ﻻ يوجد مستفيدين في الوقت الحالي",
 		empty_users: "ﻻ يوجد مستخدمين في الوقت الحالي",
 		acceptance: 'تم منح applicant type بقرار رقم number..',
-		taken_username: 'Username is taken',
+		taken_username: 'اسم المستخدم موجود حالياً',
 		create_user_notice: 'تم تسجيل المستخدم بنجاح',
 		login_notice: 'تم تسجيل الدخول بنجاح', login_warning: 'اسم المستخد أو كلمة المرور غير صالحين',
 		logout_notice: 'تم تسجيل الخروج بنجاح',

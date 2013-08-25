@@ -6,10 +6,10 @@ shared_examples_for 'index' do |model, includes=true|
 	end
 	before do
 		if includes
-			model.stub!(:includes).and_return @double
-			@double.stub!(:scoped).and_return @double
+			model.stub(:includes).and_return @double
+			@double.stub(:scoped).and_return @double
 		else
-			model.stub!(:scoped).and_return @double
+			model.stub(:scoped).and_return @double
 		end
 	end
 	

@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails'
 
 group :development, :test do
 	gem 'factory_girl_rails'
 	gem 'sqlite3'
-	gem 'debugger'# To use debugger
+	gem 'debugger'
 end
 
 group :development, :production do
@@ -39,7 +39,7 @@ end
 
 gem 'paperclip'
 gem 'jquery-rails'
-gem 'bcrypt-ruby'# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'rails-i18n'
 gem 'turbolinks'
 gem 'haml'

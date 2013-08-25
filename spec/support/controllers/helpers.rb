@@ -56,10 +56,10 @@ end
 
 def includes_stub(model, includes, method)
 	if includes
-		model.stub!(:includes).and_return @double
-		@double.stub!(method).and_return @double
+		model.stub(:includes).and_return @double
+		@double.stub(method).and_return @double
 	else
-		model.stub!(method).and_return @double
+		model.stub(method).and_return @double
 	end
 end
 

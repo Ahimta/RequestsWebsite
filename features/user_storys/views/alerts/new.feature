@@ -1,5 +1,6 @@
 Feature: admins can create alerts
 
+@admin
 Scenario Outline: alert_create
 	When I send an alert:
 		|	alert_title	|	<title>	|

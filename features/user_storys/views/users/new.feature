@@ -1,5 +1,6 @@
 Feature: Users can request users
 
+@admin
 Scenario Outline: I fill in fields appropriately | I don't fill in fields appropriately
 	When I register a user:
 	|	user_username					|	<username>	|

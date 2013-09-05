@@ -1,3 +1,7 @@
+Given(/^an? admin user exists?$/) do
+	FactoryGirl.create :admin
+end
+
 When(/^I register a user:$/) do |user|
 	visit new_user_path
 

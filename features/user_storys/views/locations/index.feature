@@ -1,5 +1,6 @@
 Feature: locations index
 
+@admin
 Scenario Outline:
 	Given a pending <model> exists
 		And an accepted <model> exists

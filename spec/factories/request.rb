@@ -6,7 +6,6 @@ FactoryGirl.define do
 			accepted nil
 		end
 		factory :accepted_request do
-		#decision
 			accepted true
 		end
 		factory :rejected_request do

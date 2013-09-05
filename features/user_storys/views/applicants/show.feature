@@ -1,5 +1,6 @@
 Feature: applicants show
 
+@admin
 Scenario Outline: applicants
 	Given a <type> <model> exist
 		And I am on the first applicant page

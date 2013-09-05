@@ -1,5 +1,6 @@
 Feature: users can see individual requests
 
+@admin
 Scenario Outline: comings
 	Given a <type> <model> exist
 		And I am on the first request page

@@ -1,5 +1,6 @@
 Feature: Users can find all users on users page
 
+@admin
 Scenario: users exist
 	Given 3 users exist
 	And I am on the users page

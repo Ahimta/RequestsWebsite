@@ -10,3 +10,12 @@ Before '@login_logout' do
 		|	username2	|	password2	|	2						|
 	}
 end
+
+Before '@admin' do
+	steps %Q{
+		Given an admin user exists
+		When I login:
+		|	login_username	|	admin	|
+		|	login_password	|	admin	|
+	}
+end

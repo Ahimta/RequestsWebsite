@@ -1,8 +1,9 @@
 Feature: locations show
 
+@admin
 Scenario Outline: applicants
 	Given a <type> <model> exist
-		And I am on the first location page
+		And I am on the second location page
 	Then I should see the following: <should_see>
 		But I should not see the following: <should_not_see>
 

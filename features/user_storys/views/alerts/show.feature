@@ -1,5 +1,6 @@
 Feature: users can see alerts
 
+@admin
 Scenario Outline:
 	Given an alert exists
 		And I am on the first alert page

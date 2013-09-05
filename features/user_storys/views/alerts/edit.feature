@@ -1,5 +1,6 @@
 Feature: admins can edit alerts
 
+@admin
 Scenario Outline: 
 	Given an alert exists
 	When I edit the first alert:

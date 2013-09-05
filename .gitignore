@@ -16,3 +16,7 @@
 *.class
 *.pyc
 *.pyo
+
+rails_best_practices.html
+brakeman.html
+.project

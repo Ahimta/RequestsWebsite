@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe User do
+  describe 'not creating duplicate locations for users' do
+    Location.destroy_all
+    
+    user1 = User.create!(username: 'u1', password: 'p', location_attributes: { name: 'name' })
+    user2 = User.create!(username: 'u2', password: 'p', location_attributes: { name: 'name' })
+    
+    Location.first.name.should == 'name'
+    Location.count.should == 1
+    
+    Location.destroy_all
+  end
+  
 	describe 'associations' do
 		subject! { User.new }
 		

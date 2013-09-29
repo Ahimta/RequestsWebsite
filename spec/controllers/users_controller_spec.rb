@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe UsersController do
   context 'logged in as admin' do
+  let!(:admin) { FactoryGirl.create :admin, username: 'userr' }
+  before { session[:user_id] = admin.id }
+  
+    
   	it_behaves_like 'index', User
   	
   	it_behaves_like 'new', User

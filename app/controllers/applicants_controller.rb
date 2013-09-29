@@ -3,11 +3,11 @@ class ApplicantsController < ApplicationController
 	before_filter :get_applicant, except: :index
 	
 	def index
-		if User::PROTECTED
-			@applicants = @current_user.try(:admin) ? Applicant.includes(Applicant::INCLUDES_ALL).load : @current_user.try(:applicants).includes(Applicant::INCLUDES_ALL)
-		else
-			@applicants = Applicant.includes(Applicant::INCLUDES_ALL).load
-		end
+		@applicants = if @current_user.try(:admin)
+		  Applicant.includes(Applicant::INCLUDES_ALL).load
+		  else
+		    @current_user.try(:applicants).includes(Applicant::INCLUDES_ALL)
+		  end
 	end
 	
 	def show

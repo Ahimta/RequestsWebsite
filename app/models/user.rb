@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	PROTECTED = false
+	PROTECTED = true
 	INCLUDES_FIND  = { requests: :applicant, applicants: :requests, location: nil }
 	INCLUDES_ALL = [:requests, :applicants, :location]
 

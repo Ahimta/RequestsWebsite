@@ -3,15 +3,11 @@ class RequestsController < ApplicationController
 	before_filter :get_request, only: [:show, :destroy]
 	
 	def index
-		if User::PROTECTED
-			@requests = if @current_user.try(:admin)
-			 Request.includes(Request::INCLUDES_ALL).load
+		@requests = if @current_user.try(:admin)
+		  Request.includes(Request::INCLUDES_ALL).load
 			else
 				@current_user.requests.includes(Request::INCLUDES_ALL).load
 			end
-		else
-			@requests = Request.includes(Request::INCLUDES_ALL).load
-		end
 	end
 	
 	def show

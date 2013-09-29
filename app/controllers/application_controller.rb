@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 	
 	before_filter :get_locale
 	before_filter :get_session
-	before_filter :require_login if User::PROTECTED
+	before_filter :require_login
 	
 	
 	private
@@ -32,19 +32,19 @@ class ApplicationController < ActionController::Base
 	
 	def require_admin
 		unless @current_user.try(:admin)
-			redirect_to requests_path if User::PROTECTED
+			redirect_to requests_path
 		end
 	end
 	
 	def require_owner(record)
 		unless User.authenticate(@current_user, record)
-			redirect_to requests_path if User::PROTECTED
+			redirect_to requests_path
 		end
 	end
 	
 	def require_login
 		unless @current_user
-			redirect_to home_page_path if User::PROTECTED
+			redirect_to home_page_path
 		end
 	end
 end

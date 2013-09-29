@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe AlertsController do
+  let!(:admin) { FactoryGirl.create :admin, username: 'userr' }
+  before { session[:user_id] = admin.id }
+  
   context 'logged in as regular user' do
   	it_behaves_like 'index', Alert, false
   	
@@ -8,7 +11,7 @@ describe AlertsController do
   end
 	
 	context 'logged in as admin' do
-  	it_behaves_like 'new', Alert
+    it_behaves_like 'new', Alert
   	
   	it_behaves_like 'create', Alert, '/alerts?locale=en'
   	

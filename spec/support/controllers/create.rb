@@ -6,7 +6,7 @@ shared_examples_for 'create' do |model, index = '/requests?locale=en'|
 		model.stub(:new).and_return @double
 		@double.stub(:save)
 		
-		Ticket.stub :has_right?
+		Ticket.stub(:has_right?).and_return true
 	end
 	after { post :create, @symbol => @param }
 	

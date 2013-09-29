@@ -13,7 +13,7 @@ class DecisionsController < ApplicationController
 				redirect_to requests_path
 			else
 				if @request.requestable_type == 'Ticket' and
-					not Ticket.has_right?(@request.applicant) and User::PROTECTED
+					not Ticket.has_right?(@request.applicant)
 					flash[:warning] = t(:create_ticket_warning)
 					redirect_to requests_path and return
 				end

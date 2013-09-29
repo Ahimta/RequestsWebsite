@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe ApplicantsController do
-  context 'logged in as regular user' do
-  	it_behaves_like 'index', Applicant
+  let!(:admin) { FactoryGirl.create :admin, username: 'userr' }
+  before { session[:user_id] = admin.id }
+  
+  context 'logged in as admin' do
+    it_behaves_like 'index', Applicant
   	
   	it_behaves_like 'show', Applicant
   	

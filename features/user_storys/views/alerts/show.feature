@@ -1,12 +1,7 @@
 Feature: users can see alerts
 
 @admin
-Scenario Outline:
-	Given an alert exists
+Scenario:
+	Given 3 alert exists
 		And I am on the first alert page
-	Then I should see the following: <should_see>
-
-Examples:
-	|	should_see		|
-	|	title2, body2	|
-	|	title0, body0	|
+	Then I should see the following: title1, body1

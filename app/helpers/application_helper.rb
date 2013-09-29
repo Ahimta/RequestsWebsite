@@ -69,6 +69,6 @@ module ApplicationHelper
 
 	def get_locale_link(locale)
 		locale = locale == :ar ? :en : :ar
-		link_to t(:locale), requests_path(locale: locale), class: get_btn_class(:link)	
+		link_to t(:locale), home_page_path(locale: locale), class: get_btn_class(:link)	
 	end
 end

@@ -38,3 +38,25 @@ def submit(data, button)
 
   click_button button
 end
+
+def create_request(n, type)
+    applicant = Applicant.create! name: "applicant#{n}", user_id: create_user(n).id
+
+    request   = Request.create!(applicant_id: applicant.id, accepted: case type
+      when 'accepted' then true
+      when 'rejected' then false
+      else nil
+      end)
+
+    request
+end
+
+def create_user(n)
+  location  = Location.create! name: "location#{n}"
+  user      = User.new(username: "username#{n}",
+    password: "password#{n}", location_id: location.id)
+  
+  user.save!(validate: false)
+
+  user
+end

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	skip_before_filter :require_login, only: [:login]
 	
 	def index
-		@users = User.includes(User::INCLUDES_ALL).scoped
+		@users = User.includes(User::INCLUDES_ALL).load
 	end
 	
 	def show
@@ -52,16 +52,16 @@ class UsersController < ApplicationController
 		if user
 			session[:user_id] = user.id
 			flash[:notice] = t(:login_notice)
+			redirect_to requests_path
 		else
 			flash[:warning] = t(:login_warning)
+			redirect_to home_page_path
 		end
-		
-		redirect_to requests_path
 	end
 	
 	def logout
 		reset_session
-		redirect_to requests_path, notice: t(:logout_notice)
+		redirect_to home_page_path, notice: t(:logout_notice)
 	end
 	
 	

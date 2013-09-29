@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   	begin
   		@current_user ||= User.find id if id
   	rescue ActiveRecord::RecordNotFound
-  		reset_session and redirect_to home_pages_path
+  		reset_session and redirect_to home_page_path
   	end
 	end
 	
@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
 	
 	def require_login
 		unless @current_user
-			redirect_to home_pages_path if User::PROTECTED
+			redirect_to home_page_path if User::PROTECTED
 		end
 	end
 end

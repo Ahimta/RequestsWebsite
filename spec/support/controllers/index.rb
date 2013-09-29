@@ -7,18 +7,18 @@ shared_examples_for 'index' do |model, includes=true|
 	before do
 		if includes
 			model.stub(:includes).and_return @double
-			@double.stub(:scoped).and_return @double
+			@double.stub(:load).and_return @double
 		else
-			model.stub(:scoped).and_return @double
+			model.stub(:all).and_return @double
 		end
 	end
 	
-	it 'should call Model.all' do
+	it 'should call Model.load' do
 		if includes
 			model.should_receive(:includes)
-			@double.should_receive(:scoped).with no_args
+			@double.should_receive(:load).with no_args
 		else
-			model.should_receive(:scoped).with no_args
+			model.should_receive(:all).with no_args
 		end
 		
 		get :index

@@ -40,14 +40,14 @@ describe User do
 	end
 	
 	describe '.authenticate' do
-		let!(:admin) { FactoryGirl.create :user, admin: true }
-		let!(:user) { FactoryGirl.create :user }
-		let!(:invalid_user) { FactoryGirl.create :user }
+		let!(:admin) { FactoryGirl.create :user, username: 'admin', admin: true }
+		let!(:user) { FactoryGirl.create :user, username: 'john' }
+		let!(:invalid_user) { FactoryGirl.create :user, username: 'smith' }
 		
-		let!(:coming) { FactoryGirl.create :coming, request_attributes: { applicant_attributes: { user: user, name: 'x' } } }
-		let!(:leave) { FactoryGirl.create :leave, request_attributes: { applicant_attributes: { user: user, name: 'x' } } }
-		let!(:ticket) { FactoryGirl.create :ticket, request_attributes: { applicant_attributes: { user: user, name: 'x' } } }
-		let!(:vacation) { FactoryGirl.create :vacation, request_attributes: { applicant_attributes: { user: user, name: 'x' } } }
+		let!(:coming) { Coming.create! reason: 'reason', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
+		let!(:leave) { Leave.create! reason: 'reason', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
+		let!(:ticket) { Ticket.create line: 'line', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
+		let!(:vacation) { Vacation.create duration: '1', from: '2', to: '3', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
 		
 		let!(:records) { [coming, ticket, leave, vacation] }
 		

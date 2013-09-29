@@ -2,7 +2,7 @@ Feature: admins can edit alerts
 
 @admin
 Scenario Outline: 
-	Given an alert exists
+	Given 1 alert exists
 	When I edit the first alert:
 		|	alert_title	|	<title>	|
 		|	alert_body	|	<body>	|

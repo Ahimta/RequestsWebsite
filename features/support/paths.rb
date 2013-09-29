@@ -11,8 +11,7 @@ module NavigationHelpers
 		when /^the first (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.first)"
 		when /^the second (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[1])"
 		
-    when /the home\s?page/
-      '/'
+  when /the home\s?page/ then home_page_path
 
     # the following are examples using path_to_pickle
 

@@ -2,21 +2,21 @@ Feature: users can edit requests
 
 @admin
 Scenario Outline: comings
-	Given a coming exists
+	Given 1 <type> coming exist
 	When I edit the first coming:
 		|	coming_request_attributes_applicant_attributes_name	|	<applicant>	|
 		|	coming_reason										|	<reason>	|
 	Then I should see "<should_see>"
 
 Examples:
-	|	applicant	|	reason	|	should_see							|
-	|	applicant	|	reason	|	Your request was updated successfully	|
-	|	applicant	|			|	Please fill in all fields			|
-	|				|	reason	|	Please fill in all fields			|
+	|	applicant	|	reason	|	type		|	should_see								|
+	|	applicant	|	reason	|	pending		|	Your request was updated successfully	|
+	|	applicant	|			|	accepted	|	Please fill in all fields				|
+	|				|	reason	|	rejected	|	Please fill in all fields				|
 
 @admin
 Scenario Outline: ticket
-	Given a ticket exists
+	Given 1 <type> ticket exists
 	When I edit the first ticket:
 		|	ticket_request_attributes_applicant_attributes_name	|	<applicant>	|
 		|	ticket_line											|	<line>		|
@@ -24,18 +24,19 @@ Scenario Outline: ticket
 	Then I should see "<should_see>"
 
 Examples:
-	|	applicant	|	line	|	number		|	should_see							|
-	|	applicant	|	line	|	number		|	Your request was updated successfully	|
-	|	applicant	|	line	|				|	Your request was updated successfully	|
-	|	applicant	|			|				|	Please fill in all fields			|
-	|				|	line	|	number		|	Please fill in all fields			|
-	|	applicant	|			|	number		|	Please fill in all fields			|
-	|				|	line	|	number		|	Please fill in all fields			|
+	|	applicant	|	line	|	number		|	type		|	should_see								|
+	|	applicant	|	line	|	number		|	pending		|	Your request was updated successfully	|
+	|	applicant	|	line	|				|	accepted	|	Your request was updated successfully	|
+	|	applicant	|	line	|				|	rejected	|	Your request was updated successfully	|
+	|	applicant	|			|				|	rejected	|	Please fill in all fields				|
+	|				|	line	|	number		|	pending		|	Please fill in all fields				|
+	|	applicant	|			|	number		|	accepted	|	Please fill in all fields				|
+	|				|	line	|	number		|	rejected	|	Please fill in all fields				|
 
 
 @admin
 Scenario Outline: vacation
-	Given a vacation exists
+	Given 1 <type> vacation exists
 	When I edit the first vacation:
 		|	vacation_request_attributes_applicant_attributes_name	|	<applicant>	|
 		|	vacation_duration										|	<duration>	|
@@ -45,10 +46,12 @@ Scenario Outline: vacation
 
 @admin
 Examples:
-	|	applicant	|	duration	|	from	|	to	|	should_see							|
-	|	applicant	|	1			|	2		|	3	|	Your request was updated successfully	|
-	|	applicant	|	1			|	2		|		|	Please fill in all fields			|
-	|	applicant	|	1			|			|		|	Please fill in all fields			|
-	|	applicant	|				|	2		|		|	Please fill in all fields			|
-	|				|	1			|	2		|		|	Please fill in all fields			|
-	|	applicant	|				|			|	3	|	Please fill in all fields			|
+	|	applicant	|	duration	|	from	|	to	|	type		|	should_see								|
+	|	applicant	|	1			|	2		|	3	|	accepted	|	Your request was updated successfully	|
+	|	applicant	|	1			|	2		|	3	|	rejected	|	Your request was updated successfully	|
+	|	applicant	|	1			|	2		|	3	|	pending		|	Your request was updated successfully	|
+	|	applicant	|	1			|	2		|		|	accepted	|	Please fill in all fields				|
+	|	applicant	|	1			|			|		|	rejected	|	Please fill in all fields				|
+	|	applicant	|				|	2		|		|	pending		|	Please fill in all fields				|
+	|				|	1			|	2		|		|	accepted	|	Please fill in all fields				|
+	|	applicant	|				|			|	3	|	rejected	|	Please fill in all fields				|

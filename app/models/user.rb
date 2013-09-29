@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	INCLUDES_ALL = [:requests, :applicants, :location]
 
 	attr_accessible :admin, :location, :location_attributes, :location_id,
-	:password, :username
+	:password, :password_confirmation, :username
 
 	has_secure_password
 
@@ -17,10 +17,8 @@ class User < ActiveRecord::Base
 	accepts_nested_attributes_for :location
 
 	validates :username, presence: true
-	if PROTECTED
-		validates :username, uniqueness: { case_sensetive: false,
-			case_insensetive: true }
-	end
+	validates :username, uniqueness: { case_sensetive: false,
+		case_insensetive: true }
 	
 	# prevent duplicate Location records
 	before_save do
@@ -34,6 +32,7 @@ class User < ActiveRecord::Base
 	
 	before_validation do
 		username.downcase!
+		self.password_confirmation = password
 	end
 	
 	# prevent admin users from being destroyed

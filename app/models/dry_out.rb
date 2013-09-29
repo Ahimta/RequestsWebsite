@@ -6,7 +6,7 @@ class DryOut
 		
 		requestables.each do |requestable|
 			requestable.class_eval do
-				attr_accessible :request_attributes
+				attr_accessible :request_attributes, :request
 				has_one :request, as: :requestable
 				has_one :applicant, through: :request
 				delegate :name, to: :applicant, prefix: true

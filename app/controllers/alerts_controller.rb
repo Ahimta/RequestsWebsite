@@ -4,7 +4,7 @@ class AlertsController < ApplicationController
 	before_filter :require_admin, except: [:index, :show]
 	
 	def index
-		@alerts = Alert.scoped
+		@alerts = Alert.all
 	end
 	
 	def show

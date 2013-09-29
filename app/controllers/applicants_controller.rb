@@ -4,9 +4,9 @@ class ApplicantsController < ApplicationController
 	
 	def index
 		if User::PROTECTED
-			@applicants = @current_user.try(:admin) ? Applicant.includes(Applicant::INCLUDES_ALL).scoped : @current_user.try(:applicants).includes(Applicant::INCLUDES_ALL)
+			@applicants = @current_user.try(:admin) ? Applicant.includes(Applicant::INCLUDES_ALL).load : @current_user.try(:applicants).includes(Applicant::INCLUDES_ALL)
 		else
-			@applicants = Applicant.includes(Applicant::INCLUDES_ALL).scoped
+			@applicants = Applicant.includes(Applicant::INCLUDES_ALL).load
 		end
 	end
 	

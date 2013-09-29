@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '>= 4'
+ruby '1.9.3'
 
 group :development, :test do
 	gem 'factory_girl_rails'
@@ -43,3 +44,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'rails-i18n'
 gem 'turbolinks'
 gem 'haml'
+gem 'protected_attributes'
+gem 'actionpack-page_caching'
+gem 'therubyracer', platforms: :ruby

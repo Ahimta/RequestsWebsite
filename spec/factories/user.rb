@@ -7,6 +7,8 @@ FactoryGirl.define do
 		factory :admin do
 			username 'admin'
 			password 'admin'
+      password_confirmation 'admin'
+			admin true
 			association :location, factory: :location, name: 'location'
 		end
 	end

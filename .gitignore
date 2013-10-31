@@ -17,6 +17,9 @@
 *.pyc
 *.pyo
 
-rails_best_practices.html
-brakeman.html
-.project
+/rails_best_practices.html
+/brakeman.html
+/.project
+
+# Ignore all pictures
+/public/system/*

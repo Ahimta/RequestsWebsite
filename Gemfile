@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '>= 4'
+gem 'rails'
 ruby '1.9.3'
 
 group :development, :test do
@@ -19,6 +19,10 @@ group :development do
 	gem 'guard-cucumber'
 	gem 'guard-rspec'
 	gem 'bullet'
+
+	gem 'sass-rails'
+	gem 'coffee-rails'
+	gem 'uglifier'
 end
 
 group :test do
@@ -32,9 +36,6 @@ group :test do
 end
 
 group :production do
-	gem 'sass-rails'
-	gem 'coffee-rails'
-	gem 'uglifier'
 	gem 'pg'
 end
 
@@ -46,4 +47,5 @@ gem 'turbolinks'
 gem 'haml'
 gem 'protected_attributes'
 gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 gem 'therubyracer', platforms: :ruby

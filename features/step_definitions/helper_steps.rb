@@ -30,6 +30,14 @@ When(/^I edit the first (\w+):$/) do |model, data|
   submit data, "Edit #{model.capitalize}"
 end
 
+When(/^I visit the first (\w+) edit page$/) do |model|
+  visit eval("edit_#{model.downcase}_path(#{model.classify}.first)")
+end
+
+When(/^I visit the new (\w+) page$/) do |model|
+  visit eval("new_#{model.downcase}_path")
+end
+
 
 def submit(data, button)
   data.rows_hash.each do |field, value|

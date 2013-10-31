@@ -10,6 +10,7 @@ module NavigationHelpers
 		
 		when /^the first (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.first)"
 		when /^the second (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[1])"
+    when /^the third (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[2])"
 		
   when /the home\s?page/ then home_page_path
 
@@ -26,6 +27,7 @@ module NavigationHelpers
 
     when /^#{capture_model}(?:'s)? (.+?) page$/                     # eg. the forum's posts page
       path_to_pickle $1, :extra => $2                               #  or the forum's edit page
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

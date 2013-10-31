@@ -1,8 +1,20 @@
-Feature: users can see alerts
+Feature: AlertsController#show
 
-Scenario Outline:
+Background:
+	Given 3 alert exists
+
+Scenario Outline: Not logged in
+	Given I am on the <page> alert page
+	Then I should be on the home page
+
+Examples:
+	|	page	|
+	|	first	|
+	|	second	|
+	|	third	|
+
+Scenario Outline: Logged in
 	Given I am logged in as <user>
-		And 3 alert exists
 		And I am on the <page> alert page
 	Then I should see the following: <should_see>
 

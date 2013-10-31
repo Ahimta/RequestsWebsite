@@ -1,6 +1,6 @@
-Feature: admins can create alerts
+Feature: AlertsController#{new, create}
 
-Scenario Outline: Not logged in
+Scenario Outline: Not logged in as admin
 	Given I am logged in as <user>
 	When I visit the new alert page
 	Then I should be on the <page> page
@@ -11,7 +11,7 @@ Examples:
 	|	regular user	|	requests	|
 
 @admin
-Scenario Outline: alert_create
+Scenario Outline: Logged in as admin
 	When I send an alert:
 		|	alert_title	|	<title>	|
 		|	alert_body	|	<body>	|

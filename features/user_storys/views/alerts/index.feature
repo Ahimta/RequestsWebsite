@@ -1,4 +1,4 @@
-Feature: Users can find all alerts on alerts page
+Feature: AlertsController#index
 
 Scenario Outline: Not logged in
 	Given <n> alerts exist

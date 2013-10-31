@@ -1,20 +1,29 @@
-Feature: locations show
+Feature: LocationsController#show
 
-@admin
-Scenario Outline: applicants
-	Given 1 <type> <model> exist
+Scenario Outline: Not logged in as admin
+	Given I am logged in as <user>
+		And 3 pending <model> exist
+		And 3 accepted <model> exist
+		And 3 rejected <model> exist
 		And I am on the second location page
-	Then I should see the following: <should_see>
-		But I should not see the following: <should_not_see>
+	Then I should be on the <page> page
 
 Examples:
-	|	model		|	type		|	should_see				|
-	|	coming		|	pending		|	username1, location1	|
-	|	coming		|	accepted	|	username1, location1	|
-	|	coming		|	rejected	|	username1, location1	|
-	|	ticket		|	pending		|	username1, location1	|
-	|	ticket		|	accepted	|	username1, location1	|
-	|	ticket		|	rejected	|	username1, location1	|
-	|	vacation	|	pending		|	username1, location1	|
-	|	vacation	|	rejected	|	username1, location1	|
-	|	vacation	|	accepted	|	username1, location1	|
+	|	user			|	model	|	page		|
+	|	not				|	coming	|	home		|
+	|	regular user	|	ticket	|	requests	|
+
+@admin
+Scenario Outline: Logged in as admin
+	Given 1 <type> coming exist
+		And 1 <type> ticket exist
+		And 1 <type> vacation exist
+		And I am on the first location page
+	Then I should see the following: admin, location
+		But I should not see the following: location1, location2, location3, username1, username2, username3
+
+Examples:
+	|	type		|
+	|	pending		|
+	|	accepted	|
+	|	rejected	|

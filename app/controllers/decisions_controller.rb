@@ -9,22 +9,22 @@ class DecisionsController < ApplicationController
 	def new
 		case params[:d]
 		when Decision::ACCEPT
-			if @request.accepted
-				redirect_to requests_path
-			else
-				if @request.requestable_type == 'Ticket' and
+			redirect_to requests_path and return if @request.accepted
+			
+			if @request.requestable_type == 'Ticket' and
 					not Ticket.has_right?(@request.applicant)
-					flash[:warning] = t(:create_ticket_warning)
-					redirect_to requests_path and return
-				end
-					
-				@decision = Decision.new
+
+				flash[:warning] = t(:create_ticket_warning)
+				redirect_to requests_path and return
 			end
+					
+			@decision = Decision.new
 		when Decision::REJECT
 			@request.update_attributes accepted: false
 			@request.decision.try :destroy
 			redirect_to requests_path
-		else redirect_to requests_path
+		else
+			redirect_to requests_path
 		end
 	end
 	
@@ -43,7 +43,7 @@ class DecisionsController < ApplicationController
 	private
 	
 	def get_request
-		@request = Request.includes(:applicant).find params[:request_id]
+		@request = Request.includes(:applicant, :decision).find params[:request_id]
 		require_owner @request
 	end
 end

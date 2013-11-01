@@ -9,6 +9,9 @@ module NavigationHelpers
     case page_name
 
     when /^the new leave page$/ then new_leafe_path
+    when /^the new decision page$/ then new_request_decision_path(Request.first)
+
+    when /^the first decision page$/ then request_decision_path(request_id: Request.first.id, id: Decision.first.id)
 		
 		when /^the first (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.first)"
 		when /^the second (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[1])"

@@ -31,4 +31,6 @@ class Request < ActiveRecord::Base
 
 		record
 	end
+
+	def ticket?; requestable_type == 'Ticket'; end
 end

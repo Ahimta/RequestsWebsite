@@ -60,11 +60,9 @@ def create_request(n, type)
 end
 
 def create_user(n)
-  location  = Location.create! name: "location#{n}"
-  user      = User.new(username: "username#{n}",
-    password: "password#{n}", location_id: location.id)
-  
-  user.save!(validate: false)
+  location  = Location.new name: "location#{n}"
+  user      = User.where(username: "username#{n}").first
 
-  user
+  user or User.create!(username: "username#{n}",
+    password: "password#{n}", location: location)
 end

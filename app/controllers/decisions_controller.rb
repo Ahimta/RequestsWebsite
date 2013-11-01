@@ -1,6 +1,6 @@
 class DecisionsController < ApplicationController
-	before_filter :get_request, only: [:new, :create]
-	before_filter :require_admin
+	before_action :get_request, only: [:new, :create]
+	before_action :require_admin
 	
 	def show
 		@decision = Decision.find params[:id]
@@ -8,7 +8,7 @@ class DecisionsController < ApplicationController
 	
 	def new
 		case params[:d]
-		when 'accept'
+		when Decision::ACCEPT
 			if @request.accepted
 				redirect_to requests_path
 			else
@@ -20,7 +20,7 @@ class DecisionsController < ApplicationController
 					
 				@decision = Decision.new
 			end
-		when 'reject'
+		when Decision::REJECT
 			@request.update_attributes accepted: false
 			@request.decision.try :destroy
 			redirect_to requests_path
@@ -43,6 +43,7 @@ class DecisionsController < ApplicationController
 	private
 	
 	def get_request
-		@request = Request.find params[:request_id]
+		@request = Request.includes(:applicant).find params[:request_id]
+		require_owner @request
 	end
 end

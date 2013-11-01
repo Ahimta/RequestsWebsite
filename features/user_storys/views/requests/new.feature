@@ -1,6 +1,17 @@
-Feature: users can make requests: coming, leave, ticket, vacation
+Feature: RequestsController#{new, create}
 
-@admin
+Scenario Outline: Not logged in
+	Given I am on the new <model> page
+	Then I should be on the home page
+
+Examples:
+	|	model		|
+	|	coming		|
+	|	leave		|
+	|	ticket		|
+	|	vacation	|
+
+@admin, @regular_user
 Scenario Outline: request a coming
 	When I request a coming:
 		|	coming_request_attributes_applicant_attributes_name	|	<applicant>	|
@@ -15,7 +26,7 @@ Examples:
 	|				|	reason	|	comings		|	Please fill in all fields			|
 	|				|			|	comings		|	Please fill in all fields			|
 
-@admin
+@admin, @regular_user
 Scenario Outline: request a leave
 	When I request a leave:
 		|	leave_request_attributes_applicant_attributes_name	|	<applicant>	|
@@ -30,7 +41,7 @@ Examples:
 	|				|	reason	|	leaves		|	Please fill in all fields			|
 	|				|			|	leaves		|	Please fill in all fields			|
 
-@admin
+@admin, @regular_user
 Scenario Outline: request a ticket
 	When I request a ticket:
 		|	ticket_request_attributes_applicant_attributes_name	|	<applicant>	|
@@ -50,7 +61,7 @@ Examples:
 	|				|			|	number	|	tickets		|	Please fill in all fields			|
 	|				|			|			|	tickets		|	Please fill in all fields			|
 
-@admin
+@admin, @regular_user
 Scenario Outline: request a vacation
 	When I request a vacation:
 		|	vacation_request_attributes_applicant_attributes_name	|	<applicant>	|

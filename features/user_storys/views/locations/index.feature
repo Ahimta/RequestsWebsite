@@ -1,9 +1,10 @@
 Feature: LocationsController#index
 
 Background:
-	Given 3 pending coming exists
-		And 3 accepted ticket exists
-		And 3 rejected vacation exists
+	Given 3 pending comings exists
+		And 3 accepted leaves exists
+		And 3 accepted tickets exists
+		And 3 rejected vacations exists
 
 Scenario Outline: Not logged in as admin
 	Given I am logged in as <user>

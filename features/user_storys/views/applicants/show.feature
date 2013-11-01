@@ -1,9 +1,9 @@
 Feature: ApplicantsController#show
 
 Background:
-	Given 3 pending coming exist
-		And 3 accepted ticket exist
-		And 3 rejected vacation exist
+	Given 3 pending comings exist
+		And 3 accepted tickets exist
+		And 3 rejected vacations exist
 
 Scenario Outline: Not logged in
 	Given I am on the <applicant> applicant page

@@ -7,10 +7,13 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
+
+    when /^the new leave page$/ then new_leafe_path
 		
 		when /^the first (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.first)"
 		when /^the second (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[1])"
     when /^the third (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[2])"
+    when /^the fourth (\w+) page$/ then eval "#{$1}_path(#{$1.titleize}.all[3])"
 		
   when /the home\s?page/ then home_page_path
 

@@ -4,9 +4,9 @@ Background:
 	Given 3 pending coming exists
 		And 3 accepted ticket exists
 		And 3 rejected vacation exists
+		And I am on the applicants page
 
 Scenario: Not logged in
-	Given I am on the applicants page
 	Then I should be on the home page
 
 Scenario Outline: Logged in as regular user
@@ -25,5 +25,4 @@ Examples:
 
 @admin
 Scenario: Logged in as admin
-	Given I am on the applicants page
 	Then I should see the following: applicant1, applicant2, applicant3

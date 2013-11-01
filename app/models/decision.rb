@@ -1,4 +1,7 @@
 class Decision < ActiveRecord::Base
+	ACCEPT = 'accept'
+	REJECT = 'reject'
+	
 	attr_accessible :number, :request_id
 	
 	belongs_to :request

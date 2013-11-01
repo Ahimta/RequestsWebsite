@@ -1,5 +1,5 @@
 class ComingsController < ApplicationController
-	before_filter :get_coming, only: [:edit, :update]
+	before_action :get_coming, only: [:edit, :update]
 	
 	def new
 		@coming = Coming.new

@@ -16,7 +16,6 @@ shared_examples_for 'index' do |model, includes=true|
 	it 'should call Model.load' do
 		if includes
 			model.should_receive(:includes)
-			@double.should_receive(:load).with no_args
 		else
 			model.should_receive(:all).with no_args
 		end

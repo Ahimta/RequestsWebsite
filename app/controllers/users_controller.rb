@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-	before_filter { @users_link = 'active' }
-	before_filter :get_user, only: [:show, :edit, :update, :destroy]
-	before_filter :require_admin, except: [:login, :logout]
+	before_action { @users_link = 'active' }
+	before_action :get_user, only: [:show, :edit, :update, :destroy]
+	before_action :require_admin, except: [:login, :logout]
+
 	skip_before_filter :require_login, only: [:login]
 	
 	def index
-		@users = User.includes(User::INCLUDES_ALL).load
+		@users = User.includes(User::INCLUDES_ALL)
 	end
 	
 	def show
@@ -51,8 +52,7 @@ class UsersController < ApplicationController
 		
 		if user
 			session[:user_id] = user.id
-			flash[:notice] = t(:login_notice)
-			redirect_to requests_path
+			redirect_to requests_path, notice: t(:login_notice)
 		else
 			flash[:warning] = t(:login_warning)
 			redirect_to home_page_path

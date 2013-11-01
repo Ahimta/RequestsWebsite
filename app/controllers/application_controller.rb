@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+	protect_from_forgery
 	
 	# Adabted from guides.rails.com
 	def default_url_options(options={})
@@ -7,44 +7,36 @@ class ApplicationController < ActionController::Base
 		{ locale: I18n.locale }
 	end
 	
-	before_filter :get_locale
-	before_filter :get_session
-	before_filter :require_login
+	before_action :get_locale
+	before_action :get_session
+	before_action :require_login
 	
 	
 	private
 	
 	def get_locale
-		I18n.locale = if params[:locale] == 'ar' then :ar
-		else :en
-		end
+		I18n.locale = params[:locale]
 	end
 	
 	def get_session
-		id = session[:user_id]
+		@current_user_id ||= session[:user_id]
   	
   	begin
-  		@current_user ||= User.find id if id
+  		@current_user ||= User.find @current_user_id if @current_user_id
   	rescue ActiveRecord::RecordNotFound
   		reset_session and redirect_to home_page_path
   	end
 	end
 	
 	def require_admin
-		unless @current_user.try(:admin)
-			redirect_to requests_path
-		end
+		redirect_to requests_path unless @current_user.admin
 	end
 	
 	def require_owner(record)
-		unless User.authenticate(@current_user, record)
-			redirect_to requests_path
-		end
+		redirect_to requests_path unless User.authenticate(@current_user, record)
 	end
 	
 	def require_login
-		unless @current_user
-			redirect_to home_page_path
-		end
+		redirect_to home_page_path unless @current_user
 	end
 end

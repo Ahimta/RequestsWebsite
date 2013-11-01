@@ -1,12 +1,12 @@
 class RequestsController < ApplicationController
-	before_filter { @requests_link = 'active' }
-	before_filter :get_request, only: [:show, :destroy]
+	before_action { @requests_link = 'active' }
+	before_action :get_request, only: [:show, :destroy]
 	
 	def index
-		@requests = if @current_user.try(:admin)
-		  Request.includes(Request::INCLUDES_ALL).load
+		@requests = if @current_user.admin
+			Request.includes(Request::INCLUDES_ALL)
 			else
-				@current_user.requests.includes(Request::INCLUDES_ALL).load
+				@current_user.requests.includes(Request::INCLUDES_ALL)
 			end
 	end
 	

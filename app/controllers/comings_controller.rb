@@ -2,8 +2,7 @@ class ComingsController < ApplicationController
 	before_action :get_coming, only: [:edit, :update]
 	
 	def new
-		@coming = Coming.new
-		@coming = Request.build_associations(@coming)
+		@coming = Request.build_associations Coming.new
 	end
 	
 	def create

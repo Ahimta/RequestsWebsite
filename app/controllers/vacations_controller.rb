@@ -1,9 +1,8 @@
 class VacationsController < ApplicationController
-	before_filter :get_vacation, only: [:edit, :update]
+	before_action :get_vacation, only: [:edit, :update]
 	
 	def new
-		@vacation = Vacation.new
-		@vacation = Request.build_associations(@vacation, passportable: true)
+		@vacation = Request.build_associations(Vacation.new, passportable: true)
 	end
 	
 	def create

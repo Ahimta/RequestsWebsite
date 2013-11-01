@@ -1,9 +1,9 @@
 class LocationsController < ApplicationController
-	before_filter { @locations_link = 'active' }
-	before_filter :require_admin
+	before_action { @locations_link = 'active' }
+	before_action :require_admin
 	
 	def index
-		@locations = Location.includes(Location::INCLUDES_ALL).load
+		@locations = Location.includes(Location::INCLUDES_ALL)
 	end
 	
 	def show

@@ -1,9 +1,9 @@
 class TicketsController < ApplicationController
-	before_filter :get_ticket, only: [:edit, :update]
+	before_action :get_ticket, only: [:edit, :update]
 	
 	def new
-		@ticket = Ticket.new
-		@ticket = Request.build_associations(@ticket, passportable: true, companions: true)
+		@ticket = Request.build_associations(Ticket.new,
+			passportable: true, companions: true)
 	end
 	
 	def create

@@ -2,5 +2,5 @@
 
 = render 'alerts', alerts: @alerts
 
-- if @current_user.try(:admin)
+- if @current_user.admin
 	%footer= link_to t(:new_alert), new_alert_path, class: get_btn_class(:create)

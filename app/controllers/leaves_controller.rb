@@ -1,9 +1,8 @@
 class LeavesController < ApplicationController
-	before_filter :get_leave, only: [:edit, :update]
+	before_action :get_leave, only: [:edit, :update]
 	
 	def new
-		@leave = Leave.new
-		@leave = Request.build_associations(@leave)
+		@leave = Request.build_associations Leave.new
 	end
 	
 	def create

@@ -17,7 +17,7 @@ class Request < ActiveRecord::Base
 	accepts_nested_attributes_for :applicant
 	
 	# prevent duplicate Applicant records
-	before_save do
+	after_validation do
 		self.applicant = Applicant.where(name: applicant.name,
 			user_id: applicant.user_id).first_or_create
 	end

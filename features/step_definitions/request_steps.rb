@@ -9,3 +9,5 @@ Then(/^all request models should be empty$/) do
   
   are_empty.should be_true
 end
+
+Then(/^there should be only one applicant$/) { Applicant.count.should == 1 }

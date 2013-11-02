@@ -19,7 +19,6 @@ class Applicant < ActiveRecord::Base
 		get_requests 'Ticket'
 	end
 	
-	
 	private
 	
 	def get_requests(type)

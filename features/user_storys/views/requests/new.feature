@@ -84,3 +84,13 @@ Examples:
 	|				|				|	2		|	3	|	vacations	|	Please fill in all fields			|
 	|				|	1			|			|	3	|	vacations	|	Please fill in all fields			|
 	|				|				|			|		|	vacations	|	Please fill in all fields			|
+
+@admin, @regular_user
+Scenario: More than one request with the same applicants create only one applicant
+	When I request a coming:
+		|	coming_request_attributes_applicant_attributes_name	|	applicant	|
+		|	coming_reason										|	reason		|
+	And I request a leave:
+		|	leave_request_attributes_applicant_attributes_name	|	applicant	|
+		|	leave_reason										|	reason		|
+	Then there should be only one applicant

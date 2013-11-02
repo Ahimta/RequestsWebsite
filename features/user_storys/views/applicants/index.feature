@@ -15,7 +15,7 @@ Scenario Outline: Logged in as regular user
 		|	login_password	|	<password>	|
 	Given I am on the applicants page
 	Then I should see "<should_see>"
-		But I should not see the following: <should_not_see>
+		But I should not see the following: <should_not_see>, username1, username2, username3
 
 Examples:
 	|	username	|	password	|	should_see	|	should_not_see			|
@@ -25,4 +25,4 @@ Examples:
 
 @admin
 Scenario: Logged in as admin
-	Then I should see the following: applicant1, applicant2, applicant3
+	Then I should see the following: applicant1, applicant2, applicant3, username1, username2, username3

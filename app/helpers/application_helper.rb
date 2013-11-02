@@ -1,4 +1,6 @@
 module ApplicationHelper
+	TABLE_CLASS = 'table table-hover'
+
 	def get_btn_class(type)
 		case type
 		when :form, :create, :submit then 'btn btn-success btn-large'
@@ -40,7 +42,7 @@ module ApplicationHelper
 	end
 	
 	def get_table_class
-		'table table-striped'
+		TABLE_CLASS
 	end
 	
 	def get_required_label(required)

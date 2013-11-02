@@ -1,7 +1,7 @@
 - requests ||= false
 
 - if items.any?
-	%table.table.table-striped
+	%table{class: ApplicationHelper::TABLE_CLASS}
 		%thead
 			%tr
 				%th #

@@ -19,7 +19,7 @@ class Request < ActiveRecord::Base
 	# prevent duplicate Applicant records
 	after_validation do
 		self.applicant = Applicant.where(name: applicant.name,
-			user_id: applicant.user_id).first_or_create
+			user_id: applicant.user_id).first_or_initialize
 	end
 	
 	def self.build_associations(record, options={})

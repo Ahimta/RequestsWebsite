@@ -38,6 +38,11 @@ When(/^I visit the new (\w+) page$/) do |model|
   visit eval("new_#{model.downcase}_path")
 end
 
+When(/^I fill in:$/) do |data|
+  data.rows_hash.each { |field, value| fill_in field, with: value }
+end
+
+
 
 def submit(data, button)
   data.rows_hash.each do |field, value|

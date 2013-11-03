@@ -1,4 +1,4 @@
-Feature: RequestsController#{new, create}
+Feature: RequestsController{new, create}
 
 Scenario Outline: Not logged in
 	Given I am on the new <model> page
@@ -94,3 +94,22 @@ Scenario: More than one request with the same applicants create only one applica
 		|	leave_request_attributes_applicant_attributes_name	|	applicant	|
 		|	leave_reason										|	reason		|
 	Then there should be only one applicant
+
+@admin, @regular_user
+Scenario Outline:
+	When I request a coming:
+		|	coming_request_attributes_applicant_attributes_name	|	<applicant>	|
+		|	coming_reason										|	<reason>	|
+	And I press "Request Coming"
+	And I fill in:
+		|	coming_request_attributes_applicant_attributes_name	|	<applicant>	|
+		|	coming_reason										|	<reason>	|
+	And I press "Request Coming"
+	And I fill in:
+		|	coming_request_attributes_applicant_attributes_name	|	applicant	|
+		|	coming_reason										|	reason		|
+
+Examples:
+	|	applicant	|	reason	|
+	|	applicant	|			|
+	|				|	reason	|

@@ -53,9 +53,10 @@ def submit(data, button)
 end
 
 def create_request(n, type)
-    applicant = Applicant.create! name: "applicant#{n}", user_id: create_user(n).id
+    applicant = Applicant.where(name: "applicant#{n}", user_id: create_user(n).id).
+      first_or_initialize
 
-    request   = Request.create!(applicant_id: applicant.id, accepted: case type
+    request   = Request.create!(applicant: applicant, accepted: case type
       when 'accepted' then true
       when 'rejected' then false
       else nil

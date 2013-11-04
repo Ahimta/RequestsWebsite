@@ -56,27 +56,24 @@ describe User do
 		let!(:user) { FactoryGirl.create :user, username: 'john' }
 		let!(:invalid_user) { FactoryGirl.create :user, username: 'smith' }
 		
-		let!(:coming) { Coming.create! reason: 'reason', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
-		let!(:leave) { Leave.create! reason: 'reason', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
-		let!(:ticket) { Ticket.create line: 'line', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
-		let!(:vacation) { Vacation.create duration: '1', from: '2', to: '3', request_attributes: { applicant_attributes: { user_id: user.id, name: 'x' } } }
+		let!(:applicant) { Applicant.create! name: 'applicant', user: user }
+    let!(:invalid_applicant) { Applicant.create! name: 'invalid_applicant', user: invalid_user }
+    
+		let!(:coming) { Coming.create! reason: 'reason', request_attributes: { applicant: applicant } }
+		let!(:leave) { Leave.create! reason: 'reason', request_attributes: { applicant: applicant } }
+		let!(:ticket) { Ticket.create! line: 'line', request_attributes: { applicant: applicant } }
+		let!(:vacation) { Vacation.create! duration: '1', from: '2', to: '3', request_attributes: { applicant: applicant } }
 		
 		let!(:records) { [coming, ticket, leave, vacation] }
 		
 		it 'should return true for a valid user' do
-			records.each do |record|
-				User.authenticate(user, record).should be_true
-			end
+			records.each { |record| User.authenticate(user, record).should be_true }
 		end
 		it 'should return true for admin user' do
-			records.each do |record|
-				User.authenticate(admin, record).should be_true
-			end
+			records.each { |record| User.authenticate(admin, record).should be_true }
 		end
 		it 'should return false for invalid user' do
-			records.each do |record|
-				User.authenticate(invalid_user, record).should be_false
-			end
+			records.each { |record| User.authenticate(invalid_user, record).should be_false }
 		end
 	end
 end

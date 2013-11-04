@@ -13,7 +13,7 @@ class Applicant < ActiveRecord::Base
 	
 	has_many :requests, dependent: :destroy
 	
-	validates :name, presence: true #, uniqueness: { scope: :user_id }
+	validates :name, presence: true , uniqueness: { scope: :user_id }
 	
 	def tickets
 		get_requests 'Ticket'

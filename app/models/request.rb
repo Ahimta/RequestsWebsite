@@ -4,7 +4,7 @@ class Request < ActiveRecord::Base
 	
 	DryOut.dry_out
 	
-	attr_accessible :accepted, :applicant_attributes, :applicant_id
+	attr_accessible :accepted, :applicant, :applicant_attributes, :applicant_id
 
 	belongs_to :applicant
 	belongs_to :requestable, polymorphic: true, dependent: :destroy

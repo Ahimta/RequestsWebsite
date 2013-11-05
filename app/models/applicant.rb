@@ -1,7 +1,7 @@
 class Applicant < ActiveRecord::Base
 	INCLUDES_FIND = { location: nil, requests: [:applicant, :decision,
 		:requestable, :user], user: nil }
-	INCLUDES_ALL  = :requests
+	INCLUDES_ALL  = [:user, :requests]
 	
   attr_protected
 	

@@ -1,6 +1,7 @@
 class Request < ActiveRecord::Base
+  INCLUDES = [{requestable: [], decision: [], applicant: {user: :location}}]
 	INCLUDES_FIND = [:decision, :requestable, :user, :applicant]
-	INCLUDES_ALL  = [:decision, :user, :applicant]
+	INCLUDES_ALL  = {requestable: [], decision: [], applicant: {user: :location}}#[:decision, :user, :applicant]
 	
 	include Requestable
 	include Movable

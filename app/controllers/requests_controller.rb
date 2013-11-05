@@ -4,9 +4,9 @@ class RequestsController < ApplicationController
 	
 	def index
 		@requests = if @current_user.admin
-			Request.includes(Request::INCLUDES_ALL)
+			Request.includes(Request::INCLUDES)
 			else
-				@current_user.requests.includes(Request::INCLUDES_ALL)
+				@current_user.requests.includes(Request::INCLUDES)
 			end
 	end
 	
@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
 	private
 	
 	def get_request
-		@request = Request.includes(Request::INCLUDES_FIND).find params[:id]
+		@request = Request.includes(Request::INCLUDES).find params[:id]
 		require_owner @request
 	end
 end

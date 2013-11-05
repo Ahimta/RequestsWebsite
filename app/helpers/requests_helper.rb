@@ -39,8 +39,8 @@ module RequestsHelper
 		columns << t(:decide) if admin
 		
 		cells = ['link_to i, item']
-		cells << 'link_to item.user_username, item.user' if admin
-		cells.push('link_to item.applicant_name, item.applicant',
+		cells << 'link_to item.applicant.user.username, item.applicant.user' if admin
+		cells.push('link_to item.applicant.name, item.applicant',
 		't(item.requestable_type.downcase.to_sym)', 'get_decision_cell(item)')
 		cells << "render('/requests/requests_btn_group', request: item)" if admin
 		

@@ -2,8 +2,8 @@
 
 %div.page-header
 	%h1= header
-	%span{ class: get_label_class(request.request.accepted) }
-		= get_status(request.request.accepted)
+	%span{ class: get_label_class(request.accepted) }
+		= get_status(request.accepted)
 
 = render('/shared/resource_attributes',
-	attributes: { t(:applicant) => request.applicant_name })
+	attributes: { t(:applicant) => request.applicant.name })

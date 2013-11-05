@@ -1,4 +1,4 @@
-= render '/shared/request_header', header: t(:show_vacation), request: vacation
+= render '/shared/request_header', header: t(:show_vacation), request: vacation.request
 
 = render('/shared/resource_attributes',
 	attributes: { t(:duration) => vacation.duration, t(:from) => vacation.from,

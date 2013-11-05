@@ -2,7 +2,7 @@ class Decision < ActiveRecord::Base
 	ACCEPT = 'accept'
 	REJECT = 'reject'
 	
-	attr_accessible :number, :request_id
+	attr_protected
 	
 	belongs_to :request
 	

@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
 	INCLUDES_FIND  = { requests: :applicant, applicants: :requests, location: nil }
 	INCLUDES_ALL = [:requests, :applicants, :location]
 
-	attr_accessible :admin, :location, :location_attributes, :location_id,
-	:password, :password_confirmation, :username
+  attr_protected
 
 	has_secure_password
 
@@ -21,13 +20,9 @@ class User < ActiveRecord::Base
 		case_insensetive: true }
 	
 	# prevent duplicate Location records
-	before_save do
-		location = self.location
-		
+	after_validation do
 		self.location = Location.where(name: location.name).
-			first_or_create
-
-		location.destroy unless self.location == location
+			first_or_initialize
 	end
 	
 	before_validation do
@@ -36,18 +31,18 @@ class User < ActiveRecord::Base
 	end
 	
 	# prevent admin users from being destroyed
-	before_destroy do
-		false if admin
-	end
+	before_destroy { false if admin }
 	
 	def self.login(login)
 		username, password = login[:username], login[:password]
-		user = User.where("lower(username) = ?", username.downcase).first
+		
+		user = User.where(username: username.downcase).first
+		
 		user.authenticate password if user
 	end
 
 	def self.authenticate(user, record)
-		(record.try(:user) == user) or user.try(:admin)
+		(record.user == user) or user.admin
 	end
 	
 	def taken?

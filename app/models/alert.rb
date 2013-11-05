@@ -1,5 +1,5 @@
 class Alert < ActiveRecord::Base
-	attr_accessible :body, :title
+  attr_protected
 
 	validates :body, :title, presence: true
 end

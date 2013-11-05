@@ -3,7 +3,7 @@ class Applicant < ActiveRecord::Base
 		:requestable, :user], user: nil }
 	INCLUDES_ALL  = :requests
 	
-	attr_accessible :name, :user, :user_id
+  attr_protected
 	
 	belongs_to :user
 	delegate :username, to: :user, prefix: true
@@ -13,7 +13,7 @@ class Applicant < ActiveRecord::Base
 	
 	has_many :requests, dependent: :destroy
 	
-	validates :name, presence: true , uniqueness: { scope: :user_id }
+	validates :name, presence: true
 	
 	def tickets
 		get_requests 'Ticket'

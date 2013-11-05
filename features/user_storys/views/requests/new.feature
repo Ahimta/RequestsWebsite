@@ -98,6 +98,9 @@ Scenario: More than one request with the same applicants create only one applica
 @admin, @regular_user
 Scenario Outline:
 	When I request a coming:
+		|	coming_request_attributes_applicant_attributes_name	|	applicant	|
+		|	coming_reason										|	reason		|
+	And I request a coming:
 		|	coming_request_attributes_applicant_attributes_name	|	<applicant>	|
 		|	coming_reason										|	<reason>	|
 	And I press "Request Coming"

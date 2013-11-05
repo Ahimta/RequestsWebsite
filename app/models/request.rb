@@ -2,9 +2,11 @@ class Request < ActiveRecord::Base
 	INCLUDES_FIND = [:decision, :requestable, :user, :applicant]
 	INCLUDES_ALL  = [:decision, :user, :applicant]
 	
-	DryOut.dry_out
+	include Requestable
+	include Movable
+	include Passportable
 	
-	attr_accessible :accepted, :applicant, :applicant_attributes, :applicant_id
+  attr_protected
 
 	belongs_to :applicant
 	belongs_to :requestable, polymorphic: true, dependent: :destroy
@@ -18,7 +20,7 @@ class Request < ActiveRecord::Base
 	
 	# prevent duplicate Applicant records
 	after_validation do
-		self.applicant = Applicant.where(name: applicant.name,
+	  self.applicant = Applicant.where(name: applicant.name,
 			user_id: applicant.user_id).first_or_initialize
 	end
 	

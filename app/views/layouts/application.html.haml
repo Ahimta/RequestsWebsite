@@ -1,81 +1,16 @@
 !!! 5
 - ar = I18n.locale == :ar
 %html
-	%head
-		%title
-			= "#{t(:page_title)} -"
-			= yield :title
-		= stylesheet_link_tag :application
-		= javascript_include_tag :application
-		= csrf_meta_tags
-	- admin = @current_user.try :admin
-	%style
-		nav { margin-bottom: 90px }
-		div.field_with_errors { display: inline }
-	%body{ dir: get_page_dir(I18n.locale) }
-		%nav
-			%div.navbar.navbar-fixed-top.navbar-inverse
-				%div.navbar-inner
-					%div.container
-						%a.btn.btn-navbar{ 'data-toggle' => "collapse", 'data-target' => ".nav-collapse" }
-							- 3.times do
-								%span.icon-bar
-						
-						%div.nav-collapse.collapse
-							- pull = ar ? 'pull-left' : 'pull-right'
-							%div.navbar-form{ class: pull }
-								= get_locale_link I18n.locale
-
-								- if @current_user
-									= link_to t(:logout), logout_users_path, method: :delete, class: get_btn_class(:logout)
-							
-							- pull2 = ar ? 'pull-right' : 'pull-left'
-
-							- if @current_user
-								%ul.nav{ class: pull2 }
-									%li{ class: @requests_link }= link_to t(:requests), requests_path
-									%li{ class: @alerts_link }= link_to t(:alerts), alerts_path
-									%li{ class: @applicants_link }= link_to t(:applicants), applicants_path
-									- if admin
-										%li{ class: @locations_link }= link_to t(:locations), locations_path
-										%li{ class: @users_link }= link_to t(:users), users_path
-
-								%ul.nav{ class: pull2 }
-									%li
-										%div.dropdown
-										%a.dropdown-toggle#dLabel{ role: 'button', 'data-toggle' => 'dropdown', 'data-target' => '#', href: '#' }
-											= t(:new_request)
-											%b.caret
-										%ul.dropdown-menu{ role: 'menu', 'aria-labelledby' => 'dLabel' }
-											%li= link_to t(:coming), new_coming_path
-											%li= link_to t(:leave), new_leafe_path
-											%li= link_to t(:ticket), new_ticket_path
-											%li= link_to t(:vacation), new_vacation_path
-							- else
-								= form_tag login_users_path, class: 'navbar-form ' + pull2 do
-									- username, password = t(:username), t(:password)
-									- klass = get_login_input_class
-									= text_field(:login, :username, placeholder: username,
-											title: username, autofocus: true,
-											required: true, class: klass)
-									= password_field(:login, :password, placeholder: password,
-											title: password, required: true, class: klass)
-									= submit_tag t(:login), class: get_btn_class(:login)
-			
-		- notice, warning = flash[:notice], flash[:warning]
-		
-		- if notice
-			%section.alert.alert-success.text-center
-				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
-				= notice
-		- elsif warning
-			%section.alert.alert-error.text-center
-				%button.close{ type: 'button', 'data-dismiss' => 'alert' } &times
-				= warning
-		
-		%div.container.text-center
-			= yield
-			
-		%footer.footer.text-center
-			%hr
-			%p.lead © Saleh Saifi
+  %head
+    %title
+      = "#{t(:page_title)} -"
+      = yield :title
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+    = csrf_meta_tags
+  - admin = @current_user.try :admin
+  %body{ dir: get_page_dir(I18n.locale) }
+    = render '/layouts/header', ar: ar, admin: admin, notice: flash[:notice], warning: flash[:warning]
+    %div.container.text-center
+      = yield
+    = render '/layouts/footer'

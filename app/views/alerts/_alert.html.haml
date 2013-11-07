@@ -1,10 +1,11 @@
-- link ||= false
-
 %article
-	%header
-		%h2= link ? link_to(alert.title, alert) : alert.title
-	
-	%p.lead= alert.body
-	
-	- if link
-		%hr
+  %header
+    %h2= link_to(alert.title, alert)
+
+  %p.lead= alert.body
+
+  - if @current_user.admin
+    = render('/shared/resource_footer', back_path: requests_path,
+      edit_path: edit_alert_path(alert), resource: alert)
+
+  %hr

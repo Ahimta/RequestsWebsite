@@ -1,7 +1,3 @@
 = title t(:show_alert)
 
 = render @alert
-
-- if @current_user.admin
-	= render('/shared/resource_footer', back_path: alerts_path,
-		edit_path: edit_alert_path(@alert), resource: @alert)

@@ -1,6 +1,6 @@
 = render('/shared/resource_attributes',
 	attributes: { t(:name) => applicant.name,
-	t(:user) => link_to(applicant.user_username,
+	t(:user) => link_to(applicant.user.username,
 	applicant.user),
-	t(:location) => link_to(applicant.location_name, applicant.location),
+	t(:location) => link_to(applicant.user.location.name, applicant.location),
 	t(:requests_count) => applicant.requests.size })

@@ -4,7 +4,7 @@ module ApplicantsHelper
 		columns = [t(:applicant_name)]
 
 		if @current_user.admin
-			cells << 'link_to item.user_username, item.user'
+			cells << 'link_to item.user.username, item.user'
 			columns << t(:user)
 		end
 

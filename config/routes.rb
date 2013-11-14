@@ -25,7 +25,7 @@ RequestsWebsite::Application.routes.draw do
 		end
 	#end
 	
-  #root to: 'requests#index'
+  root to: 'requests#index'
 
 
   # The priority is based upon order of creation:

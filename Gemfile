@@ -43,7 +43,7 @@ end
 
 gem 'paperclip'
 gem 'jquery-rails'
-gem 'bcrypt-ruby' #, '~> 3.0.0'
+gem 'bcrypt-ruby'
 gem 'rails-i18n'
 gem 'turbolinks'
 gem 'haml'

@@ -14,6 +14,10 @@ group :development, :production do
 	# gem 'thin'
 	gem 'passenger'
 	gem 'puma'
+	
+	gem 'sass-rails'
+	gem 'coffee-rails'
+	gem 'uglifier'
 end
 
 group :development do
@@ -22,10 +26,6 @@ group :development do
 	gem 'guard-cucumber'
 	gem 'guard-rspec'
 	gem 'bullet'
-
-	gem 'sass-rails'
-	gem 'coffee-rails'
-	gem 'uglifier'
 end
 
 group :test do

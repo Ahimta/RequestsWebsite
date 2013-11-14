@@ -12,9 +12,9 @@ end
 group :development, :production do
 	gem 'unicorn'
 	# gem 'thin'
-	gem 'passenger'
-	gem 'puma'
-	
+	# gem 'passenger'
+	# gem 'puma'
+
 	gem 'sass-rails'
 	gem 'coffee-rails'
 	gem 'uglifier'
@@ -52,3 +52,4 @@ gem 'protected_attributes'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 gem 'therubyracer', platforms: :ruby
+gem 'rails_12factor'

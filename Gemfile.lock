@@ -85,7 +85,6 @@ GEM
       nokogiri (>= 1.5.0)
     cucumber-rails-training-wheels (1.0.0)
       cucumber-rails (>= 1.1.1)
-    daemon_controller (1.1.7)
     database_cleaner (1.2.0)
     debugger (1.6.2)
       columnize (>= 0.3.1)
@@ -152,10 +151,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    passenger (4.0.23)
-      daemon_controller (>= 1.1.0)
-      rack
-      rake (>= 0.8.1)
     pg (0.17.0)
     pickle (0.4.11)
       cucumber (>= 0.8)
@@ -167,8 +162,6 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-    puma (2.6.0)
-      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -183,6 +176,9 @@ GEM
     rails-i18n (4.0.0)
       i18n (~> 0.6)
       rails (~> 4.0.0)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_best_practices (1.14.4)
       activesupport
       awesome_print
@@ -192,6 +188,8 @@ GEM
       i18n
       require_all
       ruby-progressbar
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.3)
     railties (4.0.0)
       actionpack (= 4.0.0)
       activesupport (= 4.0.0)
@@ -294,13 +292,12 @@ DEPENDENCIES
   jquery-rails
   launchy
   paperclip
-  passenger
   pg
   pickle
   protected_attributes
-  puma
   rails
   rails-i18n
+  rails_12factor
   rails_best_practices
   rspec-rails
   sass-rails

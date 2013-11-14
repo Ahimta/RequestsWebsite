@@ -11,7 +11,7 @@ end
 
 group :development, :production do
 	gem 'unicorn'
-	gem 'thin'
+	# gem 'thin'
 	gem 'passenger'
 	gem 'puma'
 end

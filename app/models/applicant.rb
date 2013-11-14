@@ -3,7 +3,7 @@ class Applicant < ActiveRecord::Base
 		:requestable, :user], user: nil }
 	INCLUDES_ALL  = [:user, :requests]
 	
-  attr_protected
+	attr_protected
 	
 	belongs_to :user
 	delegate :username, to: :user, prefix: true

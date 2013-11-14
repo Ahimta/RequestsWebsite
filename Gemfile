@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-ruby '1.9.3'
+# ruby '1.9.3'
 
 group :development, :test do
 	gem 'factory_girl_rails'

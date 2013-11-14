@@ -3,11 +3,7 @@ class Request < ActiveRecord::Base
 	INCLUDES_FIND = [:decision, :requestable, :user, :applicant]
 	INCLUDES_ALL  = {requestable: [], decision: [], applicant: {user: :location}}#[:decision, :user, :applicant]
 	
-	include Requestable
-	include Movable
-	include Passportable
-	
-  attr_protected
+	attr_protected
 
 	belongs_to :applicant
 	belongs_to :requestable, polymorphic: true, dependent: :destroy

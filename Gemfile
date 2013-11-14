@@ -10,6 +10,9 @@ end
 
 group :development, :production do
 	gem 'unicorn'
+	gem 'thin'
+	gem 'passenger'
+	gem 'puma'
 end
 
 group :development do

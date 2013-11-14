@@ -2,6 +2,10 @@ class Ticket < ActiveRecord::Base
 	INCLUDES_FIND = Coming::INCLUDES_FIND + [:companions, :passport]
 	LIMIT = 11.months
 
+	extend Requestable
+	acts_as_requestable
+	acts_as_passportable
+
 	has_many :companions
 
 	accepts_nested_attributes_for :companions

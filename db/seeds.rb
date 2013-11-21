@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.where(username: 'admin').first.try :destroy
+admin = User.where(username: 'admin').first
+
 User.create!(username: 'admin', password: 'admin', admin: true,
-	location_attributes: { name: 'SA' })
+	location_attributes: { name: 'SA' }) unless admin
